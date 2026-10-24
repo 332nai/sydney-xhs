@@ -1,0 +1,91 @@
+{
+  "id": "venue-holiao",
+  "title": "Ho Liao",
+  "pages": [
+    {
+      "layout": "cover_photo",
+      "image": "data/post_img/holiao_7.jpg",
+      "label": "新店｜Wynyard",
+      "headline": [
+        "Ho Jiak 开了平价版",
+        "就在 Wynyard 站对面"
+      ],
+      "sub": "马来西亚菜啤酒馆，不少菜在$20以内"
+    },
+    {
+      "layout": "photo_full",
+      "image": "data/post_img/holiao_16.jpg",
+      "caption": "Carrington Street 上的新店",
+      "sub": "出了 Wynyard 站，过马路就到"
+    },
+    {
+      "layout": "photo_full",
+      "image": "data/post_img/holiao_10.jpg",
+      "label": "招牌",
+      "caption": "挂炉烧鸭",
+      "sub": "Ho Jiak 的人气菜，这里也有"
+    },
+    {
+      "layout": "photo_grid",
+      "label": "Ho Liao｜可以点的",
+      "headline": [
+        "这几道可以点"
+      ],
+      "images": [
+        "data/post_img/holiao_12.jpg",
+        "data/post_img/holiao_6.jpg",
+        "data/post_img/holiao_8.jpg",
+        "data/post_img/holiao_4.jpg"
+      ],
+      "captions": [
+        "烧鸭",
+        "炭烤炉做的瓦煲饭",
+        "螃蟹，按时价",
+        "饺子"
+      ]
+    },
+    {
+      "layout": "venue",
+      "image": "data/post_img/holiao_2.jpg",
+      "label": "Ho Liao｜店铺信息",
+      "headline": [
+        "Ho Liao"
+      ],
+      "lede": "Ho Jiak 主厨 Junda Khoo 把最受欢迎的菜做成一份精选集。",
+      "facts": {
+        "address": "2/50 Carrington Street，Wynyard 站对面",
+        "hours": "周一至周六上午11点至晚11点，周日至晚10点",
+        "price": "不少菜在$20以内，螃蟹按时价"
+      },
+      "explainer": "还有叻沙汤鸡肉鲜虾饺子和娘惹酸辣鱼。啤酒是朝日、札幌、虎牌这些亚洲啤酒。"
+    },
+    {
+      "layout": "photo_full",
+      "image": "data/post_img/holiao_5.jpg",
+      "caption": "晚上很热闹",
+      "sub": "定位是啤酒馆，适合下班后几个人一起来"
+    },
+    {
+      "layout": "photo_duo",
+      "images": [
+        "data/post_img/holiao_9.jpg",
+        "data/post_img/holiao_15.jpg"
+      ],
+      "captions": [
+        "开放式厨房",
+        "靠窗的座位"
+      ]
+    },
+    {
+      "layout": "closing_photo",
+      "image": "data/post_img/holiao_3.jpg",
+      "headline": [
+        "下班后的一顿马来菜"
+      ],
+      "lines": [
+        "Ho Liao｜2/50 Carrington Street"
+      ],
+      "question": "你吃过 Ho Jiak 吗？最推荐哪一道？"
+    }
+  ]
+}

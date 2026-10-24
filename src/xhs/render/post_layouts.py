@@ -176,5 +176,67 @@ def number(p, ctx):
     return layouts.number_poster(item, ctx)
 
 
-REGISTRY = {"cover_photo": cover_photo, "cover_split": cover_split, "photo_grid": photo_grid, "compare": compare,
+def _caption_band(img, d, y0, caption, sub=None):
+    _shade(img, (0, y0, W, H), 175)
+    d = ImageDraw.Draw(img)
+    y = y0 + 34
+    if caption:
+        f = fit("sans", "black", caption, 860, 52, 34)
+        d.text((M, y), caption, font=f, fill=CREAM); y += int(f.size * 1.35)
+    if sub:
+        para(d, (M, y), sub, F("sans", "regular", BODY), SAND, 860, 1.45, max_lines=2)
+    return d
+
+
+def photo_full(p, ctx):
+    """整版照片，底部一条说明。"""
+    img = _img(p["image"], (W, H))
+    d = ImageDraw.Draw(img)
+    if p.get("label"):
+        f = F("sans", "bold", 26)
+        rrect(d, [M - 16, 64, M + tw(f, p["label"]) + 16, 112], 24, fill=(20, 20, 20))
+        d.text((M, 70), p["label"], font=f, fill=CREAM)
+    if p.get("caption") or p.get("sub"):
+        _caption_band(img, d, 1260 if p.get("sub") else 1320, p.get("caption"), p.get("sub"))
+    return img
+
+
+def photo_duo(p, ctx):
+    """上下两张照片，各配一行说明。"""
+    img = Image.new("RGB", (W, H), INK)
+    a, b = p["images"][:2]
+    caps = p.get("captions", ["", ""])
+    img.paste(_img(a, (W, 740)), (0, 0))
+    img.paste(_img(b, (W, 740)), (0, 760))
+    d = ImageDraw.Draw(img)
+    f = F("sans", "bold", 30)
+    for (y, cap) in [(660, caps[0]), (1420, caps[1])]:
+        if cap:
+            rrect(d, [M - 18, y - 10, M + tw(f, cap) + 18, y + 48], 26, fill=(20, 20, 20))
+            d.text((M, y - 2), cap, font=f, fill=CREAM)
+    return img
+
+
+def closing_photo(p, ctx):
+    """结尾页：上半张照片，下半部分是互动问题。"""
+    img = paper(p.get("bg", NAVY), grain=8)
+    img.paste(_img(p["image"], (W, 800)), (0, 0))
+    d = ImageDraw.Draw(img)
+    ink = CREAM
+    y = 860
+    for line in p.get("headline", []):
+        f = fit("serif", "black", line, 860, 64, 40)
+        d.text((M, y), line, font=f, fill=ink); y += int(f.size * 1.3)
+    for item in p.get("lines", []):
+        y = para(d, (M, y + 6), item, F("sans", "regular", BODY), SAND, 860, 1.5) + 6
+    q = p.get("question", "")
+    if q:
+        top = max(y + 30, 1170)
+        rrect(d, [M, top, W - M, top + 170], 20, outline=CORAL, width=3)
+        para(d, (M + 34, top + 34), q, F("sans", "bold", 38), ink, 790, 1.35, max_lines=2)
+    layouts.brand(d, ink, y=1420)
+    return img
+
+
+REGISTRY = {"photo_full": photo_full, "photo_duo": photo_duo, "closing_photo": closing_photo, "cover_photo": cover_photo, "cover_split": cover_split, "photo_grid": photo_grid, "compare": compare,
             "story": story, "closing": closing, "venue": venue, "number": number}
