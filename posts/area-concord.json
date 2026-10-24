@@ -105,15 +105,44 @@
   },
   {
    "layout": "spot",
+   "cat": "r",
+   "tag": "泛亚洲菜｜Concord West",
+   "name": "ThreeOneNine",
+   "images": [
+    "data/post_img/cc_319_spread.jpg",
+    "data/post_img/cc_319_scallop.jpg"
+   ],
+   "focus": [
+    [
+     0.3,
+     0.5
+    ],
+    null
+   ],
+   "lines": [
+    "Concord Road上的砖墙小馆，做现代版的家常菜，适合几个人一起分着吃。",
+    "招牌是虾多士、越南鸡肉沙拉和蟹肉云吞，也有牛排、扇贝这类西式菜。"
+   ]
+  },
+  {
+   "layout": "spot",
    "cat": "c",
    "tag": "咖啡｜Concord",
    "name": "Organica",
    "images": [
-    "data/post_img/cc_organica_01.jpg"
+    "data/post_img/cc_organica_07.jpg",
+    "data/post_img/cc_organica_cakes.jpg"
    ],
    "lines": [
     "2009年在这里起家的咖啡馆兼甜品店，早上5点半开门，周五周六开到晚11点。",
     "希腊风味早午餐、巴克拉瓦法式吐司、提拉米苏蛋糕。"
+   ],
+   "focus": [
+    null,
+    [
+     0.5,
+     0.8
+    ]
    ]
   },
   {
@@ -136,8 +165,8 @@
    "tag": "咖啡｜Concord West",
    "name": "Mattina",
    "images": [
-    "data/post_img/cc_mattina_08.jpg",
-    "data/post_img/cc_mattina_07.jpg"
+    "data/post_img/cc_mattina_n15.jpg",
+    "data/post_img/cc_mattina_n21.jpg"
    ],
    "lines": [
     "Concord West车站旁的社区咖啡店。",
@@ -152,7 +181,7 @@
      "name": "Pajuok 파주옥",
      "cat": "r",
      "addr": "21a Victoria Avenue, Concord West",
-     "text": "韩式汤饭：猪肉汤饭$26、雪浓汤$28、血肠汤饭$27。周一休息，午市11点至3点，晚市5点至9点。"
+     "text": "韩式汤饭，有猪肉汤饭、雪浓汤和血肠汤饭。"
     },
     {
      "name": "Late Night Table",
@@ -164,19 +193,13 @@
      "name": "Daikoku Teppanyaki",
      "cat": "r",
      "addr": "88 Majors Bay Road, Concord",
-     "text": "只有24个座位的铁板烧，主打5道菜套餐，有澳洲牛排和龙虾尾。周一休息。"
+     "text": "只有24个座位的铁板烧，主打套餐，有澳洲牛排和龙虾尾。"
     },
     {
      "name": "Da Franco Incontro",
      "cat": "r",
      "addr": "137 Parramatta Road, Concord",
      "text": "意大利菜和海鲜。"
-    },
-    {
-     "name": "ThreeOneNine",
-     "cat": "r",
-     "addr": "319 Concord Road, Concord West",
-     "text": "现代澳洲菜，街头小吃风格。"
     }
    ]
   }
