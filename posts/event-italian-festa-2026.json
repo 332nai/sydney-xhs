@@ -3,35 +3,13 @@
   "title": "Norton Street意大利节2026",
   "pages": [
     {
-      "layout": "cover_bignum",
+      "layout": "cover_full",
       "image": "data/post_img/it_Screenshot_2025-10-2.jpg",
-      "focus": [
-        0.45,
-        0.5
-      ],
-      "big": "18",
-      "unit": "万人",
-      "stripe": [
-        [
-          0,
-          146,
-          70
-        ],
-        [
-          244,
-          244,
-          240
-        ],
-        [
-          206,
-          43,
-          55
-        ]
-      ],
       "headline": [
-        "明天挤进悉尼Leichhardt"
+        "悉尼最大的意大利街头节",
+        "明天在Leichhardt"
       ],
-      "big_size": 380
+      "accent": 1
     },
     {
       "layout": "event_photo",
