@@ -3,18 +3,40 @@
   "title": "Norton Street意大利节2026",
   "pages": [
     {
-      "layout": "cover_full",
-      "image": "data/post_img/it_t1.jpg",
-      "headline": [
-        "悉尼意大利节",
-        "明天18万人"
+      "layout": "cover_bignum",
+      "image": "data/post_img/it_Screenshot_2025-10-2.jpg",
+      "focus": [
+        0.45,
+        0.5
       ],
-      "accent": 1
+      "big": "18",
+      "unit": "万人",
+      "stripe": [
+        [
+          0,
+          146,
+          70
+        ],
+        [
+          244,
+          244,
+          240
+        ],
+        [
+          206,
+          43,
+          55
+        ]
+      ],
+      "headline": [
+        "明天挤进悉尼Leichhardt"
+      ],
+      "big_size": 380
     },
     {
       "layout": "event_photo",
       "theme": "italia",
-      "image": "data/post_img/it_v1.jpg",
+      "image": "data/post_img/it_festa.jpg",
       "photo_h": 640,
       "label": "第40届",
       "headline": [
@@ -35,17 +57,28 @@
         "800米长的街封路，170多个摊位",
         "1986年由Leichhardt的St Fiacre教堂发起",
         "预计最多18万人"
+      ],
+      "focus": [
+        0.3,
+        0.4
       ]
     },
     {
       "layout": "photo_duo",
       "images": [
-        "data/post_img/it_v4.jpg",
-        "data/post_img/it_d3.jpg"
+        "data/post_img/it_t1.jpg",
+        "data/post_img/it_v4.jpg"
       ],
       "captions": [
-        "Bar Italia的意式冰淇淋",
-        "Dom Panino的帕尼尼"
+        "摊位上现切的烤猪肉",
+        "Bar Italia的意式冰淇淋"
+      ],
+      "focus": [
+        [
+          0.3,
+          0.4
+        ],
+        null
       ]
     },
     {
@@ -81,12 +114,12 @@
     {
       "layout": "photo_duo",
       "images": [
-        "data/post_img/it_d14.jpg",
-        "data/post_img/it_d9.jpg"
+        "data/post_img/it_560c3fc0c42bac9e1b6a.jpg",
+        "data/post_img/it_d3.jpg"
       ],
       "captions": [
-        "",
-        ""
+        "舞台上的意大利民族舞",
+        "Dom Panino的帕尼尼"
       ]
     },
     {

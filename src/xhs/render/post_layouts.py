@@ -169,6 +169,41 @@ def cover_sleeve(p, ctx):
     return img
 
 
+def cover_bignum(p, ctx):
+    """大数字封面：照片铺满，超大数字压在上面，下面一句话标题，可加三色条。"""
+    img = _pop(_fit_focus(p["image"], (W, H), p.get("focus")).convert("RGB"))
+    grad = Image.new("L", (1, H), 0)
+    for yy in range(H):
+        top = max(0, 1 - yy / 520) ** 1.5 * 0.55
+        bot = max(0, (yy - (H - 620)) / 620) ** 1.3 * 0.9
+        grad.putpixel((0, yy), int(255 * min(1, top + bot)))
+    img = Image.composite(Image.new("RGB", (W, H), (12, 10, 10)), img, grad.resize((W, H)))
+    d = ImageDraw.Draw(img)
+    num, unit = p["big"], p.get("unit", "")
+    size = p.get("big_size", 300)
+    nf = F("inter", "Black", size)
+    uf = F("sans", "black", int(size * 0.42))
+    y = H - 140 - int(size * 0.95) - 120 * len(p.get("headline", []))
+    x = M - 8
+    d.text((x + 6, y + 6), num, font=nf, fill=(0, 0, 0))
+    d.text((x, y), num, font=nf, fill=WHITE)
+    ux = x + nf.getlength(num) + 14
+    d.text((ux + 4, y + size * 0.45 + 4), unit, font=uf, fill=(0, 0, 0))
+    d.text((ux, y + size * 0.45), unit, font=uf, fill=WHITE)
+    yy = y + int(size * 1.02)
+    if p.get("stripe"):
+        cols = [tuple(c) for c in p["stripe"]]
+        sw = 120
+        for i, c in enumerate(cols):
+            d.rectangle([M + i * sw, yy, M + (i + 1) * sw - 6, yy + 16], fill=c)
+        yy += 46
+    for line in p.get("headline", []):
+        f = fit("sans", "black", line, 860, 92, 56)
+        d.text((M, yy), line, font=f, fill=WHITE)
+        yy += int(f.size * 1.25)
+    return img
+
+
 def cover_split(p, ctx):
     """上下两张照片，中间一条标题带。"""
     img = Image.new("RGB", (W, H), CREAM)
@@ -386,7 +421,7 @@ def closing_photo(p, ctx):
     return img
 
 
-REGISTRY = {"photo_full": photo_full, "photo_duo": photo_duo, "closing_photo": closing_photo, "cover_photo": cover_photo, "cover_full": cover_full, "cover_film": cover_film, "cover_hero": cover_hero, "cover_sleeve": cover_sleeve, "cover_split": cover_split, "photo_grid": photo_grid, "compare": compare,
+REGISTRY = {"photo_full": photo_full, "photo_duo": photo_duo, "closing_photo": closing_photo, "cover_photo": cover_photo, "cover_full": cover_full, "cover_film": cover_film, "cover_hero": cover_hero, "cover_sleeve": cover_sleeve, "cover_bignum": cover_bignum, "cover_split": cover_split, "photo_grid": photo_grid, "compare": compare,
             "story": story, "closing": closing, "venue": venue, "number": number}
 
 

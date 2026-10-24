@@ -129,32 +129,17 @@
       ]
     },
     {
-      "layout": "list_card",
+      "layout": "event_photo",
+      "image": "data/post_img/it_halloween_dh_pnsw_cr.jpg",
+      "photo_h": 620,
       "label": "Darling Harbour",
       "headline": [
         "一整片都有活动"
       ],
-      "entries": [
-        {
-          "name": "Skeletopia骷髅节",
-          "meta": "10月31日 周六下午至晚上｜Cockle Bay Wharf｜免费",
-          "note": "巨型亡灵节木偶、骷髅演员、免费画脸"
-        },
-        {
-          "name": "Darling Square不给糖就捣蛋",
-          "meta": "10月31日 周六｜Darling Square｜免费",
-          "note": "适合带小朋友，19日至31日每天有免费画脸"
-        },
-        {
-          "name": "Electric Nation音乐节",
-          "meta": "10月30日 周五 下午5点至晚11点半｜Tumbalong Park",
-          "note": "Topic、Bag Raiders等DJ，户外蹦迪"
-        },
-        {
-          "name": "《午夜凶铃》交响音乐会",
-          "meta": "10月31日 周六｜TikTok Entertainment Centre",
-          "note": "现场乐团演奏电影配乐"
-        }
+      "points": [
+        "Skeletopia骷髅节：10月31日 周六下午至晚上，巨型亡灵节木偶、骷髅演员、免费画脸",
+        "Darling Square不给糖就捣蛋：10月31日 周六，适合带小朋友，19日至31日每天有免费画脸",
+        "Electric Nation音乐节：10月30日 周五 下午5点至晚11点半，Topic、Bag Raiders等DJ，户外蹦迪"
       ]
     },
     {
