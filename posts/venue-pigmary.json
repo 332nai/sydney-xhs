@@ -2,34 +2,121 @@
   "id": "venue-pigmary",
   "title": "Pig Mary",
   "pages": [
-    {"layout": "cover_photo", "image": "data/post_img/pigmary_n20.jpg",
-     "headline": ["悉尼名店Ester隔壁", "开了一家12座小酒吧"]},
-    {"layout": "photo_full", "image": "data/post_img/pigmary_n1.jpg",
-     "caption": "Meagher Street街角的老房子", "sub": "Chippendale，离Ester只有几步"},
-    {"layout": "photo_full", "image": "data/post_img/pigmary_n22.jpg",
-     "caption": "菜单就写在门口黑板上", "sub": "小食$8起，大多在$20出头"},
-    {"layout": "photo_grid", "label": "Pig Mary｜黑板上的小食", "headline": ["以猪肉为主的下酒菜"],
-     "images": ["data/post_img/pigmary_n14.jpg", "data/post_img/pigmary_n10.jpg", "data/post_img/pigmary_n12.jpg", "data/post_img/pigmary_n6.jpg"],
-     "captions": ["Gilda配土豆面包，$8一个", "炸土豆片，$18", "葡式猪排包Bifana，$24", "西葫芦花，$24"]},
-    {"layout": "photo_duo", "images": ["data/post_img/pigmary_n8.jpg", "data/post_img/pigmary_n2.jpg"],
-     "captions": ["冰镇马天尼，金酒或伏特加", "Ester酒单上的酒也能点"]},
-    {"layout": "venue", "image": "data/post_img/pigmary_n11.jpg", "label": "Pig Mary｜店铺信息", "headline": ["Pig Mary"],
-     "lede": "Ester主厨Mat Lindsay开的小酒吧，主厨Pete Campbell之前在Poly。",
-     "facts": {"address": "42 Meagher Street, Chippendale", "hours": "周一、周四、周五晚5点至10点；周六中午至晚10点（下午4点至5点休息）；周日中午至下午4点"},
-     "explainer": "店名来自19世纪Chippendale的居民Mary O'Shea，她常去Ultimo的屠宰场捡下水喂猪，所以菜单以猪肉为主。"},
-    {"layout": "photo_duo", "images": ["data/post_img/pigmary_n9.jpg", "data/post_img/pigmary_n7.jpg"],
-     "captions": ["吧台对着小厨房", "一共12个座位，门外巷子里也有几个"]},
-    {"layout": "compare", "label": "Pig Mary｜说实话", "headline": ["开业不到一个月", "评价还很少"],
-     "cols": ["目前知道的"],
-     "rows": [
-       ["值得期待", "Ester团队出品，Ester的切达芝士派用柴火炉烤好再拿过来，在这里也能点"],
-       ["要注意", "只有12个座位，不接受预订，只能现场等；周二周三不开"],
-       ["价格", "都是小份下酒菜，$8至$32，想吃饱要点好几样，再加酒花费不会太低"],
-       ["还不知道", "要等多久、分量怎样，网上还找不到食客评价"]
-     ],
-     "note": "去过的朋友，欢迎在评论区说说排了多久。"},
-    {"layout": "closing_photo", "image": "data/post_img/pigmary_n23.jpg",
-     "headline": ["下次去Chippendale"], "lines": ["Pig Mary｜42 Meagher Street"],
-     "question": "你愿意为一家12座的小酒吧排队吗？"}
+    {
+      "layout": "cover_full",
+      "image": "data/post_img/pigmary_n2.jpg",
+      "headline": [
+        "悉尼名店Ester隔壁",
+        "开了一家12座小酒吧"
+      ]
+    },
+    {
+      "layout": "photo_full",
+      "image": "data/post_img/pigmary_n1.jpg",
+      "caption": "Meagher Street街角的老房子",
+      "sub": "Chippendale，离Ester只有几步"
+    },
+    {
+      "layout": "photo_full",
+      "image": "data/post_img/pigmary_n22.jpg",
+      "caption": "菜单就写在门口黑板上",
+      "sub": "小食$8起，大多在$20出头"
+    },
+    {
+      "layout": "photo_grid",
+      "label": "Pig Mary｜黑板上的小食",
+      "headline": [
+        "以猪肉为主的下酒菜"
+      ],
+      "images": [
+        "data/post_img/pigmary_n14.jpg",
+        "data/post_img/pigmary_n10.jpg",
+        "data/post_img/pigmary_n12.jpg",
+        "data/post_img/pigmary_n6.jpg"
+      ],
+      "captions": [
+        "Gilda配土豆面包，$8一个",
+        "炸土豆片，$18",
+        "葡式猪排包Bifana，$24",
+        "西葫芦花，$24"
+      ]
+    },
+    {
+      "layout": "photo_duo",
+      "images": [
+        "data/post_img/pigmary_n8.jpg",
+        "data/post_img/pigmary_n2.jpg"
+      ],
+      "captions": [
+        "冰镇马天尼，金酒或伏特加",
+        "Ester酒单上的酒也能点"
+      ]
+    },
+    {
+      "layout": "venue",
+      "image": "data/post_img/pigmary_n11.jpg",
+      "label": "Pig Mary｜店铺信息",
+      "headline": [
+        "Pig Mary"
+      ],
+      "lede": "Ester主厨Mat Lindsay开的小酒吧，主厨Pete Campbell之前在Poly。",
+      "facts": {
+        "address": "42 Meagher Street, Chippendale",
+        "hours": "周一、周四、周五晚5点至10点；周六中午至晚10点（下午4点至5点休息）；周日中午至下午4点"
+      },
+      "explainer": "店名来自19世纪Chippendale的居民Mary O'Shea，她常去Ultimo的屠宰场捡下水喂猪，所以菜单以猪肉为主。"
+    },
+    {
+      "layout": "photo_duo",
+      "images": [
+        "data/post_img/pigmary_n9.jpg",
+        "data/post_img/pigmary_n7.jpg"
+      ],
+      "captions": [
+        "吧台对着小厨房",
+        "一共12个座位，门外巷子里也有几个"
+      ]
+    },
+    {
+      "layout": "compare",
+      "label": "Pig Mary｜说实话",
+      "headline": [
+        "开业不到一个月",
+        "评价还很少"
+      ],
+      "cols": [
+        "目前知道的"
+      ],
+      "rows": [
+        [
+          "值得期待",
+          "Ester团队出品，Ester的切达芝士派用柴火炉烤好再拿过来，在这里也能点"
+        ],
+        [
+          "要注意",
+          "只有12个座位，不接受预订，只能现场等；周二周三不开"
+        ],
+        [
+          "价格",
+          "都是小份下酒菜，$8至$32，想吃饱要点好几样，再加酒花费不会太低"
+        ],
+        [
+          "还不知道",
+          "要等多久、分量怎样，网上还找不到食客评价"
+        ]
+      ],
+      "note": "去过的朋友，欢迎在评论区说说排了多久。"
+    },
+    {
+      "layout": "closing_photo",
+      "image": "data/post_img/pigmary_n23.jpg",
+      "headline": [
+        "下次去Chippendale"
+      ],
+      "lines": [
+        "Pig Mary｜42 Meagher Street"
+      ],
+      "question": "你愿意为一家12座的小酒吧排队吗？"
+    }
   ]
 }

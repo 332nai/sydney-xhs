@@ -36,6 +36,30 @@ def cover_photo(p, ctx):
     return img
 
 
+def cover_full(p, ctx):
+    """照片铺满整张，底部渐变压暗，只放大标题。"""
+    img = _img(p["image"], (W, H)).convert("RGB")
+    lines = p.get("headline", [])
+    fonts = [fit("sans", "black", line, 860, 108, 60) for line in lines]
+    size = min(f.size for f in fonts) if fonts else 108
+    f = F("sans", "black", size)
+    step = int(size * 1.22)
+    top = H - 90 - step * len(lines)
+    grad = Image.new("L", (1, H), 0)
+    g0 = top - 260
+    for yy in range(H):
+        t = 0 if yy < g0 else min(1, (yy - g0) / (H - g0) * 1.4)
+        grad.putpixel((0, yy), int(215 * t))
+    shade = Image.new("RGB", (W, H), (12, 10, 10))
+    img = Image.composite(shade, img, grad.resize((W, H)))
+    d = ImageDraw.Draw(img)
+    y = top
+    for line in lines:
+        d.text((M, y), line, font=f, fill=WHITE)
+        y += step
+    return img
+
+
 def cover_split(p, ctx):
     """上下两张照片，中间一条标题带。"""
     img = Image.new("RGB", (W, H), CREAM)
@@ -237,5 +261,5 @@ def closing_photo(p, ctx):
     return img
 
 
-REGISTRY = {"photo_full": photo_full, "photo_duo": photo_duo, "closing_photo": closing_photo, "cover_photo": cover_photo, "cover_split": cover_split, "photo_grid": photo_grid, "compare": compare,
+REGISTRY = {"photo_full": photo_full, "photo_duo": photo_duo, "closing_photo": closing_photo, "cover_photo": cover_photo, "cover_full": cover_full, "cover_split": cover_split, "photo_grid": photo_grid, "compare": compare,
             "story": story, "closing": closing, "venue": venue, "number": number}
