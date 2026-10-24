@@ -1,0 +1,93 @@
+{
+  "id": "venue-ame",
+  "title": "Amé",
+  "pages": [
+    {
+      "layout": "cover_hero",
+      "image": "data/post_img/ame_15.jpg",
+      "label": "新店｜Darlinghurst",
+      "headline": [
+        "悉尼少见的日本秘鲁菜",
+        "Oxford Street新开"
+      ],
+      "accent": 1
+    },
+    {
+      "layout": "photo_duo",
+      "images": [
+        "data/post_img/ame_22.jpg",
+        "data/post_img/ame_11.jpg"
+      ],
+      "captions": [
+        "Oxford Street和Foley Street的转角",
+        "红、橙、芥末黄、蓝色的纱帘从高处垂下"
+      ]
+    },
+    {
+      "layout": "photo_duo",
+      "images": [
+        "data/post_img/ame_4.jpg",
+        "data/post_img/ame_7.jpg"
+      ],
+      "captions": [
+        "秘鲁鸭肉饭，铸铁锅上桌，底下有锅巴",
+        "金枪鱼握寿司"
+      ]
+    },
+    {
+      "layout": "photo_grid",
+      "label": "Amé｜菜",
+      "headline": [
+        "寿司配秘鲁酱汁"
+      ],
+      "images": [
+        "data/post_img/ame_2.jpg",
+        "data/post_img/ame_12.jpg",
+        "data/post_img/ame_10.jpg",
+        "data/post_img/ame_19.jpg"
+      ],
+      "captions": [
+        "刺身配辣椒",
+        "虾寿司",
+        "炭烤玉米",
+        "甜品"
+      ]
+    },
+    {
+      "layout": "photo_duo",
+      "images": [
+        "data/post_img/ame_8.jpg",
+        "data/post_img/ame_20.jpg"
+      ],
+      "captions": [
+        "鸡尾酒有咖喱菠萝Daiquiri、草莓奶潘趣",
+        "招牌马天尼加了柚子、皮斯科和芝麻"
+      ]
+    },
+    {
+      "layout": "photo_duo",
+      "images": [
+        "data/post_img/ame_6.jpg",
+        "data/post_img/ame_9.jpg"
+      ],
+      "captions": [
+        "主厨团队来自Jōji和Besuto",
+        "一共115个座位"
+      ]
+    },
+    {
+      "layout": "venue",
+      "image": "data/post_img/ame_1.jpg",
+      "label": "Amé｜店铺信息",
+      "headline": [
+        "Amé"
+      ],
+      "lede": "Aalia、Nour、Ito背后的Esca集团新开的日秘料理，行政主厨Erik Ortolani专门去秘鲁做过调研。",
+      "facts": {
+        "address": "90 Oxford Street, Darlinghurst",
+        "hours": "每天晚5点半至9点；周三至周日另有午餐"
+      },
+      "explainer": "两种套餐：每人$89和$129。楼下是同一团队的酒吧Loa。"
+    }
+  ]
+}

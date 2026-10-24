@@ -1,5 +1,5 @@
 """单篇模式的版式。每一页用哪个版式，直接写在帖子数据文件的 pages 里。"""
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageOps
 
 from .. import config
 from .base import *  # noqa: F401,F403
@@ -100,6 +100,48 @@ def cover_film(p, ctx):
         x = (W - f.getlength(line)) / 2
         d.text((x + 3, y + 3), line, font=f, fill=(0, 0, 0))
         d.text((x, y), line, font=f, fill=yellow)
+        y += step
+    return img
+
+
+def _pop(im):
+    """美食照片增强：放大后锐化，略提对比、饱和和暖度。"""
+    from PIL import ImageEnhance, ImageFilter
+    im = im.filter(ImageFilter.UnsharpMask(radius=2.2, percent=90, threshold=2))
+    im = ImageEnhance.Contrast(im).enhance(1.1)
+    im = ImageEnhance.Color(im).enhance(1.15)
+    r, g, b = im.split()
+    r = r.point(lambda v: min(255, int(v * 1.03)))
+    return Image.merge("RGB", (r, g, b))
+
+
+def cover_hero(p, ctx):
+    """美食主图封面：照片占上部，底部渐变压暗放大标题。适合分辨率不高的照片。"""
+    ph = p.get("photo_h", 1060)
+    img = Image.new("RGB", (W, H), (14, 10, 8))
+    photo = _pop(_img(p["image"], (W, ph), ).convert("RGB")) if not p.get("focus") else _pop(
+        ImageOps.fit(Image.open(p["image"]).convert("RGB"), (W, ph), method=Image.LANCZOS, centering=tuple(p["focus"])))
+    img.paste(photo, (0, 0))
+    grad = Image.new("L", (1, H), 0)
+    g0 = ph - 380
+    for yy in range(H):
+        t = 0 if yy < g0 else min(1, (yy - g0) / 380)
+        grad.putpixel((0, yy), int(255 * t ** 1.3))
+    img = Image.composite(Image.new("RGB", (W, H), (14, 10, 8)), img, grad.resize((W, H)))
+    d = ImageDraw.Draw(img)
+    if p.get("label"):
+        lf = F("sans", "bold", 26)
+        rrect(d, [M - 16, 64, M + tw(lf, p["label"]) + 16, 112], 24, fill=(20, 20, 20))
+        d.text((M, 70), p["label"], font=lf, fill=CREAM)
+    lines = p.get("headline", [])
+    fonts = [fit("sans", "black", line, 860, 112, 60) for line in lines]
+    size = min(f.size for f in fonts) if fonts else 112
+    f = F("sans", "black", size)
+    step = int(size * 1.2)
+    y = H - 100 - step * len(lines)
+    acc = p.get("accent")
+    for i, line in enumerate(lines):
+        d.text((M, y), line, font=f, fill=(255, 140, 60) if acc and i == len(lines) - 1 else WHITE)
         y += step
     return img
 
@@ -305,7 +347,7 @@ def closing_photo(p, ctx):
     return img
 
 
-REGISTRY = {"photo_full": photo_full, "photo_duo": photo_duo, "closing_photo": closing_photo, "cover_photo": cover_photo, "cover_full": cover_full, "cover_film": cover_film, "cover_split": cover_split, "photo_grid": photo_grid, "compare": compare,
+REGISTRY = {"photo_full": photo_full, "photo_duo": photo_duo, "closing_photo": closing_photo, "cover_photo": cover_photo, "cover_full": cover_full, "cover_film": cover_film, "cover_hero": cover_hero, "cover_split": cover_split, "photo_grid": photo_grid, "compare": compare,
             "story": story, "closing": closing, "venue": venue, "number": number}
 
 
