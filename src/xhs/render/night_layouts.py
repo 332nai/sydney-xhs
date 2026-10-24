@@ -166,4 +166,42 @@ def calendar_card(p, ctx):
     return _centered(p, body)
 
 
-REGISTRY = {"cover_halloween": cover_halloween, "event_card": event_card, "list_card": list_card, "calendar_card": calendar_card}
+def event_photo(p, ctx):
+    """上面一张活动现场照片，渐变融进夜色，下面是活动信息。"""
+    from PIL import ImageOps
+    img = _bg()
+    ph = p.get("photo_h", 720)
+    photo = ImageOps.fit(Image.open(p["image"]).convert("RGB"), (W, ph), method=Image.LANCZOS, centering=tuple(p.get("focus", (0.5, 0.5))))
+    img.paste(photo, (0, 0))
+    grad = Image.new("L", (1, H), 0)
+    for yy in range(ph - 160, ph):
+        grad.putpixel((0, yy), int(255 * ((yy - (ph - 160)) / 160) ** 1.4))
+    for yy in range(ph, H):
+        grad.putpixel((0, yy), 255)
+    img = Image.composite(_bg(), img, grad.resize((W, H)))
+    d = ImageDraw.Draw(img)
+    y = ph - 40
+    if p.get("label"):
+        d.text((M, y), p["label"], font=F("sans", "bold", 30), fill=ORANGE)
+        y += 54
+    for line in p.get("headline", []):
+        f = fit("serif", "black", line, 860, 76, 48)
+        d.text((M, y), line, font=f, fill=CREAM)
+        y += int(f.size * 1.3)
+    if p.get("when"):
+        f = fit("sans", "black", p["when"], 860, 52, 38)
+        d.text((M, y + 4), p["when"], font=f, fill=ORANGE)
+        y += int(f.size * 1.6)
+    fl, fv = F("sans", "bold", 32), F("sans", "regular", 34)
+    for k, v in p.get("facts", []):
+        d.text((M, y + 2), k, font=fl, fill=DIM)
+        y = para(d, (M + 130, y), v, fv, CREAM, 730, 1.45) + 12
+    y += 16
+    fb = F("sans", "regular", 34)
+    for b in p.get("points", []):
+        d.ellipse([M, y + 17, M + 13, y + 30], fill=ORANGE)
+        y = para(d, (M + 34, y), b, fb, CREAM, 826, 1.45) + 14
+    return img
+
+
+REGISTRY = {"cover_halloween": cover_halloween, "event_card": event_card, "list_card": list_card, "calendar_card": calendar_card, "event_photo": event_photo}

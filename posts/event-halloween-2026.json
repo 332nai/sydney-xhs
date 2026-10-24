@@ -3,12 +3,14 @@
   "title": "悉尼万圣节2026",
   "pages": [
     {
-      "layout": "cover_halloween",
+      "layout": "cover_full",
+      "image": "data/post_img/hw_gf_ghost.jpg",
       "label": "活动｜万圣节",
       "headline": [
         "悉尼万圣节",
         "今年去哪玩"
-      ]
+      ],
+      "accent": 1
     },
     {
       "layout": "calendar_card",
@@ -58,36 +60,54 @@
       ]
     },
     {
-      "layout": "event_card",
+      "layout": "event_photo",
+      "image": "data/post_img/hw_gf_6.jpg",
       "label": "最大的一场",
       "headline": [
         "The Rocks｜Ghost Festival"
       ],
-      "when": "10月29日至11月1日",
+      "when": "10月29日至11月1日 下午4点至晚11点",
       "facts": [
         [
-          "时间",
-          "每天下午4点至晚11点"
-        ],
-        [
-          "地点",
-          "The Rocks，Circular Quay旁边"
-        ],
-        [
           "价格",
-          "街头活动免费，部分项目另收费"
+          "街头活动免费，露天电影和Trick or Drink要买票"
+        ],
+        [
+          "交通",
+          "坐火车或渡轮到Circular Quay"
         ]
       ],
       "points": [
-        "号称全澳最大的万圣节街头节，去年第一届来了超过11万人",
-        "楼上挂巨型触手，还有6米高的大蜘蛛",
+        "号称全澳最大的万圣节街头节，去年来了超过11万人",
         "市集、主题酒吧、DJ、街头演员",
-        "Cadmans Cottage露天放电影：白天放《寻梦环游记》《怪兽电力公司》，晚上放《招魂2》《小丑回魂》"
-      ],
-      "tip": "10月30日、31日晚7点至午夜，George Street封路。坐火车或渡轮到Circular Quay最方便。"
+        "30日、31日晚7点至午夜George Street封路"
+      ]
     },
     {
-      "layout": "event_card",
+      "layout": "photo_duo",
+      "images": [
+        "data/post_img/hw_gf_deco.jpg",
+        "data/post_img/hw_gf_main.jpg"
+      ],
+      "captions": [
+        "楼上挂着巨型触手",
+        "Cadmans Cottage的露天电影，要买票"
+      ]
+    },
+    {
+      "layout": "photo_duo",
+      "images": [
+        "data/post_img/hw_gf_skel.jpg",
+        "data/post_img/hw_gf_horror.jpg"
+      ],
+      "captions": [
+        "骷髅调酒师",
+        "鬼屋House of Horror"
+      ]
+    },
+    {
+      "layout": "event_photo",
+      "image": "data/post_img/hw_luna.jpg",
       "label": "想被吓一下",
       "headline": [
         "Luna Park｜Halloscream"
@@ -95,20 +115,19 @@
       "when": "10月29日至31日 晚上",
       "facts": [
         [
-          "地点",
-          "Luna Park，Milsons Point"
-        ],
-        [
           "票价",
           "周四早鸟$90起，普通票$110，VIP $165"
+        ],
+        [
+          "地点",
+          "Luna Park，Milsons Point"
         ]
       ],
       "points": [
         "天黑后游乐设施随便玩",
-        "今年有3个新项目：马戏团密室逃脱、鬼屋迷宫The Forgotten Children、沉浸式游戏Alienation",
-        "海港大桥下面，夜景很好"
-      ],
-      "tip": "要提前网上买票。想省钱选周四。"
+        "3个新项目：马戏团密室、鬼屋迷宫、沉浸式游戏",
+        "要提前网上买票，想省钱选周四"
+      ]
     },
     {
       "layout": "list_card",

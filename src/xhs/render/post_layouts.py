@@ -58,8 +58,8 @@ def cover_full(p, ctx):
         rrect(d, [M - 16, 64, M + tw(lf, p["label"]) + 16, 112], 24, fill=(20, 20, 20))
         d.text((M, 70), p["label"], font=lf, fill=CREAM)
     y = top
-    for line in lines:
-        d.text((M, y), line, font=f, fill=WHITE)
+    for i, line in enumerate(lines):
+        d.text((M, y), line, font=f, fill=(255, 140, 60) if p.get("accent") and i == len(lines) - 1 else WHITE)
         y += step
     return img
 
