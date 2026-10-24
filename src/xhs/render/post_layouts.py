@@ -18,22 +18,21 @@ def _shade(img, box, alpha=150):
 
 
 def cover_photo(p, ctx):
-    """整版照片，底部深色区放大标题。"""
+    """整版照片，底部深色区只放大标题（封面不写小字）。"""
     img = Image.new("RGB", (W, H), INK)
-    img.paste(_img(p["image"], (W, 900)), (0, 0))
+    ph = 880
+    img.paste(_img(p["image"], (W, ph)), (0, 0))
     d = ImageDraw.Draw(img)
-    if p.get("label"):
-        f = F("sans", "bold", 26)
-        rrect(d, [M - 16, 64, M + tw(f, p["label"]) + 16, 112], 24, fill=(20, 20, 20))
-        d.text((M, 70), p["label"], font=f, fill=CREAM)
-    y = 935
+    lines = p.get("headline", [])
+    fonts = [fit("sans", "black", line, 860, 104, 60) for line in lines]
+    size = min(f.size for f in fonts) if fonts else 104
+    f = F("sans", "black", size)
+    step = int(size * 1.22)
+    y = ph + (H - ph - step * len(lines)) // 2 + int(size * 0.05)
     acc = p.get("accent")
-    for i, line in enumerate(p.get("headline", [])):
-        f = fit("sans", "black", line, 860, 96, 56)
+    for i, line in enumerate(lines):
         d.text((M, y), line, font=f, fill=CORAL if acc and acc in line and i == 0 else CREAM)
-        y += int(f.size * 1.2)
-    if p.get("sub"):
-        para(d, (M, y + 10), p["sub"], F("sans", "medium", 32), SAND, 860, 1.4, max_lines=2)
+        y += step
     return img
 
 
