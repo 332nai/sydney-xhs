@@ -106,6 +106,21 @@
   {
    "layout": "spot",
    "cat": "r",
+   "tag": "意大利菜｜Concord",
+   "name": "Fratelli & Co",
+   "images": [
+    "data/post_img/cc_fratelli_antipasto.jpg",
+    "data/post_img/cc_fratelli_room.jpg"
+   ],
+   "lines": [
+    "2016年开业，白天是咖啡馆，晚上做南意菜。",
+    "柴火窑披萨、手工意面和前菜拼盘，招牌是芝士轮卡邦尼。",
+    "拿过意大利政府的Ospitalità Italiana认证。"
+   ]
+  },
+  {
+   "layout": "spot",
+   "cat": "r",
    "tag": "泛亚洲菜｜Concord West",
    "name": "ThreeOneNine",
    "images": [
@@ -200,6 +215,18 @@
      "cat": "r",
      "addr": "137 Parramatta Road, Concord",
      "text": "意大利菜和海鲜。"
+    },
+    {
+     "name": "Sud",
+     "cat": "r",
+     "addr": "10 Cabarita Road, Concord",
+     "text": "南意街头小吃风格，柴火披萨和手工意面。"
+    },
+    {
+     "name": "Meno Diciotto",
+     "cat": "c",
+     "addr": "93 Majors Bay Road, Concord",
+     "text": "意式冰淇淋店，还有冰淇淋卷和冰淇淋cannoli。"
     }
    ]
   }

@@ -1,7 +1,136 @@
-{"title1": "悉尼Concord附近", "venues": "/tmp/claude-0/-home-claude/d2aa705a-a3c9-5391-b5c6-802034136ddf/scratchpad/cc_cover/final.json",
- "zoom": 16, "scale": 0.5, "dlon": 0.0002, "legend": [["r", "餐厅"], ["c", "咖啡店"]], "out": "/tmp/claude-0/-home-claude/d2aa705a-a3c9-5391-b5c6-802034136ddf/scratchpad/v3/cc.png",
- "place": {"Paperboy": ["l", 0], "Mattina": ["r", -14], "ThreeOneNine": ["r", 6], "雄起厨房": ["l", -16], "Abhi's Indian": ["r", 20],
-  "Frango": ["l", -24], "Daikoku Teppanyaki": ["r", -34], "Maranello's": ["l", 24], "Organica": ["r", 10],
-  "Late Night Table": ["r", -22], "Myeong Dong": ["r", 20], "Bar Biscotti": ["l", -22], "August Coffee": ["l", 22],
-  "Da Franco": ["r", 0], "Pajuok 파주옥": ["l", 30]},
- "photos": [["cc_myeongdong_09.jpg",[0.5,0.8]],["cc_abhis_05.jpg",[0.5,0.45]],["cc_xq_1.jpg",[0.5,0.5]],["cc_myeongdong_45.jpg",[0.5,0.4]],["cc_abhis_14.jpg",[0.5,0.5]],["cc_paperboy_19c.jpg",[0.5,0.5]]]}
+{
+ "title1": "悉尼Concord附近",
+ "venues": "/tmp/claude-0/-home-claude/d2aa705a-a3c9-5391-b5c6-802034136ddf/scratchpad/cc_cover/final.json",
+ "zoom": 16,
+ "scale": 0.5,
+ "dlon": 0.0002,
+ "legend": [
+  [
+   "r",
+   "餐厅"
+  ],
+  [
+   "c",
+   "咖啡店"
+  ]
+ ],
+ "out": "/tmp/claude-0/-home-claude/d2aa705a-a3c9-5391-b5c6-802034136ddf/scratchpad/v3/cc.png",
+ "place": {
+  "Paperboy": [
+   "l",
+   0
+  ],
+  "Mattina": [
+   "r",
+   -14
+  ],
+  "ThreeOneNine": [
+   "r",
+   6
+  ],
+  "雄起厨房": [
+   "l",
+   -16
+  ],
+  "Abhi's Indian": [
+   "r",
+   34
+  ],
+  "Frango": [
+   "l",
+   4
+  ],
+  "Daikoku Teppanyaki": [
+   "r",
+   4
+  ],
+  "Maranello's": [
+   "l",
+   30
+  ],
+  "Organica": [
+   "r",
+   34
+  ],
+  "Late Night Table": [
+   "r",
+   -22
+  ],
+  "Myeong Dong": [
+   "r",
+   20
+  ],
+  "Bar Biscotti": [
+   "l",
+   -22
+  ],
+  "August Coffee": [
+   "l",
+   22
+  ],
+  "Da Franco": [
+   "r",
+   0
+  ],
+  "Pajuok 파주옥": [
+   "l",
+   30
+  ],
+  "Fratelli & Co": [
+   "l",
+   -30
+  ],
+  "Sud": [
+   "r",
+   0
+  ],
+  "Meno Diciotto": [
+   "r",
+   -30
+  ]
+ },
+ "photos": [
+  [
+   "cc_myeongdong_09.jpg",
+   [
+    0.5,
+    0.8
+   ]
+  ],
+  [
+   "cc_abhis_05.jpg",
+   [
+    0.5,
+    0.45
+   ]
+  ],
+  [
+   "cc_xq_1.jpg",
+   [
+    0.5,
+    0.5
+   ]
+  ],
+  [
+   "cc_myeongdong_45.jpg",
+   [
+    0.5,
+    0.4
+   ]
+  ],
+  [
+   "cc_abhis_14.jpg",
+   [
+    0.5,
+    0.5
+   ]
+  ],
+  [
+   "cc_paperboy_19c.jpg",
+   [
+    0.5,
+    0.5
+   ]
+  ]
+ ]
+}

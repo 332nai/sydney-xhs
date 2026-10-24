@@ -126,5 +126,26 @@
   "lat": -33.847736,
   "lon": 151.086949,
   "addr": "21a Victoria Ave"
+ },
+ {
+  "name": "Fratelli & Co",
+  "cat": "r",
+  "lat": -33.8555674,
+  "lon": 151.1028521,
+  "addr": "110 Majors Bay Rd"
+ },
+ {
+  "name": "Sud",
+  "cat": "r",
+  "lat": -33.851606,
+  "lon": 151.1076573,
+  "addr": "10 Cabarita Rd"
+ },
+ {
+  "name": "Meno Diciotto",
+  "cat": "c",
+  "lat": -33.8552071,
+  "lon": 151.1034593,
+  "addr": "93 Majors Bay Rd"
  }
 ]
