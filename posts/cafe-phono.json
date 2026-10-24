@@ -1,0 +1,18 @@
+{
+  "id": "cafe-phono",
+  "title": "Phono Stage",
+  "pages": [
+    {"layout": "cover_sleeve", "image": "data/post_img/phono_13.jpg", "focus": [0.45, 0.5], "label": "咖啡｜Balmain",
+     "headline": ["悉尼Balmain", "放黑胶的喫茶店"]},
+    {"layout": "photo_full", "image": "data/post_img/phono_1.jpg", "focus": [0.45, 0.5], "tag": "13 Beattie Street"},
+    {"layout": "photo_full", "image": "data/post_img/phono_9.jpg", "focus": [0.4, 0.5]},
+    {"layout": "photo_duo", "images": ["data/post_img/phono_12.jpg", "data/post_img/phono_10.jpg"], "captions": ["整张专辑从头放到尾", ""]},
+    {"layout": "photo_full", "image": "data/post_img/phono_3.jpg", "focus": [0.5, 0.5], "tag": "巴斯克芝士蛋糕"},
+    {"layout": "photo_duo", "images": ["data/post_img/phono_14.jpg", "data/post_img/phono_6.jpg"], "captions": ["隔壁Penny Fours的可颂", ""]},
+    {"layout": "photo_full", "image": "data/post_img/phono_4.jpg", "focus": [0.5, 0.5]},
+    {"layout": "venue", "image": "data/post_img/phono_2.jpg", "label": "Phono Stage｜店铺信息", "headline": ["Phono Stage"],
+     "lede": "店主Kevin Tu在悉尼做了15年咖啡，这是他自己开的第一家店，照着日本喫茶店的感觉来做。",
+     "facts": {"address": "13 Beattie Street, Balmain", "hours": "每天早6点至下午3点"},
+     "explainer": "咖啡豆用Mecca，每周换一款滤泡豆。招牌是自制柚子蜂蜜抹茶。"}
+  ]
+}

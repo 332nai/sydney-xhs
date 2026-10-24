@@ -146,6 +146,28 @@ def cover_hero(p, ctx):
     return img
 
 
+def cover_sleeve(p, ctx):
+    """唱片封套式封面：照片铺满，四周一圈细框，衬线标题放在顶部。"""
+    img = _fit_focus(p["image"], (W, H), p.get("focus")).convert("RGB")
+    grad = Image.new("L", (1, H), 0)
+    for yy in range(0, 560):
+        grad.putpixel((0, yy), int(150 * (1 - yy / 560) ** 1.6))
+    img = Image.composite(Image.new("RGB", (W, H), (20, 14, 10)), img, grad.resize((W, H)))
+    d = ImageDraw.Draw(img)
+    ink = tuple(p.get("ink", CREAM))
+    d.rectangle([34, 34, W - 34, H - 34], outline=ink, width=3)
+    if p.get("label"):
+        lf = F("sans", "bold", 26)
+        rrect(d, [M - 16, 76, M + tw(lf, p["label"]) + 16, 124], 24, fill=(20, 20, 20))
+        d.text((M, 82), p["label"], font=lf, fill=CREAM)
+    y = 168
+    for line in p.get("headline", []):
+        f = fit("serif", "black", line, 860, 96, 56)
+        d.text((M, y), line, font=f, fill=ink)
+        y += int(f.size * 1.28)
+    return img
+
+
 def cover_split(p, ctx):
     """上下两张照片，中间一条标题带。"""
     img = Image.new("RGB", (W, H), CREAM)
@@ -297,10 +319,25 @@ def _caption_band(img, d, y0, caption, sub=None):
     return d
 
 
+def _fit_focus(path, size, focus=None):
+    if not focus:
+        return _img(path, size)
+    return ImageOps.fit(Image.open(path).convert("RGB"), size, method=Image.LANCZOS, centering=tuple(focus))
+
+
+def _tag(d, text, y):
+    """照片上的小标签：一行短字，深色圆角底。"""
+    f = F("sans", "bold", 30)
+    rrect(d, [M - 18, y - 10, M + tw(f, text) + 18, y + 48], 26, fill=(20, 20, 20))
+    d.text((M, y - 2), text, font=f, fill=CREAM)
+
+
 def photo_full(p, ctx):
-    """整版照片，底部一条说明。"""
-    img = _img(p["image"], (W, H))
+    """整版照片，底部一条说明；只写 tag 时是一个小标签；都不写就是纯照片。"""
+    img = _fit_focus(p["image"], (W, H), p.get("focus"))
     d = ImageDraw.Draw(img)
+    if p.get("tag"):
+        _tag(d, p["tag"], H - 90)
     if p.get("label"):
         f = F("sans", "bold", 26)
         rrect(d, [M - 16, 64, M + tw(f, p["label"]) + 16, 112], 24, fill=(20, 20, 20))
@@ -315,8 +352,9 @@ def photo_duo(p, ctx):
     img = Image.new("RGB", (W, H), INK)
     a, b = p["images"][:2]
     caps = p.get("captions", ["", ""])
-    img.paste(_img(a, (W, 656)), (0, 0))
-    img.paste(_img(b, (W, 657)), (0, 676))
+    fa, fb = (p.get("focus") or [None, None])[:2]
+    img.paste(_fit_focus(a, (W, 656), fa), (0, 0))
+    img.paste(_fit_focus(b, (W, 657), fb), (0, 676))
     d = ImageDraw.Draw(img)
     f = F("sans", "bold", 30)
     for (y, cap) in [(576, caps[0]), (H - 80, caps[1])]:
@@ -347,7 +385,7 @@ def closing_photo(p, ctx):
     return img
 
 
-REGISTRY = {"photo_full": photo_full, "photo_duo": photo_duo, "closing_photo": closing_photo, "cover_photo": cover_photo, "cover_full": cover_full, "cover_film": cover_film, "cover_hero": cover_hero, "cover_split": cover_split, "photo_grid": photo_grid, "compare": compare,
+REGISTRY = {"photo_full": photo_full, "photo_duo": photo_duo, "closing_photo": closing_photo, "cover_photo": cover_photo, "cover_full": cover_full, "cover_film": cover_film, "cover_hero": cover_hero, "cover_sleeve": cover_sleeve, "cover_split": cover_split, "photo_grid": photo_grid, "compare": compare,
             "story": story, "closing": closing, "venue": venue, "number": number}
 
 
