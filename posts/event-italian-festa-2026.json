@@ -1,0 +1,125 @@
+{
+  "id": "event-italian-festa-2026",
+  "title": "Norton Street意大利节2026",
+  "pages": [
+    {
+      "layout": "cover_full",
+      "image": "data/post_img/it_t1.jpg",
+      "headline": [
+        "悉尼意大利节",
+        "明天18万人"
+      ],
+      "accent": 1
+    },
+    {
+      "layout": "event_photo",
+      "theme": "italia",
+      "image": "data/post_img/it_v1.jpg",
+      "photo_h": 640,
+      "label": "第40届",
+      "headline": [
+        "Norton Street意大利节"
+      ],
+      "when": "10月25日 周日 上午10点至下午5点",
+      "facts": [
+        [
+          "地点",
+          "Norton Street，Marion Street至William Street"
+        ],
+        [
+          "门票",
+          "免费"
+        ]
+      ],
+      "points": [
+        "800米长的街封路，170多个摊位",
+        "1986年由Leichhardt的St Fiacre教堂发起",
+        "预计最多18万人"
+      ]
+    },
+    {
+      "layout": "photo_duo",
+      "images": [
+        "data/post_img/it_v4.jpg",
+        "data/post_img/it_d3.jpg"
+      ],
+      "captions": [
+        "Bar Italia的意式冰淇淋",
+        "Dom Panino的帕尼尼"
+      ]
+    },
+    {
+      "layout": "list_card",
+      "theme": "italia",
+      "label": "去了吃什么、看什么",
+      "headline": [
+        "一条街逛下来"
+      ],
+      "entries": [
+        {
+          "name": "吃",
+          "meta": "披萨、gnocchi、炸面饺panzerotti、cannoli、gelato",
+          "note": "还有烤猪肉帕尼尼porchetta和烤章鱼，意大利酒和利口酒可以试饮"
+        },
+        {
+          "name": "老爷车展AutoFesta",
+          "meta": "Fiat、Lancia、Alfa Romeo、Ducati、Vespa",
+          "note": "意大利经典车和摩托"
+        },
+        {
+          "name": "三个舞台",
+          "meta": "Leichhardt Town Hall旁主舞台｜北端新舞台｜街中间DJ",
+          "note": "警察乐队唱意大利歌、男高音唱歌剧，还有从意大利飞来的歌手"
+        },
+        {
+          "name": "带孩子",
+          "meta": "Pioneers Memorial Park",
+          "note": "旋转茶杯、充气滑梯、秋千椅，街上有画脸和漫画像"
+        }
+      ]
+    },
+    {
+      "layout": "photo_duo",
+      "images": [
+        "data/post_img/it_d14.jpg",
+        "data/post_img/it_d9.jpg"
+      ],
+      "captions": [
+        "",
+        ""
+      ]
+    },
+    {
+      "layout": "photo_full",
+      "image": "data/post_img/it_v9.jpg",
+      "tag": "Norton Street上的老店Bar Italia"
+    },
+    {
+      "layout": "event_card",
+      "theme": "italia",
+      "label": "怎么去",
+      "headline": [
+        "别开车"
+      ],
+      "facts": [
+        [
+          "轻轨",
+          "L1到Marion站或Leichhardt North站，走路就到"
+        ],
+        [
+          "火车",
+          "内西线明天停运换巴士，到Petersham后走约20分钟"
+        ],
+        [
+          "巴士",
+          "437、440、445改道，Norton Street和Allen Street的站暂停"
+        ]
+      ],
+      "points": [
+        "周边道路凌晨3点至晚9点封闭",
+        "Norton Street和William Street有临时禁停，车会被拖走"
+      ],
+      "tip": "停车位很少，坐轻轨最省心。"
+    }
+  ]
+}

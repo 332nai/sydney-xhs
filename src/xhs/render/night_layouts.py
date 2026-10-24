@@ -204,4 +204,26 @@ def event_photo(p, ctx):
     return img
 
 
-REGISTRY = {"cover_halloween": cover_halloween, "event_card": event_card, "list_card": list_card, "calendar_card": calendar_card, "event_photo": event_photo}
+THEMES = {
+    "italia": {"NIGHT": (246, 240, 228), "ORANGE": (196, 38, 46), "DIM": (110, 100, 90), "LINE": (220, 210, 196),
+               "CREAM": (28, 26, 24), "ACCENT2": (0, 120, 72)},
+}
+
+
+def _themed(fn):
+    """按 p["theme"] 临时换一套配色，画完恢复。"""
+    def wrap(p, ctx):
+        t = THEMES.get(p.get("theme"))
+        if not t:
+            return fn(p, ctx)
+        g = globals()
+        old = {k: g[k] for k in t if k in g}
+        g.update(t)
+        try:
+            return fn(p, ctx)
+        finally:
+            g.update(old)
+    return wrap
+
+
+REGISTRY = {k: _themed(v) for k, v in {"cover_halloween": cover_halloween, "event_card": event_card, "list_card": list_card, "calendar_card": calendar_card, "event_photo": event_photo}.items()}
