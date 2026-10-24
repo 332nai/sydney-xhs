@@ -1,35 +1,165 @@
 {
-  "id": "area-fivedock",
-  "title": "悉尼Five Dock附近吃什么",
-  "pages": [
-    {"layout": "photo_full", "image": "data/post_img/fd_map.png"},
-    {"layout": "spot", "cat": "c", "tag": "意大利甜点｜Great North Road", "name": "Pasticceria Tamborrino",
-     "images": ["data/post_img/fd_tamborrino_27.jpg", "data/post_img/fd_tamborrino_19.jpg"],
-     "lines": ["罗马来的Tamborrino夫妇开的甜点店，本地意大利人常说是悉尼最好的之一。", "猫舌饼干、龙虾尾酥、sfogliatella、cannoli、朗姆巴巴，早上配一杯浓缩咖啡。"]},
-    {"layout": "spot", "cat": "c", "tag": "意大利甜点｜Queens Road", "name": "Pasticceria Papa",
-     "images": ["data/post_img/fd_papa_14.jpg", "data/post_img/fd_papa_01.jpg"],
-     "lines": ["Haberfield老牌意大利甜点店在Five Dock的分店。", "招牌是意式乳清芝士蛋糕，口感轻得像云，不会太甜。"]},
-    {"layout": "spot", "cat": "c", "tag": "可颂｜Great North Road", "name": "Buttercrumbs",
-     "images": ["data/post_img/fd_butter_02.jpg", "data/post_img/fd_butter_21.jpg"],
-     "lines": ["2019年开业，周末一早就排队，热门款常卖光。", "除了经典可颂，还有方块可颂Buttercubes：开心果、抹茶、蒜香、火腿芝士。"]},
-    {"layout": "spot", "cat": "c", "tag": "意式冰淇淋｜Queens Road", "name": "Duccio Gelato",
-     "images": ["data/post_img/fd_duccio.jpg"],
-     "lines": ["小工厂门店，现做意式冰淇淋，单球$6左右。", "牛轧糖、松露、Baci口味受欢迎，还有冰淇淋夹心的cannoli。"]},
-    {"layout": "spot", "cat": "c", "tag": "意式熟食｜Great North Road", "name": "Dino's",
-     "images": ["data/post_img/fd_dinos_02.jpg", "data/post_img/fd_dinos_04.jpg"],
-     "lines": ["意式熟食店，现做夹满火腿芝士的大三明治。", "也有咖啡和甜点。"]},
-    {"layout": "spot", "cat": "r", "tag": "日本料理｜First Avenue", "name": "Izakaya Gaku",
-     "images": ["data/post_img/fd_gaku_32.jpg", "data/post_img/fd_gaku_31.jpg"],
-     "lines": ["Darlinghurst的Gaku Robata Grill同一个团队，主打铁锅釜饭，可以选鸡肉、三文鱼、龙虾尾或和牛。", "只接受现场排队，周一休息。"]},
-    {"layout": "spot", "cat": "r", "tag": "精酿啤酒｜Spencer Street", "name": "Akasha Brewing",
-     "images": ["data/post_img/fd_akasha_04.jpg", "data/post_img/fd_akasha_02.jpg"],
-     "lines": ["旧仓库改的精酿啤酒厂，主打美式重酒花啤酒，招牌是Canada Bay XPA。", "后面有啤酒花园，吃的来自轮换的餐车。"]},
-    {"layout": "spot_list", "headline": "还有这几家",
-     "entries": [
-       {"name": "Filicudi", "cat": "r", "addr": "11 Ramsay Road", "text": "传统意大利菜，辣番茄炖章鱼、蓝蟹奶油番茄笔管面是常点的。"},
-       {"name": "Bella Puglia", "cat": "r", "addr": "106 Great North Road", "text": "意大利南部普利亚风味。"},
-       {"name": "Skinny Tony's Really Italian", "cat": "r", "addr": "20b Barnstaple Road", "text": "意大利菜，在Five Dock Park旁边。"},
-       {"name": "Banh Banh Espresso", "cat": "c", "addr": "121 Great North Road", "text": "越南法包兼咖啡店。"}
-     ]}
-  ]
+ "id": "area-fivedock",
+ "title": "悉尼Five Dock附近吃什么",
+ "pages": [
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/fd_map.png"
+  },
+  {
+   "layout": "spot",
+   "cat": "c",
+   "tag": "意大利甜点｜Great North Road",
+   "name": "Pasticceria Tamborrino",
+   "images": [
+    "data/post_img/fd_tamborrino_27.jpg",
+    "data/post_img/fd_tamborrino_19.jpg"
+   ],
+   "lines": [
+    "罗马来的Tamborrino夫妇开的甜点店，本地意大利人常说是悉尼最好的之一。",
+    "猫舌饼干、龙虾尾酥、sfogliatella、cannoli、朗姆巴巴，早上配一杯浓缩咖啡。"
+   ]
+  },
+  {
+   "layout": "spot",
+   "cat": "c",
+   "tag": "意大利甜点｜Queens Road",
+   "name": "Pasticceria Papa",
+   "images": [
+    "data/post_img/fd_papa_14.jpg",
+    "data/post_img/fd_papa_01.jpg"
+   ],
+   "lines": [
+    "Haberfield老牌意大利甜点店在Five Dock的分店。",
+    "招牌是意式乳清芝士蛋糕，口感轻得像云，不会太甜。"
+   ]
+  },
+  {
+   "layout": "spot",
+   "cat": "c",
+   "tag": "可颂｜Great North Road",
+   "name": "Buttercrumbs",
+   "images": [
+    "data/post_img/fd_butter_02.jpg",
+    "data/post_img/fd_butter_21.jpg"
+   ],
+   "lines": [
+    "2019年开业，周末一早就排队，热门款常卖光。",
+    "除了经典可颂，还有方块可颂Buttercubes：开心果、抹茶、蒜香、火腿芝士。"
+   ]
+  },
+  {
+   "layout": "spot",
+   "cat": "c",
+   "tag": "面包店｜Wareemba",
+   "name": "Martha's",
+   "images": [
+    "data/post_img/fd_martha_13.jpg",
+    "data/post_img/fd_martha_02.jpg"
+   ],
+   "lines": [
+    "Bar Biscotti家族的Paris Nassif自己开的烘焙店，在Great North Road北头的街角。",
+    "招牌是墨西哥辣椒火腿芝士可颂、za'atar羊奶芝士结、豆蔻玫瑰可颂，还有枫糖焦黄油拿铁这类特调咖啡。"
+   ]
+  },
+  {
+   "layout": "spot",
+   "cat": "c",
+   "tag": "意式冰淇淋｜Queens Road",
+   "name": "Duccio Gelato",
+   "images": [
+    "data/post_img/fd_duccio.jpg"
+   ],
+   "lines": [
+    "小工厂门店，现做意式冰淇淋，单球$6左右。",
+    "牛轧糖、松露、Baci口味受欢迎，还有冰淇淋夹心的cannoli。"
+   ]
+  },
+  {
+   "layout": "spot",
+   "cat": "c",
+   "tag": "意式熟食｜Great North Road",
+   "name": "Dino's",
+   "images": [
+    "data/post_img/fd_dinos_02.jpg",
+    "data/post_img/fd_dinos_04.jpg"
+   ],
+   "lines": [
+    "意式熟食店，现做夹满火腿芝士的大三明治。",
+    "也有咖啡和甜点。"
+   ]
+  },
+  {
+   "layout": "spot",
+   "cat": "c",
+   "tag": "意式杂货店｜Great North Road",
+   "name": "Raineri's Deli",
+   "images": [
+    "data/post_img/fd_raineri_1.jpg",
+    "data/post_img/fd_raineri_0.jpg"
+   ],
+   "lines": [
+    "西西里来的Raineri夫妇八十年代开的意大利杂货老店，一直开到现在。",
+    "火腿芝士现切，一百多种意面，还有现做帕尼尼。"
+   ]
+  },
+  {
+   "layout": "spot",
+   "cat": "r",
+   "tag": "日本料理｜First Avenue",
+   "name": "Izakaya Gaku",
+   "images": [
+    "data/post_img/fd_gaku_32.jpg",
+    "data/post_img/fd_gaku_31.jpg"
+   ],
+   "lines": [
+    "Darlinghurst的Gaku Robata Grill同一个团队，主打铁锅釜饭，可以选鸡肉、三文鱼、龙虾尾或和牛。",
+    "只接受现场排队，周一休息。"
+   ]
+  },
+  {
+   "layout": "spot",
+   "cat": "r",
+   "tag": "精酿啤酒｜Spencer Street",
+   "name": "Akasha Brewing",
+   "images": [
+    "data/post_img/fd_akasha_04.jpg",
+    "data/post_img/fd_akasha_02.jpg"
+   ],
+   "lines": [
+    "旧仓库改的精酿啤酒厂，主打美式重酒花啤酒，招牌是Canada Bay XPA。",
+    "后面有啤酒花园，吃的来自轮换的餐车。"
+   ]
+  },
+  {
+   "layout": "spot_list",
+   "headline": "还有这几家",
+   "entries": [
+    {
+     "name": "Filicudi",
+     "cat": "r",
+     "addr": "11 Ramsay Road",
+     "text": "传统意大利菜，辣番茄炖章鱼、蓝蟹奶油番茄笔管面是常点的。"
+    },
+    {
+     "name": "Bella Puglia",
+     "cat": "r",
+     "addr": "106 Great North Road",
+     "text": "意大利南部普利亚风味。"
+    },
+    {
+     "name": "Skinny Tony's Really Italian",
+     "cat": "r",
+     "addr": "20b Barnstaple Road",
+     "text": "意大利菜，在Five Dock Park旁边。"
+    },
+    {
+     "name": "Banh Banh Espresso",
+     "cat": "c",
+     "addr": "121 Great North Road",
+     "text": "越南法包兼咖啡店。"
+    }
+   ]
+  }
+ ]
 }

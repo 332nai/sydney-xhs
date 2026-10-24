@@ -10,10 +10,10 @@ vs = json.load(open("final.json"))
 by = {v["name"]: v for v in vs}
 col = lambda v: RED if v["cat"] == "r" else TEAL
 lats = [v["lat"] for v in vs]; lons = [v["lon"] for v in vs]
-clat = (min(lats) + max(lats)) / 2 - 0.0002; clon = (min(lons) + max(lons)) / 2 + 0.0004
+clat = (min(lats) + max(lats)) / 2 + 0.0000; clon = (min(lons) + max(lons)) / 2 + 0.0004
 TOP = 0
 MAP_H = 1120
-map_img, mpx = tiles.render(clat, clon, 17, W, MAP_H, scale=0.56)
+map_img, mpx = tiles.render(clat, clon, 17, W, MAP_H, scale=0.5)
 map_img = Image.blend(ImageEnhance.Color(map_img).enhance(0.45), Image.new("RGB", map_img.size, (250, 248, 244)), 0.28)
 img = Image.new("RGB", (W, H), (250, 248, 244)); img.paste(map_img, (0, TOP))
 px = lambda la, lo: (mpx(la, lo)[0], mpx(la, lo)[1] + TOP)
@@ -22,9 +22,9 @@ f = F("b", 22)
 # 标签紧贴圆点，不用引线：side 表示标签在点的左边还是右边，dy 是标签中心相对点的上下偏移
 place = {
  "Akasha Brewing": ("r", 26), "Pasticceria Papa": ("l", -26), "Duccio Gelato": ("r", 0),
- "Izakaya Gaku": ("r", 6), "Banh Banh Espresso": ("l", 4), "Pasticceria Tamborrino": ("l", 34),
+ "Izakaya Gaku": ("r", 6), "Banh Banh Espresso": ("l", -24), "Pasticceria Tamborrino": ("l", 44),
  "Buttercrumbs": ("l", 8), "Dino's": ("l", -26), "Filicudi": ("r", 0), "Bella Puglia": ("r", -6),
- "Skinny Tony's": ("l", 0),
+ "Skinny Tony's": ("l", 0), "Raineri's": ("l", 14), "Martha's": ("r", 0),
 }
 pts = {v["name"]: px(v["lat"], v["lon"]) for v in vs}
 for v in vs:

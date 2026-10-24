@@ -1,13 +1,80 @@
 [
- {"name":"Akasha Brewing","cat":"r","lat":-33.869545,"lon":151.118227},
- {"name":"Pasticceria Papa","cat":"c","lat":-33.869217,"lon":151.117321},
- {"name":"Duccio Gelato","cat":"c","lat":-33.869298,"lon":151.122085},
- {"name":"Izakaya Gaku","cat":"r","lat":-33.8692017,"lon":151.1306761},
- {"name":"Banh Banh Espresso","cat":"c","lat":-33.868783,"lon":151.129422},
- {"name":"Pasticceria Tamborrino","cat":"c","lat":-33.870083,"lon":151.128997},
- {"name":"Buttercrumbs","cat":"c","lat":-33.8661813,"lon":151.1300262},
- {"name":"Dino's","cat":"c","lat":-33.8654447,"lon":151.1298063},
- {"name":"Filicudi","cat":"r","lat":-33.872481,"lon":151.132331},
- {"name":"Bella Puglia","cat":"r","lat":-33.8677838,"lon":151.1302842},
- {"name":"Skinny Tony's","cat":"r","lat":-33.865372,"lon":151.135645}
+ {
+  "name": "Akasha Brewing",
+  "cat": "r",
+  "lat": -33.869545,
+  "lon": 151.118227
+ },
+ {
+  "name": "Pasticceria Papa",
+  "cat": "c",
+  "lat": -33.869217,
+  "lon": 151.117321
+ },
+ {
+  "name": "Duccio Gelato",
+  "cat": "c",
+  "lat": -33.869298,
+  "lon": 151.122085
+ },
+ {
+  "name": "Izakaya Gaku",
+  "cat": "r",
+  "lat": -33.8692017,
+  "lon": 151.1306761
+ },
+ {
+  "name": "Banh Banh Espresso",
+  "cat": "c",
+  "lat": -33.868783,
+  "lon": 151.129422
+ },
+ {
+  "name": "Pasticceria Tamborrino",
+  "cat": "c",
+  "lat": -33.870083,
+  "lon": 151.128997
+ },
+ {
+  "name": "Buttercrumbs",
+  "cat": "c",
+  "lat": -33.8661813,
+  "lon": 151.1300262
+ },
+ {
+  "name": "Dino's",
+  "cat": "c",
+  "lat": -33.8654447,
+  "lon": 151.1298063
+ },
+ {
+  "name": "Filicudi",
+  "cat": "r",
+  "lat": -33.872481,
+  "lon": 151.132331
+ },
+ {
+  "name": "Bella Puglia",
+  "cat": "r",
+  "lat": -33.8677838,
+  "lon": 151.1302842
+ },
+ {
+  "name": "Skinny Tony's",
+  "cat": "r",
+  "lat": -33.865372,
+  "lon": 151.135645
+ },
+ {
+  "name": "Raineri's",
+  "cat": "c",
+  "lat": -33.8694081,
+  "lon": 151.1292755
+ },
+ {
+  "name": "Martha's",
+  "cat": "c",
+  "lat": -33.8558134,
+  "lon": 151.1307734
+ }
 ]
