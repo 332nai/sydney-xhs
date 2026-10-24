@@ -11,8 +11,9 @@ by = {v["name"]: v for v in vs}
 col = lambda v: RED if v["cat"] == "r" else TEAL
 lats = [v["lat"] for v in vs]; lons = [v["lon"] for v in vs]
 clat = (min(lats) + max(lats)) / 2 + 0.0001; clon = (min(lons) + max(lons)) / 2 + 0.0002
-TOP = 150
-map_img, mpx = tiles.render(clat, clon, 16, W, H - TOP, scale=0.9)
+TOP = 0
+MAP_H = 1120
+map_img, mpx = tiles.render(clat, clon, 16, W, MAP_H, scale=0.8)
 map_img = Image.blend(ImageEnhance.Color(map_img).enhance(0.45), Image.new("RGB", map_img.size, (250, 248, 244)), 0.28)
 img = Image.new("RGB", (W, H), (250, 248, 244)); img.paste(map_img, (0, TOP))
 px = lambda la, lo: (mpx(la, lo)[0], mpx(la, lo)[1] + TOP)
@@ -24,7 +25,7 @@ place = {
  "雄起厨房": ("r", -22), "Abhi's Indian": ("r", 24),
  "Frango": ("l", -30), "Daikoku Teppanyaki": ("l", 4), "Maranello's": ("l", 36), "Organica": ("r", 6),
  "Late Night Table": ("r", -22), "Myeong Dong": ("r", 20), "Bar Biscotti": ("l", -24), "August Coffee": ("l", 24),
- "Da Franco": ("r", 0), "Pajuok 파주옥": ("r", 6),
+ "Da Franco": ("r", 0), "Pajuok 파주옥": ("l", 34),
 }
 pts = {v["name"]: px(v["lat"], v["lon"]) for v in vs}
 for v in vs:
@@ -39,16 +40,15 @@ for v in vs:
     x, y = pts[v["name"]]
     d.ellipse([x - 10, y - 10, x + 10, y + 10], fill="white")
     d.ellipse([x - 7, y - 7, x + 7, y + 7], fill=col(v))
-# 标题：顶部通栏，不悬浮
-d.rectangle([0, 0, W, TOP], fill=(250, 248, 244))
-d.line([(0, TOP), (W, TOP)], fill=INK, width=3)
-t1, t2 = "Concord一带", "吃什么？"
-f1 = F("k", 76)
-d.text((44, 26), t1, font=f1, fill=INK)
-d.text((44 + f1.getlength(t1) + 6, 26), t2, font=f1, fill=RED)
-lf = F("m", 22); lx, ly = W - 230, 62
+# 标题：和其他封面一样，底部深色区放白色大标题，第二行橙色
+DARK, ORANGE = (24, 24, 26), (255, 140, 60)
+d.rectangle([0, MAP_H, W, H], fill=DARK)
+f1 = F("k", 104)
+d.text((76, MAP_H + 40), "Concord附近", font=f1, fill=(255, 255, 255))
+d.text((76, MAP_H + 40 + 126), "吃什么？", font=f1, fill=ORANGE)
+lf = F("m", 24); lx, ly = W - 250, H - 62
 for c, t in [(RED, "餐厅"), (TEAL, "咖啡店")]:
-    d.ellipse([lx, ly + 6, lx + 18, ly + 24], fill=c); d.text((lx + 26, ly), t, font=lf, fill=INK); lx += 100
-d.text((W - 180, H - 32), "© OpenStreetMap", font=F("m", 17), fill=(110, 105, 98))
+    d.ellipse([lx, ly + 7, lx + 20, ly + 27], fill=c); d.text((lx + 28, ly), t, font=lf, fill=(220, 220, 220)); lx += 110
+d.text((W - 180, MAP_H - 30), "© OpenStreetMap", font=F("m", 17), fill=(110, 105, 98))
 img.save("concord_map.png")
 print({k: (round(a), round(b)) for k, (a, b) in pts.items()})
