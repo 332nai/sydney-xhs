@@ -21,10 +21,10 @@ d = ImageDraw.Draw(img)
 f = F("b", 22)
 # 标签紧贴圆点，不用引线：side 表示标签在点的左边还是右边，dy 是标签中心相对点的上下偏移
 place = {
- "Akasha Brewing": ("r", 26), "Pasticceria Papa": ("l", -26), "Duccio Gelato": ("r", 0),
- "Izakaya Gaku": ("r", 6), "Banh Banh Espresso": ("l", -24), "Pasticceria Tamborrino": ("l", 44),
+ "Akasha Brewing": ("r", 26), "Pasticceria Papa": ("l", -26), "Duccio Gelato": ("r", 6),
+ "Izakaya Gaku": ("r", 6), "Banh Banh Espresso": ("l", -44), "Pasticceria Tamborrino": ("l", 44),
  "Buttercrumbs": ("l", 8), "Dino's": ("l", -26), "Filicudi": ("r", 0), "Bella Puglia": ("r", -6),
- "Skinny Tony's": ("l", 0), "Raineri's": ("l", 14), "Martha's": ("r", 0),
+ "Skinny Tony's": ("l", 0), "Raineri's": ("l", 14), "Martha's": ("r", 0), "The Lab": ("r", -34),
 }
 pts = {v["name"]: px(v["lat"], v["lon"]) for v in vs}
 for v in vs:

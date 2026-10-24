@@ -78,6 +78,20 @@
   {
    "layout": "spot",
    "cat": "c",
+   "tag": "咖啡｜Queens Road",
+   "name": "The Lab",
+   "images": [
+    "data/post_img/fd_lab_pizza.jpg",
+    "data/post_img/fd_lab_room.jpg"
+   ],
+   "lines": [
+    "Black Poison开的咖啡店，就在Duccio Gelato隔壁，黑色调的大空间。",
+    "咖啡用Di Mattina的豆，可以点Barista Board，三杯咖啡配三样小食。也有早午餐、自选夹料的三明治和披萨。"
+   ]
+  },
+  {
+   "layout": "spot",
+   "cat": "c",
    "tag": "意式熟食｜Great North Road",
    "name": "Dino's",
    "images": [
