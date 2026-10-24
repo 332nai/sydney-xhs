@@ -1,0 +1,76 @@
+{
+  "id": "venue-razzies",
+  "title": "Razzie's",
+  "pages": [
+    {
+      "layout": "cover_full",
+      "image": "data/post_img/razzies_n6.jpg",
+      "label": "新店｜CBD",
+      "headline": [
+        "悉尼CBD新开的汉堡店",
+        "4款汉堡都在$16以内"
+      ]
+    },
+    {
+      "layout": "photo_full",
+      "image": "data/post_img/razzies_n1.jpg",
+      "caption": "Kent Street上的小店面",
+      "sub": "Shop 1/355 Kent Street，门口也有几张桌子"
+    },
+    {
+      "layout": "photo_full",
+      "image": "data/post_img/razzies_n2.jpg",
+      "caption": "招牌辣肉酱汉堡，$15.9",
+      "sub": "辣肉酱慢炖2小时再冷藏一夜，其实不辣"
+    },
+    {
+      "layout": "photo_grid",
+      "label": "Razzie's｜做法",
+      "headline": [
+        "smash是这样压出来的"
+      ],
+      "images": [
+        "data/post_img/razzies_n12.jpg",
+        "data/post_img/razzies_n4.jpg",
+        "data/post_img/razzies_n11.jpg",
+        "data/post_img/razzies_n9.jpg"
+      ],
+      "captions": [
+        "冷肉球直接压在热铁板上",
+        "压扁后煎出焦脆的边",
+        "洋葱汉堡的洋葱和肉一起压",
+        "肉饼用和牛的牛胸和肩肉"
+      ]
+    },
+    {
+      "layout": "photo_duo",
+      "images": [
+        "data/post_img/razzies_n8.jpg",
+        "data/post_img/razzies_n3.jpg"
+      ],
+      "captions": [
+        "芝士辣肉酱薯条",
+        "店里一共20个座位"
+      ]
+    },
+    {
+      "layout": "venue",
+      "image": "data/post_img/razzies_n17.jpg",
+      "label": "Razzie's｜店铺信息",
+      "headline": [
+        "Razzie's"
+      ],
+      "lede": "Ryan Song从洛杉矶搬来悉尼，吃不到想念的LA辣肉酱，就辞掉程序员工作自己做，和兄弟Eugene一起开店。",
+      "facts": {
+        "address": "Shop 1/355 Kent Street, Sydney",
+        "hours": "周三至周六上午11点至晚10点"
+      },
+      "explainer": "汉堡$14.9至$15.9，薯条$5.5，洋葱圈$8，加一块肉饼$4。辣肉酱热狗即将推出。"
+    },
+    {
+      "layout": "photo_full",
+      "image": "data/post_img/razzies_n14.jpg",
+      "caption": "开放式厨房，现点现做"
+    }
+  ]
+}
