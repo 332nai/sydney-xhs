@@ -1,0 +1,86 @@
+{
+ "id": "venue-kyu-by-kyue",
+ "title": "Kyu by Kyue",
+ "pages": [
+  {
+   "layout": "cover_full",
+   "image": "data/post_img/kyu_katsuset.jpg",
+   "focus": [
+    0.55,
+    0.5
+   ],
+   "headline": [
+    "悉尼这家炸猪排饭",
+    "卷心菜免费续"
+   ]
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/kyu_tonkatsu.jpg",
+   "focus": [
+    0.62,
+    0.5
+   ]
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/kyu_kushi.jpg",
+   "focus": [
+    0.5,
+    0.55
+   ]
+  },
+  {
+   "layout": "photo_duo",
+   "images": [
+    "data/post_img/kyu_gyukatsu.jpg",
+    "data/post_img/kyu_kaisendon.jpg"
+   ]
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/kyu_udon.jpg",
+   "focus": [
+    0.5,
+    0.55
+   ]
+  },
+  {
+   "layout": "photo_duo",
+   "images": [
+    "data/post_img/kyu_room.jpg",
+    "data/post_img/kyu_stairs.jpg"
+   ],
+   "focus": [
+    [
+     0.5,
+     0.5
+    ],
+    [
+     0.5,
+     0.35
+    ]
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Kyu by Kyue",
+   "images": [
+    "data/post_img/kyu_sake.jpg"
+   ],
+   "photo_h": 620,
+   "focus": [
+    [
+     0.5,
+     0.45
+    ]
+   ],
+   "lines": [
+    "Willoughby那家Kyue Japanese的团队在Darlinghurst开的新店，主打大阪风格的炸物。",
+    "黑豚炸猪排定食$32，200克猪排，配米饭和卷心菜沙拉，自己磨芝麻调酱。",
+    "还有和牛炸牛排、9串大阪串炸和牛肉乌冬。",
+    "303a Liverpool Street, Darlinghurst，周一休息。"
+   ]
+  }
+ ]
+}
