@@ -3,11 +3,30 @@
  "title": "Aambra",
  "pages": [
   {
-   "layout": "cover_full",
-   "image": "data/post_img/aambra_glass.jpg",
+   "layout": "cover_quad",
+   "images": [
+    "data/post_img/aambra_glass2.jpg",
+    "data/post_img/aambra_duck2.jpg",
+    "data/post_img/aambra_oyster.jpg",
+    "data/post_img/aambra_door.jpg"
+   ],
    "focus": [
-    0.5,
-    0.5
+    [
+     0.5,
+     0.5
+    ],
+    [
+     0.45,
+     0.5
+    ],
+    [
+     0.5,
+     0.5
+    ],
+    [
+     0.5,
+     0.5
+    ]
    ],
    "headline": [
     "悉尼这家餐厅",
@@ -24,14 +43,6 @@
   },
   {
    "layout": "photo_full",
-   "image": "data/post_img/aambra_door.jpg",
-   "focus": [
-    0.55,
-    0.5
-   ]
-  },
-  {
-   "layout": "photo_full",
    "image": "data/post_img/aambra_hall.jpg",
    "focus": [
     0.4,
@@ -41,15 +52,22 @@
   {
    "layout": "photo_duo",
    "images": [
-    "data/post_img/aambra_duck.jpg",
-    "data/post_img/aambra_fish.jpg"
+    "data/post_img/aambra_fish2.jpg",
+    "data/post_img/aambra_borek.jpg"
+   ]
+  },
+  {
+   "layout": "photo_duo",
+   "images": [
+    "data/post_img/aambra_kibbeh.jpg",
+    "data/post_img/aambra_dolma.jpg"
    ]
   },
   {
    "layout": "spot_clean",
    "name": "Aambra",
    "images": [
-    "data/post_img/aambra_scallop.jpg"
+    "data/post_img/aambra_feta.jpg"
    ],
    "photo_h": 640,
    "lines": [

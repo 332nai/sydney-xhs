@@ -485,6 +485,32 @@ def photo_full(p, ctx):
     return img
 
 
+def cover_quad(p, ctx):
+    """封面：四张图拼成2×2，标题放在四张图的交汇处。"""
+    gap = p.get("gap", 8)
+    img = Image.new("RGB", (W, H), CREAM)
+    imgs = p["images"][:4]
+    foci = p.get("focus") or [None] * 4
+    hw, hh = (W - gap) // 2, (H - gap) // 2
+    boxes = [(0, 0), (hw + gap, 0), (0, hh + gap), (hw + gap, hh + gap)]
+    for (x, y), path, fc in zip(boxes, imgs, foci):
+        img.paste(_fit_focus(path, (W - hw - gap if x else hw, H - hh - gap if y else hh), fc), (x, y))
+    d = ImageDraw.Draw(img)
+    lines = p.get("headline", [])
+    size = min(fit("sans", "black", line, 640, 84, 48).size for line in lines)
+    f = F("sans", "black", size)
+    step = int(size * 1.28)
+    bw = max(tw(f, line) for line in lines) + 2 * 56
+    bh = step * len(lines) + 2 * 44 - (step - size)
+    bx, by = (W - bw) // 2, (H - bh) // 2
+    d.rectangle([bx, by, bx + bw, by + bh], fill=CREAM)
+    y = by + 40
+    for line in lines:
+        d.text(((W - tw(f, line)) // 2, y), line, font=f, fill=INK)
+        y += step
+    return img
+
+
 def photo_duo(p, ctx):
     """上下两张照片，各配一行说明。"""
     img = Image.new("RGB", (W, H), INK)
@@ -523,7 +549,7 @@ def closing_photo(p, ctx):
     return img
 
 
-REGISTRY = {"photo_full": photo_full, "photo_duo": photo_duo, "closing_photo": closing_photo, "cover_photo": cover_photo, "cover_full": cover_full, "cover_film": cover_film, "cover_hero": cover_hero, "cover_sleeve": cover_sleeve, "cover_bignum": cover_bignum, "cover_mosaic": cover_mosaic, "spot": spot, "spot_list": spot_list, "spot_clean": spot_clean, "list_clean": list_clean, "cover_split": cover_split, "photo_grid": photo_grid, "compare": compare,
+REGISTRY = {"photo_full": photo_full, "photo_duo": photo_duo, "closing_photo": closing_photo, "cover_photo": cover_photo, "cover_full": cover_full, "cover_quad": cover_quad, "cover_film": cover_film, "cover_hero": cover_hero, "cover_sleeve": cover_sleeve, "cover_bignum": cover_bignum, "cover_mosaic": cover_mosaic, "spot": spot, "spot_list": spot_list, "spot_clean": spot_clean, "list_clean": list_clean, "cover_split": cover_split, "photo_grid": photo_grid, "compare": compare,
             "story": story, "closing": closing, "venue": venue, "number": number}
 
 
