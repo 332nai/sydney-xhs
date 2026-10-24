@@ -118,5 +118,13 @@
   "lat": -33.8579239,
   "lon": 151.0924176,
   "addr": "167 Concord Rd"
+ },
+ {
+  "n": 15,
+  "name": "Pajuok 파주옥",
+  "cat": "r",
+  "lat": -33.847736,
+  "lon": 151.086949,
+  "addr": "21a Victoria Ave"
  }
 ]
