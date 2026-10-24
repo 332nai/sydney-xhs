@@ -44,11 +44,13 @@ for v in vs:
 DARK, ORANGE = (24, 24, 26), (255, 140, 60)
 d.rectangle([0, MAP_H, W, H], fill=DARK)
 f1 = F("k", 104)
-d.text((76, MAP_H + 40), "Concord附近", font=f1, fill=(255, 255, 255))
+d.text((76, MAP_H + 40), "悉尼Concord附近", font=f1, fill=(255, 255, 255))
 d.text((76, MAP_H + 40 + 126), "吃什么？", font=f1, fill=ORANGE)
-lf = F("m", 24); lx, ly = W - 250, H - 62
+# 图例：地图左下角一个不显眼的小条
+lf = F("m", 19); lx, ly = 22, MAP_H - 44
+d.rounded_rectangle([lx - 10, ly - 6, lx + 196, ly + 30], 14, fill=(255, 255, 255))
 for c, t in [(RED, "餐厅"), (TEAL, "咖啡店")]:
-    d.ellipse([lx, ly + 7, lx + 20, ly + 27], fill=c); d.text((lx + 28, ly), t, font=lf, fill=(220, 220, 220)); lx += 110
+    d.ellipse([lx, ly + 5, lx + 14, ly + 19], fill=c); d.text((lx + 20, ly - 2), t, font=lf, fill=(90, 90, 90)); lx += 86
 d.text((W - 180, MAP_H - 30), "© OpenStreetMap", font=F("m", 17), fill=(110, 105, 98))
 img.save("concord_map.png")
 print({k: (round(a), round(b)) for k, (a, b) in pts.items()})
