@@ -307,3 +307,7 @@ def closing_photo(p, ctx):
 
 REGISTRY = {"photo_full": photo_full, "photo_duo": photo_duo, "closing_photo": closing_photo, "cover_photo": cover_photo, "cover_full": cover_full, "cover_film": cover_film, "cover_split": cover_split, "photo_grid": photo_grid, "compare": compare,
             "story": story, "closing": closing, "venue": venue, "number": number}
+
+
+from .night_layouts import REGISTRY as _NIGHT
+REGISTRY.update(_NIGHT)
