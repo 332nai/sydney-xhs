@@ -204,6 +204,28 @@ def cover_bignum(p, ctx):
     return img
 
 
+def cover_mosaic(p, ctx):
+    """四宫格封面：上面2x2四张照片，下面深色区放大标题。"""
+    img = Image.new("RGB", (W, H), (16, 20, 20))
+    gap, top_h = 8, p.get("grid_h", 900)
+    cw, ch = (W - gap) // 2, (top_h - gap) // 2
+    foci = p.get("focus") or [None] * 4
+    for i, path in enumerate(p["images"][:4]):
+        x, y = (i % 2) * (cw + gap), (i // 2) * (ch + gap)
+        img.paste(_pop(_fit_focus(path, (cw, ch), foci[i]).convert("RGB")), (x, y))
+    d = ImageDraw.Draw(img)
+    lines = p.get("headline", [])
+    fonts = [fit("sans", "black", line, 860, 104, 56) for line in lines]
+    size = min(f.size for f in fonts) if fonts else 104
+    f = F("sans", "black", size)
+    step = int(size * 1.22)
+    y = top_h + (H - top_h - step * len(lines)) // 2
+    for i, line in enumerate(lines):
+        d.text((M, y), line, font=f, fill=tuple(p.get("accent_rgb", (0, 190, 180))) if p.get("accent") and i == len(lines) - 1 else WHITE)
+        y += step
+    return img
+
+
 def cover_split(p, ctx):
     """上下两张照片，中间一条标题带。"""
     img = Image.new("RGB", (W, H), CREAM)
@@ -421,7 +443,7 @@ def closing_photo(p, ctx):
     return img
 
 
-REGISTRY = {"photo_full": photo_full, "photo_duo": photo_duo, "closing_photo": closing_photo, "cover_photo": cover_photo, "cover_full": cover_full, "cover_film": cover_film, "cover_hero": cover_hero, "cover_sleeve": cover_sleeve, "cover_bignum": cover_bignum, "cover_split": cover_split, "photo_grid": photo_grid, "compare": compare,
+REGISTRY = {"photo_full": photo_full, "photo_duo": photo_duo, "closing_photo": closing_photo, "cover_photo": cover_photo, "cover_full": cover_full, "cover_film": cover_film, "cover_hero": cover_hero, "cover_sleeve": cover_sleeve, "cover_bignum": cover_bignum, "cover_mosaic": cover_mosaic, "cover_split": cover_split, "photo_grid": photo_grid, "compare": compare,
             "story": story, "closing": closing, "venue": venue, "number": number}
 
 

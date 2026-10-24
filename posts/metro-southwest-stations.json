@@ -1,0 +1,194 @@
+{
+  "id": "metro-southwest-stations",
+  "title": "悉尼新地铁沿线吃什么",
+  "pages": [
+    {
+      "layout": "cover_mosaic",
+      "images": [
+        "data/post_img/mt_metro.jpg",
+        "data/post_img/mt_mpr2.jpg",
+        "data/post_img/mt_yas1.jpg",
+        "data/post_img/mt_w_crinan.jpg"
+      ],
+      "focus": [
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.4,
+          0.5
+        ],
+        [
+          0.5,
+          0.6
+        ]
+      ],
+      "headline": [
+        "悉尼新地铁10月30日开通",
+        "沿线10站吃什么"
+      ],
+      "accent": 1
+    },
+    {
+      "layout": "event_card",
+      "theme": "metro",
+      "label": "先看要点",
+      "headline": [
+        "Sydenham至Bankstown"
+      ],
+      "when": "10月30日 周五 凌晨4点31分首班",
+      "facts": [
+        [
+          "班次",
+          "高峰4分钟一班，白天5分钟，晚上和周末10分钟"
+        ],
+        [
+          "时间",
+          "Bankstown到Central 28分钟，Marrickville到Gadigal 12分钟"
+        ]
+      ],
+      "points": [
+        "10个站：Marrickville、Dulwich Hill、Hurlstone Park、Canterbury、Campsie、Belmore、Lakemba、Wiley Park、Punchbowl、Bankstown",
+        "Wiley Park、Dulwich Hill、Hurlstone Park、Punchbowl、Canterbury第一次有电梯",
+        "11月1日上午10点至下午1点，Bankstown站和Dulwich Hill站有开通活动"
+      ]
+    },
+    {
+      "layout": "event_photo",
+      "theme": "metro",
+      "image": "data/post_img/mt_mpr1.jpg",
+      "focus": [
+        0.45,
+        0.4
+      ],
+      "label": "第1站",
+      "headline": [
+        "Marrickville"
+      ],
+      "points": [
+        "Marrickville Pork Roll：236A Illawarra Road，悉尼最有名的越南法包之一，大部分$10以内，常要排队",
+        "Sit咖啡店：2/387 Illawarra Road，社会企业开的社区咖啡店，招牌是卷蛋饼"
+      ],
+      "photo_h": 840
+    },
+    {
+      "layout": "event_photo",
+      "theme": "metro",
+      "image": "data/post_img/mt_w_dh.jpg",
+      "label": "第2站",
+      "headline": [
+        "Dulwich Hill"
+      ],
+      "points": [
+        "Fred's Oil and Oregano：黎巴嫩面包店，招牌是百里香披萨",
+        "Small Talk：社区咖啡店，自家烤的糕点、佛卡夏和贝果",
+        "11月1日这站有开通活动"
+      ],
+      "photo_h": 840
+    },
+    {
+      "layout": "event_photo",
+      "theme": "metro",
+      "image": "data/post_img/mt_w_crinan.jpg",
+      "label": "第3站｜小站",
+      "headline": [
+        "Hurlstone Park"
+      ],
+      "points": [
+        "车站旁的Crinan Street是一条小商业街，还留着老店面",
+        "南边就是Cooks River，沿河绿道有自行车道，Ewen Park在河边",
+        "希腊裔社区，有草地保龄球俱乐部HP Bowlo和Hurlstone Park Hotel"
+      ],
+      "photo_h": 840
+    },
+    {
+      "layout": "event_photo",
+      "theme": "metro",
+      "image": "data/post_img/mt_w_canterbury.jpg",
+      "label": "第4站｜小站",
+      "headline": [
+        "Canterbury"
+      ],
+      "points": [
+        "车站修复了老的砖砌烟囱，这次第一次装电梯",
+        "Pazar Food Collective：325 Canterbury Road，土耳其、中东和墨西哥菜，分享着吃，晚餐营业"
+      ],
+      "photo_h": 840
+    },
+    {
+      "layout": "event_photo",
+      "theme": "metro",
+      "image": "data/post_img/mt_w_belmore.jpg",
+      "label": "第6站｜小站",
+      "headline": [
+        "Belmore"
+      ],
+      "points": [
+        "Burwood Road上一排1920年代的装饰艺术风格老店面",
+        "Belmore Sports Ground：Bulldogs橄榄球队的主场",
+        "Five Star Coffee and Nut Roaster：现烤坚果、橄榄、椰枣和玫瑰水，咖啡是自家拼配"
+      ],
+      "photo_h": 840
+    },
+    {
+      "layout": "event_photo",
+      "theme": "metro",
+      "image": "data/post_img/mt_w_wiley.jpg",
+      "label": "第8站｜小站",
+      "headline": [
+        "Wiley Park"
+      ],
+      "points": [
+        "站名来自旁边的公园：1906年由J.V. Wiley捐给居民，有池塘和露天剧场",
+        "King Georges Road往南有一座越南高台教寺庙",
+        "车站外有一小排商店"
+      ],
+      "photo_h": 840
+    },
+    {
+      "layout": "event_photo",
+      "theme": "metro",
+      "image": "data/post_img/mt_yas1.jpg",
+      "label": "第9站",
+      "headline": [
+        "Punchbowl"
+      ],
+      "points": [
+        "Al Yasmin：222 The Boulevarde，就在车站对面，早8点至晚9点45",
+        "一坐下先送面包、腌菜和蘸酱",
+        "柠檬蒜香鸡$26，素食拼盘$30够两人，卷饼约$10"
+      ],
+      "photo_h": 840
+    },
+    {
+      "layout": "list_card",
+      "theme": "metro",
+      "label": "大站简单说",
+      "headline": [
+        "Campsie、Lakemba、Bankstown"
+      ],
+      "entries": [
+        {
+          "name": "Campsie（第5站）",
+          "meta": "Beamish Street",
+          "note": "中餐、韩国烤肉、马来菜都多，Albee's Kitchen的叻沙是老字号；新车站外有露天广场"
+        },
+        {
+          "name": "Lakemba（第7站）",
+          "meta": "Haldon Street",
+          "note": "黎巴嫩菜Jasmins、甜点店King of Sweets、Al Fayhaa的manoush饼；清真寺可以预约参观"
+        },
+        {
+          "name": "Bankstown（终点站）",
+          "meta": "车站周边",
+          "note": "越南菜集中的地方，法包和河粉选择多；11月1日有开通活动"
+        }
+      ]
+    }
+  ]
+}
