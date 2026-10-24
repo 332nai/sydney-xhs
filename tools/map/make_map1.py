@@ -23,9 +23,10 @@ f = F("b", 22)
 place = {
  "Paperboy": ("l", 0), "Mattina": ("r", -10), "ThreeOneNine": ("r", 0),
  "雄起厨房": ("r", -22), "Abhi's Indian": ("r", 24),
- "Frango": ("l", -30), "Daikoku Teppanyaki": ("l", 4), "Maranello's": ("l", 36), "Organica": ("r", 6),
+ "Frango": ("l", 4), "Daikoku Teppanyaki": ("r", 4), "Maranello's": ("l", 36), "Organica": ("r", 36),
  "Late Night Table": ("r", -22), "Myeong Dong": ("r", 20), "Bar Biscotti": ("l", -24), "August Coffee": ("l", 24),
  "Da Franco": ("r", 0), "Pajuok 파주옥": ("l", 34),
+ "Fratelli & Co": ("l", -30), "Sud": ("r", 0), "Meno Diciotto": ("r", -30),
 }
 pts = {v["name"]: px(v["lat"], v["lon"]) for v in vs}
 for v in vs:
