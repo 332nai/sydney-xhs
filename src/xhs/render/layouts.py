@@ -13,6 +13,8 @@ FACT_LABELS = [("address", "地址"), ("hours", "营业"), ("price", "价格"), 
 
 
 def brand(d, color, y=1420, align="left"):
+    if not config.settings().get("show_brand", True):
+        return
     f = F("sans", "medium", 22)
     t = config.settings()["account_name"]
     x = M if align == "left" else W - M - tw(f, t)

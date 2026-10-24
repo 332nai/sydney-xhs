@@ -1,6 +1,7 @@
 # 运行参数。改这里不需要动代码。
 
 account_name: 悉尼内城观察
+show_brand: false     # 卡片上是否显示账号名署名
 
 windows:
   venue_days: 60        # 新店开业多少天内可以入选
