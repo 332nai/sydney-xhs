@@ -3,11 +3,30 @@
  "title": "Rick Stein at Coogee Beach",
  "pages": [
   {
-   "layout": "cover_full",
-   "image": "data/post_img/rs_lobster.jpg",
+   "layout": "cover_quad",
+   "images": [
+    "data/post_img/rs_platter.jpg",
+    "data/post_img/rs_terrace.jpg",
+    "data/post_img/rs_room.jpg",
+    "data/post_img/rs_crab2.jpg"
+   ],
    "focus": [
-    0.55,
-    0.5
+    [
+     0.5,
+     0.5
+    ],
+    [
+     0.45,
+     0.5
+    ],
+    [
+     0.62,
+     0.5
+    ],
+    [
+     0.42,
+     0.5
+    ]
    ],
    "headline": [
     "英国名厨Rick Stein",
@@ -16,38 +35,61 @@
   },
   {
    "layout": "photo_full",
-   "image": "data/post_img/rs_steins.jpg",
+   "image": "data/post_img/rs_sunset.jpg",
+   "focus": [
+    0.4,
+    0.5
+   ]
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/rs_spread.jpg",
    "focus": [
     0.5,
     0.5
    ]
   },
   {
+   "layout": "photo_duo",
+   "images": [
+    "data/post_img/rs_crab.jpg",
+    "data/post_img/rs_fishchips.jpg"
+   ]
+  },
+  {
    "layout": "photo_full",
-   "image": "data/post_img/rs_crab.jpg",
+   "image": "data/post_img/rs_room.jpg",
    "focus": [
-    0.6,
+    0.5,
     0.5
    ]
   },
   {
    "layout": "photo_duo",
    "images": [
-    "data/post_img/rs_fishchips.jpg",
-    "data/post_img/rs_scallops.jpg"
+    "data/post_img/rs_scallops.jpg",
+    "data/post_img/rs_calamari.jpg"
+   ]
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/rs_bar.jpg",
+   "focus": [
+    0.55,
+    0.5
    ]
   },
   {
    "layout": "spot_clean",
    "name": "Rick Stein at Coogee Beach",
    "images": [
-    "data/post_img/rs_front.jpg"
+    "data/post_img/rs_oysters.jpg"
    ],
    "photo_h": 640,
    "lines": [
     "英国名厨Rick Stein和太太Sarah在悉尼的第一家餐厅，开在InterContinental酒店一楼，对着Coogee海滩。",
-    "招牌是牛油炸的鱼和薯条、新加坡辣椒蟹，冰台上有生蚝、扇贝和龙虾。",
-    "242 Arden Street, Coogee。"
+    "招牌是牛油炸鱼薯条、新加坡辣椒蟹和热海鲜拼盘。",
+    "户外露台不用预订，直接去就行。242 Arden Street, Coogee。"
    ]
   }
  ]
