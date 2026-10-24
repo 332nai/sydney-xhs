@@ -52,8 +52,9 @@ def render_post(post: dict, base_dir: str, out_dir: str) -> list:
         if f.endswith(".png"):
             os.remove(os.path.join(out_dir, f))
     files, variants = [], {}
+    from ..textfix import clean
     for i, page in enumerate(post["pages"], 1):
-        page = dict(page)
+        page = clean(dict(page))  # 出图前统一去掉中英文之间的空格
         for k in ("image",):
             if page.get(k) and not os.path.isabs(page[k]):
                 page[k] = os.path.join(base_dir, page[k])

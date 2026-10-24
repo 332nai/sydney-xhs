@@ -7,23 +7,23 @@
       "image": "data/post_img/holiao_7.jpg",
       "label": "新店｜Wynyard",
       "headline": [
-        "Ho Jiak 开了平价版",
-        "就在 Wynyard 站对面"
+        "Ho Jiak开了平价版",
+        "就在Wynyard站对面"
       ],
       "sub": "马来西亚菜啤酒馆，不少菜在$20以内"
     },
     {
       "layout": "photo_full",
       "image": "data/post_img/holiao_16.jpg",
-      "caption": "Carrington Street 上的新店",
-      "sub": "出了 Wynyard 站，过马路就到"
+      "caption": "Carrington Street上的新店",
+      "sub": "出了Wynyard站，过马路就到"
     },
     {
       "layout": "photo_full",
       "image": "data/post_img/holiao_10.jpg",
       "label": "招牌",
       "caption": "挂炉烧鸭",
-      "sub": "Ho Jiak 的人气菜，这里也有"
+      "sub": "Ho Jiak的人气菜，这里也有"
     },
     {
       "layout": "photo_grid",
@@ -51,13 +51,39 @@
       "headline": [
         "Ho Liao"
       ],
-      "lede": "Ho Jiak 主厨 Junda Khoo 把最受欢迎的菜做成一份精选集。",
+      "lede": "Ho Jiak主厨Junda Khoo把各家店最受欢迎的菜挑出来，做成一份精选集。",
       "facts": {
-        "address": "2/50 Carrington Street，Wynyard 站对面",
+        "address": "2/50 Carrington Street，Wynyard站对面",
         "hours": "周一至周六上午11点至晚11点，周日至晚10点",
         "price": "不少菜在$20以内，螃蟹按时价"
       },
       "explainer": "还有叻沙汤鸡肉鲜虾饺子和娘惹酸辣鱼。啤酒是朝日、札幌、虎牌这些亚洲啤酒。"
+    },
+    {
+      "layout": "compare",
+      "label": "Ho Liao｜真实评价",
+      "headline": [
+        "墨尔本店",
+        "评价两极"
+      ],
+      "cols": [
+        "墨尔本Ho Liao的食客怎么说"
+      ],
+      "rows": [
+        [
+          "好评",
+          "马来炒粿条、叻沙、马来风光空心菜，有人觉得不输Ho Jiak"
+        ],
+        [
+          "差评",
+          "分量偏小，有人说$23一碗面肉很少；鸡饭和干捞面的叉烧不太行"
+        ],
+        [
+          "我们的建议",
+          "人多一起去，点几道分着吃更划算；悉尼店刚开，味道还要看"
+        ]
+      ],
+      "note": "悉尼店开业不到一周，还没有多少评价。以上来自墨尔本Ho Liao在Tripadvisor上的评价。"
     },
     {
       "layout": "photo_full",
@@ -85,7 +111,7 @@
       "lines": [
         "Ho Liao｜2/50 Carrington Street"
       ],
-      "question": "你吃过 Ho Jiak 吗？最推荐哪一道？"
+      "question": "去过悉尼店的朋友，分量和味道怎么样？"
     }
   ]
 }
