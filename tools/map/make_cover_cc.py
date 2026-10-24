@@ -11,9 +11,7 @@ DARK, ORANGE = (24, 24, 26), (255, 140, 60)
 PHOTO_H = int(sys.argv[1]) if len(sys.argv) > 1 else 560
 tiles_spec = json.loads(sys.argv[2]) if len(sys.argv) > 2 else [["cc_frango_08.jpg", [0.5, 0.5]], ["cc_myeongdong_09.jpg", [0.45, 0.6]], ["cc_abhis_05.jpg", [0.5, 0.45]]]
 def pop(im):
-    im = im.filter(ImageFilter.UnsharpMask(2, 60, 2))
-    im = ImageEnhance.Contrast(im).enhance(1.06)
-    return ImageEnhance.Color(im).enhance(1.12)
+    return im
 img = Image.new("RGB", (W, H), DARK)
 n = len(tiles_spec); gap = 6; tw = (W - gap * (n - 1)) // n
 x = 0
