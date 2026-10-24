@@ -1,0 +1,89 @@
+{
+ "id": "venue-observer-hotel",
+ "title": "The Observer Hotel",
+ "pages": [
+  {
+   "layout": "cover_quad",
+   "gap": 0,
+   "images": [
+    "data/post_img/obs_front.jpg",
+    "data/post_img/obs_snooker.jpg",
+    "data/post_img/obs_food.jpg",
+    "data/post_img/obs_bar.jpg"
+   ],
+   "focus": [
+    [
+     0.45,
+     0.5
+    ],
+    [
+     0.45,
+     0.5
+    ],
+    [
+     0.42,
+     0.5
+    ],
+    [
+     0.4,
+     0.5
+    ]
+   ],
+   "headline": [
+    "悉尼百年老酒馆",
+    "重新开门了"
+   ]
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/obs_bar.jpg",
+   "focus": [
+    0.35,
+    0.5
+   ]
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/obs_snooker.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ]
+  },
+  {
+   "layout": "photo_duo",
+   "images": [
+    "data/post_img/obs_food.jpg",
+    "data/post_img/obs_fishfinger.jpg"
+   ]
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/obs_dining.jpg",
+   "focus": [
+    0.45,
+    0.5
+   ]
+  },
+  {
+   "layout": "photo_duo",
+   "images": [
+    "data/post_img/obs_conservatory.jpg",
+    "data/post_img/obs_lounge.jpg"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "The Observer Hotel",
+   "images": [
+    "data/post_img/obs_history.jpg"
+   ],
+   "photo_h": 620,
+   "lines": [
+    "The Rocks的老酒馆，现在的楼1909年建成，是州级文物建筑，翻修了三年半，9月底重新开门。",
+    "英国手压泵打的桶装艾尔啤酒，楼上有斯诺克、飞镖和国际象棋，每天都有烤肉，周日有四种。",
+    "69 George Street, The Rocks。"
+   ]
+  }
+ ]
+}
