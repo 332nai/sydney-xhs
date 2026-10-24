@@ -1,4 +1,82 @@
-{"夜上海Shanghai Night":["l",-22],"新上海New Shanghai":["l",18],"西安风味小吃":["r",-20],"Eedaero Gamjatang":["r",0],
-"Polish Club":["r",4],"Ashfield Apothecary":["r",-6],"Postino Osteria":["r",14],"Solstice":["r",-22],"Goblin":["r",0],
-"Yakitori Jin":["r",14],"Bistro Cocotte":["l",22],"Paesanella":["r",-12],"Peppe's Pasta":["l",-20],
-"Excelsior Jones":["r",0],"Outfield":["r",0]}
+{
+ "西安风味小吃": [
+  "r",
+  -20
+ ],
+ "Eedaero Gamjatang": [
+  "r",
+  0
+ ],
+ "Polish Club": [
+  "r",
+  4
+ ],
+ "Ashfield Apothecary": [
+  "r",
+  -8
+ ],
+ "Postino Osteria": [
+  "r",
+  14
+ ],
+ "Solstice": [
+  "r",
+  -22
+ ],
+ "Goblin": [
+  "r",
+  0
+ ],
+ "Yakitori Jin": [
+  "r",
+  -10
+ ],
+ "Bistro Cocotte": [
+  "r",
+  40
+ ],
+ "Paesanella": [
+  "r",
+  -50
+ ],
+ "Peppe's Pasta": [
+  "l",
+  -14
+ ],
+ "Excelsior Jones": [
+  "r",
+  0
+ ],
+ "Outfield": [
+  "r",
+  0
+ ],
+ "Happyfield": [
+  "l",
+  12
+ ],
+ "Aberdeen Dining": [
+  "l",
+  24
+ ],
+ "满意客家热炒": [
+  "l",
+  -26
+ ],
+ "Festive Coffee": [
+  "r",
+  -6
+ ],
+ "Headlands Coffee": [
+  "l",
+  0
+ ],
+ "夜上海": [
+  "l",
+  4
+ ],
+ "新上海": [
+  "l",
+  42
+ ]
+}
