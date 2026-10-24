@@ -1,0 +1,84 @@
+{
+  "title": "两家亚洲新店",
+  "pages": [
+    {
+      "layout": "cover_split",
+      "images": [
+        "data/post_img/holiao_1.jpg",
+        "data/post_img/eggette_1.jpg"
+      ],
+      "label": "新店合集",
+      "headline": [
+        "两家亚洲新店",
+        "都在 CBD"
+      ],
+      "sub": "马来菜大多$20以内，还有一家鸡蛋仔专门店",
+      "tags": [
+        "Ho Liao｜Wynyard",
+        "Eggette｜Haymarket"
+      ]
+    },
+    {
+      "layout": "venue",
+      "image": "data/post_img/holiao_2.jpg",
+      "label": "新店｜Wynyard",
+      "headline": [
+        "Ho Liao"
+      ],
+      "lede": "悉尼马来西亚菜名店 Ho Jiak 的平价啤酒馆，不少菜在$20以内。",
+      "facts": {
+        "address": "2/50 Carrington Street，Wynyard 站对面",
+        "hours": "周一至周六上午11点至晚11点，周日至晚10点",
+        "team": "Ho Jiak 主厨 Junda Khoo"
+      },
+      "explainer": "招牌：叻沙汤鸡肉鲜虾饺子、炭烤瓦煲饭、烧鸭、娘惹酸辣鱼。"
+    },
+    {
+      "layout": "photo_grid",
+      "label": "两家店的样子",
+      "headline": [
+        "一家热闹，一家小巧"
+      ],
+      "images": [
+        "data/post_img/holiao_4.jpg",
+        "data/post_img/holiao_3.jpg",
+        "data/post_img/eggette_3.jpg",
+        "data/post_img/eggette_4.jpg"
+      ],
+      "captions": [
+        "Ho Liao 的招牌菜",
+        "Ho Liao 店内",
+        "Eggette 在 George Street 的店面",
+        "现做鸡蛋仔"
+      ]
+    },
+    {
+      "layout": "venue",
+      "image": "data/post_img/eggette_2.jpg",
+      "label": "新店｜Haymarket",
+      "headline": [
+        "Eggette"
+      ],
+      "lede": "Chinatown 新开的鸡蛋仔专门店。",
+      "facts": {
+        "address": "George Street 683至689号，Citymark Building 地面层",
+        "hours": "每天上午11点半至晚8点半",
+        "team": "The Peak Hong Kong Cafe 戴家两兄弟"
+      },
+      "explainer": "朱古力粒和红豆最受欢迎，还有阿华田、美禄、好立克、芝士、抹茶口味，也卖鸳鸯。"
+    },
+    {
+      "layout": "closing",
+      "headline": [
+        "两家都不贵",
+        "都在 CBD 步行范围"
+      ],
+      "lines": [
+        "Ho Liao：Wynyard 站对面",
+        "Eggette：Chinatown 的 George Street"
+      ],
+      "question": "你最想念哪一种港式街头小吃？"
+    }
+  ],
+  "id": "venues-01-asian"
+}

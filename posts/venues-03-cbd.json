@@ -1,0 +1,83 @@
+{
+  "title": "CBD 午餐",
+  "pages": [
+    {
+      "layout": "cover_split",
+      "images": [
+        "data/post_img/razzies_2.jpg",
+        "data/post_img/heritage_1.jpg"
+      ],
+      "label": "CBD 午餐",
+      "headline": [
+        "CBD 上班族",
+        "午餐换换口味"
+      ],
+      "sub": "两家9月新开的店",
+      "tags": [
+        "Razzie's｜Kent Street",
+        "The Heritage Room｜Martin Place"
+      ]
+    },
+    {
+      "layout": "venue",
+      "image": "data/post_img/razzies_3.jpg",
+      "label": "新店｜CBD",
+      "headline": [
+        "Razzie's"
+      ],
+      "lede": "灵感来自洛杉矶 In-N-Out 的 smash burger。",
+      "facts": {
+        "address": "Shop 1/355 Kent Street",
+        "hours": "周三至周六上午11点至晚10点",
+        "team": "Song 家兄弟，从快闪店转为固定店"
+      },
+      "explainer": "招牌：辣肉酱汉堡、芝士辣酱薯条、洋葱圈，辣肉酱热狗即将推出。"
+    },
+    {
+      "layout": "number",
+      "label": "新店｜Martin Place",
+      "headline": [
+        "牛肋排三明治加一杯酒"
+      ],
+      "lede": "The Heritage Room，周二至周五中午12点至下午3点。",
+      "big_number": {
+        "value": "$39",
+        "label": "午餐套餐，单点三明治 $32"
+      },
+      "facts": {
+        "address": "25 Martin Place（Rovollo 隔壁）"
+      },
+      "explainer": "主打托斯卡纳和少见的意大利白葡萄酒，酒单200款，三明治供应到午夜。"
+    },
+    {
+      "layout": "photo_grid",
+      "label": "两家店的样子",
+      "headline": [
+        "一家快餐，一家慢酒"
+      ],
+      "images": [
+        "data/post_img/razzies_4.jpg",
+        "data/post_img/razzies_1.jpg",
+        "data/post_img/heritage_2.jpg",
+        "data/post_img/heritage_4.jpg"
+      ],
+      "captions": [
+        "Razzie's 的铁板 smash 做法",
+        "Kent Street 店面",
+        "The Heritage Room 店内",
+        "葡萄酒吧一角"
+      ]
+    },
+    {
+      "layout": "closing",
+      "headline": [
+        "同一区域还有"
+      ],
+      "lines": [
+        "Ho Liao：Wynyard 站对面的马来西亚啤酒馆，不少菜在$20以内。"
+      ],
+      "question": "你在 CBD 上班时，午餐最常去哪？"
+    }
+  ],
+  "id": "venues-03-cbd"
+}

@@ -1,0 +1,56 @@
+{
+  "title": "Calamansi",
+  "pages": [
+    {
+      "layout": "cover_photo",
+      "image": "data/post_img/calamansi_3.jpg",
+      "label": "新店｜Cremorne",
+      "headline": [
+        "MasterChef 选手",
+        "开了自己的第一家店"
+      ],
+      "sub": "菜单来自妈妈的家常菜"
+    },
+    {
+      "layout": "story",
+      "image": "data/post_img/calamansi_4.jpg",
+      "label": "主厨的故事",
+      "headline": [
+        "Sarah Tiong"
+      ],
+      "paragraphs": [
+        "她参加过 MasterChef，之前和另一位 MasterChef 选手在 Surry Hills 合开过 Ogni，后来那家店关了。",
+        "Calamansi 是她第一家完全属于自己的餐厅。菜单来自她从小吃到大的味道，很大一部分受已故母亲的家常菜影响。"
+      ],
+      "quote": "从小吃到大的味道，做成了自己的菜单"
+    },
+    {
+      "layout": "venue",
+      "image": "data/post_img/calamansi_2.jpg",
+      "label": "Calamansi｜值得点",
+      "headline": [
+        "Calamansi"
+      ],
+      "lede": "招牌是娘惹咖喱鸡，用罗望子、芫荽籽、红葱头、蒜和土豆一起炖。",
+      "facts": {
+        "address": "307 Military Road, Cremorne",
+        "hours": "周二至周六晚5点至10点"
+      },
+      "explainer": "另外两道：新加坡辣椒蟹可乐饼，酿了扇贝和虾馅的去骨鸡翼。"
+    },
+    {
+      "layout": "closing",
+      "bg": [
+        15,
+        59,
+        58
+      ],
+      "headline": [
+        "过了桥",
+        "下北也有新店"
+      ],
+      "question": "住在下北的读者，你们附近最近开了什么店？"
+    }
+  ],
+  "id": "venues-05-calamansi"
+}

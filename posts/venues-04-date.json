@@ -1,0 +1,94 @@
+{
+  "title": "约会去处",
+  "pages": [
+    {
+      "layout": "cover_split",
+      "images": [
+        "data/post_img/pigmary_2.jpg",
+        "data/post_img/fitzroy_3.jpg"
+      ],
+      "label": "约会去处",
+      "headline": [
+        "两家新开的",
+        "安静小店"
+      ],
+      "sub": "都和悉尼名店有关",
+      "tags": [
+        "Pig Mary｜Chippendale",
+        "Fitzroy Dining Room｜Woolloomooloo"
+      ]
+    },
+    {
+      "layout": "venue",
+      "image": "data/post_img/pigmary_4.jpg",
+      "label": "新店｜Chippendale",
+      "headline": [
+        "Pig Mary"
+      ],
+      "lede": "名餐厅 Ester 主厨开的小酒吧，只有12个座位。",
+      "facts": {
+        "address": "42 Meagher Street, Chippendale",
+        "hours": "周一、周四、周五晚5点至10点；周六中午至晚10点；周日中午至下午4点",
+        "team": "Ester 主厨 Mat Lindsay"
+      },
+      "explainer": "不接受预订。可以点葡萄牙猪排包、韭葱配血肠、Ester 的切达芝士派。"
+    },
+    {
+      "layout": "venue",
+      "image": "data/post_img/fitzroy_4.jpg",
+      "label": "重开｜Woolloomooloo",
+      "headline": [
+        "Fitzroy Dining Room"
+      ],
+      "lede": "老酒吧 The Old Fitz 楼上的餐厅，换了新主厨。",
+      "facts": {
+        "address": "129 Dowling Street（The Old Fitz 楼上）",
+        "hours": "周三至周五晚5点至10点；周六中午至晚10点；周日中午至晚9点",
+        "team": "主厨 Ben Richards，曾在 Ester、Ante"
+      },
+      "explainer": "虾仁酿西葫芦花、乡村猪肉冻、生蓝鳍金枪鱼，甜品是英式 trifle。"
+    },
+    {
+      "layout": "compare",
+      "label": "怎么选",
+      "headline": [
+        "两家怎么选"
+      ],
+      "cols": [
+        "Pig Mary",
+        "Fitzroy"
+      ],
+      "rows": [
+        [
+          "座位",
+          "12个",
+          "老酒吧楼上的整间餐厅"
+        ],
+        [
+          "预订",
+          "只能现场排队",
+          "出发前查一下官网"
+        ],
+        [
+          "适合",
+          "两人小酌，吃点小食",
+          "正式一点的晚餐"
+        ],
+        [
+          "周末",
+          "周六全天，周日白天",
+          "周六周日都营业"
+        ]
+      ]
+    },
+    {
+      "layout": "closing",
+      "headline": [
+        "小店的好处",
+        "是能好好说话"
+      ],
+      "question": "你更喜欢热闹的大餐厅，还是这种小店？"
+    }
+  ],
+  "id": "venues-04-date"
+}

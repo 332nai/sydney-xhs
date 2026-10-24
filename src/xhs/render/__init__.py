@@ -42,3 +42,30 @@ def overview(files, dest, cols=5):
         im = Image.open(f).resize((tw_, th), Image.LANCZOS)
         sheet.paste(im, (gap + (i % cols) * (tw_ + gap), gap + (i // cols) * (th + gap)))
     sheet.save(dest)
+
+
+def render_post(post: dict, base_dir: str, out_dir: str) -> list:
+    """单篇模式：按 post["pages"] 逐页出图。图片路径相对于 base_dir。"""
+    from . import post_layouts
+    os.makedirs(out_dir, exist_ok=True)
+    for f in os.listdir(out_dir):
+        if f.endswith(".png"):
+            os.remove(os.path.join(out_dir, f))
+    files, variants = [], {}
+    for i, page in enumerate(post["pages"], 1):
+        page = dict(page)
+        for k in ("image",):
+            if page.get(k) and not os.path.isabs(page[k]):
+                page[k] = os.path.join(base_dir, page[k])
+        if page.get("images"):
+            page["images"] = [p if os.path.isabs(p) else os.path.join(base_dir, p) for p in page["images"]]
+        if isinstance(page.get("bg"), list):
+            page["bg"] = tuple(page["bg"])
+        lay = page["layout"]
+        v = variants.get(lay, 0); variants[lay] = v + 1
+        img = post_layouts.REGISTRY[lay](page, {"variant": v})
+        name = f"{i:02d}_{lay}.png"
+        img.save(os.path.join(out_dir, name))
+        files.append(os.path.join(out_dir, name))
+    overview(files, os.path.join(os.path.dirname(out_dir.rstrip("/")), f"{post['id']}_overview.png"), cols=len(files) if len(files) <= 6 else 5)
+    return files

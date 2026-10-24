@@ -141,6 +141,8 @@ def jitter_line(d, pts, fill, width, amp=2.0, seg=18, seed=3):
 
 
 def kicker_text(item):
+    if item.get("label"):
+        return item["label"]  # 单篇模式里直接写好的标签
     kind = "新店" if item.get("kind") == "venue" else ("活动" if item.get("kind") == "event" else "社区动态")
     tag = item.get("kicker") or item.get("suburb") or ""
     if item.get("kind") == "venue":

@@ -1,0 +1,78 @@
+{
+  "title": "Loa",
+  "pages": [
+    {
+      "layout": "cover_photo",
+      "image": "data/post_img/loa_1.jpg",
+      "label": "新店｜Darlinghurst",
+      "headline": [
+        "Oxford Street 地下",
+        "新开了一家酒吧"
+      ],
+      "sub": "汉堡、薯条加一杯马天尼，$39"
+    },
+    {
+      "layout": "number",
+      "label": "Loa｜欢乐时光",
+      "headline": [
+        "每天下午5点至7点"
+      ],
+      "lede": "汉堡、薯条加一杯马天尼。",
+      "big_number": {
+        "value": "$39",
+        "label": "Loa 的欢乐时光套餐"
+      },
+      "facts": {
+        "address": "1/90 Oxford Street, Darlinghurst",
+        "hours": "周三周四、周日下午5点至午夜；周五周六至凌晨2点"
+      },
+      "explainer": "入口在 Foley Street 后巷，就在 Amé 餐厅正下方。"
+    },
+    {
+      "layout": "compare",
+      "label": "Loa｜值得点",
+      "headline": [
+        "三杯值得点的酒"
+      ],
+      "cols": [
+        "是什么"
+      ],
+      "rows": [
+        [
+          "Gimlet",
+          "做成无乳制品的软冰淇淋，可以加自制黑莓酱"
+        ],
+        [
+          "Colada",
+          "清澈版 Piña Colada，杯口沾草莓"
+        ],
+        [
+          "Cosmo",
+          "加了龙蒿和薰衣草"
+        ],
+        [
+          "音乐",
+          "大部分晚上有 DJ，周三周四有现场乐队"
+        ]
+      ],
+      "note": "吃的来自楼上 Amé 的厨房。"
+    },
+    {
+      "layout": "closing",
+      "bg": [
+        15,
+        59,
+        58
+      ],
+      "headline": [
+        "Oxford Street",
+        "正在热闹回来"
+      ],
+      "lines": [
+        "楼上是10月22日开业的日秘料理 Amé，和 Loa 是同一个团队。"
+      ],
+      "question": "你最近去 Oxford Street 吃过什么？"
+    }
+  ],
+  "id": "venues-02-loa"
+}
