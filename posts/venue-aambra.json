@@ -1,0 +1,63 @@
+{
+ "id": "venue-aambra",
+ "title": "Aambra",
+ "pages": [
+  {
+   "layout": "cover_full",
+   "image": "data/post_img/aambra_glass.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": [
+    "悉尼这家餐厅",
+    "开在百年教堂里"
+   ]
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/aambra_night.jpg",
+   "focus": [
+    0.35,
+    0.5
+   ]
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/aambra_door.jpg",
+   "focus": [
+    0.55,
+    0.5
+   ]
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/aambra_hall.jpg",
+   "focus": [
+    0.4,
+    0.5
+   ]
+  },
+  {
+   "layout": "photo_duo",
+   "images": [
+    "data/post_img/aambra_duck.jpg",
+    "data/post_img/aambra_fish.jpg"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Aambra",
+   "images": [
+    "data/post_img/aambra_scallop.jpg"
+   ],
+   "photo_h": 640,
+   "lines": [
+    "Rose Bay一座1904年奠基的教堂，2008年做完最后一次礼拜，空置多年后改成了黎凡特餐厅。",
+    "原来的彩色玻璃窗都还在，穹顶有10米高。",
+    "用澳洲本地海鲜做中东菜：整条蓝石斑做的烤鱼masgouf、Moreton Bay bug酥饼、干式熟成烤鸭。",
+    "518A Old South Head Road，周一休息。"
+   ]
+  }
+ ]
+}
