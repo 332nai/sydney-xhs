@@ -64,6 +64,46 @@ def cover_full(p, ctx):
     return img
 
 
+def _film_grade(im, seed=7):
+    """王家卫式胶片调色：暗部偏青绿，亮部偏暖，加对比和颗粒。"""
+    from PIL import ImageEnhance
+    im = ImageEnhance.Contrast(im).enhance(1.12)
+    im = ImageEnhance.Color(im).enhance(1.08)
+    r, g, b = im.split()
+    r = r.point(lambda v: min(255, int(v * 1.04 + 4)))
+    g = g.point(lambda v: min(255, int(v * 1.0 + (10 if v < 110 else 0))))
+    b = b.point(lambda v: min(255, int(v * 0.9 + (14 if v < 90 else 0))))
+    im = Image.merge("RGB", (r, g, b))
+    noise = Image.effect_noise(im.size, 26).convert("L")
+    return Image.blend(im, Image.merge("RGB", [noise] * 3), 0.07)
+
+
+def cover_film(p, ctx):
+    """电影截图式封面：上下黑边，胶片调色，大标题像字幕一样居中。"""
+    img = Image.new("RGB", (W, H), (8, 8, 8))
+    top, ph = 150, 760
+    img.paste(_film_grade(_img(p["image"], (W, ph)).convert("RGB")), (0, top))
+    d = ImageDraw.Draw(img)
+    if p.get("label"):
+        lf = F("sans", "bold", 26)
+        rrect(d, [M - 16, 51, M + tw(lf, p["label"]) + 16, 99], 24, fill=(36, 36, 36))
+        d.text((M, 57), p["label"], font=lf, fill=CREAM)
+    lines = p.get("headline", [])
+    fonts = [fit("serif", "black", line, 880, 92, 52) for line in lines]
+    size = min(f.size for f in fonts) if fonts else 92
+    f = F("serif", "black", size)
+    step = int(size * 1.4)
+    band_top = top + ph
+    y = band_top + (H - band_top - step * len(lines)) // 2 + int(size * 0.08)
+    yellow = (246, 214, 92)
+    for line in lines:
+        x = (W - f.getlength(line)) / 2
+        d.text((x + 3, y + 3), line, font=f, fill=(0, 0, 0))
+        d.text((x, y), line, font=f, fill=yellow)
+        y += step
+    return img
+
+
 def cover_split(p, ctx):
     """上下两张照片，中间一条标题带。"""
     img = Image.new("RGB", (W, H), CREAM)
@@ -265,5 +305,5 @@ def closing_photo(p, ctx):
     return img
 
 
-REGISTRY = {"photo_full": photo_full, "photo_duo": photo_duo, "closing_photo": closing_photo, "cover_photo": cover_photo, "cover_full": cover_full, "cover_split": cover_split, "photo_grid": photo_grid, "compare": compare,
+REGISTRY = {"photo_full": photo_full, "photo_duo": photo_duo, "closing_photo": closing_photo, "cover_photo": cover_photo, "cover_full": cover_full, "cover_film": cover_film, "cover_split": cover_split, "photo_grid": photo_grid, "compare": compare,
             "story": story, "closing": closing, "venue": venue, "number": number}

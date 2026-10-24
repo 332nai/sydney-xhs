@@ -1,0 +1,77 @@
+{
+  "id": "venue-kiddo",
+  "title": "Kiddo Coffee",
+  "pages": [
+    {
+      "layout": "cover_film",
+      "image": "data/post_img/kiddo_4.jpg",
+      "label": "新店｜Surry Hills",
+      "headline": [
+        "悉尼Surry Hills新开的",
+        "王家卫风咖啡店"
+      ]
+    },
+    {
+      "layout": "photo_full",
+      "image": "data/post_img/kiddo_1.jpg",
+      "caption": "Mary Street上的淡黄色店面",
+      "sub": "84-86 Mary Street，Surry Hills"
+    },
+    {
+      "layout": "photo_duo",
+      "images": [
+        "data/post_img/kiddo_19.jpg",
+        "data/post_img/kiddo_17.jpg"
+      ],
+      "captions": [
+        "墙上挂着《堕落天使》的海报",
+        "红色霓虹“幸運”"
+      ]
+    },
+    {
+      "layout": "photo_full",
+      "image": "data/post_img/kiddo_12.jpg",
+      "caption": "菠萝包、斑斓包，配一杯奶油咖啡",
+      "sub": "面包由一对香港兄妹在本地做"
+    },
+    {
+      "layout": "photo_grid",
+      "label": "Kiddo Coffee｜细节",
+      "headline": [
+        "一眼就是港式茶餐厅"
+      ],
+      "images": [
+        "data/post_img/kiddo_9.jpg",
+        "data/post_img/kiddo_5.jpg",
+        "data/post_img/kiddo_15.jpg",
+        "data/post_img/kiddo_14.jpg"
+      ],
+      "captions": [
+        "寿字纹杯碟",
+        "红色塑料汽水箱当桌子",
+        "架子上的茶叶罐",
+        "Cool kids never sleep"
+      ]
+    },
+    {
+      "layout": "photo_full",
+      "image": "data/post_img/kiddo_8.jpg",
+      "caption": "门口的小板凳",
+      "sub": "坐在街边喝，最有茶餐厅的感觉"
+    },
+    {
+      "layout": "venue",
+      "image": "data/post_img/kiddo_7.jpg",
+      "label": "Kiddo Coffee｜店铺信息",
+      "headline": [
+        "Kiddo Coffee"
+      ],
+      "lede": "泰国店主Zen以前在Bondi开过同名咖啡店，关店两年后，自己一个人用有限的预算开了这家。",
+      "facts": {
+        "address": "84-86 Mary Street, Surry Hills",
+        "hours": "周一至周五早7点至下午3点；周末早7点半至下午3点"
+      },
+      "explainer": "咖啡豆来自Summer Hill的Headlands。Momokawa是浓缩加植物奶油，撒玄米茶。"
+    }
+  ]
+}
