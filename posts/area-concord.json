@@ -1,0 +1,194 @@
+{
+  "id": "area-concord",
+  "title": "悉尼Concord附近吃什么",
+  "pages": [
+    {
+      "layout": "photo_full",
+      "image": "data/post_img/cc_map.png"
+    },
+    {
+      "layout": "spot",
+      "cat": "r",
+      "tag": "印度菜｜North Strathfield",
+      "name": "Abhi's Indian",
+      "addr": "163 Concord Road",
+      "images": [
+        "data/post_img/cc_abhis_05.jpg",
+        "data/post_img/cc_abhis_14.jpg"
+      ],
+      "lines": [
+        "1990年开业，主厨Kumar Mahadevan，2026年《Good Food Guide》一顶厨师帽。",
+        "北印度馕坑烤菜、金奈家常菜、果阿海鲜都有。"
+      ]
+    },
+    {
+      "layout": "spot",
+      "cat": "r",
+      "tag": "川菜｜North Strathfield",
+      "name": "雄起厨房 Shone Chi Kitchen",
+      "addr": "167 Concord Road，Abhi's隔壁",
+      "images": [
+        "data/post_img/cc_xq_3c.jpg",
+        "data/post_img/cc_xq_1.jpg"
+      ],
+      "lines": [
+        "川味面食和小吃：干拌肉臊豌杂面、红烧牛肉面加蛋各$18.1，甜皮鸭半只$25.2，还有桂花凉糕。",
+        "每天上午11点至晚10点。"
+      ]
+    },
+    {
+      "layout": "spot",
+      "cat": "r",
+      "tag": "韩国菜｜North Strathfield",
+      "name": "Myeong Dong",
+      "addr": "1 George Street",
+      "images": [
+        "data/post_img/cc_myeongdong_37.jpg",
+        "data/post_img/cc_myeongdong_45.jpg"
+      ],
+      "lines": [
+        "每天上午10点开到午夜。至少12样小菜，免费续。",
+        "招牌是辣猪骨汤、海鲜煎饼和菜包肉，不做烤肉。"
+      ]
+    },
+    {
+      "layout": "spot",
+      "cat": "c",
+      "tag": "咖啡｜Bakehouse Quarter",
+      "name": "Bar Biscotti",
+      "addr": "24 George Street",
+      "images": [
+        "data/post_img/cc_biscotti_21.jpg",
+        "data/post_img/cc_biscotti_17.jpg"
+      ],
+      "lines": [
+        "开在Arnott's饼干厂旧址里的意式咖啡馆，工作日早6点开门。",
+        "早午餐、汉堡、法式吐司，还有意式脆饼。"
+      ]
+    },
+    {
+      "layout": "spot",
+      "cat": "c",
+      "tag": "咖啡｜Bakehouse Quarter",
+      "name": "August Coffee",
+      "addr": "16 George Street",
+      "images": [
+        "data/post_img/cc_august_01.jpg",
+        "data/post_img/cc_august_06.jpg"
+      ],
+      "lines": [
+        "周一至周六开到晚上10点，在咖啡店里算很晚，可以喝酒。",
+        "有三明治和简餐。"
+      ]
+    },
+    {
+      "layout": "spot",
+      "cat": "r",
+      "tag": "葡式烤鸡｜Concord",
+      "name": "Frango",
+      "addr": "92 Majors Bay Road",
+      "images": [
+        "data/post_img/cc_frango_10.jpg"
+      ],
+      "lines": [
+        "从Petersham开过来的家族店，炭烤鸡配piri-piri辣酱。",
+        "还有烤肉串、葡式蛋挞，户外座位很大。"
+      ]
+    },
+    {
+      "layout": "spot",
+      "cat": "r",
+      "tag": "意大利菜｜Concord",
+      "name": "Maranello's",
+      "addr": "80 Majors Bay Road",
+      "images": [
+        "data/post_img/cc_maranellos_01.jpg",
+        "data/post_img/cc_maranellos_03.jpg"
+      ],
+      "lines": [
+        "意面和柴火披萨，海鲜意面受欢迎，有儿童菜单。",
+        "每天午市和晚市都开。"
+      ]
+    },
+    {
+      "layout": "spot",
+      "cat": "c",
+      "tag": "咖啡｜Concord",
+      "name": "Organica",
+      "addr": "43 Majors Bay Road",
+      "images": [
+        "data/post_img/cc_organica_01.jpg"
+      ],
+      "lines": [
+        "2009年在这里起家的咖啡馆兼甜品店，早上5点半开门，周五周六开到晚11点。",
+        "希腊风味早午餐、巴克拉瓦法式吐司、提拉米苏蛋糕。"
+      ]
+    },
+    {
+      "layout": "spot",
+      "cat": "c",
+      "tag": "咖啡｜Concord",
+      "name": "Paperboy",
+      "addr": "18 Tennyson Road",
+      "images": [
+        "data/post_img/cc_paperboy_19.jpg",
+        "data/post_img/cc_paperboy_05.jpg"
+      ],
+      "lines": [
+        "Rhodes的Left of Field同一个团队，咖啡用Single O。",
+        "招牌是巧克力华夫三明治，夹牛轧糖冰淇淋和椰丝，像lamington。"
+      ]
+    },
+    {
+      "layout": "spot",
+      "cat": "c",
+      "tag": "咖啡｜Concord West",
+      "name": "Mattina",
+      "addr": "82 Queen Street，车站旁",
+      "images": [
+        "data/post_img/cc_mattina_08.jpg",
+        "data/post_img/cc_mattina_07.jpg"
+      ],
+      "lines": [
+        "Concord West车站旁的社区咖啡店。",
+        "早午餐、三明治和可颂。"
+      ]
+    },
+    {
+      "layout": "spot_list",
+      "headline": "还有这几家",
+      "entries": [
+        {
+          "name": "Pajuok 파주옥",
+          "cat": "r",
+          "addr": "21a Victoria Avenue, Concord West",
+          "text": "韩式汤饭：猪肉汤饭$26、雪浓汤$28、血肠汤饭$27。周一休息，午市11点至3点，晚市5点至9点。"
+        },
+        {
+          "name": "Late Night Table",
+          "cat": "r",
+          "addr": "5 George Street, North Strathfield",
+          "text": "韩式夜宵，店名意思是“夜宵桌”，可以喝酒。"
+        },
+        {
+          "name": "Daikoku Teppanyaki",
+          "cat": "r",
+          "addr": "88 Majors Bay Road, Concord",
+          "text": "只有24个座位的铁板烧，主打5道菜套餐，有澳洲牛排和龙虾尾。周一休息。"
+        },
+        {
+          "name": "Da Franco Incontro",
+          "cat": "r",
+          "addr": "137 Parramatta Road, Concord",
+          "text": "意大利菜和海鲜。"
+        },
+        {
+          "name": "ThreeOneNine",
+          "cat": "r",
+          "addr": "319 Concord Road, Concord West",
+          "text": "现代澳洲菜，街头小吃风格。"
+        }
+      ]
+    }
+  ]
+}

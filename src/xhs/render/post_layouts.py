@@ -226,6 +226,52 @@ def cover_mosaic(p, ctx):
     return img
 
 
+def spot(p, ctx):
+    """合集里的单店页：上面一到两张照片，下面店名、地址和两三句介绍。"""
+    img = Image.new("RGB", (W, H), CREAM)
+    imgs = p.get("images", [])
+    ph = p.get("photo_h", 760)
+    foci = p.get("focus") or [None] * len(imgs)
+    if len(imgs) == 1:
+        img.paste(_fit_focus(imgs[0], (W, ph), foci[0]), (0, 0))
+    elif len(imgs) >= 2:
+        gw = (W - 8) // 2
+        img.paste(_fit_focus(imgs[0], (gw, ph), foci[0]), (0, 0))
+        img.paste(_fit_focus(imgs[1], (W - gw - 8, ph), foci[1]), (gw + 8, 0))
+    d = ImageDraw.Draw(img)
+    y = (ph if imgs else 120) + 52
+    tagc = (214, 69, 65) if p.get("cat", "r") == "r" else (0, 128, 128)
+    tf = F("sans", "bold", 30); tag = p.get("tag", "")
+    if tag:
+        rrect(d, [M, y, M + tw(tf, tag) + 36, y + 52], 26, fill=tagc)
+        d.text((M + 18, y + 7), tag, font=tf, fill=WHITE); y += 80
+    nf = fit("sans", "black", p["name"], 860, 84, 52)
+    d.text((M, y), p["name"], font=nf, fill=INK); y += int(nf.size * 1.3)
+    if p.get("addr"):
+        d.text((M, y), p["addr"], font=F("sans", "medium", 31), fill=GREY); y += 64
+    for line in p.get("lines", []):
+        y = para(d, (M, y), line, F("sans", "regular", 36), INK, 860, 1.55) + 12
+    return img
+
+
+def spot_list(p, ctx):
+    """没有照片的几家店合在一页，纯文字。"""
+    img = Image.new("RGB", (W, H), CREAM)
+    d = ImageDraw.Draw(img)
+    y = 80
+    if p.get("headline"):
+        d.text((M, y), p["headline"], font=F("sans", "black", 64), fill=INK); y += 110
+    for i, e in enumerate(p.get("entries", [])):
+        if i:
+            d.line([(M, y), (W - M, y)], fill=(220, 210, 196), width=2); y += 30
+        c = (214, 69, 65) if e.get("cat", "r") == "r" else (0, 128, 128)
+        d.ellipse([M, y + 16, M + 18, y + 34], fill=c)
+        d.text((M + 32, y), e["name"], font=F("sans", "black", 42), fill=INK); y += 60
+        d.text((M + 32, y), e["addr"], font=F("sans", "medium", 27), fill=GREY); y += 44
+        y = para(d, (M + 32, y), e["text"], F("sans", "regular", 31), INK, 828, 1.45) + 20
+    return img
+
+
 def cover_split(p, ctx):
     """上下两张照片，中间一条标题带。"""
     img = Image.new("RGB", (W, H), CREAM)
@@ -443,7 +489,7 @@ def closing_photo(p, ctx):
     return img
 
 
-REGISTRY = {"photo_full": photo_full, "photo_duo": photo_duo, "closing_photo": closing_photo, "cover_photo": cover_photo, "cover_full": cover_full, "cover_film": cover_film, "cover_hero": cover_hero, "cover_sleeve": cover_sleeve, "cover_bignum": cover_bignum, "cover_mosaic": cover_mosaic, "cover_split": cover_split, "photo_grid": photo_grid, "compare": compare,
+REGISTRY = {"photo_full": photo_full, "photo_duo": photo_duo, "closing_photo": closing_photo, "cover_photo": cover_photo, "cover_full": cover_full, "cover_film": cover_film, "cover_hero": cover_hero, "cover_sleeve": cover_sleeve, "cover_bignum": cover_bignum, "cover_mosaic": cover_mosaic, "spot": spot, "spot_list": spot_list, "cover_split": cover_split, "photo_grid": photo_grid, "compare": compare,
             "story": story, "closing": closing, "venue": venue, "number": number}
 
 
