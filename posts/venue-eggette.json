@@ -1,0 +1,109 @@
+{
+  "id": "venue-eggette",
+  "title": "Eggette",
+  "pages": [
+    {
+      "layout": "cover_photo",
+      "image": "data/post_img/eggette_8.jpg",
+      "label": "新店｜Haymarket",
+      "headline": [
+        "Chinatown开了一家",
+        "鸡蛋仔专门店"
+      ],
+      "sub": "阿华田、美禄、好立克口味都有"
+    },
+    {
+      "layout": "photo_full",
+      "image": "data/post_img/eggette_3.jpg",
+      "caption": "George Street上的小店面",
+      "sub": "Citymark Building地面层，店里只有一个柜台"
+    },
+    {
+      "layout": "photo_duo",
+      "images": [
+        "data/post_img/eggette_6.jpg",
+        "data/post_img/eggette_7.jpg"
+      ],
+      "captions": [
+        "现倒面糊",
+        "一份一份现烤"
+      ]
+    },
+    {
+      "layout": "photo_full",
+      "image": "data/post_img/eggette_2.jpg",
+      "caption": "外壳薄脆，里面松软",
+      "sub": "媒体对它的形容"
+    },
+    {
+      "layout": "photo_grid",
+      "label": "Eggette｜口味",
+      "headline": [
+        "有夹心，也有原味"
+      ],
+      "images": [
+        "data/post_img/eggette_9.jpg",
+        "data/post_img/eggette_10.jpg",
+        "data/post_img/eggette_1.jpg",
+        "data/post_img/eggette_4.jpg"
+      ],
+      "captions": [
+        "有夹心的口味",
+        "抹茶口味",
+        "装在牛皮纸袋里拿着吃",
+        "烤鸡蛋仔的模具"
+      ]
+    },
+    {
+      "layout": "venue",
+      "image": "data/post_img/eggette_5.jpg",
+      "label": "Eggette｜店铺信息",
+      "headline": [
+        "Eggette"
+      ],
+      "lede": "港式茶餐厅The Peak的戴家开的鸡蛋仔专门店，两兄弟打理。",
+      "facts": {
+        "address": "George Street 683至689号，Citymark Building地面层",
+        "hours": "每天上午11点半至晚8点半"
+      },
+      "explainer": "朱古力粒和红豆最受欢迎，还有阿华田、美禄、好立克、芝士、抹茶口味，也卖鸳鸯。"
+    },
+    {
+      "layout": "compare",
+      "label": "Eggette｜说实话",
+      "headline": [
+        "开业一个多月",
+        "评价还很少"
+      ],
+      "cols": [
+        "目前知道的"
+      ],
+      "rows": [
+        [
+          "背景",
+          "戴家2019年在Bondi Junction开港式茶餐厅The Peak，2021年搬到Glebe，鸡蛋仔一直卖得好"
+        ],
+        [
+          "媒体怎么说",
+          "外壳薄脆，里面松软"
+        ],
+        [
+          "还不知道",
+          "价格多少、要不要排队，网上还找不到食客评价"
+        ]
+      ],
+      "note": "去过的朋友，欢迎在评论区补充。"
+    },
+    {
+      "layout": "closing_photo",
+      "image": "data/post_img/eggette_1.jpg",
+      "headline": [
+        "下次路过Chinatown"
+      ],
+      "lines": [
+        "Eggette｜George Street 683至689号"
+      ],
+      "question": "你心里悉尼最好吃的鸡蛋仔是哪家？"
+    }
+  ]
+}
