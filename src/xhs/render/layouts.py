@@ -15,6 +15,7 @@ FACT_LABELS = [("address", "地址"), ("hours", "营业"), ("price", "价格"), 
 def brand(d, color, y=1420, align="left"):
     if not config.settings().get("show_brand", True):
         return
+    y = min(y, H - 43)
     f = F("sans", "medium", 22)
     t = config.settings()["account_name"]
     x = M if align == "left" else W - M - tw(f, t)
@@ -316,7 +317,7 @@ def number_poster(it, ctx):
     y = para(d, (M, y + 10), it.get("lede", ""), F("sans", "regular", BODY), pal["ink"], 860) + 30
     scratch = ImageDraw.Draw(Image.new("RGB", (W, H * 2)))
     h = _number_body(scratch, it, pal, 0)
-    free_space = 1380 - y - h
+    free_space = H - 120 - y - h
     _number_body(d, it, pal, y + max(0, int(free_space * 0.45)))
     brand(d, pal["ink"], y=1420)
     return img
@@ -359,7 +360,7 @@ def qa_cards(it, ctx):
 # ------------------------------------------------------------------ 照片海报
 def photo_poster(it, ctx):
     img = Image.new("RGB", (W, H), CREAM)
-    ph = 860
+    ph = 740
     img.paste(cover_crop(it["image"]["path"], (W, ph)), (0, 0))
     d = ImageDraw.Draw(img)
     k = kicker_text(it)
@@ -377,7 +378,7 @@ def photo_poster(it, ctx):
         y = fact_rows(d, it.get("facts"), M, y, CORAL, INK)
     else:
         y = bullets(d, it.get("points", [])[:3], M, y, 860, INK, CORAL)
-    if it.get("explainer") and y < 1300:
+    if it.get("explainer") and y < H - 130:
         para(d, (M, y + 6), it["explainer"], F("sans", "regular", BODY), (90, 84, 76), 860, 1.45, max_lines=2)
     return img
 

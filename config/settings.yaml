@@ -34,7 +34,8 @@ images:
   min_width: 900
 
 render:
-  size: [1000, 1500]
+  size: [1000, 1333]     # 设计画布，3:4
+  output_size: [1080, 1440]   # 小红书 3:4 标准尺寸
   body_size: 30          # 全组正文字号统一
   max_same_family_per_week: 2
   fonts:   # 换电脑或服务器时改成字体实际所在的文件夹

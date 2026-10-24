@@ -3,7 +3,7 @@ import math, random
 
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 
-W, H = 1000, 1500
+W, H = 1000, 1333  # 3:4 设计画布，保存时放大到 config 里的 output_size
 M = 70  # 左右页边距
 
 from .. import config as _config

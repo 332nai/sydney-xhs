@@ -35,7 +35,7 @@ def render_issue(issue: dict, out_dir=None) -> list:
 
 
 def overview(files, dest, cols=5):
-    tw_, th, gap = 300, 450, 20
+    tw_, th, gap = 300, 400, 20
     rows = math.ceil(len(files) / cols)
     sheet = Image.new("RGB", (cols * tw_ + (cols + 1) * gap, rows * th + (rows + 1) * gap), (40, 40, 42))
     for i, f in enumerate(files):
@@ -65,6 +65,9 @@ def render_post(post: dict, base_dir: str, out_dir: str) -> list:
         lay = page["layout"]
         v = variants.get(lay, 0); variants[lay] = v + 1
         img = post_layouts.REGISTRY[lay](page, {"variant": v})
+        out_size = tuple(config.settings()["render"].get("output_size", img.size))
+        if img.size != out_size:
+            img = img.resize(out_size, Image.LANCZOS)
         name = f"{i:02d}_{lay}.png"
         img.save(os.path.join(out_dir, name))
         files.append(os.path.join(out_dir, name))

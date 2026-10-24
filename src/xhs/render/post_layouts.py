@@ -20,13 +20,13 @@ def _shade(img, box, alpha=150):
 def cover_photo(p, ctx):
     """整版照片，底部深色区放大标题。"""
     img = Image.new("RGB", (W, H), INK)
-    img.paste(_img(p["image"], (W, 1060)), (0, 0))
+    img.paste(_img(p["image"], (W, 900)), (0, 0))
     d = ImageDraw.Draw(img)
     if p.get("label"):
         f = F("sans", "bold", 26)
         rrect(d, [M - 16, 64, M + tw(f, p["label"]) + 16, 112], 24, fill=(20, 20, 20))
         d.text((M, 70), p["label"], font=f, fill=CREAM)
-    y = 1100
+    y = 935
     acc = p.get("accent")
     for i, line in enumerate(p.get("headline", [])):
         f = fit("sans", "black", line, 860, 96, 56)
@@ -41,14 +41,14 @@ def cover_split(p, ctx):
     """上下两张照片，中间一条标题带。"""
     img = Image.new("RGB", (W, H), CREAM)
     a, b = p["images"][:2]
-    img.paste(_img(a, (W, 560)), (0, 0))
-    img.paste(_img(b, (W, 560)), (0, 940))
+    img.paste(_img(a, (W, 480)), (0, 0))
+    img.paste(_img(b, (W, 480)), (0, 853))
     d = ImageDraw.Draw(img)
-    d.rectangle([0, 560, W, 940], fill=p.get("band", CREAM))
+    d.rectangle([0, 480, W, 853], fill=p.get("band", CREAM))
     ink = INK if not p.get("band") else CREAM
     if p.get("label"):
-        d.text((M, 588), p["label"], font=F("sans", "bold", 26), fill=CORAL)
-    y = 640
+        d.text((M, 508), p["label"], font=F("sans", "bold", 26), fill=CORAL)
+    y = 560
     for line in p.get("headline", []):
         f = fit("sans", "black", line, 860, 92, 52)
         d.text((M, y), line, font=f, fill=ink)
@@ -58,7 +58,7 @@ def cover_split(p, ctx):
     tags = p.get("tags", [])
     if tags:
         f = F("sans", "bold", 26)
-        for (x, yy), t in zip([(M, 500), (M, 1380)], tags):
+        for (x, yy), t in zip([(M, 420), (M, 1270)], tags):
             rrect(d, [x - 14, yy - 6, x + tw(f, t) + 14, yy + 42], 22, fill=(20, 20, 20))
             d.text((x, yy), t, font=f, fill=CREAM)
     return img
@@ -75,10 +75,10 @@ def photo_grid(p, ctx):
         d.text((M, y), line, font=f, fill=INK); y += int(f.size * 1.25)
     y += 20
     cells = list(zip(p["images"], p.get("captions", [""] * len(p["images"]))))[:4]
-    cw, ch, gap = 420, 520, 20
+    cw, ch, gap = 420, 450, 20
     for i, (im, cap) in enumerate(cells):
         x = M + (i % 2) * (cw + gap)
-        yy = y + (i // 2) * (ch + 90)
+        yy = y + (i // 2) * (ch + 80)
         img.paste(_img(im, (cw, ch)), (x, yy))
         para(d, (x, yy + ch + 12), cap, F("sans", "medium", 26), INK, cw, 1.35, max_lines=2)
     return img
@@ -116,7 +116,7 @@ def compare(p, ctx):
         d.text((M, y), line, font=f, fill=INK); y += int(f.size * 1.25)
     scratch = ImageDraw.Draw(Image.new("RGB", (W, H * 2)))
     h = _compare_body(scratch, p, 0)
-    _compare_body(d, p, y + max(40, int((1380 - y - h) * 0.4)))
+    _compare_body(d, p, y + max(40, int((H - 120 - y - h) * 0.4)))
     layouts.brand(d, GREY, y=1420)
     return img
 
@@ -124,9 +124,9 @@ def compare(p, ctx):
 def story(p, ctx):
     """长文页：一张横幅照片加几段正文，适合讲人物故事。"""
     img = paper((246, 241, 231)); d = ImageDraw.Draw(img)
-    img.paste(_img(p["image"], (W, 560)), (0, 0))
+    img.paste(_img(p["image"], (W, 480)), (0, 0))
     d = ImageDraw.Draw(img)
-    y = 610
+    y = 525
     if p.get("label"):
         d.text((M, y), p["label"], font=F("sans", "bold", 26), fill=CORAL); y += 50
     for line in p.get("headline", []):
@@ -135,7 +135,7 @@ def story(p, ctx):
     y += 16
     for para_text in p.get("paragraphs", []):
         y = para(d, (M, y), para_text, F("serif", "regular", BODY + 6), (50, 48, 45), 860, 1.7) + 26
-    if p.get("quote") and y < 1200:
+    if p.get("quote") and y < H - 200:
         d.line([(M, y + 20), (M, y + 150)], fill=CORAL, width=6)
         para(d, (M + 34, y + 24), p["quote"], F("serif", "bold", 44), INK, 820, 1.4, max_lines=2)
     layouts.brand(d, GREY, y=1420)
@@ -146,7 +146,7 @@ def closing(p, ctx):
     """结尾页：一句话总结加互动问题。"""
     img = paper(p.get("bg", NAVY), grain=8); d = ImageDraw.Draw(img)
     ink = CREAM if p.get("bg", NAVY) in (NAVY, TEAL, INK) else INK
-    y = 260
+    y = 230
     for line in p.get("headline", []):
         f = fit("serif", "black", line, 860, 80, 48)
         d.text((M, y), line, font=f, fill=ink); y += int(f.size * 1.3)
@@ -155,7 +155,7 @@ def closing(p, ctx):
         y = para(d, (M, y), item, F("sans", "regular", BODY + 2), ink, 860, 1.6) + 14
     q = p.get("question", "")
     if q:
-        top = 1120
+        top = H - 333
         rrect(d, [M, top, W - M, top + 190], 20, outline=CORAL, width=3)
         para(d, (M + 34, top + 38), q, F("sans", "bold", 40), ink, 790, 1.35, max_lines=2)
     layouts.brand(d, ink, y=1420)
@@ -197,7 +197,7 @@ def photo_full(p, ctx):
         rrect(d, [M - 16, 64, M + tw(f, p["label"]) + 16, 112], 24, fill=(20, 20, 20))
         d.text((M, 70), p["label"], font=f, fill=CREAM)
     if p.get("caption") or p.get("sub"):
-        _caption_band(img, d, 1260 if p.get("sub") else 1320, p.get("caption"), p.get("sub"))
+        _caption_band(img, d, H - 240 if p.get("sub") else H - 180, p.get("caption"), p.get("sub"))
     return img
 
 
@@ -206,11 +206,11 @@ def photo_duo(p, ctx):
     img = Image.new("RGB", (W, H), INK)
     a, b = p["images"][:2]
     caps = p.get("captions", ["", ""])
-    img.paste(_img(a, (W, 740)), (0, 0))
-    img.paste(_img(b, (W, 740)), (0, 760))
+    img.paste(_img(a, (W, 656)), (0, 0))
+    img.paste(_img(b, (W, 657)), (0, 676))
     d = ImageDraw.Draw(img)
     f = F("sans", "bold", 30)
-    for (y, cap) in [(660, caps[0]), (1420, caps[1])]:
+    for (y, cap) in [(576, caps[0]), (H - 80, caps[1])]:
         if cap:
             rrect(d, [M - 18, y - 10, M + tw(f, cap) + 18, y + 48], 26, fill=(20, 20, 20))
             d.text((M, y - 2), cap, font=f, fill=CREAM)
@@ -220,10 +220,10 @@ def photo_duo(p, ctx):
 def closing_photo(p, ctx):
     """结尾页：上半张照片，下半部分是互动问题。"""
     img = paper(p.get("bg", NAVY), grain=8)
-    img.paste(_img(p["image"], (W, 800)), (0, 0))
+    img.paste(_img(p["image"], (W, 690)), (0, 0))
     d = ImageDraw.Draw(img)
     ink = CREAM
-    y = 860
+    y = 740
     for line in p.get("headline", []):
         f = fit("serif", "black", line, 860, 64, 40)
         d.text((M, y), line, font=f, fill=ink); y += int(f.size * 1.3)
@@ -231,7 +231,7 @@ def closing_photo(p, ctx):
         y = para(d, (M, y + 6), item, F("sans", "regular", BODY), SAND, 860, 1.5) + 6
     q = p.get("question", "")
     if q:
-        top = max(y + 30, 1170)
+        top = max(y + 30, H - 293)
         rrect(d, [M, top, W - M, top + 170], 20, outline=CORAL, width=3)
         para(d, (M + 34, top + 34), q, F("sans", "bold", 38), ink, 790, 1.35, max_lines=2)
     layouts.brand(d, ink, y=1420)
