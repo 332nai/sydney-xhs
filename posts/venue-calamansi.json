@@ -1,0 +1,82 @@
+{
+  "id": "venue-calamansi",
+  "title": "Calamansi",
+  "pages": [
+    {
+      "layout": "cover_full",
+      "image": "data/post_img/calamansi_n7.jpg",
+      "label": "新店｜Cremorne",
+      "headline": [
+        "悉尼MasterChef选手",
+        "开了第一家自己的店"
+      ]
+    },
+    {
+      "layout": "photo_full",
+      "image": "data/post_img/calamansi_n17.jpg",
+      "caption": "Military Road上的小店",
+      "sub": "307 Military Road，Cremorne"
+    },
+    {
+      "layout": "photo_full",
+      "image": "data/post_img/calamansi_n3.jpg",
+      "caption": "整面墙的热带植物壁画",
+      "sub": "店是主厨和员工花几个星期自己装修的"
+    },
+    {
+      "layout": "photo_duo",
+      "images": [
+        "data/post_img/calamansi_n14.jpg",
+        "data/post_img/calamansi_n8.jpg"
+      ],
+      "captions": [
+        "酸甜抱子甘蓝，$18",
+        "炉子里现烤的roti，$6"
+      ]
+    },
+    {
+      "layout": "photo_grid",
+      "label": "Calamansi｜菜",
+      "headline": [
+        "马来和泰式风味的分享菜"
+      ],
+      "images": [
+        "data/post_img/calamansi_n5.jpg",
+        "data/post_img/calamansi_n10.jpg",
+        "data/post_img/calamansi_n12.jpg",
+        "data/post_img/calamansi_n2.jpg"
+      ],
+      "captions": [
+        "小份菜$9至$24",
+        "适合几个人分着吃",
+        "配一碗白饭",
+        "炭炉现烤"
+      ]
+    },
+    {
+      "layout": "photo_duo",
+      "images": [
+        "data/post_img/calamansi_n4.jpg",
+        "data/post_img/calamansi_n6.jpg"
+      ],
+      "captions": [
+        "开放式厨房",
+        "晚上5点开门，周二至周六"
+      ]
+    },
+    {
+      "layout": "venue",
+      "image": "data/post_img/calamansi_n1.jpg",
+      "label": "Calamansi｜店铺信息",
+      "headline": [
+        "Calamansi"
+      ],
+      "lede": "MasterChef选手Sarah Tiong第一家完全属于自己的餐厅，菜单受已故母亲的家常菜影响。",
+      "facts": {
+        "address": "Shop 7/307 Military Road, Cremorne",
+        "hours": "周二至周六晚5点至10点"
+      },
+      "explainer": "招牌是娘惹咖喱鸡$36，几乎每桌都点。叉烧五花肉串$19、新加坡辣椒蟹可乐饼$24也受欢迎。"
+    }
+  ]
+}
