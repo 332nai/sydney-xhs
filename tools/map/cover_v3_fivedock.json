@@ -1,0 +1,122 @@
+{
+ "title1": "悉尼Five Dock附近",
+ "venues": "/tmp/claude-0/-home-claude/d2aa705a-a3c9-5391-b5c6-802034136ddf/scratchpad/fd/final.json",
+ "zoom": 17,
+ "scale": 0.37,
+ "legend": [
+  [
+   "r",
+   "餐厅酒吧"
+  ],
+  [
+   "c",
+   "甜点咖啡"
+  ]
+ ],
+ "out": "/tmp/claude-0/-home-claude/d2aa705a-a3c9-5391-b5c6-802034136ddf/scratchpad/v3/fd.png",
+ "place": {
+  "Akasha Brewing": [
+   "r",
+   54
+  ],
+  "Pasticceria Papa": [
+   "l",
+   -24
+  ],
+  "Duccio Gelato": [
+   "r",
+   26
+  ],
+  "The Lab": [
+   "l",
+   -34
+  ],
+  "Izakaya Gaku": [
+   "r",
+   6
+  ],
+  "Banh Banh Espresso": [
+   "l",
+   -26
+  ],
+  "Pasticceria Tamborrino": [
+   "r",
+   34
+  ],
+  "Raineri's": [
+   "l",
+   -14
+  ],
+  "Buttercrumbs": [
+   "l",
+   10
+  ],
+  "Dino's": [
+   "l",
+   -18
+  ],
+  "Filicudi": [
+   "r",
+   0
+  ],
+  "Bella Puglia": [
+   "r",
+   -4
+  ],
+  "Skinny Tony's": [
+   "l",
+   0
+  ],
+  "Martha's": [
+   "r",
+   0
+  ]
+ },
+ "photos": [
+  [
+   "fd_gaku_25.jpg",
+   [
+    0.4,
+    0.45
+   ]
+  ],
+  [
+   "fd_martha_13.jpg",
+   [
+    0.5,
+    0.5
+   ]
+  ],
+  [
+   "fd_gaku_32c.jpg",
+   [
+    0.5,
+    0.5
+   ]
+  ],
+  [
+   "fd_tamborrino_10.jpg",
+   [
+    0.5,
+    0.6
+   ]
+  ],
+  [
+   "fd_gaku_17.jpg",
+   [
+    0.6,
+    0.45
+   ]
+  ],
+  [
+   "fd_butter_18.jpg",
+   [
+    0.5,
+    0.55
+   ]
+  ]
+ ],
+ "top_h": 430,
+ "bottom_h": 214,
+ "dlat": -0.0003
+}
