@@ -241,10 +241,9 @@ def spot(p, ctx):
     d = ImageDraw.Draw(img)
     y = (ph if imgs else 120) + 52
     tagc = (214, 69, 65) if p.get("cat", "r") == "r" else (0, 128, 128)
-    tf = F("sans", "bold", 30); tag = p.get("tag", "")
-    if tag:
-        rrect(d, [M, y, M + tw(tf, tag) + 36, y + 52], 26, fill=tagc)
-        d.text((M + 18, y + 7), tag, font=tf, fill=WHITE); y += 80
+    tf = F("sans", "medium", 30); tag = p.get("tag", "")
+    if tag:  # 简单的文字标签，不加底色
+        d.text((M, y), tag, font=tf, fill=GREY); y += 58
     nf = fit("sans", "black", p["name"], 860, 84, 52)
     d.text((M, y), p["name"], font=nf, fill=INK); y += int(nf.size * 1.3)
     if p.get("addr"):

@@ -11,7 +11,6 @@
       "cat": "r",
       "tag": "印度菜｜North Strathfield",
       "name": "Abhi's Indian",
-      "addr": "163 Concord Road",
       "images": [
         "data/post_img/cc_abhis_05.jpg",
         "data/post_img/cc_abhis_14.jpg"
@@ -26,7 +25,6 @@
       "cat": "r",
       "tag": "川菜｜North Strathfield",
       "name": "雄起厨房 Shone Chi Kitchen",
-      "addr": "167 Concord Road，Abhi's隔壁",
       "images": [
         "data/post_img/cc_xq_3c.jpg",
         "data/post_img/cc_xq_1.jpg"
@@ -41,7 +39,6 @@
       "cat": "r",
       "tag": "韩国菜｜North Strathfield",
       "name": "Myeong Dong",
-      "addr": "1 George Street",
       "images": [
         "data/post_img/cc_myeongdong_37.jpg",
         "data/post_img/cc_myeongdong_45.jpg"
@@ -56,7 +53,6 @@
       "cat": "c",
       "tag": "咖啡｜Bakehouse Quarter",
       "name": "Bar Biscotti",
-      "addr": "24 George Street",
       "images": [
         "data/post_img/cc_biscotti_21.jpg",
         "data/post_img/cc_biscotti_17.jpg"
@@ -71,7 +67,6 @@
       "cat": "c",
       "tag": "咖啡｜Bakehouse Quarter",
       "name": "August Coffee",
-      "addr": "16 George Street",
       "images": [
         "data/post_img/cc_august_01.jpg",
         "data/post_img/cc_august_06.jpg"
@@ -86,7 +81,6 @@
       "cat": "r",
       "tag": "葡式烤鸡｜Concord",
       "name": "Frango",
-      "addr": "92 Majors Bay Road",
       "images": [
         "data/post_img/cc_frango_10.jpg"
       ],
@@ -100,7 +94,6 @@
       "cat": "r",
       "tag": "意大利菜｜Concord",
       "name": "Maranello's",
-      "addr": "80 Majors Bay Road",
       "images": [
         "data/post_img/cc_maranellos_01.jpg",
         "data/post_img/cc_maranellos_03.jpg"
@@ -115,7 +108,6 @@
       "cat": "c",
       "tag": "咖啡｜Concord",
       "name": "Organica",
-      "addr": "43 Majors Bay Road",
       "images": [
         "data/post_img/cc_organica_01.jpg"
       ],
@@ -129,7 +121,6 @@
       "cat": "c",
       "tag": "咖啡｜Concord",
       "name": "Paperboy",
-      "addr": "18 Tennyson Road",
       "images": [
         "data/post_img/cc_paperboy_19.jpg",
         "data/post_img/cc_paperboy_05.jpg"
@@ -144,7 +135,6 @@
       "cat": "c",
       "tag": "咖啡｜Concord West",
       "name": "Mattina",
-      "addr": "82 Queen Street，车站旁",
       "images": [
         "data/post_img/cc_mattina_08.jpg",
         "data/post_img/cc_mattina_07.jpg"
