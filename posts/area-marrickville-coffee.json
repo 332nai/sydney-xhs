@@ -10,8 +10,8 @@
    "layout": "spot_clean",
    "name": "ONA Coffee",
    "images": [
-    "data/post_img/mk_ona-coffee_06.jpg",
-    "data/post_img/mk_ona-coffee_02.jpg"
+    "data/post_img/mk_ona_pour.jpg",
+    "data/post_img/mk_ona_bar.jpg"
    ],
    "lines": [
     "堪培拉知名烘焙商在悉尼的旗舰店，创始人Sasa Sestic是2015年世界咖啡师冠军。",
@@ -94,8 +94,8 @@
    "layout": "spot_clean",
    "name": "Sample Coffee",
    "images": [
-    "data/post_img/mk_sample_13.jpg",
-    "data/post_img/mk_sample_5.jpg"
+    "data/post_img/mk_sample_cup.jpg",
+    "data/post_img/mk_sample_mural.jpg"
    ],
    "lines": [
     "今年9月开的迷你咖啡吧，就在Sydenham车站旁。",

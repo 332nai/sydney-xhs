@@ -1,0 +1,53 @@
+{
+ "id": "cafe-primary",
+ "title": "Primary Coffee",
+ "pages": [
+  {
+   "layout": "cover_full",
+   "image": "data/post_img/primary_02.jpg",
+   "label": "咖啡｜Marrickville",
+   "headline": [
+    "悉尼这家咖啡店",
+    "后面就是烘豆房"
+   ]
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/primary_00.jpg"
+  },
+  {
+   "layout": "photo_duo",
+   "images": [
+    "data/post_img/primary_03.jpg",
+    "data/post_img/primary_04.jpg"
+   ]
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/primary_hifi.jpg"
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/primary_01.jpg"
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/primary_door.jpg"
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Primary Coffee",
+   "images": [
+    "data/post_img/primary_05.jpg"
+   ],
+   "photo_h": 600,
+   "lines": [
+    "2017年在Potts Point开出第一家，这里是第二家。",
+    "吧台在前，烘豆房在后，每周在店里烘豆。",
+    "当季单品豆既做意式也做手冲。",
+    "点心来自Pioik，甜甜圈来自Shortstop。",
+    "38 Chapel Street，每天下午3点关门。"
+   ]
+  }
+ ]
+}
