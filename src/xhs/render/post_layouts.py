@@ -155,7 +155,8 @@ def cover_sleeve(p, ctx):
     img = Image.composite(Image.new("RGB", (W, H), (20, 14, 10)), img, grad.resize((W, H)))
     d = ImageDraw.Draw(img)
     ink = tuple(p.get("ink", CREAM))
-    d.rectangle([34, 34, W - 34, H - 34], outline=ink, width=3)
+    if p.get("frame", True):
+        d.rectangle([34, 34, W - 34, H - 34], outline=ink, width=3)
     if p.get("label"):
         lf = F("sans", "bold", 26)
         rrect(d, [M - 16, 76, M + tw(lf, p["label"]) + 16, 124], 24, fill=(20, 20, 20))
