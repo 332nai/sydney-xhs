@@ -1,0 +1,164 @@
+{
+ "id": "area-ashfield",
+ "title": "悉尼Ashfield附近吃什么",
+ "pages": [
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/af_map.png"
+  },
+  {
+   "layout": "spot_clean",
+   "name": "夜上海Shanghai Night",
+   "images": [
+    "data/post_img/af_sn_xlb.jpg",
+    "data/post_img/af_sn_sjb.jpg"
+   ],
+   "lines": [
+    "1990年开业，是这条街最早的上海点心店之一。",
+    "招牌是小笼包和生煎包，还有葱油饼和炸酱面。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "新上海New Shanghai",
+   "images": [
+    "data/post_img/af_nsh_spread.jpg",
+    "data/post_img/af_nsh_noodle.jpg"
+   ],
+   "lines": [
+    "就在夜上海隔壁，排队时能隔着玻璃看师傅包小笼。",
+    "生煎包好吃，隔壁小卖部还有鲜肉月饼。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "西安风味小吃",
+   "images": [
+    "data/post_img/af_xa_biang.jpg",
+    "data/post_img/af_xa_rjm.jpg"
+   ],
+   "lines": [
+    "车站旁边的西北小馆。",
+    "招牌是一大碗biangbiang面和肉夹馍。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Eedaero Gamjatang",
+   "images": [
+    "data/post_img/af_eg_stew.jpg",
+    "data/post_img/af_eg_rice.jpg"
+   ],
+   "lines": [
+    "只做一道菜的韩国店：桌上现煮的土豆排骨汤。",
+    "吃到最后加面、加年糕，再炒一锅饭。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Polish Club",
+   "images": [
+    "data/post_img/af_pc_platter.jpg",
+    "data/post_img/af_pc_barszcz.jpg"
+   ],
+   "lines": [
+    "二战后来澳的波兰老兵1967年建的会所。",
+    "餐厅叫Sto Lat，有烤猪肘、香肠和甜菜汤。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Excelsior Jones",
+   "images": [
+    "data/post_img/af_ej_dish.jpg",
+    "data/post_img/af_ej_bun.jpg"
+   ],
+   "lines": [
+    "老牌街坊咖啡馆，拿过Time Out年度最佳咖啡馆。",
+    "招牌早餐是猪肉土豆饼pork hash。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Outfield",
+   "images": [
+    "data/post_img/af_of_burger.jpg",
+    "data/post_img/af_of_park.jpg"
+   ],
+   "lines": [
+    "公园边的咖啡馆，可以借野餐毯坐草地上吃。",
+    "汉堡和三明治，果酱和腌菜都是自己做的。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Ashfield Apothecary",
+   "images": [
+    "data/post_img/af_ap_cake.jpg",
+    "data/post_img/af_ap_front.jpg"
+   ],
+   "lines": [
+    "车站旁边的老房子里一家很小的咖啡店。",
+    "咖啡豆轮换各国客座烘焙商，配波斯爱情蛋糕。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Postino Osteria",
+   "images": [
+    "data/post_img/af_po_pasta.jpg",
+    "data/post_img/af_po_front.jpg"
+   ],
+   "lines": [
+    "老邮局改的意大利餐厅，Ormeggio团队开的。",
+    "手工意面和米兰肉丸，先来一杯spritz。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Solstice",
+   "images": [
+    "data/post_img/af_so_food.jpg",
+    "data/post_img/af_so_pour.jpg"
+   ],
+   "lines": [
+    "只做单品咖啡，New Paradigm烘焙商的团队。",
+    "周六有智利和德国风味的小菜单。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Yakitori Jin",
+   "images": [
+    "data/post_img/af_yj_skewer.jpg",
+    "data/post_img/af_yj_grill.jpg"
+   ],
+   "lines": [
+    "Haberfield的居酒屋，炭火烤鸡肉串。",
+    "也有刺身、啤酒和清酒，晚上开门，最好预订。"
+   ]
+  },
+  {
+   "layout": "list_clean",
+   "headline": "还有这几家",
+   "entries": [
+    {
+     "name": "Bistro Cocotte",
+     "text": "Haberfield的法国小馆，鸭肝慕斯和鞑靼牛肉。"
+    },
+    {
+     "name": "Paesanella",
+     "text": "意大利芝士和熟食店，有芝士做的“蛋糕”。"
+    },
+    {
+     "name": "Peppe's Pasta",
+     "text": "新鲜意面和酱汁的老店。"
+    },
+    {
+     "name": "Goblin",
+     "text": "Summer Hill白天是咖啡馆，晚上变成小酒馆。"
+    }
+   ]
+  }
+ ]
+}

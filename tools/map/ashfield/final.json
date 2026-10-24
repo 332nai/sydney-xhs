@@ -1,0 +1,92 @@
+[
+ {
+  "name": "夜上海Shanghai Night",
+  "cat": "r",
+  "lat": -33.8882951,
+  "lon": 151.1243792
+ },
+ {
+  "name": "新上海New Shanghai",
+  "cat": "r",
+  "lat": -33.8883265,
+  "lon": 151.1244209
+ },
+ {
+  "name": "西安风味小吃",
+  "cat": "r",
+  "lat": -33.8883864,
+  "lon": 151.1253051
+ },
+ {
+  "name": "Eedaero Gamjatang",
+  "cat": "r",
+  "lat": -33.8895602,
+  "lon": 151.12628
+ },
+ {
+  "name": "Polish Club",
+  "cat": "r",
+  "lat": -33.89053,
+  "lon": 151.1266844
+ },
+ {
+  "name": "Postino Osteria",
+  "cat": "r",
+  "lat": -33.891766,
+  "lon": 151.13707
+ },
+ {
+  "name": "Yakitori Jin",
+  "cat": "r",
+  "lat": -33.881294,
+  "lon": 151.13986
+ },
+ {
+  "name": "Bistro Cocotte",
+  "cat": "r",
+  "lat": -33.8813493,
+  "lon": 151.1393782
+ },
+ {
+  "name": "Goblin",
+  "cat": "r",
+  "lat": -33.88969,
+  "lon": 151.13908
+ },
+ {
+  "name": "Excelsior Jones",
+  "cat": "c",
+  "lat": -33.89993,
+  "lon": 151.12706
+ },
+ {
+  "name": "Outfield",
+  "cat": "c",
+  "lat": -33.9033292,
+  "lon": 151.129481
+ },
+ {
+  "name": "Ashfield Apothecary",
+  "cat": "c",
+  "lat": -33.886402,
+  "lon": 151.12602
+ },
+ {
+  "name": "Solstice",
+  "cat": "c",
+  "lat": -33.891582,
+  "lon": 151.13702
+ },
+ {
+  "name": "Paesanella",
+  "cat": "c",
+  "lat": -33.8810854,
+  "lon": 151.1391556
+ },
+ {
+  "name": "Peppe's Pasta",
+  "cat": "c",
+  "lat": -33.8801826,
+  "lon": 151.1387723
+ }
+]
