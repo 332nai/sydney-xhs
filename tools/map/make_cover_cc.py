@@ -8,30 +8,33 @@ NOTO = "/usr/share/fonts/opentype/noto/"
 def F(w, s): return ImageFont.truetype(NOTO + {"b": "NotoSansCJK-Bold.ttc", "k": "NotoSansCJK-Black.ttc", "m": "NotoSansCJK-Medium.ttc"}[w], s, index=2)
 RED, TEAL, INK = (214, 69, 65), (0, 128, 128), (25, 28, 30)
 DARK, ORANGE = (24, 24, 26), (255, 140, 60)
-PHOTO_H = int(sys.argv[1]) if len(sys.argv) > 1 else 560
-tiles_spec = json.loads(sys.argv[2]) if len(sys.argv) > 2 else [["cc_frango_08.jpg", [0.5, 0.5]], ["cc_myeongdong_09.jpg", [0.45, 0.6]], ["cc_abhis_05.jpg", [0.5, 0.45]]]
+PHOTO_H = int(sys.argv[1]) if len(sys.argv) > 1 else 470
+tiles_spec = json.loads(sys.argv[2])
+TB = 136
 def pop(im):
-    return im
+    im = ImageEnhance.Color(im).enhance(1.28)
+    im = ImageEnhance.Contrast(im).enhance(1.06)
+    return ImageEnhance.Brightness(im).enhance(1.03)
 img = Image.new("RGB", (W, H), DARK)
-n = len(tiles_spec); gap = 6; tw = (W - gap * (n - 1)) // n
-x = 0
+gap = 5; cols, rows = 3, 2
+tw = (W - gap * (cols - 1)) / cols; th = (PHOTO_H - gap) / rows
 for i, (f, c) in enumerate(tiles_spec):
-    w = W - x if i == n - 1 else tw
-    t = ImageOps.fit(Image.open(IMG + f).convert("RGB"), (w, PHOTO_H), Image.LANCZOS, centering=tuple(c))
-    img.paste(pop(t), (x, 0)); x += w + gap
-# 照片底部渐变，标题压在照片上
-grad = Image.new("L", (1, PHOTO_H))
-for yy in range(PHOTO_H):
-    k = max(0, (yy - PHOTO_H * 0.5) / (PHOTO_H * 0.5)); grad.putpixel((0, yy), int(235 * k ** 1.4))
-shade = Image.new("RGB", (W, PHOTO_H), DARK)
-top = img.crop((0, 0, W, PHOTO_H)); top.paste(shade, (0, 0), grad.resize((W, PHOTO_H))); img.paste(top, (0, 0))
+    r, q = divmod(i, cols)
+    x0, y0 = round(q * (tw + gap)), round(r * (th + gap))
+    x1, y1 = round(q * (tw + gap) + tw), round(r * (th + gap) + th)
+    t = ImageOps.fit(Image.open(IMG + f).convert("RGB"), (x1 - x0, y1 - y0), Image.LANCZOS, centering=tuple(c))
+    img.paste(pop(t), (x0, y0))
 d = ImageDraw.Draw(img)
-f1 = F("k", 100)
-d.text((60, PHOTO_H - 262), "悉尼Concord附近", font=f1, fill=(255, 255, 255))
-d.text((60, PHOTO_H - 262 + 118), "吃什么？", font=f1, fill=ORANGE)
+TITLE = "悉尼Concord附近"
+fs = 78
+f1 = F("k", fs)
+while f1.getlength(TITLE + "吃什么？") > W - 110: fs -= 2; f1 = F("k", fs)
+tx = (W - f1.getlength(TITLE + "吃什么？")) / 2; ty = PHOTO_H + (TB - fs * 1.18) / 2 - 4
+d.text((tx, ty), TITLE, font=f1, fill=(255, 255, 255))
+d.text((tx + f1.getlength(TITLE), ty), "吃什么？", font=f1, fill=ORANGE)
 # 地图
 vs = json.load(open("final.json")); col = lambda v: RED if v["cat"] == "r" else TEAL
-MAP_Y = PHOTO_H + 8; MAP_H = H - MAP_Y
+MAP_Y = PHOTO_H + TB; MAP_H = H - MAP_Y
 lats = [v["lat"] for v in vs]; lons = [v["lon"] for v in vs]
 clat = (min(lats) + max(lats)) / 2; clon = (min(lons) + max(lons)) / 2 + 0.0002
 SCALE = float(sys.argv[3]) if len(sys.argv) > 3 else 0.62
