@@ -1,0 +1,267 @@
+{
+  "issue_no": 1,
+  "publish_date": "2026-10-29",
+  "cover": {
+    "headline_lines": [
+      "这周悉尼",
+      "变了9件事"
+    ],
+    "highlight": "9",
+    "sticker": [
+      "Metro",
+      "下周五",
+      "通车"
+    ]
+  },
+  "items": [
+    {
+      "kind": "community",
+      "suburb": "Sydenham",
+      "toc": "Metro 西南线10月30日通车",
+      "kicker": "交通",
+      "headline": [
+        "西南线 Metro",
+        "10月30日通车"
+      ],
+      "lede": "Sydenham 至 Bankstown 段自2024年9月起停运改造，下周五起由 Metro 接手，列车可直达 CBD。",
+      "date_badge": {
+        "value": "10.30",
+        "label": "周五 正式通车"
+      },
+      "points": [
+        "413 路：Campsie 经 Summer Hill、Lewisham、Annandale、Broadway 至 CBD，每周加开173班。",
+        "非高峰从每30分钟一班，改为每20分钟一班；高峰仍为15分钟一班。",
+        "418 路：Burwood 至 Sydenham，经 Dulwich Hill、Marrickville，每周加开17班。"
+      ],
+      "impact": "Marrickville、Dulwich Hill 一带停运两年的车站恢复轨道交通，可坐 Metro 直达市区；Annandale 与 Broadway 沿线多了一条更密的公交。",
+      "sources": [
+        "https://cityhub.com.au/inner-west-to-receive-190-new-bus-trips-to-complement-new-metro/"
+      ],
+      "num": 1
+    },
+    {
+      "kind": "community",
+      "suburb": "Erskineville",
+      "toc": "11月15日起 T8 不再停 Redfern",
+      "kicker": "交通",
+      "headline": [
+        "11月15日起",
+        "这4个站的列车变了"
+      ],
+      "before_after": [
+        {
+          "name": "Redfern",
+          "before": "T8 不再停靠",
+          "note": "仍有其他线路"
+        },
+        {
+          "name": "Sydenham",
+          "before": "T8 不再停靠",
+          "note": "仍有 Metro 等"
+        },
+        {
+          "name": "Erskineville",
+          "before": "T8 不再停靠",
+          "after": "改由 T4 服务"
+        },
+        {
+          "name": "St Peters",
+          "before": "T8 不再停靠",
+          "after": "改由 T4 服务"
+        }
+      ],
+      "points": [
+        "T8 在 Green Square 至 Wolli Creek 段，高峰每4分钟一班",
+        "South Coast 线不再经 Wolli Creek，终点改为 Central",
+        "部分行程时间最多增加14分钟"
+      ],
+      "impact": "建议在11月15日前，用 Trip Planner 重查一遍通勤路线",
+      "sources": [
+        "https://cityhub.com.au/longer-travel-times-of-up-to-14-minutes-following-sydney-trains-service-changes/"
+      ],
+      "num": 2
+    },
+    {
+      "kind": "community",
+      "suburb": "Enmore",
+      "toc": "Enmore 街头广场拟永久保留",
+      "kicker": "街道",
+      "headline": [
+        "Enmore 的街头广场",
+        "拟永久保留"
+      ],
+      "lede": "London Street 在 Enmore Road 与 Cambridge Lane 之间的封路试行半年后，Inner West Council 交通论坛建议永久保留。",
+      "big_number": {
+        "value": "+55%",
+        "label": "试行期间，旁边 Cambridge Street 的日均车流增幅"
+      },
+      "points": [
+        "回应调查的居民中，78% 用过这个广场社交或吃外卖",
+        "试行期间 Simmons Street 改为北向单行，并加了自行车道"
+      ],
+      "impact": "永久方案可能增加铺装、座椅、照明和遮阳，需要另外申请资金。",
+      "sources": [
+        "https://cityhub.com.au/road-closures-near-enmore-theatre-to-become-permanent-despite-traffic-concerns/"
+      ],
+      "num": 3
+    },
+    {
+      "kind": "community",
+      "suburb": "Newtown",
+      "toc": "20多个街区或可营业到深夜",
+      "kicker": "夜生活",
+      "headline": [
+        "你家附近，可能要变成",
+        "“夜间娱乐区”"
+      ],
+      "date_badge": {
+        "value": "11.26",
+        "label": "征集截止"
+      },
+      "qa": [
+        {
+          "q": "这是什么？",
+          "a": "City of Sydney 提议设立20多个特别娱乐区。区内场所可能获得更长营业时间和酒牌费折扣，Council 也能单独制定噪音规则。"
+        },
+        {
+          "q": "涉及哪些街区？",
+          "a": "包括 Newtown 与 Erskineville Road、Redfern Street、Glebe Point Road、Oxford Street、Surry Hills 的 Crown Street 等，Ultimo 的 Harris Street 是新增区域。"
+        },
+        {
+          "q": "我能做什么？",
+          "a": "无论支持还是担心噪音，都可以在 Sydney Your Say 网站提交意见，截止日期是11月26日。"
+        }
+      ],
+      "sources": [
+        "https://cityhub.com.au/city-of-sydney-seeking-community-feedback-on-new-special-entertainment-precincts/"
+      ],
+      "num": 4
+    },
+    {
+      "kind": "venue",
+      "suburb": "Darlinghurst",
+      "toc": "Amé｜Darlinghurst 日秘料理",
+      "kicker": "日秘料理",
+      "headline": [
+        "Amé",
+        "日本 × 秘鲁，Nikkei 料理"
+      ],
+      "lede": "Oxford Street 转角，10月22日开业",
+      "facts": {
+        "name": "Amé",
+        "team": "Aalia、Nour 背后的 Esca 餐饮集团",
+        "price": "两档套餐，每人 $89 与 $129",
+        "address": "90 Oxford Street, Darlinghurst",
+        "hours": "周一周二晚餐；周三至周日午餐与晚餐"
+      },
+      "explainer": "什么是 Nikkei：1899年日本移民抵达秘鲁后形成的菜系，用日料的刀工处理秘鲁的辣椒、柑橘与香草，酸辣都很直接。",
+      "sources": [
+        "https://www.broadsheet.com.au/sydney/food-and-drink/article/ame-nikkei-restaurant-darlinghurst-open"
+      ],
+      "num": 5
+    },
+    {
+      "kind": "venue",
+      "suburb": "Surry Hills",
+      "toc": "Sense of Self｜Surry Hills 地下浴场",
+      "kicker": "浴场",
+      "headline": [
+        "墨尔本人气浴场来了"
+      ],
+      "lede": "地下浴场面积是墨尔本原店的四倍，10月8日开业。",
+      "big_number": {
+        "value": "1200㎡",
+        "label": "地下浴场面积，是墨尔本原店的四倍"
+      },
+      "facts": {
+        "name": "Sense of Self",
+        "address": "529 South Dowling Street, Surry Hills",
+        "opened": "10月8日"
+      },
+      "explainer": "两间芬兰桑拿、冷水池、土耳其浴、感官剥离池和热矿物池。每次体验两小时，入场需把手机锁进柜子。",
+      "sources": [
+        "https://www.broadsheet.com.au/sydney/active/article/sense-of-self-bathhouse-surry-hills-open-2026"
+      ],
+      "num": 6
+    },
+    {
+      "kind": "venue",
+      "suburb": "Surry Hills",
+      "toc": "Kiddo Coffee｜Surry Hills 菠萝包",
+      "kicker": "菠萝包",
+      "headline": [
+        "Kiddo Coffee"
+      ],
+      "lede": "港式茶餐厅风格加泰国元素，现烤菠萝包和班兰椰子包。",
+      "facts": {
+        "name": "Kiddo Coffee",
+        "address": "Mary Street 84至86号",
+        "hours": "周一至周五早7点至下午3点"
+      },
+      "sources": [
+        "https://www.broadsheet.com.au/sydney/food-and-drink/article/kiddo-coffee-surry-hills-open"
+      ],
+      "num": 7
+    },
+    {
+      "kind": "venue",
+      "suburb": "Newtown",
+      "toc": "Il Baretto｜Newtown 平价意面",
+      "kicker": "$30以内",
+      "headline": [
+        "Il Baretto"
+      ],
+      "lede": "1999年起家的意面老店，招牌意面都在$30以内，只接受现场排队。",
+      "facts": {
+        "name": "Il Baretto",
+        "address": "365 King Street"
+      },
+      "sources": [
+        "https://www.broadsheet.com.au/sydney/food-and-drink/article/il-baretto-newtown-open"
+      ],
+      "num": 8
+    },
+    {
+      "kind": "venue",
+      "suburb": "Newtown",
+      "toc": "Carlisle Castle｜Newtown 老酒吧重开",
+      "kicker": "1876",
+      "headline": [
+        "Carlisle Castle"
+      ],
+      "lede": "1876年的老酒吧重开，没有老虎机，周一有$20炸肉排和问答夜。",
+      "facts": {
+        "name": "Carlisle Castle",
+        "address": "17至19 Albermarle Street"
+      },
+      "sources": [
+        "https://www.broadsheet.com.au/sydney/food-and-drink/article/carlisle-castle-hotel-newtown-open"
+      ],
+      "num": 9
+    }
+  ],
+  "editor_note": {
+    "headline": "编辑判断",
+    "paragraphs": [
+      "本周最该留意的不是新店，而是11月15日的火车时刻表调整。",
+      "住在 Erskineville、St Peters 的读者，以后要改坐 T4；习惯在 Redfern 坐 T8 去机场的，需要改到 Central 上车。",
+      "Metro 西南线通车后，Marrickville 一带进城会更方便，这对周边的租房和通勤选择都有影响，我们会在后续的街区档案里展开。"
+    ],
+    "question": "你住的街区最近有什么变化？"
+  },
+  "post": {
+    "titles": [
+      "悉尼本周9件事｜地铁通车和5家新店",
+      "11月15日起，Redfern 坐 T8 不停了",
+      "悉尼周报01｜Metro、封路、新浴场、老酒吧"
+    ],
+    "body": "悉尼本周新鲜事，一共9件：4件社区动态，5家新店。",
+    "tags": [
+      "#悉尼生活",
+      "#悉尼新店",
+      "#悉尼交通",
+      "#Newtown",
+      "#SurryHills"
+    ]
+  }
+}

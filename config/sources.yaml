@@ -1,0 +1,83 @@
+# 信息源清单。每个来源一条，改 enabled 就能开关。
+#
+# type 说明：
+#   rss      ：读 RSS 订阅（url 填订阅地址）
+#   listing  ：读栏目列表页，按 link_pattern 找出文章链接（正则表达式）
+#
+# kind 是这个来源主要提供哪类线索：venue（新店）、community（社区动态）、event（活动）、mixed
+# 标了 verify_url: true 的条目，链接是按网站结构推测的，第一次运行前请在浏览器打开确认一下。
+
+sources:
+  - id: cityhub
+    name: City Hub
+    type: rss
+    url: https://cityhub.com.au/feed/
+    kind: community
+    enabled: true
+
+  - id: broadsheet_food
+    name: Broadsheet Sydney 餐饮
+    type: listing
+    url: https://www.broadsheet.com.au/sydney/food-and-drink
+    link_pattern: "/sydney/food-and-drink/article/"
+    kind: venue
+    enabled: true
+
+  - id: broadsheet_active
+    name: Broadsheet Sydney 生活
+    type: listing
+    url: https://www.broadsheet.com.au/sydney/active
+    link_pattern: "/sydney/active/article/"
+    kind: venue
+    enabled: true
+
+  - id: concrete_playground
+    name: Concrete Playground Sydney
+    type: listing
+    url: https://concreteplayground.com/sydney/food-drink
+    link_pattern: "/sydney/food-drink/"
+    kind: venue
+    enabled: true
+    verify_url: true
+
+  - id: timeout_news
+    name: Time Out Sydney 新闻
+    type: listing
+    url: https://www.timeout.com/sydney/news
+    link_pattern: "/sydney/news/"
+    kind: mixed
+    enabled: true
+    verify_url: true
+
+  - id: gourmet_traveller
+    name: Gourmet Traveller 新餐厅
+    type: listing
+    url: https://www.gourmettraveller.com.au/dining-out/food-news/
+    link_pattern: "/dining-out/food-news/"
+    kind: venue
+    enabled: true
+
+  - id: city_of_sydney
+    name: City of Sydney 新闻
+    type: listing
+    url: https://news.cityofsydney.nsw.gov.au/articles
+    link_pattern: "/articles/"
+    kind: community
+    enabled: true
+
+  # 以下 Council 的新闻页链接需要逐一确认后再打开
+  - {id: inner_west_council, name: Inner West Council, type: listing, url: https://www.innerwest.nsw.gov.au/news, link_pattern: "/news/", kind: community, enabled: false, verify_url: true}
+  - {id: canada_bay_council, name: City of Canada Bay, type: listing, url: https://www.canadabay.nsw.gov.au/news, link_pattern: "/news/", kind: community, enabled: false, verify_url: true}
+  - {id: waverley_council, name: Waverley Council, type: listing, url: https://www.waverley.nsw.gov.au/news, link_pattern: "/news/", kind: community, enabled: false, verify_url: true}
+  - {id: north_sydney_council, name: North Sydney Council, type: listing, url: https://www.northsydney.nsw.gov.au/news, link_pattern: "/news/", kind: community, enabled: false, verify_url: true}
+  - {id: willoughby_council, name: Willoughby Council, type: listing, url: https://www.willoughby.nsw.gov.au/news, link_pattern: "/news/", kind: community, enabled: false, verify_url: true}
+  - {id: transport_nsw, name: Transport for NSW 出行公告, type: listing, url: https://transportnsw.info/news, link_pattern: "/news/", kind: community, enabled: false, verify_url: true}
+
+# 规划数据（开发申请），第2阶段再打开。字段名需要按官方数据字典确认。
+planning:
+  enabled: false
+  name: NSW Online DA Data API
+  dataset_page: https://data.nsw.gov.au/data/dataset/online-da-data-api
+  note: 用于提前发现即将开业的餐饮店。接口地址与过滤参数请按数据字典填写到 endpoint 和 filters。
+  endpoint: ""
+  filters: {}

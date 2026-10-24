@@ -1,0 +1,27 @@
+# 覆盖范围：五个片区。采集时只保留落在这些街区里的线索。
+# 修改方法：直接增删 suburbs 列表里的街区名（英文，和媒体报道里的写法一致）。
+# aliases 用来匹配别名或常见拼写，例如 Darlo 指 Darlinghurst。
+
+regions:
+  cbd:
+    name: CBD 及周边
+    suburbs: [Sydney, CBD, Haymarket, The Rocks, Barangaroo, Millers Point, Dawes Point, Pyrmont, Ultimo, Darling Harbour, Circular Quay, Walsh Bay, Chinatown, Wynyard, Martin Place]
+  inner_west:
+    name: 内西
+    suburbs: [Glebe, Forest Lodge, Camperdown, Chippendale, Darlington, Newtown, Enmore, Stanmore, Petersham, Lewisham, Marrickville, Dulwich Hill, Summer Hill, Annandale, Leichhardt, Lilyfield, Rozelle, Balmain, Birchgrove, Haberfield, Ashfield, Five Dock, Drummoyne, Abbotsford, Concord, Concord West, North Strathfield, Burwood, Strathfield, Croydon, Rhodes, Wentworth Point, Breakfast Point, Cabarita, Mortlake, Rodd Point, Russell Lea]
+  east:
+    name: 东区
+    suburbs: [Surry Hills, Darlinghurst, East Sydney, Woolloomooloo, Potts Point, Elizabeth Bay, Kings Cross, Rushcutters Bay, Paddington, Woollahra, Edgecliff, Double Bay, Bellevue Hill, Moore Park, Centennial Park, Bondi Junction, Bondi, North Bondi, Bondi Beach, Tamarama, Bronte, Waverley, Queens Park]
+    aliases: {Darlo: Darlinghurst, Paddo: Paddington}
+  inner_south:
+    name: 南部近郊
+    suburbs: [Redfern, Eveleigh, South Eveleigh, Waterloo, Zetland, Alexandria, Beaconsfield, Erskineville, St Peters, Sydenham, Tempe, Green Square, Rosebery]
+  lower_north:
+    name: 下北
+    suburbs: [North Sydney, Milsons Point, Kirribilli, McMahons Point, Lavender Bay, Waverton, Wollstonecraft, Crows Nest, St Leonards, Greenwich, Neutral Bay, Cremorne, Cammeray, Mosman, Lane Cove, Artarmon, Naremburn, Willoughby, Northbridge, Chatswood]
+
+# 太宽泛的词：只有当模型抽取的街区正好是它时才算，正文里出现不算
+generic: [Sydney]
+
+# 和地址一起出现时容易误判的词，匹配时忽略
+ignore_phrases: ["Sydney Harbour", "Sydney Festival", "Sydney Opera House", "City of Sydney", "Sydney Trains", "Sydney Metro", "Greater Sydney"]

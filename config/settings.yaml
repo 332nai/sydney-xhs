@@ -1,0 +1,45 @@
+# 运行参数。改这里不需要动代码。
+
+account_name: 悉尼内城观察
+
+windows:
+  venue_days: 60        # 新店开业多少天内可以入选
+  community_days: 14    # 社区动态多少天内可以入选
+  event_ahead_days: 14  # 活动在未来多少天内举行可以入选
+
+weekly_issue:
+  min_items: 6
+  max_items: 10
+  min_community: 2      # 每期至少几条社区动态
+  min_venue: 3          # 每期至少几家新店
+  publish_weekday: Thursday
+
+llm:
+  # 模型名可以随时换。写稿和核实用同一个模型，采集抽取可以用更便宜的。
+  write_model: claude-sonnet-5-5
+  extract_model: claude-haiku-5-5
+  max_tokens: 8000
+
+http:
+  user_agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36"
+  timeout_seconds: 25
+  max_articles_per_source: 25
+  polite_delay_seconds: 1.5
+
+images:
+  # 选图顺序：文章里注明“店方提供”的图 > 店铺官网的分享图 > 文章主图 > 不用照片的设计版式
+  preferred_credit_words: ["Courtesy", "Supplied", "supplied", "courtesy"]
+  avoid_credit_words: []   # 不想用的图片署名关键词，例如某位媒体摄影师的名字
+  min_width: 900
+
+render:
+  size: [1000, 1500]
+  body_size: 30          # 全组正文字号统一
+  max_same_family_per_week: 2
+  fonts:   # 换电脑或服务器时改成字体实际所在的文件夹
+    noto_dir: /usr/share/fonts/opentype/noto/          # Noto Sans CJK 与 Noto Serif CJK 的 .ttc
+    inter_dir: /usr/share/fonts/opentype/inter/        # Inter Display 的 .otf
+    lora_file: /usr/share/fonts/truetype/google-fonts/Lora-Variable.ttf
+
+paths:
+  data: data             # 线索库、每期数据、图片缓存都放这里
