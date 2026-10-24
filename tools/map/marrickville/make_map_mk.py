@@ -5,7 +5,8 @@ from PIL import Image, ImageDraw, ImageFont, ImageEnhance
 W, H = 1080, 1440
 NOTO = "/usr/share/fonts/opentype/noto/"
 def F(w, s): return ImageFont.truetype(NOTO + {"b": "NotoSansCJK-Bold.ttc", "k": "NotoSansCJK-Black.ttc", "m": "NotoSansCJK-Medium.ttc"}[w], s, index=2)
-DOT, INK = (150, 92, 52), (25, 28, 30)
+BROWN, GREEN, INK = (140, 82, 44), (0, 128, 110), (25, 28, 30)
+col = lambda v: BROWN if v["cat"] == "k" else GREEN
 vs = json.load(open("final.json"))
 place = json.load(open("place.json"))
 SCALE = float(sys.argv[2]) if len(sys.argv) > 2 else 0.8
@@ -22,16 +23,20 @@ for v in vs:
     t = v["name"]; bw, bh = f.getlength(t) + 18, 34
     bx = x + 16 if side == "r" else x - 16 - bw
     bx = min(max(bx, 10), W - bw - 10); by_ = min(max(y + dy - bh / 2, 10), MAP_H - bh - 10)
-    d.rounded_rectangle([bx, by_, bx + bw, by_ + bh], 8, fill="white", outline=DOT, width=3)
+    d.rounded_rectangle([bx, by_, bx + bw, by_ + bh], 8, fill="white", outline=col(v), width=3)
     d.text((bx + 9, by_ + 2), t, font=f, fill=INK)
 for v in vs:
     x, y = pts[v["name"]]
-    d.ellipse([x - 10, y - 10, x + 10, y + 10], fill="white"); d.ellipse([x - 7, y - 7, x + 7, y + 7], fill=DOT)
+    d.ellipse([x - 10, y - 10, x + 10, y + 10], fill="white"); d.ellipse([x - 7, y - 7, x + 7, y + 7], fill=col(v))
 DARK, ORANGE = (24, 24, 26), (255, 140, 60)
 d.rectangle([0, MAP_H, W, H], fill=DARK)
 f1 = F("k", 104)
 d.text((76, MAP_H + 40), "悉尼Marrickville", font=f1, fill=(255, 255, 255))
 d.text((76, MAP_H + 40 + 126), "咖啡喝什么？", font=f1, fill=ORANGE)
+lf = F("m", 19); lx, ly = 22, MAP_H - 44
+d.rounded_rectangle([lx - 10, ly - 6, lx + 196, ly + 30], 14, fill=(255, 255, 255))
+for c, t in [(BROWN, "咖啡店"), (GREEN, "Cafe")]:
+    d.ellipse([lx, ly + 5, lx + 14, ly + 19], fill=c); d.text((lx + 20, ly - 2), t, font=lf, fill=(90, 90, 90)); lx += 100
 d.text((W - 180, MAP_H - 30), "© OpenStreetMap", font=F("m", 17), fill=(110, 105, 98))
 img.save("mk_map.png")
 print({k: (round(a), round(b)) for k, (a, b) in pts.items()})
