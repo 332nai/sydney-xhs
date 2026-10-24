@@ -511,6 +511,28 @@ def cover_quad(p, ctx):
     return img
 
 
+def cover_five(p, ctx):
+    """封面：上方标题，下方一张大图加一排四张小方图，留白干净。"""
+    m, g = 44, 12
+    img = Image.new("RGB", (W, H), CREAM)
+    d = ImageDraw.Draw(img)
+    lines = p.get("headline", [])
+    f = F("sans", "black", min(fit("sans", "black", l, W - 2 * m, 74, 50).size for l in lines))
+    y = m + 6
+    for line in lines:
+        d.text((m, y), line, font=f, fill=INK); y += int(f.size * 1.26)
+    top = y + 22
+    imgs = p["images"][:5]; foci = p.get("focus") or [None] * 5
+    sw = (W - 2 * m - 3 * g) // 4
+    bh = H - m - sw - g - top
+    img.paste(_fit_focus(imgs[0], (W - 2 * m, bh), foci[0]), (m, top))
+    x = m
+    for i in range(4):
+        w = sw if i < 3 else W - m - x
+        img.paste(_fit_focus(imgs[i + 1], (w, sw), foci[i + 1]), (x, top + bh + g)); x += sw + g
+    return img
+
+
 def photo_duo(p, ctx):
     """上下两张照片，各配一行说明。"""
     img = Image.new("RGB", (W, H), INK)
@@ -549,7 +571,7 @@ def closing_photo(p, ctx):
     return img
 
 
-REGISTRY = {"photo_full": photo_full, "photo_duo": photo_duo, "closing_photo": closing_photo, "cover_photo": cover_photo, "cover_full": cover_full, "cover_quad": cover_quad, "cover_film": cover_film, "cover_hero": cover_hero, "cover_sleeve": cover_sleeve, "cover_bignum": cover_bignum, "cover_mosaic": cover_mosaic, "spot": spot, "spot_list": spot_list, "spot_clean": spot_clean, "list_clean": list_clean, "cover_split": cover_split, "photo_grid": photo_grid, "compare": compare,
+REGISTRY = {"photo_full": photo_full, "photo_duo": photo_duo, "closing_photo": closing_photo, "cover_photo": cover_photo, "cover_full": cover_full, "cover_quad": cover_quad, "cover_five": cover_five, "cover_film": cover_film, "cover_hero": cover_hero, "cover_sleeve": cover_sleeve, "cover_bignum": cover_bignum, "cover_mosaic": cover_mosaic, "spot": spot, "spot_list": spot_list, "spot_clean": spot_clean, "list_clean": list_clean, "cover_split": cover_split, "photo_grid": photo_grid, "compare": compare,
             "story": story, "closing": closing, "venue": venue, "number": number}
 
 

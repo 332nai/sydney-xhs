@@ -1,0 +1,90 @@
+{
+ "id": "cafe-jinius",
+ "title": "Jinius",
+ "pages": [
+  {
+   "layout": "cover_five",
+   "images": [
+    "data/post_img/jin_donut.jpg",
+    "data/post_img/jin_tart_c.jpg",
+    "data/post_img/jin_choco_c.jpg",
+    "data/post_img/jin_toast_c.jpg",
+    "data/post_img/jin_window.jpg"
+   ],
+   "focus": [
+    [
+     0.42,
+     0.5
+    ],
+    null,
+    null,
+    null,
+    [
+     0.6,
+     0.5
+    ]
+   ],
+   "headline": [
+    "悉尼大桥下的面包店",
+    "葡挞加了味噌焦糖"
+   ]
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/jin_board.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ]
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/jin_room.jpg",
+   "focus": [
+    0.45,
+    0.5
+   ]
+  },
+  {
+   "layout": "photo_duo",
+   "images": [
+    "data/post_img/jin_toast.jpg",
+    "data/post_img/jin_plate.jpg"
+   ]
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/jin_window.jpg",
+   "focus": [
+    0.55,
+    0.5
+   ]
+  },
+  {
+   "layout": "photo_duo",
+   "images": [
+    "data/post_img/jin_eggs.jpg",
+    "data/post_img/jin_front.jpg"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Jinius",
+   "images": [
+    "data/post_img/jin_sign.jpg"
+   ],
+   "photo_h": 600,
+   "focus": [
+    [
+     0.5,
+     0.45
+    ]
+   ],
+   "lines": [
+    "韩国面点师Yeongjin Park开的面包店兼咖啡馆，他之前是Tenacious Bakehouse的联合创始人，那款味噌焦糖葡挞就是他做的。",
+    "招牌葡挞回来了，还有牛奶芝士甜甜圈、巧克力杏仁糖可颂和用韩国酒曲发酵的酸种面包。",
+    "离海港大桥300米，Shop 8, 16 Hickson Road, Dawes Point，周三到周日开。"
+   ]
+  }
+ ]
+}
