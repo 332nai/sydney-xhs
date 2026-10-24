@@ -53,6 +53,11 @@ def cover_full(p, ctx):
     shade = Image.new("RGB", (W, H), (12, 10, 10))
     img = Image.composite(shade, img, grad.resize((W, H)))
     d = ImageDraw.Draw(img)
+    if p.get("label"):
+        lf = F("sans", "bold", 34)
+        lw = tw(lf, p["label"])
+        rrect(d, [M - 20, top - 92, M + lw + 20, top - 30], 31, fill=CORAL)
+        d.text((M, top - 88), p["label"], font=lf, fill=WHITE)
     y = top
     for line in lines:
         d.text((M, y), line, font=f, fill=WHITE)

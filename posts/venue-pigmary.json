@@ -4,7 +4,8 @@
   "pages": [
     {
       "layout": "cover_full",
-      "image": "data/post_img/pigmary_n2.jpg",
+      "image": "data/post_img/pigmary_n14.jpg",
+      "label": "新店｜Chippendale",
       "headline": [
         "悉尼名店Ester隔壁",
         "开了一家12座小酒吧"
@@ -29,7 +30,7 @@
         "以猪肉为主的下酒菜"
       ],
       "images": [
-        "data/post_img/pigmary_n14.jpg",
+        "data/post_img/pigmary_n4.jpg",
         "data/post_img/pigmary_n10.jpg",
         "data/post_img/pigmary_n12.jpg",
         "data/post_img/pigmary_n6.jpg"
