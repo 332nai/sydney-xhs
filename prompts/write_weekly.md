@@ -33,7 +33,7 @@
   - impact：这件事对周边居民的影响，不超过70字
 - venue 类还要填 facts：name、address、hours、price、team、opened（只填线索里有的）
 - editor_note.paragraphs：二到三段，每段不超过70字
-- editor_note.question：引导评论的问题
+- editor_note.question：留空，不写向读者提问的句子
 - post.body：小红书正文，不超过900字，前三行出现街区名和关键词，不写来源说明
 - post.tags：6到9个话题标签
 
