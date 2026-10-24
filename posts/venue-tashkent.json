@@ -1,0 +1,77 @@
+{
+  "id": "venue-tashkent",
+  "title": "Tashkent",
+  "pages": [
+    {
+      "layout": "cover_full",
+      "image": "data/post_img/tashkent_13.jpg",
+      "headline": [
+        "悉尼少见的乌兹别克餐厅",
+        "手抓饭、烤包子、拉面"
+      ],
+      "accent": 1
+    },
+    {
+      "layout": "photo_full",
+      "image": "data/post_img/tashkent_8.jpg",
+      "tag": "贴在馕坑里烤的烤包子"
+    },
+    {
+      "layout": "photo_duo",
+      "images": [
+        "data/post_img/tashkent_3.jpg",
+        "data/post_img/tashkent_11.jpg"
+      ],
+      "captions": [
+        "蒸饺manti",
+        "烤包子somsa"
+      ]
+    },
+    {
+      "layout": "photo_full",
+      "image": "data/post_img/tashkent_9.jpg",
+      "tag": "芝麻馕"
+    },
+    {
+      "layout": "photo_duo",
+      "images": [
+        "data/post_img/tashkent_17.jpg",
+        "data/post_img/tashkent_19.jpg"
+      ],
+      "captions": [
+        "老板娘自创的茄子卷",
+        "蜂蜜千层蛋糕"
+      ]
+    },
+    {
+      "layout": "photo_duo",
+      "images": [
+        "data/post_img/tashkent_7.jpg",
+        "data/post_img/tashkent_15.jpg"
+      ],
+      "captions": [
+        "每天现包",
+        ""
+      ]
+    },
+    {
+      "layout": "photo_full",
+      "image": "data/post_img/tashkent_4.jpg",
+      "tag": "Italian Forum里，50个座位"
+    },
+    {
+      "layout": "venue",
+      "image": "data/post_img/tashkent_16.jpg",
+      "label": "Tashkent｜店铺信息",
+      "headline": [
+        "Tashkent"
+      ],
+      "lede": "Dilly和丈夫Farrukh开的乌兹别克餐厅，厨房中间是一座馕坑。",
+      "facts": {
+        "address": "Shop 39/23 Norton Street, Leichhardt",
+        "hours": "周二至周四下午4点半至9点；周五至周日中午至晚9点"
+      },
+      "explainer": "烤包子的面团要提前三天准备，当天卖完就没有了。"
+    }
+  ]
+}
