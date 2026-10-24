@@ -1,0 +1,156 @@
+[
+ {
+  "name": "ONA Coffee",
+  "lat": -33.907322,
+  "lon": 151.16733,
+  "addr": "58-60 Smith Street",
+  "cat": "c"
+ },
+ {
+  "name": "Coffee Alchemy",
+  "lat": -33.9110555,
+  "lon": 151.1643339,
+  "addr": "87 Sydenham Road",
+  "cat": "c"
+ },
+ {
+  "name": "Double Roasters",
+  "lat": -33.9093867,
+  "lon": 151.1622481,
+  "addr": "199 Victoria Road",
+  "cat": "c"
+ },
+ {
+  "name": "Double Tap",
+  "lat": -33.90726,
+  "lon": 151.1672,
+  "addr": "54-56 Smith Street",
+  "cat": "c"
+ },
+ {
+  "name": "Deluca",
+  "lat": -33.90385,
+  "lon": 151.1656,
+  "addr": "5-7 Denby Street",
+  "cat": "c"
+ },
+ {
+  "name": "Roastville",
+  "lat": -33.90788,
+  "lon": 151.16338,
+  "addr": "157 Victoria Road",
+  "cat": "c"
+ },
+ {
+  "name": "Primary",
+  "lat": -33.907822,
+  "lon": 151.1655273,
+  "addr": "38 Chapel Street",
+  "cat": "c"
+ },
+ {
+  "name": "Black Market Roasters",
+  "lat": -33.91014,
+  "lon": 151.16563,
+  "addr": "24 Cadogan Street",
+  "cat": "c"
+ },
+ {
+  "name": "Sample Coffee",
+  "lat": -33.9127628,
+  "lon": 151.1664201,
+  "addr": "37 Sydenham Road",
+  "cat": "c"
+ },
+ {
+  "name": "Superfreak",
+  "lat": -33.9031175,
+  "lon": 151.1687494,
+  "addr": "333A Enmore Road",
+  "cat": "c"
+ },
+ {
+  "name": "Two Chaps",
+  "lat": -33.905586,
+  "lon": 151.16196,
+  "addr": "122 Chapel Street",
+  "cat": "c"
+ },
+ {
+  "name": "Algorithm",
+  "lat": -33.9125841,
+  "lon": 151.1609753,
+  "addr": "109 Marrickville Road",
+  "cat": "c"
+ },
+ {
+  "name": "Valentina's",
+  "lat": -33.90479,
+  "lon": 151.15347,
+  "addr": "132 Livingstone Road",
+  "cat": "c"
+ },
+ {
+  "name": "Matinee",
+  "lat": -33.9037129,
+  "lon": 151.1676186,
+  "addr": "23-29 Addison Road",
+  "cat": "c"
+ },
+ {
+  "name": "Illi Hill",
+  "lat": -33.905285,
+  "lon": 151.16104,
+  "addr": "72 Illawarra Road",
+  "cat": "c"
+ },
+ {
+  "name": "White Rabbit",
+  "lat": -33.9046598,
+  "lon": 151.1720411,
+  "addr": "30 Llewellyn Street",
+  "cat": "c"
+ },
+ {
+  "name": "Sit",
+  "lat": -33.9149815,
+  "lon": 151.152292,
+  "addr": "2/387 Illawarra Road",
+  "cat": "c"
+ },
+ {
+  "name": "Angus",
+  "lat": -33.911915,
+  "lon": 151.16096,
+  "addr": "69 Meeks Road",
+  "cat": "c"
+ },
+ {
+  "name": "Goodwood Bakeshop",
+  "lat": -33.9094855,
+  "lon": 151.1547053,
+  "addr": "297 Marrickville Road",
+  "cat": "c"
+ },
+ {
+  "name": "Bourke Street Bakery",
+  "lat": -33.9080937,
+  "lon": 151.1628285,
+  "addr": "2 Mitchell Street",
+  "cat": "c"
+ },
+ {
+  "name": "Albermarle",
+  "lat": -33.9126778,
+  "lon": 151.1471676,
+  "addr": "249 Livingstone Road",
+  "cat": "c"
+ },
+ {
+  "name": "Warren & Holt",
+  "lat": -33.915634,
+  "lon": 151.1513,
+  "addr": "415-421 Illawarra Road",
+  "cat": "c"
+ }
+]

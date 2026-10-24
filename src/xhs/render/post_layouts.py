@@ -255,6 +255,39 @@ def spot(p, ctx):
     return img
 
 
+def spot_clean(p, ctx):
+    """极简单店页：照片，店名，一两句话。只用两种字号、一种字色。"""
+    img = Image.new("RGB", (W, H), CREAM)
+    imgs = p.get("images", [])
+    ph = p.get("photo_h", 860)
+    foci = p.get("focus") or [None] * len(imgs)
+    if len(imgs) == 1:
+        img.paste(_fit_focus(imgs[0], (W, ph), foci[0]), (0, 0))
+    elif len(imgs) >= 2:
+        gw = (W - 6) // 2
+        img.paste(_fit_focus(imgs[0], (gw, ph), foci[0]), (0, 0))
+        img.paste(_fit_focus(imgs[1], (W - gw - 6, ph), foci[1]), (gw + 6, 0))
+    d = ImageDraw.Draw(img)
+    y = ph + 70
+    nf = F("sans", "black", p.get("name_size", 66))
+    d.text((M, y), p["name"], font=nf, fill=INK); y += int(nf.size * 1.6)
+    for line in p.get("lines", []):
+        y = para(d, (M, y), line, F("sans", "regular", 36), INK, W - 2 * M, 1.6) + 14
+    return img
+
+
+def list_clean(p, ctx):
+    """极简文字页：标题，下面每家店一行店名一行介绍。"""
+    img = Image.new("RGB", (W, H), CREAM)
+    d = ImageDraw.Draw(img)
+    y = 110
+    d.text((M, y), p.get("headline", "还有这几家"), font=F("sans", "black", 64), fill=INK); y += 150
+    for e in p.get("entries", []):
+        d.text((M, y), e["name"], font=F("sans", "bold", 40), fill=INK); y += 62
+        y = para(d, (M, y), e["text"], F("sans", "regular", 34), INK, W - 2 * M, 1.5) + 54
+    return img
+
+
 def spot_list(p, ctx):
     """没有照片的几家店合在一页，纯文字。"""
     img = Image.new("RGB", (W, H), CREAM)
@@ -490,7 +523,7 @@ def closing_photo(p, ctx):
     return img
 
 
-REGISTRY = {"photo_full": photo_full, "photo_duo": photo_duo, "closing_photo": closing_photo, "cover_photo": cover_photo, "cover_full": cover_full, "cover_film": cover_film, "cover_hero": cover_hero, "cover_sleeve": cover_sleeve, "cover_bignum": cover_bignum, "cover_mosaic": cover_mosaic, "spot": spot, "spot_list": spot_list, "cover_split": cover_split, "photo_grid": photo_grid, "compare": compare,
+REGISTRY = {"photo_full": photo_full, "photo_duo": photo_duo, "closing_photo": closing_photo, "cover_photo": cover_photo, "cover_full": cover_full, "cover_film": cover_film, "cover_hero": cover_hero, "cover_sleeve": cover_sleeve, "cover_bignum": cover_bignum, "cover_mosaic": cover_mosaic, "spot": spot, "spot_list": spot_list, "spot_clean": spot_clean, "list_clean": list_clean, "cover_split": cover_split, "photo_grid": photo_grid, "compare": compare,
             "story": story, "closing": closing, "venue": venue, "number": number}
 
 

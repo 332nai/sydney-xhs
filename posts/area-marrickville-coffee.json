@@ -1,0 +1,231 @@
+{
+ "id": "area-marrickville-coffee",
+ "title": "悉尼Marrickville咖啡喝什么",
+ "pages": [
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/mk_map.png"
+  },
+  {
+   "layout": "spot_clean",
+   "name": "ONA Coffee",
+   "images": [
+    "data/post_img/mk_ona-coffee_06.jpg",
+    "data/post_img/mk_ona-coffee_02.jpg"
+   ],
+   "lines": [
+    "堪培拉知名烘焙商在悉尼的旗舰店，创始人Sasa Sestic是2015年世界咖啡师冠军。",
+    "店里有三个吧台，分别做手冲、意式和特调。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Coffee Alchemy",
+   "images": [
+    "data/post_img/mk_coffee-alchemy_06.jpg",
+    "data/post_img/mk_coffee-alchemy_00.jpg"
+   ],
+   "lines": [
+    "开了很多年的老牌烘焙商兼咖啡吧。",
+    "每天开门前，店里会先把当天的咖啡都试一遍。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Double Roasters",
+   "images": [
+    "data/post_img/mk_double-roasters_05.jpg",
+    "data/post_img/mk_double-roasters_07.jpg"
+   ],
+   "lines": [
+    "旧仓库改的大咖啡馆，店里就摆着烘豆机。",
+    "招牌拼配豆叫Flight Path。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Deluca",
+   "images": [
+    "data/post_img/mk_deluca-marrickville_04.jpg",
+    "data/post_img/mk_deluca-marrickville_01.jpg"
+   ],
+   "lines": [
+    "只卖咖啡，不卖吃的，豆子在店里烘。",
+    "原木吧台和大窗户，店里很亮。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Double Tap",
+   "images": [
+    "data/post_img/mk_double-tap-coffee_08.jpg",
+    "data/post_img/mk_double-tap-coffee_02.jpg"
+   ],
+   "lines": [
+    "自己烘豆的街坊小店，蛋糕是老板妈妈做的。",
+    "三明治价格实在，熏牛肉Reuben很受欢迎。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Black Market Roasters",
+   "images": [
+    "data/post_img/mk_black-market-roasters-marrickville_00.jpg",
+    "data/post_img/mk_black-market-roasters-marrickville_03.jpg"
+   ],
+   "lines": [
+    "烘焙厂、咖啡馆和培训教室都在同一个仓库里。",
+    "可以报名品鉴课和咖啡制作课。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Roastville",
+   "images": [
+    "data/post_img/mk_roastville-coffee_11.jpg",
+    "data/post_img/mk_roastville-coffee_02.jpg"
+   ],
+   "lines": [
+    "自己烘豆，和咖啡农场直接合作。",
+    "有一款加了咖啡的奶昔很受欢迎。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Sample Coffee",
+   "images": [
+    "data/post_img/mk_sample_13.jpg",
+    "data/post_img/mk_sample_5.jpg"
+   ],
+   "lines": [
+    "今年9月开的迷你咖啡吧，就在Sydenham车站旁。",
+    "只做饮品，单品用Modbar做意式和手冲。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Superfreak",
+   "images": [
+    "data/post_img/mk_superfreak_09.jpg",
+    "data/post_img/mk_superfreak_01.jpg"
+   ],
+   "lines": [
+    "常被说是悉尼最好看的咖啡馆，店里放黑胶唱片。",
+    "早餐、汤和燕麦粥都做得很家常。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Algorithm",
+   "images": [
+    "data/post_img/mk_algorithm_13.jpg",
+    "data/post_img/mk_algorithm_11.jpg"
+   ],
+   "lines": [
+    "Marrickville Road上的街角店，主厨在Quay做过。",
+    "招牌是班兰卡仕达包，冰饮选择很多。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Two Chaps",
+   "images": [
+    "data/post_img/mk_two-chaps_05.jpg",
+    "data/post_img/mk_two-chaps_00.jpg"
+   ],
+   "lines": [
+    "藏在卷帘门后的素食咖啡馆，面包点心都自己做。",
+    "周五周六晚上还做意面晚餐。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Angus",
+   "images": [
+    "data/post_img/mk_angus_07.jpg",
+    "data/post_img/mk_angus_10.jpg"
+   ],
+   "lines": [
+    "红砖房里的咖啡馆兼烘焙坊，点心每个月换一轮。",
+    "午餐可以点佛卡夏三明治。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Valentina's",
+   "images": [
+    "data/post_img/mk_valentinas_09.jpg",
+    "data/post_img/mk_valentinas_00.jpg"
+   ],
+   "lines": [
+    "Grumpy Donuts团队开的美式小餐馆。",
+    "松饼、炸鸡三明治，还有一柜子甜甜圈。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Matinee",
+   "images": [
+    "data/post_img/mk_matinee_00.jpg",
+    "data/post_img/mk_matinee_01.jpg"
+   ],
+   "lines": [
+    "灵感来自悉尼的老式牛奶吧，店里颜色很多。",
+    "厨房里是做过高级餐厅的厨师。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Illi Hill",
+   "images": [
+    "data/post_img/mk_illi-hill-marrickville_01.jpg",
+    "data/post_img/mk_illi-hill-marrickville_11.jpg"
+   ],
+   "lines": [
+    "Illawarra Road上的街角咖啡馆，比热门店安静。",
+    "菜单按季节换，可以带狗。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Warren & Holt",
+   "images": [
+    "data/post_img/mk_warren-holt_06.jpg",
+    "data/post_img/mk_warren-holt_11.jpg"
+   ],
+   "lines": [
+    "有机全食咖啡馆，对过敏体质和素食都很友好。"
+   ]
+  },
+  {
+   "layout": "list_clean",
+   "headline": "还有这几家",
+   "entries": [
+    {
+     "name": "Primary",
+     "text": "自家烘豆的小咖啡馆，木质空间很安静。"
+    },
+    {
+     "name": "Goodwood Bakeshop",
+     "text": "可颂和酸种面包，点心常常早早卖完。"
+    },
+    {
+     "name": "Bourke Street Bakery",
+     "text": "悉尼老牌面包店，面包和甜点都有名。"
+    },
+    {
+     "name": "White Rabbit",
+     "text": "面包店兼咖啡馆，早上6点半就有点心。"
+    },
+    {
+     "name": "Sit",
+     "text": "Baba's Place团队开的社区咖啡馆。"
+    },
+    {
+     "name": "Albermarle",
+     "text": "街角小咖啡馆，酸种面包很受欢迎。"
+    }
+   ]
+  }
+ ]
+}
