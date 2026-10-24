@@ -248,6 +248,8 @@ def spot(p, ctx):
     d.text((M, y), p["name"], font=nf, fill=INK); y += int(nf.size * 1.3)
     if p.get("addr"):
         d.text((M, y), p["addr"], font=F("sans", "medium", 31), fill=GREY); y += 64
+    else:
+        y += 24
     for line in p.get("lines", []):
         y = para(d, (M, y), line, F("sans", "regular", 36), INK, 860, 1.55) + 12
     return img
