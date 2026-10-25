@@ -160,12 +160,16 @@
     {
      "name": "Pho Hoa",
      "text": "越南河粉店，点一碗生牛肉河粉。"
+    },
+    {
+     "name": "Lillah",
+     "text": "休闲中东菜，炭烤肉和各种分享盘。"
     }
    ]
   },
   {
    "layout": "list_clean",
-   "headline": "咖啡和小吃",
+   "headline": "咖啡、酒吧和小吃",
    "entries": [
     {
      "name": "Commission Coffee",
@@ -178,6 +182,14 @@
     {
      "name": "Destination Roll",
      "text": "7月开的越南法棍店，也有河粉和叻沙。"
+    },
+    {
+     "name": "The Alcott",
+     "text": "地中海风味餐厅，有spritz吧和阳光露台。"
+    },
+    {
+     "name": "Longueville Hotel",
+     "text": "街坊酒吧，金枪鱼薄片、布拉塔和油封鸭腿。"
     }
    ]
   }

@@ -6,11 +6,11 @@ NOTO = "/usr/share/fonts/opentype/noto/"
 def F(w, s): return ImageFont.truetype(NOTO + {"b": "NotoSansCJK-Bold.ttc", "k": "NotoSansCJK-Black.ttc"}[w], s, index=2)
 P = "data/post_img/"
 # 每行：[(图片, 店名, 焦点x, 焦点y)]
-CELLS = [
-    ("lc_sho_sashimi.jpg", "Sho Sushi", .45, .35), ("lc_jl_rosti.jpg", "Jules", .5, .5), ("lc_l8_eclair.jpg", "Lamin8", .5, .5), ("lc_vn_pizza.jpg", "Via Napoli", .45, .5),
-    ("lc_ko_ramen.jpg", "Kosuke", .7, .55), ("lc_ec_spread.jpg", "Encasa", .3, .55), ("lc_s11_cans.jpg", "11:11 Sweet", .5, .5), ("lc_sho_wagyu.jpg", "Sho Sushi", .5, .35),
-    ("lc_jl_prawn.jpg", "Jules", .45, .5), ("lc_sh_octopus.jpg", "Shorties", .55, .6), ("lc_kin_pasta.jpg", "KIN", .5, .6), ("lc_l8_choux.jpg", "Lamin8", .5, .5),
-    ("lc_pc_grilled.jpg", "波塞冬", .5, .5), ("lc_sho_uni.jpg", "Sho Sushi", .45, .45), ("lc_ec_jamon.jpg", "Encasa", .45, .5), ("lc_sh_martini.jpg", "Shorties", .45, .5),
+CELLS = [  # 16家店，每家只出现一次
+    ("lc_sho_sashimi.jpg", "Sho Sushi", .45, .35), ("lc_jl_rosti.jpg", "Jules", .5, .5), ("lc_ss_curry.jpg", "Seven Spices", .5, .5), ("lc_vn_pizza.jpg", "Via Napoli", .45, .5),
+    ("lc_ko_ramen.jpg", "Kosuke", .7, .55), ("lc_l8_eclair.jpg", "Lamin8", .5, .5), ("lc_hm_birria.jpg", "Hecho En Mexico", .5, .45), ("lc_ec_spread.jpg", "Encasa", .3, .55),
+    ("lc_li_spread.jpg", "Lillah", .6, .5), ("lc_sh_octopus.jpg", "Shorties", .55, .6), ("lc_kin_pasta.jpg", "KIN", .5, .6), ("lc_s11_cans.jpg", "11:11 Sweet", .5, .5),
+    ("lc_pc_grilled.jpg", "波塞冬", .5, .5), ("lc_al_spread.jpg", "The Alcott", .4, .5), ("lc_bw_toast.jpg", "Birdwood", .5, .5), ("lc_lh_entrees.jpg", "Longueville Hotel", .75, .7),
 ]
 ROWS = [CELLS[i:i + 4] for i in range(0, 16, 4)]
 BAND, GAP = 290, 4

@@ -126,4 +126,4 @@ if __name__ == "__main__":
     chips = [{"text": "Galuwa Dining · 高尔夫球场 ↓", "xy": (-16, MAP_H - 62), "cat": "r"},
              {"text": "↑ Commission Coffee · Lane Cove North", "xy": (-16, 16), "cat": "c"},
              {"text": "← Poseidon's Catch · Lane Cove West", "xy": (16, 16), "cat": "r"}]
-    print(draw_map("lc", ALL, ((-33.8162, -33.8127), (151.1672, 151.1712)), "", 21, chips, out, (90, 90)))
+    print(draw_map("lc", ALL, ((-33.8162, -33.8124), (151.1672, 151.1712)), "", 21, chips, out, (90, 90)))
