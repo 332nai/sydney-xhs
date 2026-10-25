@@ -4,6 +4,10 @@
  "pages": [
   {
    "layout": "photo_full",
+   "image": "data/post_img/lc_cover.png"
+  },
+  {
+   "layout": "photo_full",
    "image": "data/post_img/lc_map.png"
   },
   {
