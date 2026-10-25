@@ -22,6 +22,64 @@
   },
   {
    "layout": "spot_clean",
+   "name": "KIN Cafe",
+   "images": [
+    "data/post_img/lc_kin_pasta.jpg",
+    "data/post_img/lc_kin_front.jpg"
+   ],
+   "lines": [
+    "Harris Farm旁边，白天是咖啡馆，也是酒吧。",
+    "法式吐司、鸭胸咖喱和菠萝炒饭很受欢迎，菜单跟着季节换。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "虎助Kosuke Ramen",
+   "images": [
+    "data/post_img/lc_ko_ramen.jpg",
+    "data/post_img/lc_ko_door.jpg"
+   ],
+   "lines": [
+    "日本主厨Kosuke开的拉面店，总店在North Strathfield。",
+    "有东京风拉面、番茄拉面和蘸面，叉烧可以免费换成炸鸡。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Sho Sushi",
+   "images": [
+    "data/post_img/lc_sho_nigiri.jpg"
+   ],
+   "lines": [
+    "The Village商场里的日料店，有户外座位。",
+    "寿司、刺身、天妇罗，也有热菜。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "11:11 Sweet",
+   "images": [
+    "data/post_img/lc_s11_cans.jpg"
+   ],
+   "lines": [
+    "主厨照着亚洲各地的甜品做的甜品店，就在广场上。",
+    "招牌是罐装千层蛋糕、提拉米苏、北海道软冰淇淋和宇治抹茶拿铁。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "波塞冬Poseidon's Catch",
+   "images": [
+    "data/post_img/lc_pc_grilled.jpg",
+    "data/post_img/lc_pc_platter.jpg"
+   ],
+   "lines": [
+    "Lane Cove West的海鲜炸鱼薯条店，新老板接手后重新装修。",
+    "烤海鲜拼盘有鱼、鱿鱼、大虾和章鱼，也能单点尖吻鲈和John Dory。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
    "name": "Lamin8",
    "images": [
     "data/post_img/lc_l8_eclair.jpg",
@@ -73,18 +131,6 @@
    ]
   },
   {
-   "layout": "spot_clean",
-   "name": "虎助Kosuke Ramen",
-   "images": [
-    "data/post_img/lc_ko_ramen.jpg",
-    "data/post_img/lc_ko_door.jpg"
-   ],
-   "lines": [
-    "日本主厨Kosuke开的拉面店，总店在North Strathfield。",
-    "有东京风拉面、番茄拉面和蘸面，叉烧可以免费换成炸鸡。"
-   ]
-  },
-  {
    "layout": "list_clean",
    "headline": "还有这几家",
    "entries": [
@@ -107,21 +153,13 @@
     {
      "name": "Pho Hoa",
      "text": "越南河粉店，点一碗生牛肉河粉。"
-    },
-    {
-     "name": "Sho Sushi",
-     "text": "The Village商场里的寿司店，有户外座位。"
     }
    ]
   },
   {
    "layout": "list_clean",
-   "headline": "咖啡甜品和外卖",
+   "headline": "咖啡和小吃",
    "entries": [
-    {
-     "name": "KIN",
-     "text": "Harris Farm旁边，白天是咖啡馆，也是酒吧，法式吐司和鸭胸咖喱很受欢迎。"
-    },
     {
      "name": "Commission Coffee",
      "text": "Lane Cove North的精品咖啡店，配抹茶奶油大福。"
@@ -131,16 +169,8 @@
      "text": "Double Roasters团队开在小巷里的咖啡馆，单品豆轮换。"
     },
     {
-     "name": "11:11 Sweet",
-     "text": "广场上的甜品店，蛋糕和各式甜点。"
-    },
-    {
      "name": "Destination Roll",
      "text": "7月开的越南法棍店，也有河粉和叻沙。"
-    },
-    {
-     "name": "Poseidon's Catch",
-     "text": "Lane Cove West的炸鱼薯条店，新老板重新装修过。"
     }
    ]
   }
