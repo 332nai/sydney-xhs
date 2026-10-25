@@ -43,6 +43,10 @@ def draw_map(name, vs, bounds, line2, fs, chips, out, pad=(70, 60)):
         cw = f.getlength(ch["text"]) + fs * 0.8; cx, cy = ch["xy"]
         if cx < 0: cx = W - cw + cx
         ch["_r"] = (cx - 6, cy - 6, cx + cw + 6, cy + bh + 6)
+    # 图例：地图左下角，小而淡
+    fl = F("m", 17); LX, LY = 18, MAP_H - 44
+    lw = 2 * (18 + 8 + fl.getlength("老牌")) + 22 + 20
+    chips = chips + [{"_r": (LX - 4, LY - 4, LX + lw + 4, LY + 34 + 4), "legend": True}]
     pts = {v["key"]: mpx(v["lat"], v["lon"]) for v in vs}
     pins = {k: (x - pr - 2, y - pr - 2, x + pr + 2, y + pr + 2) for k, (x, y) in pts.items()}
     # 先放周围最挤的店
@@ -95,21 +99,26 @@ def draw_map(name, vs, bounds, line2, fs, chips, out, pad=(70, 60)):
         d.ellipse([x - pr + 1, y - pr + 1, x + pr - 1, y + pr - 1], fill=COL[v["cat"]])
     # 图外的店：边缘提示
     for ch in chips:
+        if ch.get("legend"): continue
         t = ch["text"]; bw = f.getlength(t) + fs * 0.8; bx, by = ch["xy"]
         if bx < 0: bx = W - bw + bx
         d.rounded_rectangle([bx, by, bx + bw, by + bh], max(5, fs // 3), fill="white", outline=COL[ch["cat"]], width=2)
         d.text((bx + fs * 0.4, by + (bh - fs) / 2 - fs * 0.18), t, font=f, fill=INK)
     d.text((W - 150, MAP_H - 24), "© OpenStreetMap", font=F("m", 14), fill=(115, 110, 104))
+    ov_ = Image.new("RGBA", (W, H), (0, 0, 0, 0)); od = ImageDraw.Draw(ov_)
+    od.rounded_rectangle([LX, LY, LX + lw, LY + 34], 17, fill=(255, 255, 255, 170))
+    img.paste(Image.alpha_composite(img.convert("RGBA"), ov_).convert("RGB")); d = ImageDraw.Draw(img)
+    x = LX + 12
+    for lab, c in (("老牌", OLD), ("新秀", NEW)):
+        d.ellipse([x, LY + 10, x + 14, LY + 24], fill=c); x += 22
+        d.text((x, LY + 4), lab, font=fl, fill=(95, 90, 85)); x += fl.getlength(lab) + 20
     d.rectangle([0, MAP_H, W, H], fill=DARK)
     f1 = F("k", 84)
-    d.text((70, MAP_H + 32), "悉尼精品咖啡地图", font=f1, fill="white")
-    f2 = F("k", 54)
-    d.text((72, MAP_H + 148), line2, font=f2, fill=(255, 140, 60))
-    fl = F("b", 32); x = W - 70; ly = MAP_H + 62
-    for lab, c in (("新秀", NEW), ("老牌", OLD)):
-        tw = fl.getlength(lab); x -= tw; d.text((x, ly), lab, font=fl, fill="white")
-        x -= 38; d.ellipse([x, ly + 12, x + 26, ly + 38], fill="white"); d.ellipse([x + 6, ly + 18, x + 20, ly + 32], fill=c)
-        x -= 36
+    if line2:
+        d.text((70, MAP_H + 32), "悉尼精品咖啡地图", font=f1, fill="white")
+        d.text((72, MAP_H + 148), line2, font=F("k", 54), fill=(255, 140, 60))
+    else:
+        d.text((70, MAP_H + (BAND - 84) / 2 - 18), "悉尼精品咖啡地图", font=f1, fill="white")
     img.save(out)
     return {k: tuple(round(c) for c in p) for k, p in pts.items()}
 
@@ -119,7 +128,7 @@ if __name__ == "__main__":
     by = lambda a: [v for v in ALL if v["area"] in a]
     IW = ("Solstice", "Mecca Alexandria", "Campos")
     jobs = [
-        ("all", [v for v in by(("cbd", "east", "west")) if v["key"] != "Solstice"], ((-33.9150, -33.8615), (151.1530, 151.2300)), "全图", 13,
+        ("all", [v for v in by(("cbd", "east", "west")) if v["key"] != "Solstice"], ((-33.9150, -33.8615), (151.1530, 151.2300)), "", 13,
          [{"text": "↑ Ratio Coffee · Crows Nest", "xy": (-14, 14), "cat": "n"},
           {"text": "← Solstice · Summer Hill", "xy": (14, 14), "cat": "n"}], (14, 30)),
         ("cbd", by(("cbd",)), ((-33.8870, -33.8618), (151.1935, 151.2105)), "CBD · Ultimo", 20,
