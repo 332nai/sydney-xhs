@@ -1,6 +1,6 @@
 {
  "id": "area-marrickville-beer",
- "title": "悉尼Marrickville啤酒厂和酒吧",
+ "title": "悉尼精酿，来这就够了｜Marrickville最全攻略",
  "pages": [
   {
    "layout": "photo_full",
@@ -118,6 +118,18 @@
    "lines": [
     "2024年10月从The Rocks的Harts Pub搬来，有24个酒头。",
     "砖窑出罗马披萨，招牌是夹炸摩德代拉和波罗伏洛芝士的披萨三明治The Bourdain。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Bracket Brewing",
+   "images": [
+    "data/post_img/mb_brk_00.jpg"
+   ],
+   "photo_h": 860,
+   "lines": [
+    "从Alexandria搬到Addison Road的酒厂，每月出新款。",
+    "主打浑浊IPA、双倍酒花IPA和三倍IPA，欢迎带狗和骑车来的人。"
    ]
   },
   {
@@ -304,11 +316,11 @@
   },
   {
    "layout": "list_clean",
-   "headline": "还有这一家",
+   "headline": "顺路甜品",
    "entries": [
     {
-     "name": "Bracket Brewing",
-     "text": "从Alexandria搬来Addison Road的酒厂，每月出新款，欢迎带狗和骑车来的人。"
+     "name": "Donut Garage",
+     "text": "Mitchell Street上，就在Sauce旁边，喝完酒来个甜甜圈。"
     }
    ]
   }

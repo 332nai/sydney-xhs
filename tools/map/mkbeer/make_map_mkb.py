@@ -114,9 +114,9 @@ def draw_map(name, vs, bounds, line2, fs, chips, out, pad=(70, 60)):
         d.ellipse([x, LY + 10, x + 14, LY + 24], fill=c); x += 22
         d.text((x, LY + 4), lab, font=fl, fill=(95, 90, 85)); x += fl.getlength(lab) + 20
     d.rectangle([0, MAP_H, W, H], fill=DARK)
-    f1 = F("k", 100)
-    d.text((70, MAP_H + 34), "悉尼Marrickville", font=f1, fill="white")
-    d.text((70, MAP_H + 160), "啤酒厂和酒吧", font=f1, fill=(255, 140, 60))
+    f1 = F("k", 86)
+    d.text((70, MAP_H + 34), "悉尼精酿，来这就够了", font=f1, fill="white")
+    d.text((70, MAP_H + 160), "Marrickville最全攻略", font=f1, fill=(255, 140, 60))
     img.save(out)
     return {k: tuple(round(c) for c in p) for k, p in pts.items()}
 

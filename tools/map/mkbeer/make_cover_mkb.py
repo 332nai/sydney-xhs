@@ -40,7 +40,7 @@ for row in ROWS:
         d.text((round(x) + 14, round(y) + h - 18 - fs_), name, font=fl, fill="white", stroke_width=3, stroke_fill=(0, 0, 0))
         x += cw + GAP
     y += rh + GAP
-f1 = F("k", 100)
-d.text((70, H - BAND + 30), "悉尼Marrickville", font=f1, fill="white")
-d.text((70, H - BAND + 152), "啤酒厂和酒吧", font=f1, fill=(255, 140, 60))
+f1 = F("k", 86)
+d.text((70, H - BAND + 30), "悉尼精酿，来这就够了", font=f1, fill="white")
+d.text((70, H - BAND + 152), "Marrickville最全攻略", font=f1, fill=(255, 140, 60))
 img.save(sys.argv[1] if len(sys.argv) > 1 else "lc_cover.png")
