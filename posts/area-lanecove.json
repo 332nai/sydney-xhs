@@ -138,6 +138,85 @@
    ]
   },
   {
+   "layout": "spot_clean",
+   "name": "Seven Spices",
+   "images": [
+    "data/post_img/lc_ss_curry.jpg",
+    "data/post_img/lc_ss_chettinad.jpg",
+    "data/post_img/lc_ss_taco.jpg",
+    "data/post_img/lc_ss_dessert.jpg"
+   ],
+   "lines": [
+    "Burns Bay Road上的现代印度菜，摆盘很精致。",
+    "招牌是切蒂纳德羊膝、鸡肉香饭和黄油鸡。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Lillah",
+   "images": [
+    "data/post_img/lc_li_spread.jpg",
+    "data/post_img/lc_li_steak.jpg",
+    "data/post_img/lc_li_salad.jpg",
+    "data/post_img/lc_li_bar.jpg"
+   ],
+   "lines": [
+    "Longueville Road上的休闲中东餐厅。",
+    "炭烤肉、烤蔬菜和各种分享盘，适合一群人点一桌。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "The Alcott",
+   "images": [
+    "data/post_img/lc_al_spread.jpg",
+    "data/post_img/lc_al_plates.jpg",
+    "data/post_img/lc_al_salmon.jpg",
+    "data/post_img/lc_al_terrace.jpg"
+   ],
+   "lines": [
+    "地中海风味的餐厅，有spritz吧和阳光露台。",
+    "以分享盘为主，配一杯spritz。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Hecho En Mexico",
+   "images": [
+    "data/post_img/lc_hm_birria.jpg",
+    "data/post_img/lc_hm_spread.jpg",
+    "data/post_img/lc_hm_table.jpg"
+   ],
+   "lines": [
+    "The Canopy里的墨西哥餐厅，墨尔本起家的连锁。",
+    "招牌是birria塔可和脆皮鸡肉卷饼，配一杯玛格丽特。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Longueville Hotel",
+   "images": [
+    "data/post_img/lc_lh_entrees.jpg"
+   ],
+   "lines": [
+    "Longueville Road上的街坊酒吧，户外区叫Villa。",
+    "金枪鱼薄片、布拉塔、油封鸭腿，还有Villa牛肉汉堡。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Birdwood",
+   "images": [
+    "data/post_img/lc_bw_toast.jpg",
+    "data/post_img/lc_bw_table.jpg",
+    "data/post_img/lc_bw_cakes.jpg"
+   ],
+   "lines": [
+    "Double Roasters团队开在小巷里的咖啡馆。",
+    "单品豆轮换，早午餐有三文鱼牛油果吐司。"
+   ]
+  },
+  {
    "layout": "list_clean",
    "headline": "还有这几家",
    "entries": [
@@ -150,46 +229,16 @@
      "text": "今年1月开的手工饺子馆，招牌是猪肉韭菜锅贴。"
     },
     {
-     "name": "Seven Spices",
-     "text": "现代印度菜，切蒂纳德羊膝和鸡肉香饭。"
-    },
-    {
-     "name": "Hecho En Mexico",
-     "text": "The Canopy里的墨西哥菜，招牌是birria塔可。"
-    },
-    {
      "name": "Pho Hoa",
      "text": "越南河粉店，点一碗生牛肉河粉。"
     },
-    {
-     "name": "Lillah",
-     "text": "休闲中东菜，炭烤肉和各种分享盘。"
-    }
-   ]
-  },
-  {
-   "layout": "list_clean",
-   "headline": "咖啡、酒吧和小吃",
-   "entries": [
     {
      "name": "Commission Coffee",
      "text": "Lane Cove North的精品咖啡店，配抹茶奶油大福。"
     },
     {
-     "name": "Birdwood",
-     "text": "Double Roasters团队开在小巷里的咖啡馆，单品豆轮换。"
-    },
-    {
      "name": "Destination Roll",
      "text": "7月开的越南法棍店，也有河粉和叻沙。"
-    },
-    {
-     "name": "The Alcott",
-     "text": "地中海风味餐厅，有spritz吧和阳光露台。"
-    },
-    {
-     "name": "Longueville Hotel",
-     "text": "街坊酒吧，金枪鱼薄片、布拉塔和油封鸭腿。"
     }
    ]
   }
