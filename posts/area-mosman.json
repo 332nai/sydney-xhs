@@ -11,7 +11,9 @@
    "name": "Bathers' Pavilion",
    "images": [
     "data/post_img/mos_bathers_out.jpg",
-    "data/post_img/mos_bathers_in.jpg"
+    "data/post_img/mos_bathers_in.jpg",
+    "data/post_img/mos_bathers_dish.jpg",
+    "data/post_img/mos_bathers_terrace.jpg"
    ],
    "lines": [
     "Balmoral海滩上的文物建筑，原来是海滩更衣亭。",
@@ -23,7 +25,9 @@
    "name": "Ormeggio at The Spit",
    "images": [
     "data/post_img/mos_ormeggio_out.jpg",
-    "data/post_img/mos_ormeggio_pasta.jpg"
+    "data/post_img/mos_ormeggio_pasta.jpg",
+    "data/post_img/mos_ormeggio_dessert.jpg",
+    "data/post_img/mos_ormeggio_room.jpg"
    ],
    "lines": [
     "Spit桥边漂在水上的意大利餐厅。",
@@ -35,7 +39,9 @@
    "name": "Chiosco by Ormeggio",
    "images": [
     "data/post_img/mos_chiosco_prawn.jpg",
-    "data/post_img/mos_chiosco_gelato.jpg"
+    "data/post_img/mos_chiosco_gelato.jpg",
+    "data/post_img/mos_chiosco_crudo.jpg",
+    "data/post_img/mos_chiosco_fish.jpg"
    ],
    "lines": [
     "Ormeggio旁边的休闲版，坐在码头上吃。",
@@ -47,6 +53,8 @@
    "name": "St Siandra",
    "images": [
     "data/post_img/mos_siandra_prawn.jpg",
+    "data/post_img/mos_siandra_oyster.jpg",
+    "data/post_img/mos_siandra_dish.jpg",
     "data/post_img/mos_siandra_room.jpg"
    ],
    "lines": [
@@ -70,7 +78,9 @@
    "name": "Fourth Village",
    "images": [
     "data/post_img/mos_fv_pizza.jpg",
-    "data/post_img/mos_fv_cannoli.jpg"
+    "data/post_img/mos_fv_cannoli.jpg",
+    "data/post_img/mos_fv_oven.jpg",
+    "data/post_img/mos_fv_salumi.jpg"
    ],
    "lines": [
     "意大利杂货店兼餐厅，柴火披萨和现做cannoli。",
@@ -94,7 +104,8 @@
    "name": "The Boathouse",
    "images": [
     "data/post_img/mos_boat_deck.jpg",
-    "data/post_img/mos_boat_flowers.jpg"
+    "data/post_img/mos_boat_flowers.jpg",
+    "data/post_img/mos_boat_fruit.jpg"
    ],
    "lines": [
     "Balmoral海滩上老船屋改的咖啡馆，平台伸到水面上。",
@@ -106,7 +117,9 @@
    "name": "Public Dining Room",
    "images": [
     "data/post_img/mos_pdr_prawn.jpg",
-    "data/post_img/mos_pdr_view.jpg"
+    "data/post_img/mos_pdr_view.jpg",
+    "data/post_img/mos_pdr_mussels.jpg",
+    "data/post_img/mos_pdr_fish.jpg"
    ],
    "lines": [
     "Balmoral海边的现代澳洲菜，落地窗外就是沙滩。",
@@ -118,7 +131,8 @@
    "name": "Pasture of Balmoral",
    "images": [
     "data/post_img/mos_pasture_drinks.jpg",
-    "data/post_img/mos_pasture_food.jpg"
+    "data/post_img/mos_pasture_food.jpg",
+    "data/post_img/mos_pasture_juice.jpg"
    ],
    "lines": [
     "Balmoral海滩对面的咖啡馆。",
@@ -130,7 +144,9 @@
    "name": "Mosman Rowers",
    "images": [
     "data/post_img/mos_rowers_out.jpg",
-    "data/post_img/mos_rowers_oyster.jpg"
+    "data/post_img/mos_rowers_oyster.jpg",
+    "data/post_img/mos_rowers_deck.jpg",
+    "data/post_img/mos_rowers_fish.jpg"
    ],
    "lines": [
     "Mosman Bay水上的老划船俱乐部。",

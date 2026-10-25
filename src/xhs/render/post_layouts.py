@@ -263,10 +263,19 @@ def spot_clean(p, ctx):
     foci = p.get("focus") or [None] * len(imgs)
     if len(imgs) == 1:
         img.paste(_fit_focus(imgs[0], (W, ph), foci[0]), (0, 0))
-    elif len(imgs) >= 2:
+    elif len(imgs) == 2:
         gw = (W - 6) // 2
         img.paste(_fit_focus(imgs[0], (gw, ph), foci[0]), (0, 0))
         img.paste(_fit_focus(imgs[1], (W - gw - 6, ph), foci[1]), (gw + 6, 0))
+    elif len(imgs) == 3:
+        lw = int(W * 0.58); rh = (ph - 6) // 2
+        img.paste(_fit_focus(imgs[0], (lw, ph), foci[0]), (0, 0))
+        img.paste(_fit_focus(imgs[1], (W - lw - 6, rh), foci[1]), (lw + 6, 0))
+        img.paste(_fit_focus(imgs[2], (W - lw - 6, ph - rh - 6), foci[2]), (lw + 6, rh + 6))
+    elif len(imgs) >= 4:
+        gw = (W - 6) // 2; gh = (ph - 6) // 2
+        for i, (x, y0) in enumerate([(0, 0), (gw + 6, 0), (0, gh + 6), (gw + 6, gh + 6)]):
+            img.paste(_fit_focus(imgs[i], (W - gw - 6 if x else gw, ph - gh - 6 if y0 else gh), foci[i]), (x, y0))
     d = ImageDraw.Draw(img)
     y = ph + 70
     nf = F("sans", "black", p.get("name_size", 66))
