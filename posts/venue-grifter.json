@@ -1,0 +1,64 @@
+{
+ "id": "venue-grifter",
+ "title": "The Grifter Brewing Co",
+ "pages": [
+  {
+   "layout": "cover_quad",
+   "gap": 0,
+   "images": [
+    "data/post_img/gr_14.jpg",
+    "data/post_img/gr_05.jpg",
+    "data/post_img/gr_08.jpg",
+    "data/post_img/gr_00.jpg"
+   ],
+   "focus": [
+    [
+     0.45,
+     0.5
+    ],
+    [
+     0.6,
+     0.5
+    ],
+    [
+     0.45,
+     0.5
+    ],
+    [
+     0.4,
+     0.5
+    ]
+   ],
+   "headline": [
+    "悉尼这家精酿厂",
+    "有青瓜味啤酒"
+   ]
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/gr_05.jpg"
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/gr_15.jpg"
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/gr_08.jpg"
+  },
+  {
+   "layout": "spot_clean",
+   "name": "The Grifter Brewing Co",
+   "images": [
+    "data/post_img/gr_16.jpg",
+    "data/post_img/gr_04.jpg",
+    "data/post_img/gr_12.jpg",
+    "data/post_img/gr_19.jpg"
+   ],
+   "lines": [
+    "Marrickville旧干洗厂改的大仓库酒馆，有台球桌。",
+    "招牌Pale Ale和西瓜皮尔森Serpent's Kiss，还有青瓜味的C-Boogie，现在也有披萨。"
+   ]
+  }
+ ]
+}
