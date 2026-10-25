@@ -1,0 +1,148 @@
+{
+ "id": "area-lanecove",
+ "title": "悉尼Lane Cove附近吃什么",
+ "pages": [
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/lc_map.png"
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Jules",
+   "images": [
+    "data/post_img/lc_jl_prawn.jpg",
+    "data/post_img/lc_jl_rosti.jpg",
+    "data/post_img/lc_jl_octopus.jpg",
+    "data/post_img/lc_jl_room.jpg"
+   ],
+   "lines": [
+    "Birdwood Lane上的小餐厅，澳洲食材加亚洲风味。",
+    "招牌是龙虾汤泡蟹肉虾饺，土豆饼配味噌卡仕达和鳟鱼籽。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Lamin8",
+   "images": [
+    "data/post_img/lc_l8_eclair.jpg",
+    "data/post_img/lc_l8_choux.jpg",
+    "data/post_img/lc_l8_lamington.jpg",
+    "data/post_img/lc_l8_tarts.jpg"
+   ],
+   "lines": [
+    "20多种酥皮点心，还有活性炭酸种面包。",
+    "可颂、kouign amann和牛肉泡菜派都是自己做的。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Encasa",
+   "images": [
+    "data/post_img/lc_ec_spread.jpg",
+    "data/post_img/lc_ec_jamon.jpg",
+    "data/post_img/lc_ec_legs.jpg"
+   ],
+   "lines": [
+    "Pitt Street老牌西班牙餐厅在Lane Cove的分店。",
+    "红酒炖牛脸颊、蒜香大虾、伊比利亚火腿和巴斯克芝士蛋糕。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Shorties",
+   "images": [
+    "data/post_img/lc_sh_octopus.jpg",
+    "data/post_img/lc_sh_spread.jpg",
+    "data/post_img/lc_sh_martini.jpg"
+   ],
+   "lines": [
+    "亚洲和西班牙风味混搭的鸡尾酒吧。",
+    "下酒菜有手指青柠鰤鱼刺身和羊肉可乐饼。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Via Napoli",
+   "images": [
+    "data/post_img/lc_vn_oven.jpg",
+    "data/post_img/lc_vn_pizza.jpg"
+   ],
+   "lines": [
+    "拿到那不勒斯披萨协会认证的柴火披萨。",
+    "招牌是一米长、三种口味的长条披萨。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "虎助Kosuke Ramen",
+   "images": [
+    "data/post_img/lc_ko_ramen.jpg",
+    "data/post_img/lc_ko_door.jpg"
+   ],
+   "lines": [
+    "日本主厨Kosuke开的拉面店，总店在North Strathfield。",
+    "有东京风拉面、番茄拉面和蘸面，叉烧可以免费换成炸鸡。"
+   ]
+  },
+  {
+   "layout": "list_clean",
+   "headline": "还有这几家",
+   "entries": [
+    {
+     "name": "Galuwa Dining",
+     "text": "10月刚开，窗外是高尔夫球场，周末早餐有舒芙蕾松饼。"
+    },
+    {
+     "name": "Dumpling Head",
+     "text": "今年1月开的手工饺子馆，招牌是猪肉韭菜锅贴。"
+    },
+    {
+     "name": "Seven Spices",
+     "text": "现代印度菜，切蒂纳德羊膝和鸡肉香饭。"
+    },
+    {
+     "name": "Hecho En Mexico",
+     "text": "The Canopy里的墨西哥菜，招牌是birria塔可。"
+    },
+    {
+     "name": "Pho Hoa",
+     "text": "越南河粉店，点一碗生牛肉河粉。"
+    },
+    {
+     "name": "Sho Sushi",
+     "text": "The Village商场里的寿司店，有户外座位。"
+    }
+   ]
+  },
+  {
+   "layout": "list_clean",
+   "headline": "咖啡甜品和外卖",
+   "entries": [
+    {
+     "name": "KIN",
+     "text": "Harris Farm旁边，白天是咖啡馆，也是酒吧，法式吐司和鸭胸咖喱很受欢迎。"
+    },
+    {
+     "name": "Commission Coffee",
+     "text": "Lane Cove North的精品咖啡店，配抹茶奶油大福。"
+    },
+    {
+     "name": "Birdwood",
+     "text": "Double Roasters团队开在小巷里的咖啡馆，单品豆轮换。"
+    },
+    {
+     "name": "11:11 Sweet",
+     "text": "广场上的甜品店，蛋糕和各式甜点。"
+    },
+    {
+     "name": "Destination Roll",
+     "text": "7月开的越南法棍店，也有河粉和叻沙。"
+    },
+    {
+     "name": "Poseidon's Catch",
+     "text": "Lane Cove West的炸鱼薯条店，新老板重新装修过。"
+    }
+   ]
+  }
+ ]
+}
