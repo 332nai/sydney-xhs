@@ -69,6 +69,18 @@
   },
   {
    "layout": "spot_clean",
+   "name": "马华Malay Chinese",
+   "images": [
+    "data/post_img/af_mc_laksa.jpg"
+   ],
+   "photo_h": 860,
+   "lines": [
+    "1987年就在城里卖叻沙的老店，现在Ashfield和Circular Quay各有一家。",
+    "椰浆汤底的叻沙可以选鸡肉、大虾或牛肉，也有炒粿条和海南鸡。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
    "name": "满意小馆",
    "images": [
     "data/post_img/af_my_bento.jpg",
