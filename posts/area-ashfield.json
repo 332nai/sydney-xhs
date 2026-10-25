@@ -44,6 +44,43 @@
   },
   {
    "layout": "spot_clean",
+   "name": "鑫平烧腊Xin Ping BBQ",
+   "images": [
+    "data/post_img/af_xp_window.jpg",
+    "data/post_img/af_xp_duck.jpg"
+   ],
+   "lines": [
+    "Hercules Street上的烧腊店，橱窗里挂满烧鸭。",
+    "烧鸭和叉烧可以挑肥瘦按重量买，也有台湾香肠。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "牛车水Kreta Ayer",
+   "images": [
+    "data/post_img/af_ka_laksa.jpg",
+    "data/post_img/af_ka_chicken.jpg",
+    "data/post_img/af_ka_ckt.jpg"
+   ],
+   "lines": [
+    "Kingsford起家的南洋菜馆，Ashfield这家是分店。",
+    "招牌是什锦叻沙、无骨海南鸡和槟城炒粿条。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "满意小馆",
+   "images": [
+    "data/post_img/af_my_bento.jpg",
+    "data/post_img/af_my_noodle.jpg"
+   ],
+   "lines": [
+    "Liverpool Road上的台湾便当小馆，前身是馄饨店。",
+    "排骨、鸡腿便当和卤味拼盘，店里免费供应冬瓜茶。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
    "name": "Eedaero Gamjatang",
    "images": [
     "data/post_img/af_eg_stew.jpg",
@@ -190,10 +227,6 @@
    "layout": "list_clean",
    "headline": "还有这几家",
    "entries": [
-    {
-     "name": "满意客家热炒",
-     "text": "Liverpool Road上的台湾客家热炒小馆。"
-    },
     {
      "name": "Bistro Cocotte",
      "text": "Haberfield的法国小馆，鸭肝慕斯和鞑靼牛肉。"
