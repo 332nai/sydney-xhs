@@ -1,0 +1,62 @@
+[
+ {
+  "name": "Beta Coffee",
+  "lat": -33.885902,
+  "lon": 151.20778
+ },
+ {
+  "name": "Mecca",
+  "lat": -33.879242,
+  "lon": 151.21564
+ },
+ {
+  "name": "September Studio",
+  "lat": -33.87931,
+  "lon": 151.22417
+ },
+ {
+  "name": "Padre",
+  "lat": -33.882263,
+  "lon": 151.2286296
+ },
+ {
+  "name": "Valet",
+  "lat": -33.905334,
+  "lon": 151.18079
+ },
+ {
+  "name": "Trafalgar St Espresso",
+  "lat": -33.8867785,
+  "lon": 151.1697879
+ },
+ {
+  "name": "Antidote",
+  "lat": -33.8694918,
+  "lon": 151.1952487
+ },
+ {
+  "name": "Workshop Espresso",
+  "lat": -33.8726306,
+  "lon": 151.2071687
+ },
+ {
+  "name": "Grill Americano",
+  "lat": -33.8660324,
+  "lon": 151.2106366
+ },
+ {
+  "name": "Sample Coffee",
+  "lat": -33.9127628,
+  "lon": 151.1664201
+ },
+ {
+  "name": "Primary",
+  "lat": -33.907822,
+  "lon": 151.1655273
+ },
+ {
+  "name": "Stitch Coffee",
+  "lat": -33.9123328,
+  "lon": 151.1631672
+ }
+]
