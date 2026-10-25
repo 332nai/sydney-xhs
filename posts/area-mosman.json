@@ -1,0 +1,115 @@
+{
+ "id": "area-mosman",
+ "title": "悉尼Mosman附近吃什么",
+ "pages": [
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/mos_map.png"
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Bathers' Pavilion",
+   "images": [
+    "data/post_img/mos_bathers_out.jpg",
+    "data/post_img/mos_bathers_in.jpg"
+   ],
+   "lines": [
+    "Balmoral海滩上的文物建筑，原来是海滩更衣亭。",
+    "现在做法式小酒馆菜，窗外就是海。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Ormeggio at The Spit",
+   "images": [
+    "data/post_img/mos_ormeggio_out.jpg",
+    "data/post_img/mos_ormeggio_pasta.jpg"
+   ],
+   "lines": [
+    "Spit桥边漂在水上的意大利餐厅。",
+    "主厨Alessandro Pavoni，主打海鲜和手工意面。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Chiosco by Ormeggio",
+   "images": [
+    "data/post_img/mos_chiosco_prawn.jpg",
+    "data/post_img/mos_chiosco_gelato.jpg"
+   ],
+   "lines": [
+    "Ormeggio旁边的休闲版，坐在码头上吃。",
+    "烤大虾、炸鱼薯条，还有意式冰淇淋。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "St Siandra",
+   "images": [
+    "data/post_img/mos_siandra_prawn.jpg",
+    "data/post_img/mos_siandra_room.jpg"
+   ],
+   "lines": [
+    "Spit海边的地中海餐厅，主厨来自Nomad。",
+    "生蚝、烤虾和手工意面，窗外是一排游艇。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Gunners' Barracks",
+   "images": [
+    "data/post_img/mos_gunners.jpg"
+   ],
+   "lines": [
+    "1870年代的砂岩兵营，在Georges Heights山上。",
+    "招牌是对着海港的英式下午茶。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Fourth Village",
+   "images": [
+    "data/post_img/mos_fv_pizza.jpg",
+    "data/post_img/mos_fv_cannoli.jpg"
+   ],
+   "lines": [
+    "意大利杂货店兼餐厅，柴火披萨和现做cannoli。",
+    "店里还能买芝士、火腿和意大利食材。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "The Fernery",
+   "images": [
+    "data/post_img/mos_fernery_bar.jpg",
+    "data/post_img/mos_fernery_roof.jpg"
+   ],
+   "lines": [
+    "Mosman屋顶花园酒吧，看得到海港。",
+    "主打桃红葡萄酒，适合傍晚来坐坐。"
+   ]
+  },
+  {
+   "layout": "list_clean",
+   "headline": "还有这几家",
+   "entries": [
+    {
+     "name": "Ripples at Chowder Bay",
+     "text": "Chowder Bay码头上的海景餐厅。"
+    },
+    {
+     "name": "Public Dining Room",
+     "text": "Balmoral海边的现代澳洲菜。"
+    },
+    {
+     "name": "Burnt Orange",
+     "text": "Georges Heights老房子里的咖啡馆，带花园。"
+    },
+    {
+     "name": "Four Frogs Creperie",
+     "text": "法式可丽饼小店。"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,68 @@
+[
+ {
+  "name": "Bathers' Pavilion",
+  "cat": "r",
+  "lat": -33.826366,
+  "lon": 151.25188
+ },
+ {
+  "name": "Ormeggio",
+  "cat": "r",
+  "lat": -33.80435,
+  "lon": 151.24574
+ },
+ {
+  "name": "Chiosco",
+  "cat": "r",
+  "lat": -33.80405,
+  "lon": 151.2459
+ },
+ {
+  "name": "St Siandra",
+  "cat": "r",
+  "lat": -33.8068,
+  "lon": 151.247
+ },
+ {
+  "name": "Gunners' Barracks",
+  "cat": "c",
+  "lat": -33.8367862,
+  "lon": 151.2583932
+ },
+ {
+  "name": "Fourth Village",
+  "cat": "c",
+  "lat": -33.8252,
+  "lon": 151.24052
+ },
+ {
+  "name": "The Fernery",
+  "cat": "c",
+  "lat": -33.828304,
+  "lon": 151.24376
+ },
+ {
+  "name": "Ripples",
+  "cat": "r",
+  "lat": -33.8389984,
+  "lon": 151.2551347
+ },
+ {
+  "name": "Public Dining Room",
+  "cat": "r",
+  "lat": -33.8276037,
+  "lon": 151.2523792
+ },
+ {
+  "name": "Burnt Orange",
+  "cat": "c",
+  "lat": -33.830322,
+  "lon": 151.25839
+ },
+ {
+  "name": "Four Frogs",
+  "cat": "c",
+  "lat": -33.8318162,
+  "lon": 151.2446647
+ }
+]
