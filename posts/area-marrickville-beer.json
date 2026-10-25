@@ -12,58 +12,28 @@
   },
   {
    "layout": "spot_clean",
-   "name": "Bob Hawke Beer & Leisure",
+   "name": "Kicks Brewing",
    "images": [
-    "data/post_img/mb_bh_05.jpg",
-    "data/post_img/mb_bh_04.jpg",
-    "data/post_img/mb_bh_16.jpg",
-    "data/post_img/mb_bh_19.jpg"
+    "data/post_img/mb_kk_05.jpg",
+    "data/post_img/mb_kk_04.jpg",
+    "data/post_img/mb_kk_02.jpg",
+    "data/post_img/mb_kk_01.jpg"
    ],
    "lines": [
-    "80年代澳洲复古风的啤酒厂，纪念前总理Bob Hawke。",
-    "里面有中餐小馆Lucky Prawn，点虾多士和炸Viennetta冰淇淋，台球室兼小型纪念馆。"
+    "夫妻俩开的小酒厂，设计很有风格。",
+    "10个酒头每月轮换限量款，招牌是日式米啤酒Golden Child。"
    ]
   },
   {
    "layout": "spot_clean",
-   "name": "Philter Brewing",
+   "name": "Bracket Brewing",
    "images": [
-    "data/post_img/mb_ph_11.jpg",
-    "data/post_img/mb_ph_10.jpg",
-    "data/post_img/mb_ph_08.jpg",
-    "data/post_img/mb_ph_02.jpg"
+    "data/post_img/mb_brk_00.jpg"
    ],
+   "photo_h": 860,
    "lines": [
-    "楼下是木墙板的老式酒馆，有披萨、汉堡和鸡翅。",
-    "楼上是粉色系天台酒吧Marrickville Springs，喝鸡尾酒配复古小吃。"
-   ]
-  },
-  {
-   "layout": "spot_clean",
-   "name": "Grifter Brewing",
-   "images": [
-    "data/post_img/mb_gr_14.jpg",
-    "data/post_img/mb_gr_05.jpg",
-    "data/post_img/mb_gr_08.jpg",
-    "data/post_img/mb_gr_00.jpg"
-   ],
-   "lines": [
-    "旧干洗厂改的大仓库酒馆，有台球桌。",
-    "招牌是Pale Ale和西瓜皮尔森Serpent's Kiss，现在还有店内披萨。"
-   ]
-  },
-  {
-   "layout": "spot_clean",
-   "name": "Batch Brewing Co",
-   "images": [
-    "data/post_img/mb_bt_09.jpg",
-    "data/post_img/mb_bt_00.jpg",
-    "data/post_img/mb_bt_03.jpg",
-    "data/post_img/mb_bt_05.jpg"
-   ],
-   "lines": [
-    "2013年开的老牌精酿厂，旧修车厂改建。",
-    "酒头多，口味常换，椰子味的Tiny Coconut Bubbles很受欢迎。"
+    "从Alexandria搬到Addison Road的酒厂，每月出新款。",
+    "主打浑浊IPA、双倍酒花IPA和三倍IPA，欢迎带狗和骑车来的人。"
    ]
   },
   {
@@ -96,16 +66,16 @@
   },
   {
    "layout": "spot_clean",
-   "name": "Kicks Brewing",
+   "name": "Grifter Brewing",
    "images": [
-    "data/post_img/mb_kk_05.jpg",
-    "data/post_img/mb_kk_04.jpg",
-    "data/post_img/mb_kk_02.jpg",
-    "data/post_img/mb_kk_01.jpg"
+    "data/post_img/mb_gr_14.jpg",
+    "data/post_img/mb_gr_05.jpg",
+    "data/post_img/mb_gr_08.jpg",
+    "data/post_img/mb_gr_00.jpg"
    ],
    "lines": [
-    "夫妻俩开的小酒厂，设计很有风格。",
-    "10个酒头每月轮换限量款，招牌是日式米啤酒Golden Child。"
+    "旧干洗厂改的大仓库酒馆，有台球桌。",
+    "招牌是Pale Ale和西瓜皮尔森Serpent's Kiss，现在还有店内披萨。"
    ]
   },
   {
@@ -122,14 +92,44 @@
   },
   {
    "layout": "spot_clean",
-   "name": "Bracket Brewing",
+   "name": "Bob Hawke Beer & Leisure",
    "images": [
-    "data/post_img/mb_brk_00.jpg"
+    "data/post_img/mb_bh_05.jpg",
+    "data/post_img/mb_bh_04.jpg",
+    "data/post_img/mb_bh_16.jpg",
+    "data/post_img/mb_bh_19.jpg"
    ],
-   "photo_h": 860,
    "lines": [
-    "从Alexandria搬到Addison Road的酒厂，每月出新款。",
-    "主打浑浊IPA、双倍酒花IPA和三倍IPA，欢迎带狗和骑车来的人。"
+    "80年代澳洲复古风的啤酒厂，纪念前总理Bob Hawke。",
+    "里面有中餐小馆Lucky Prawn，点虾多士和炸Viennetta冰淇淋，台球室兼小型纪念馆。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Philter Brewing",
+   "images": [
+    "data/post_img/mb_ph_11.jpg",
+    "data/post_img/mb_ph_10.jpg",
+    "data/post_img/mb_ph_08.jpg",
+    "data/post_img/mb_ph_02.jpg"
+   ],
+   "lines": [
+    "楼下是木墙板的老式酒馆，有披萨、汉堡和鸡翅。",
+    "楼上是粉色系天台酒吧Marrickville Springs，喝鸡尾酒配复古小吃。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Batch Brewing Co",
+   "images": [
+    "data/post_img/mb_bt_09.jpg",
+    "data/post_img/mb_bt_00.jpg",
+    "data/post_img/mb_bt_03.jpg",
+    "data/post_img/mb_bt_05.jpg"
+   ],
+   "lines": [
+    "2013年开的老牌精酿厂，旧修车厂改建。",
+    "酒头多，口味常换，椰子味的Tiny Coconut Bubbles很受欢迎。"
    ]
   },
   {
