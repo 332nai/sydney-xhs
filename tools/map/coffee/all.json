@@ -1,0 +1,304 @@
+[
+{
+"name": "Toby's Estate",
+"lat": -33.8858858,
+"lon": 151.1944292,
+"cat": "o",
+"key": "Toby's Estate"
+},
+{
+"name": "Artificer",
+"lat": -33.8871817,
+"lon": 151.2152109,
+"cat": "o",
+"key": "Artificer"
+},
+{
+"name": "Sample Coffee",
+"lat": -33.8867239,
+"lon": 151.2091369,
+"cat": "o",
+"key": "Sample Coffee"
+},
+{
+"name": "Gumption",
+"lat": -33.8694568,
+"lon": 151.2075762,
+"cat": "o",
+"key": "Gumption"
+},
+{
+"name": "Primary",
+"lat": -33.8738848,
+"lon": 151.2252145,
+"cat": "o",
+"key": "Primary"
+},
+{
+"name": "Skittle Lane",
+"lat": -33.8686055,
+"lon": 151.2048853,
+"cat": "o",
+"key": "Skittle Lane"
+},
+{
+"name": "Regiment",
+"lat": -33.8669839,
+"lon": 151.2067491,
+"cat": "o",
+"key": "Regiment"
+},
+{
+"name": "St Dreux",
+"lat": -33.8676621,
+"lon": 151.2049286,
+"cat": "o",
+"key": "St Dreux"
+},
+{
+"name": "Dutch Smuggler",
+"lat": -33.8625195,
+"lon": 151.2080735,
+"cat": "o",
+"key": "Dutch Smuggler"
+},
+{
+"name": "Cabrito",
+"lat": -33.862564,
+"lon": 151.2096,
+"cat": "o",
+"key": "Cabrito"
+},
+{
+"name": "Diggy Doo's",
+"lat": -33.8633559,
+"lon": 151.2076831,
+"cat": "o",
+"key": "Diggy Doo's"
+},
+{
+"name": "Leible",
+"lat": -33.8698698,
+"lon": 151.2059962,
+"cat": "o",
+"key": "Leible"
+},
+{
+"name": "Veneziano",
+"lat": -33.8830642,
+"lon": 151.2164276,
+"cat": "o",
+"key": "Veneziano"
+},
+{
+"name": "Gypsy Espresso",
+"lat": -33.870694,
+"lon": 151.2249484,
+"cat": "o",
+"key": "Gypsy Espresso"
+},
+{
+"name": "Kingswood",
+"lat": -33.877697,
+"lon": 151.20575,
+"cat": "o",
+"key": "Kingswood"
+},
+{
+"name": "Single O",
+"lat": -33.8811804,
+"lon": 151.209681,
+"cat": "o",
+"key": "Single O"
+},
+{
+"name": "Paramount",
+"lat": -33.8793053,
+"lon": 151.2110456,
+"cat": "o",
+"key": "Paramount"
+},
+{
+"name": "Edition",
+"lat": -33.87835,
+"lon": 151.2022,
+"cat": "o",
+"key": "Edition"
+},
+{
+"name": "Reuben Hills",
+"lat": -33.8829006,
+"lon": 151.2109902,
+"cat": "o",
+"key": "Reuben Hills"
+},
+{
+"name": "Pablo & Rusty's",
+"lat": -33.8724803,
+"lon": 151.2091155,
+"cat": "o",
+"key": "Pablo & Rusty's"
+},
+{
+"name": "Barrel One",
+"lat": -33.873846,
+"lon": 151.2248543,
+"cat": "o",
+"key": "Barrel One"
+},
+{
+"name": "Campos",
+"lat": -33.8930442,
+"lon": 151.1831969,
+"cat": "o",
+"key": "Campos"
+},
+{
+"name": "Coffee Alchemy",
+"lat": -33.9110555,
+"lon": 151.1643339,
+"cat": "o",
+"key": "Coffee Alchemy"
+},
+{
+"name": "Double Tap",
+"lat": -33.90726,
+"lon": 151.1672,
+"cat": "o",
+"key": "Double Tap"
+},
+{
+"name": "Black Market",
+"lat": -33.91014,
+"lon": 151.16563,
+"cat": "o",
+"key": "Black Market"
+},
+{
+"name": "Deluca",
+"lat": -33.90385,
+"lon": 151.1656,
+"cat": "o",
+"key": "Deluca"
+},
+{
+"name": "Double Roasters",
+"lat": -33.9093867,
+"lon": 151.1622481,
+"cat": "o",
+"key": "Double Roasters"
+},
+{
+"name": "ONA Coffee",
+"lat": -33.907322,
+"lon": 151.16733,
+"cat": "o",
+"key": "ONA Coffee"
+},
+{
+"name": "Sample Pro Shop",
+"lat": -33.9129879,
+"lon": 151.1723767,
+"cat": "o",
+"key": "Sample Pro Shop"
+},
+{
+"name": "Mecca Alexandria",
+"lat": -33.9063766,
+"lon": 151.1997996,
+"cat": "o",
+"key": "Mecca Alexandria"
+},
+{
+"name": "Beta Coffee",
+"lat": -33.885902,
+"lon": 151.20778,
+"cat": "n",
+"key": "Beta Coffee"
+},
+{
+"name": "Outta Coffee",
+"lat": -33.8819417,
+"lon": 151.2040675,
+"cat": "n",
+"key": "Outta Coffee"
+},
+{
+"name": "Mecca",
+"lat": -33.879242,
+"lon": 151.21564,
+"cat": "n",
+"key": "Mecca"
+},
+{
+"name": "Padre",
+"lat": -33.882263,
+"lon": 151.2286296,
+"cat": "n",
+"key": "Padre"
+},
+{
+"name": "Industry Beans",
+"lat": -33.8692873,
+"lon": 151.2062574,
+"cat": "n",
+"key": "Industry Beans"
+},
+{
+"name": "Axil",
+"lat": -33.8849393,
+"lon": 151.2139211,
+"cat": "n",
+"key": "Axil"
+},
+{
+"name": "Sample Coffee",
+"lat": -33.9127628,
+"lon": 151.1664201,
+"cat": "n",
+"key": "Sample Coffee#2"
+},
+{
+"name": "Primary",
+"lat": -33.907822,
+"lon": 151.1655273,
+"cat": "n",
+"key": "Primary#2"
+},
+{
+"name": "Stitch Coffee",
+"lat": -33.9123328,
+"lon": 151.1631672,
+"cat": "n",
+"key": "Stitch Coffee"
+},
+{
+"name": "Stitch Coffee",
+"lat": -33.8836016,
+"lon": 151.1952042,
+"cat": "o",
+"key": "Stitch Coffee#2"
+},
+{
+"name": "Solstice",
+"lat": -33.8915754,
+"lon": 151.1370334,
+"cat": "n",
+"key": "Solstice"
+},
+{
+"name": "Coffee Cult",
+"lat": -33.9002854,
+"lon": 151.1893771,
+"cat": "n",
+"key": "Coffee Cult"
+},
+{
+"name": "Ratio Coffee",
+"lat": -33.8265049,
+"lon": 151.1999504,
+"cat": "n",
+"offmap": true,
+"key": "Ratio Coffee"
+}
+]
