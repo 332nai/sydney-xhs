@@ -6,18 +6,19 @@ NOTO = "/usr/share/fonts/opentype/noto/"
 def F(w, s): return ImageFont.truetype(NOTO + {"b": "NotoSansCJK-Bold.ttc", "k": "NotoSansCJK-Black.ttc"}[w], s, index=2)
 P = "data/post_img/"
 # 每行：[(图片, 店名, 焦点x, 焦点y)]
-ROWS = [
-    [("lc_sho_sashimi.jpg", "Sho Sushi", .45, .35), ("lc_jl_rosti.jpg", "Jules", .5, .5), ("lc_l8_eclair.jpg", "Lamin8", .5, .5)],
-    [("lc_ko_ramen.jpg", "虎助Kosuke Ramen", .3, .5), ("lc_vn_pizza.jpg", "Via Napoli", .45, .5)],
-    [("lc_ec_spread.jpg", "Encasa", .3, .55), ("lc_sh_octopus.jpg", "Shorties", .5, .5)],
-    [("lc_pc_grilled.jpg", "波塞冬Poseidon's", .5, .5), ("lc_s11_cans.jpg", "11:11 Sweet", .5, .5), ("lc_kin_pasta.jpg", "KIN Cafe", .5, .6)],
+CELLS = [
+    ("lc_sho_sashimi.jpg", "Sho Sushi", .45, .35), ("lc_jl_rosti.jpg", "Jules", .5, .5), ("lc_l8_eclair.jpg", "Lamin8", .5, .5), ("lc_vn_pizza.jpg", "Via Napoli", .45, .5),
+    ("lc_ko_ramen.jpg", "Kosuke", .7, .55), ("lc_ec_spread.jpg", "Encasa", .3, .55), ("lc_s11_cans.jpg", "11:11 Sweet", .5, .5), ("lc_sho_wagyu.jpg", "Sho Sushi", .5, .35),
+    ("lc_jl_prawn.jpg", "Jules", .45, .5), ("lc_sh_octopus.jpg", "Shorties", .55, .6), ("lc_kin_pasta.jpg", "KIN", .5, .6), ("lc_l8_choux.jpg", "Lamin8", .5, .5),
+    ("lc_pc_grilled.jpg", "波塞冬", .5, .5), ("lc_sho_uni.jpg", "Sho Sushi", .45, .45), ("lc_ec_jamon.jpg", "Encasa", .45, .5), ("lc_sh_martini.jpg", "Shorties", .45, .5),
 ]
-BAND, GAP = 290, 6
+ROWS = [CELLS[i:i + 4] for i in range(0, 16, 4)]
+BAND, GAP = 290, 4
 DARK = (24, 24, 26)
 img = Image.new("RGB", (W, H), DARK)
 d = ImageDraw.Draw(img)
 rh = (H - BAND - GAP * (len(ROWS) - 1)) / len(ROWS)
-fl = F("b", 30)
+fl = F("k", 46)
 def fill(src, w, h, fx, fy):
     im = Image.open(P + src).convert("RGB")
     s = max(w / im.width, h / im.height); im = im.resize((round(im.width * s), round(im.height * s)), Image.LANCZOS)
@@ -30,10 +31,13 @@ for row in ROWS:
         w, h = round(cw), round(rh)
         tile = fill(src, w, h, fx, fy)
         # 底部渐暗，方便看清店名
-        grad = Image.new("L", (1, h)); [grad.putpixel((0, i), int(max(0, (i - h * .55) / (h * .45)) * 150)) for i in range(h)]
+        grad = Image.new("L", (1, h)); [grad.putpixel((0, i), int(max(0, (i - h * .5) / (h * .5)) * 170)) for i in range(h)]
         tile.paste(Image.new("RGB", (w, h), (0, 0, 0)), (0, 0), grad.resize((w, h)))
         img.paste(tile, (round(x), round(y)))
-        d.text((round(x) + 18, round(y) + h - 50), name, font=fl, fill="white")
+        fs_ = 46
+        while F("k", fs_).getlength(name) > w - 26: fs_ -= 2
+        fl = F("k", fs_)
+        d.text((round(x) + 14, round(y) + h - 18 - fs_), name, font=fl, fill="white", stroke_width=3, stroke_fill=(0, 0, 0))
         x += cw + GAP
     y += rh + GAP
 f1 = F("k", 100)
