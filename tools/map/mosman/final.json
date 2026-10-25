@@ -64,5 +64,65 @@
   "cat": "c",
   "lat": -33.8318162,
   "lon": 151.2446647
+ },
+ {
+  "name": "The Boathouse",
+  "cat": "c",
+  "lat": -33.828156,
+  "lon": 151.25285
+ },
+ {
+  "name": "Mosman Rowers",
+  "cat": "r",
+  "lat": -33.83634,
+  "lon": 151.23271
+ },
+ {
+  "name": "Salt Meats Cheese",
+  "cat": "r",
+  "lat": -33.831158,
+  "lon": 151.24393
+ },
+ {
+  "name": "Pasture",
+  "cat": "c",
+  "lat": -33.82343,
+  "lon": 151.2504
+ },
+ {
+  "name": "The Buena",
+  "cat": "r",
+  "lat": -33.833164,
+  "lon": 151.24911
+ },
+ {
+  "name": "Penny Royal",
+  "cat": "c",
+  "lat": -33.8248829,
+  "lon": 151.2407868
+ },
+ {
+  "name": "The Source",
+  "cat": "c",
+  "lat": -33.8307927,
+  "lon": 151.2446902
+ },
+ {
+  "name": "Kazzi Beach Greek",
+  "cat": "r",
+  "lat": -33.8268235,
+  "lon": 151.2514266
+ },
+ {
+  "name": "Rosso Cavallino",
+  "cat": "r",
+  "lat": -33.8310591,
+  "lon": 151.2440183
+ },
+ {
+  "name": "Hunter Wine Bar",
+  "cat": "r",
+  "lat": -33.82523,
+  "lon": 151.24072
  }
 ]

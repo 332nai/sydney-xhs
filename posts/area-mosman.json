@@ -90,24 +90,123 @@
    ]
   },
   {
+   "layout": "spot_clean",
+   "name": "The Boathouse",
+   "images": [
+    "data/post_img/mos_boat_deck.jpg",
+    "data/post_img/mos_boat_flowers.jpg"
+   ],
+   "lines": [
+    "Balmoral海滩上老船屋改的咖啡馆，平台伸到水面上。",
+    "店里摆满鲜花和水果，早午餐对着海吃。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Public Dining Room",
+   "images": [
+    "data/post_img/mos_pdr_prawn.jpg",
+    "data/post_img/mos_pdr_view.jpg"
+   ],
+   "lines": [
+    "Balmoral海边的现代澳洲菜，落地窗外就是沙滩。",
+    "海鲜做得好，适合周末午餐。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Pasture of Balmoral",
+   "images": [
+    "data/post_img/mos_pasture_drinks.jpg",
+    "data/post_img/mos_pasture_food.jpg"
+   ],
+   "lines": [
+    "Balmoral海滩对面的咖啡馆。",
+    "彩色果汁和早午餐，坐在门口看海。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Mosman Rowers",
+   "images": [
+    "data/post_img/mos_rowers_out.jpg",
+    "data/post_img/mos_rowers_oyster.jpg"
+   ],
+   "lines": [
+    "Mosman Bay水上的老划船俱乐部。",
+    "生蚝配桃红，可以租桨板下水。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Ripples at Chowder Bay",
+   "images": [
+    "data/post_img/mos_ripples.jpg"
+   ],
+   "lines": [
+    "Chowder Bay码头上的海景餐厅。",
+    "傍晚坐在木平台上看日落。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Salt Meats Cheese",
+   "images": [
+    "data/post_img/mos_smc_board.jpg",
+    "data/post_img/mos_smc_burrata.jpg"
+   ],
+   "lines": [
+    "意大利熟食店兼餐厅，火腿芝士拼盘和柴火披萨。",
+    "店里还能买意大利食材。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "The Buena",
+   "images": [
+    "data/post_img/mos_buena_still.jpg",
+    "data/post_img/mos_buena_bar.jpg"
+   ],
+   "lines": [
+    "翻新的老酒馆，里面有三家店。",
+    "法国名厨Guillaume Brahimi参与打造。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Burnt Orange",
+   "images": [
+    "data/post_img/mos_bo_garden.jpg",
+    "data/post_img/mos_bo_veranda.jpg"
+   ],
+   "lines": [
+    "Georges Heights老房子里的咖啡馆，前面是花园。",
+    "坐在走廊上吃早午餐，看得到海。"
+   ]
+  },
+  {
    "layout": "list_clean",
-   "headline": "还有这几家",
+   "headline": "地图上还有",
    "entries": [
     {
-     "name": "Ripples at Chowder Bay",
-     "text": "Chowder Bay码头上的海景餐厅。"
-    },
-    {
-     "name": "Public Dining Room",
-     "text": "Balmoral海边的现代澳洲菜。"
-    },
-    {
-     "name": "Burnt Orange",
-     "text": "Georges Heights老房子里的咖啡馆，带花园。"
+     "name": "Kazzi Beach Greek",
+     "text": "Balmoral海边的希腊菜。"
     },
     {
      "name": "Four Frogs Creperie",
-     "text": "法式可丽饼小店。"
+     "text": "法式可丽饼。"
+    },
+    {
+     "name": "Rosso Cavallino",
+     "text": "意大利披萨。"
+    },
+    {
+     "name": "Penny Royal / The Source",
+     "text": "两家街坊咖啡店，The Source自己烘豆。"
+    },
+    {
+     "name": "Hunter Wine Bar",
+     "text": "Spit Junction的葡萄酒吧。"
     }
    ]
   }
