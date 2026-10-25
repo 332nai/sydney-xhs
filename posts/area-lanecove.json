@@ -48,11 +48,14 @@
    "layout": "spot_clean",
    "name": "Sho Sushi",
    "images": [
-    "data/post_img/lc_sho_nigiri.jpg"
+    "data/post_img/lc_sho_sashimi.jpg",
+    "data/post_img/lc_sho_wagyu.jpg",
+    "data/post_img/lc_sho_platter.jpg",
+    "data/post_img/lc_sho_uni.jpg"
    ],
    "lines": [
-    "The Village商场里的日料店，有户外座位。",
-    "寿司、刺身、天妇罗，也有热菜。"
+    "The Village商场里的日料店，门口挂着“松”字招牌。",
+    "刺身拼盘有海螯虾、金目鲷和大腹，还有和牛握寿司、15贯握寿司拼盘和海胆三文鱼卷。"
    ]
   },
   {
