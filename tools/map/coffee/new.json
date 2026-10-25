@@ -5,14 +5,14 @@
   "lon": 151.20778
  },
  {
+  "name": "Outta Coffee",
+  "lat": -33.8819417,
+  "lon": 151.2040675
+ },
+ {
   "name": "Mecca",
   "lat": -33.879242,
   "lon": 151.21564
- },
- {
-  "name": "September Studio",
-  "lat": -33.87931,
-  "lon": 151.22417
  },
  {
   "name": "Padre",
@@ -20,29 +20,14 @@
   "lon": 151.2286296
  },
  {
-  "name": "Valet",
-  "lat": -33.905334,
-  "lon": 151.18079
+  "name": "Industry Beans",
+  "lat": -33.8692873,
+  "lon": 151.2062574
  },
  {
-  "name": "Trafalgar St Espresso",
-  "lat": -33.8867785,
-  "lon": 151.1697879
- },
- {
-  "name": "Antidote",
-  "lat": -33.8694918,
-  "lon": 151.1952487
- },
- {
-  "name": "Workshop Espresso",
-  "lat": -33.8726306,
-  "lon": 151.2071687
- },
- {
-  "name": "Grill Americano",
-  "lat": -33.8660324,
-  "lon": 151.2106366
+  "name": "Axil",
+  "lat": -33.8849393,
+  "lon": 151.2139211
  },
  {
   "name": "Sample Coffee",

@@ -5,13 +5,19 @@ from PIL import Image, ImageDraw, ImageFont, ImageEnhance
 W, H = 1080, 1440
 NOTO = "/usr/share/fonts/opentype/noto/"
 def F(w, s): return ImageFont.truetype(NOTO + {"b": "NotoSansCJK-Bold.ttc", "k": "NotoSansCJK-Black.ttc", "m": "NotoSansCJK-Medium.ttc"}[w], s, index=2)
-venues, place_f, line2, out, scale = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4], float(sys.argv[5])
+venues, place_f, line2, out = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
 DOT, INK = (140, 82, 44), (25, 28, 30)
 vs = json.load(open(venues)); place = json.load(open(place_f))
 lats = [v["lat"] for v in vs]; lons = [v["lon"] for v in vs]
-clat = (min(lats) + max(lats)) / 2; clon = (min(lons) + max(lons)) / 2 + (float(sys.argv[6]) if len(sys.argv) > 6 else 0)
+clat = (min(lats) + max(lats)) / 2 + (float(sys.argv[6]) if len(sys.argv) > 6 else 0); clon = (min(lons) + max(lons)) / 2 + (float(sys.argv[5]) if len(sys.argv) > 5 else 0)
 MAP_H = 1120
-m, mpx = tiles.render(clat, clon, 16, W, MAP_H, scale=scale)
+PADX, PADY = 230, 110
+for Z in (17, 16):
+    x0, y0 = tiles.merc(max(lats), min(lons), Z); x1, y1 = tiles.merc(min(lats), max(lons), Z)
+    scale = min((W - 2 * PADX) / max(x1 - x0, 1), (MAP_H - 2 * PADY) / max(y1 - y0, 1))
+    if scale >= 0.55 or Z == 16: break
+scale = min(scale, 1.6)
+m, mpx = tiles.render(clat, clon, Z, W, MAP_H, scale=scale)
 m = Image.blend(ImageEnhance.Color(m).enhance(0.45), Image.new("RGB", m.size, (250, 248, 244)), 0.28)
 img = Image.new("RGB", (W, H), (250, 248, 244)); img.paste(m, (0, 0))
 d = ImageDraw.Draw(img); f = F("b", 21)
