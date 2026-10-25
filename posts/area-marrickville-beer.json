@@ -1,0 +1,316 @@
+{
+ "id": "area-marrickville-beer",
+ "title": "悉尼Marrickville啤酒厂和酒吧",
+ "pages": [
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/mb_cover.png"
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/mb_map.png"
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Bob Hawke Beer & Leisure",
+   "images": [
+    "data/post_img/mb_bh_05.jpg",
+    "data/post_img/mb_bh_04.jpg",
+    "data/post_img/mb_bh_16.jpg",
+    "data/post_img/mb_bh_19.jpg"
+   ],
+   "lines": [
+    "80年代澳洲复古风的啤酒厂，纪念前总理Bob Hawke。",
+    "里面有中餐小馆Lucky Prawn，点虾多士和炸Viennetta冰淇淋，台球室兼小型纪念馆。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Philter Brewing",
+   "images": [
+    "data/post_img/mb_ph_11.jpg",
+    "data/post_img/mb_ph_10.jpg",
+    "data/post_img/mb_ph_08.jpg",
+    "data/post_img/mb_ph_02.jpg"
+   ],
+   "lines": [
+    "楼下是木墙板的老式酒馆，有披萨、汉堡和鸡翅。",
+    "楼上是粉色系天台酒吧Marrickville Springs，喝鸡尾酒配复古小吃。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Grifter Brewing",
+   "images": [
+    "data/post_img/mb_gr_14.jpg",
+    "data/post_img/mb_gr_05.jpg",
+    "data/post_img/mb_gr_08.jpg",
+    "data/post_img/mb_gr_00.jpg"
+   ],
+   "lines": [
+    "旧干洗厂改的大仓库酒馆，有台球桌。",
+    "招牌是Pale Ale和西瓜皮尔森Serpent's Kiss，现在还有店内披萨。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Batch Brewing Co",
+   "images": [
+    "data/post_img/mb_bt_09.jpg",
+    "data/post_img/mb_bt_00.jpg",
+    "data/post_img/mb_bt_03.jpg",
+    "data/post_img/mb_bt_05.jpg"
+   ],
+   "lines": [
+    "2013年开的老牌精酿厂，旧修车厂改建。",
+    "酒头多，口味常换，椰子味的Tiny Coconut Bubbles很受欢迎。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Sauce Brewing",
+   "images": [
+    "data/post_img/mb_sc_01.jpg",
+    "data/post_img/mb_sc_05.jpg",
+    "data/post_img/mb_sc_10.jpg",
+    "data/post_img/mb_sc_03.jpg"
+   ],
+   "lines": [
+    "主打超级多酒花和实验风格的精酿。",
+    "后面有大啤酒花园，适合一群人去，也卖罐装鸡尾酒。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Mixtape Brewing & Bar",
+   "images": [
+    "data/post_img/mb_mx_02.jpg",
+    "data/post_img/mb_mx_08.jpg",
+    "data/post_img/mb_mx_05.jpg",
+    "data/post_img/mb_mx_00.jpg"
+   ],
+   "lines": [
+    "低调的仓库酒吧，独立精酿、50多款自然酒和不少威士忌。",
+    "下酒菜有泡菜饺子、水牛城鸡翅和披萨，周三晚上有问答之夜。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Kicks Brewing",
+   "images": [
+    "data/post_img/mb_kk_05.jpg",
+    "data/post_img/mb_kk_04.jpg",
+    "data/post_img/mb_kk_02.jpg",
+    "data/post_img/mb_kk_01.jpg"
+   ],
+   "lines": [
+    "夫妻俩开的小酒厂，设计很有风格。",
+    "10个酒头每月轮换限量款，招牌是日式米啤酒Golden Child。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Pickled Monkey Brewing",
+   "images": [
+    "data/post_img/mb_pm_01.jpg",
+    "data/post_img/mb_pm_02.jpg"
+   ],
+   "lines": [
+    "2024年10月从The Rocks的Harts Pub搬来，有24个酒头。",
+    "砖窑出罗马披萨，招牌是夹炸摩德代拉和波罗伏洛芝士的披萨三明治The Bourdain。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Heaps Normal Health Club",
+   "images": [
+    "data/post_img/mb_hn_08.jpg",
+    "data/post_img/mb_hn_00.jpg",
+    "data/post_img/mb_hn_04.jpg",
+    "data/post_img/mb_hn_16.jpg"
+   ],
+   "lines": [
+    "无酒精啤酒品牌Heaps Normal开的仓库酒吧和舞厅。",
+    "有号称南半球第二大的迪斯科球、现场音乐和舞会，目前部分开放。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Ester Spirits",
+   "images": [
+    "data/post_img/mb_es_08.jpg",
+    "data/post_img/mb_es_12.jpg",
+    "data/post_img/mb_es_06.jpg",
+    "data/post_img/mb_es_00.jpg"
+   ],
+   "lines": [
+    "像艺术工作室一样的金酒蒸馏所。",
+    "以Negroni出名，配金酒小吃，还有本地设计师的小玩意。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Unexpected Guest",
+   "images": [
+    "data/post_img/mb_ug_06.jpg",
+    "data/post_img/mb_ug_05.jpg",
+    "data/post_img/mb_ug_07.jpg",
+    "data/post_img/mb_ug_12.jpg"
+   ],
+   "lines": [
+    "从1972年的大众Kombi车里起家的金酒吧。",
+    "现在在旧修车厂里，做带小心思的经典鸡尾酒，甜点有巴斯克芝士蛋糕。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Moonshiner Gin",
+   "images": [
+    "data/post_img/mb_ms_06.jpg",
+    "data/post_img/mb_ms_05.jpg",
+    "data/post_img/mb_ms_04.jpg",
+    "data/post_img/mb_ms_02.jpg"
+   ],
+   "lines": [
+    "20个座位的小蒸馏所，每周只开一天。",
+    "酒款用Inner West的街道命名，樱桃金酒马天尼喝起来像Cherry Ripe。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "The Marrickville Hotel",
+   "images": [
+    "data/post_img/mb_mh_08.jpg",
+    "data/post_img/mb_mh_01.jpg",
+    "data/post_img/mb_mh_02.jpg",
+    "data/post_img/mb_mh_00.jpg"
+   ],
+   "lines": [
+    "自称“小酒吧式的酒馆”，啤酒和饮品都很认真。",
+    "服务友好，后面有一个很舒服的庭院。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "We Three",
+   "images": [
+    "data/post_img/mb_w3_02.jpg",
+    "data/post_img/mb_w3_03.jpg",
+    "data/post_img/mb_w3_12.jpg",
+    "data/post_img/mb_w3_00.jpg"
+   ],
+   "lines": [
+    "母女俩开的两层街坊酒吧，原来是一家奶茶店。",
+    "好喝的葡萄酒配地中海风味小盘。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "LazyBones Lounge",
+   "images": [
+    "data/post_img/mb_lb_03.jpg",
+    "data/post_img/mb_lb_04.jpg",
+    "data/post_img/mb_lb_11.jpg",
+    "data/post_img/mb_lb_12.jpg"
+   ],
+   "lines": [
+    "复古华丽的室内，鸡尾酒单很长。",
+    "每天晚上都有现场音乐。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Gasoline Pony",
+   "images": [
+    "data/post_img/mb_gp_08.jpg",
+    "data/post_img/mb_gp_20.jpg",
+    "data/post_img/mb_gp_03.jpg",
+    "data/post_img/mb_gp_04.jpg"
+   ],
+   "lines": [
+    "随性的街坊酒吧，酒、吃的和音乐都有。",
+    "鸡尾酒、塔可和芝士冷肉拼盘，后巷有户外座位。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Titus Jones",
+   "images": [
+    "data/post_img/mb_tj_08.jpg",
+    "data/post_img/mb_tj_05.jpg",
+    "data/post_img/mb_tj_01.jpg",
+    "data/post_img/mb_tj_00.jpg"
+   ],
+   "lines": [
+    "适合坐下来聊天、待久一点的小酒吧。",
+    "鸡尾酒是重点。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Where's Nick",
+   "images": [
+    "data/post_img/mb_wn_02.jpg",
+    "data/post_img/mb_wn_01.jpg",
+    "data/post_img/mb_wn_07.jpg",
+    "data/post_img/mb_wn_00.jpg"
+   ],
+   "lines": [
+    "轻松学葡萄酒的酒吧，当然主要是喝。",
+    "满墙酒瓶，配披萨。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "The Henson",
+   "images": [
+    "data/post_img/mb_hs_02.jpg",
+    "data/post_img/mb_hs_06.jpg",
+    "data/post_img/mb_hs_00.jpg",
+    "data/post_img/mb_hs_08.jpg"
+   ],
+   "lines": [
+    "现代酒馆，啤酒花园里种着香草和蔬菜。",
+    "有塔可和各种酒馆菜。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Vic on the Park",
+   "images": [
+    "data/post_img/mb_vp_00.jpg",
+    "data/post_img/mb_vp_08.jpg",
+    "data/post_img/mb_vp_05.jpg",
+    "data/post_img/mb_vp_03.jpg"
+   ],
+   "lines": [
+    "以社区为中心的街坊酒馆。",
+    "可以带狗，还有篮球场。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "The Great Club",
+   "images": [
+    "data/post_img/mb_gc_00.jpg",
+    "data/post_img/mb_gc_08.jpg",
+    "data/post_img/mb_gc_03.jpg",
+    "data/post_img/mb_gc_14.jpg"
+   ],
+   "lines": [
+    "老社区俱乐部改的现场音乐场地。",
+    "有酒馆餐和平价饮品，还有喜剧和问答之夜。"
+   ]
+  },
+  {
+   "layout": "list_clean",
+   "headline": "还有这一家",
+   "entries": [
+    {
+     "name": "Bracket Brewing",
+     "text": "从Alexandria搬来Addison Road的酒厂，每月出新款，欢迎带狗和骑车来的人。"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,156 @@
+[
+ {
+  "key": "mh",
+  "name": "Marrickville Hotel",
+  "cat": "c",
+  "lat": -33.91166,
+  "lon": 151.15817
+ },
+ {
+  "key": "gp",
+  "name": "Gasoline Pony",
+  "cat": "c",
+  "lat": -33.912395,
+  "lon": 151.16086
+ },
+ {
+  "key": "wn",
+  "name": "Where's Nick",
+  "cat": "c",
+  "lat": -33.911793,
+  "lon": 151.15848
+ },
+ {
+  "key": "w3",
+  "name": "We Three",
+  "cat": "c",
+  "lat": -33.912148,
+  "lon": 151.15462
+ },
+ {
+  "key": "lb",
+  "name": "LazyBones",
+  "cat": "c",
+  "lat": -33.91081,
+  "lon": 151.1564
+ },
+ {
+  "key": "tj",
+  "name": "Titus Jones",
+  "cat": "c",
+  "lat": -33.912605,
+  "lon": 151.1524
+ },
+ {
+  "key": "gc",
+  "name": "The Great Club",
+  "cat": "c",
+  "lat": -33.906906,
+  "lon": 151.1532
+ },
+ {
+  "key": "gr",
+  "name": "Grifter",
+  "cat": "r",
+  "lat": -33.904686,
+  "lon": 151.16544
+ },
+ {
+  "key": "bh",
+  "name": "Bob Hawke",
+  "cat": "r",
+  "lat": -33.911716,
+  "lon": 151.16394
+ },
+ {
+  "key": "kk",
+  "name": "Kicks",
+  "cat": "r",
+  "lat": -33.903915,
+  "lon": 151.16393
+ },
+ {
+  "key": "mx",
+  "name": "Mixtape",
+  "cat": "r",
+  "lat": -33.90715,
+  "lon": 151.16446
+ },
+ {
+  "key": "ph",
+  "name": "Philter",
+  "cat": "r",
+  "lat": -33.91025,
+  "lon": 151.16264
+ },
+ {
+  "key": "bt",
+  "name": "Batch",
+  "cat": "r",
+  "lat": -33.91195,
+  "lon": 151.1647
+ },
+ {
+  "key": "sc",
+  "name": "Sauce",
+  "cat": "r",
+  "lat": -33.907787,
+  "lon": 151.1631
+ },
+ {
+  "key": "ms",
+  "name": "Moonshiner",
+  "cat": "c",
+  "lat": -33.905052,
+  "lon": 151.16742
+ },
+ {
+  "key": "es",
+  "name": "Ester",
+  "cat": "c",
+  "lat": -33.906796,
+  "lon": 151.16345
+ },
+ {
+  "key": "ug",
+  "name": "Unexpected Guest",
+  "cat": "c",
+  "lat": -33.91071,
+  "lon": 151.16519
+ },
+ {
+  "key": "vp",
+  "name": "Vic on the Park",
+  "cat": "c",
+  "lat": -33.90422,
+  "lon": 151.16791
+ },
+ {
+  "key": "hs",
+  "name": "The Henson",
+  "cat": "c",
+  "lat": -33.90508,
+  "lon": 151.16133
+ },
+ {
+  "key": "pm",
+  "name": "Pickled Monkey",
+  "cat": "r",
+  "lat": -33.9079,
+  "lon": 151.1651
+ },
+ {
+  "key": "br",
+  "name": "Bracket",
+  "cat": "r",
+  "lat": -33.9035,
+  "lon": 151.1645
+ },
+ {
+  "key": "hn",
+  "name": "Heaps Normal",
+  "cat": "r",
+  "lat": -33.9052397,
+  "lon": 151.1656263
+ }
+]
