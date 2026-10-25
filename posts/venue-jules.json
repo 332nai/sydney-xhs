@@ -1,0 +1,71 @@
+{
+ "id": "venue-jules",
+ "title": "Jules",
+ "pages": [
+  {
+   "layout": "cover_quad",
+   "gap": 0,
+   "images": [
+    "data/post_img/jl_12.jpg",
+    "data/post_img/jl_03.jpg",
+    "data/post_img/jl_08.jpg",
+    "data/post_img/jl_04.jpg"
+   ],
+   "focus": [
+    [
+     0.5,
+     0.5
+    ],
+    [
+     0.5,
+     0.5
+    ],
+    [
+     0.5,
+     0.5
+    ],
+    [
+     0.5,
+     0.5
+    ]
+   ],
+   "headline": [
+    "Time Out五星",
+    "悉尼北岸宝藏小馆"
+   ]
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/jl_12.jpg"
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/jl_08.jpg"
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/jl_05.jpg"
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/jl_09.jpg"
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/jl_00.jpg"
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Jules",
+   "images": [
+    "data/post_img/jl_03.jpg",
+    "data/post_img/jl_04.jpg",
+    "data/post_img/jl_01.jpg"
+   ],
+   "lines": [
+    "Lane Cove Birdwood Lane上的小餐厅，夫妻俩开的，澳洲食材加亚洲风味。",
+    "招牌是龙虾汤泡蟹肉虾饺、土豆饼配味噌卡仕达和鳟鱼籽、XO酱大虾和巴斯克芝士蛋糕。"
+   ]
+  }
+ ]
+}

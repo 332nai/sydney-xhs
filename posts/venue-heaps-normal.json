@@ -1,0 +1,68 @@
+{
+ "id": "venue-heaps-normal",
+ "title": "Heaps Normal Health Club",
+ "pages": [
+  {
+   "layout": "cover_quad",
+   "gap": 0,
+   "images": [
+    "data/post_img/hn_08.jpg",
+    "data/post_img/hn_05.jpg",
+    "data/post_img/hn_16.jpg",
+    "data/post_img/hn_00.jpg"
+   ],
+   "focus": [
+    [
+     0.5,
+     0.5
+    ],
+    [
+     0.5,
+     0.4
+    ],
+    [
+     0.5,
+     0.5
+    ],
+    [
+     0.5,
+     0.5
+    ]
+   ],
+   "headline": [
+    "悉尼这家酒吧",
+    "不喝酒也能嗨"
+   ]
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/hn_00.jpg"
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/hn_05.jpg"
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/hn_17.jpg"
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/hn_10.jpg"
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Heaps Normal Health Club",
+   "images": [
+    "data/post_img/hn_04.jpg",
+    "data/post_img/hn_09.jpg",
+    "data/post_img/hn_02.jpg",
+    "data/post_img/hn_15.jpg"
+   ],
+   "lines": [
+    "无酒精啤酒品牌Heaps Normal在Marrickville开的仓库酒吧和舞厅。",
+    "有号称南半球第二大的迪斯科球、舞池和现场音乐，酒吧也有普通啤酒和葡萄酒。"
+   ]
+  }
+ ]
+}
