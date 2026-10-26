@@ -1,0 +1,72 @@
+{
+ "id": "venue-bob-hawke",
+ "title": "Bob Hawke Beer & Leisure Centre",
+ "pages": [
+  {
+   "layout": "cover_quad",
+   "gap": 0,
+   "images": [
+    "data/post_img/bh_05.jpg",
+    "data/post_img/bh_04.jpg",
+    "data/post_img/bh_23.jpg",
+    "data/post_img/bh_16.jpg"
+   ],
+   "focus": [
+    [
+     0.5,
+     0.5
+    ],
+    [
+     0.5,
+     0.5
+    ],
+    [
+     0.5,
+     0.5
+    ],
+    [
+     0.5,
+     0.5
+    ]
+   ],
+   "headline": [
+    "前总理开的啤酒厂",
+    "里面藏着中餐馆！"
+   ]
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/bh_04.jpg"
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/bh_08.jpg"
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/bh_23.jpg"
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/bh_19.jpg"
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/bh_13.jpg"
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Bob Hawke Beer & Leisure",
+   "images": [
+    "data/post_img/bh_07.jpg",
+    "data/post_img/bh_03.jpg",
+    "data/post_img/bh_16.jpg",
+    "data/post_img/bh_21.jpg"
+   ],
+   "lines": [
+    "Marrickville的80年代澳洲复古风啤酒厂，纪念前总理Bob Hawke。",
+    "中餐小馆Lucky Prawn有虾多士和炸Viennetta冰淇淋，台球室兼小型纪念馆。"
+   ]
+  }
+ ]
+}
