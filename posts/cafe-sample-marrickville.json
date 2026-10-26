@@ -1,0 +1,82 @@
+{
+ "id": "cafe-sample-marrickville",
+ "title": "Sample Coffee Marrickville",
+ "pages": [
+  {
+   "layout": "cover_quad",
+   "gap": 0,
+   "images": [
+    "data/post_img/mk_sample_cup.jpg",
+    "data/post_img/smk_09.jpg",
+    "data/post_img/smk_03.jpg",
+    "data/post_img/smk_06.jpg"
+   ],
+   "focus": [
+    [
+     0.5,
+     0.5
+    ],
+    [
+     0.5,
+     0.45
+    ],
+    [
+     0.5,
+     0.5
+    ],
+    [
+     0.4,
+     0.5
+    ]
+   ],
+   "headline": [
+    "Sydenham站下车",
+    "先别急着走"
+   ]
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/mk_sample_cup.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ]
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/smk_03.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ]
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/mk_sample_13.jpg",
+   "focus": [
+    0.3,
+    0.5
+   ]
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/smk_09.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Sample Coffee Marrickville",
+   "images": [
+    "data/post_img/smk_06.jpg",
+    "data/post_img/smk_02.jpg"
+   ],
+   "lines": [
+    "离Sydenham站50米的迷你咖啡吧，原来是一家泳衣厂的门面。",
+    "单品豆用Modbar做意式和手冲，还有批量滴滤和冷萃，烘豆厂之后也会搬过来。"
+   ]
+  }
+ ]
+}
