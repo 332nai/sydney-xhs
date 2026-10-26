@@ -12,6 +12,19 @@
   },
   {
    "layout": "spot_clean",
+   "name": "Bar Italia",
+   "images": [
+    "data/post_img/lh_bi_02.jpg",
+    "data/post_img/lh_bi_00.jpg",
+    "data/post_img/lh_bi_01.jpg"
+   ],
+   "lines": [
+    "Norton Street上的老字号，Leichhardt的地标，价格实在。",
+    "奶油培根意面和披萨人气很高，门口的意式冰淇淋柜也别错过。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
    "name": "Tashkent",
    "images": [
     "data/post_img/lh_tk_12.jpg",
@@ -48,8 +61,8 @@
     "data/post_img/lh_ap_09.jpg"
    ],
    "lines": [
-    "Norton Street上的意大利餐厅和披萨店。",
-    "前菜、手工意面和窑烤披萨都有，适合一群人分着吃。"
+    "Norton Street上的意大利餐厅，主打那不勒斯风格披萨，饼边厚实蓬松。",
+    "海鲜意面和开心果提拉米苏也值得一试。"
    ]
   },
   {
@@ -167,6 +180,14 @@
    "layout": "list_clean",
    "headline": "还有这几家",
    "entries": [
+    {
+     "name": "Jolly Cafe",
+     "text": "开了几十年的老牌家常意大利菜，酱汁入味，价格实在。"
+    },
+    {
+     "name": "La Bottega",
+     "text": "Norton Street上的意式街坊咖啡馆，全天早餐、周末早午餐，还能喝一杯spritz，欢迎带狗。"
+    },
     {
      "name": "Amami Mart",
      "text": "香港老板开的日式便利店，有现做饭团和北海道牛奶软冰淇淋。"

@@ -9,7 +9,7 @@ P = "data/post_img/"
 CELLS = [  # 9家店，每家只出现一次
     ("lh_tk_12.jpg", "Tashkent", .5, .5), ("lh_dp_04.jpg", "Dom Panino", .5, .5), ("lh_ap_05.jpg", "Aperitivo", .5, .5),
     ("lh_sb_09.jpg", "Sébastien", .5, .5), ("lh_lb_01.jpg", "La Botte D'Oro", .5, .5), ("lh_cp_08.jpg", "Capriccio", .5, .5),
-    ("lh_sp_17.jpg", "Spicetown", .45, .55), ("lh_cc_02.jpg", "Creek & Cella", .5, .5), ("lh_ry_19.jpg", "The Royal", .5, .5),
+    ("lh_sp_17.jpg", "Spicetown", .45, .55), ("lh_cc_02.jpg", "Creek & Cella", .5, .5), ("lh_bi_02.jpg", "Bar Italia", .5, .5),
 ]
 ROWS = [CELLS[i:i + 3] for i in range(0, 9, 3)]
 BAND, GAP = 290, 4
