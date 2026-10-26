@@ -1,0 +1,418 @@
+{
+ "id": "area-marrickville-food",
+ "title": "悉尼Marrickville吃什么",
+ "pages": [
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/mkf_cover.png"
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/mkf_map.png"
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Marrickville Pork Roll",
+   "images": [
+    "data/post_img/mkf_pr_01.jpg",
+    "data/post_img/mkf_pr_00.jpg"
+   ],
+   "lines": [
+    "悉尼最有名的越南法棍，门口常年排队。",
+    "法棍夹肉、胡萝卜、腌白萝卜、猪肝酱和香菜，再加一把辣到流泪的指天椒。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Banh Cuon Ba Oanh",
+   "images": [
+    "data/post_img/mkf_bc_02.jpg",
+    "data/post_img/mkf_bc_01.jpg",
+    "data/post_img/mkf_bc_03.jpg",
+    "data/post_img/mkf_bc_07.jpg"
+   ],
+   "lines": [
+    "只卖四样东西的小店，主角是现做的越南粉卷。",
+    "主厨是第三代北越粉卷师傅，米皮薄滑，配猪肉、木耳和鱼露。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Hello Auntie",
+   "images": [
+    "data/post_img/mkf_ha_00.jpg",
+    "data/post_img/mkf_ha_01.jpg",
+    "data/post_img/mkf_ha_12.jpg",
+    "data/post_img/mkf_ha_07.jpg"
+   ],
+   "lines": [
+    "越南难民后代重拾家乡味道的越南菜。",
+    "有越南煎饼、小煎饼banh khot、河粉，还有自己卷的米纸卷。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Eat Fuh",
+   "images": [
+    "data/post_img/mkf_ef_01.jpg",
+    "data/post_img/mkf_ef_04.jpg",
+    "data/post_img/mkf_ef_02.jpg"
+   ],
+   "lines": [
+    "Marrickville越南店扎堆，这家河粉依然很出众。",
+    "店面干净明亮，河粉、米线和饭都有。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "VN Street Foods",
+   "images": [
+    "data/post_img/mkf_vn_01.jpg",
+    "data/post_img/mkf_vn_05.jpg",
+    "data/post_img/mkf_vn_09.jpg",
+    "data/post_img/mkf_vn_13.jpg"
+   ],
+   "lines": [
+    "越南菜做成便当盒，一格一格装得满满的。",
+    "可以自己搭配，烤肉、春卷、米饭和香草一盒搞定。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Pepito's",
+   "images": [
+    "data/post_img/mkf_pe_06.jpg",
+    "data/post_img/mkf_pe_04.jpg",
+    "data/post_img/mkf_pe_07.jpg",
+    "data/post_img/mkf_pe_05.jpg"
+   ],
+   "lines": [
+    "Illawarra Road上的秘鲁街头小馆。",
+    "酸橘汁腌鱼、秘鲁小吃配皮斯科酸酒。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Baba's Place",
+   "images": [
+    "data/post_img/mkf_bb_05.jpg",
+    "data/post_img/mkf_bb_03.jpg",
+    "data/post_img/mkf_bb_04.jpg",
+    "data/post_img/mkf_bb_01.jpg"
+   ],
+   "lines": [
+    "藏在卷帘门后的仓库餐厅，致敬悉尼西南区的移民文化。",
+    "希腊和中东风味的家常菜，鸡尾酒围绕巴尔干传统烈酒来做。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "20 Chapel",
+   "images": [
+    "data/post_img/mkf_c20_04.jpg",
+    "data/post_img/mkf_c20_03.jpg",
+    "data/post_img/mkf_c20_07.jpg",
+    "data/post_img/mkf_c20_09.jpg"
+   ],
+   "lines": [
+    "前Rockpool烹饪总监开的柴火烤肉餐厅。",
+    "各种部位的Blackmore和牛都用柴火烤，蔬菜来自悉尼有名的有机农场。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Pizza Madre",
+   "images": [
+    "data/post_img/mkf_pm_03.jpg",
+    "data/post_img/mkf_pm_10.jpg",
+    "data/post_img/mkf_pm_09.jpg",
+    "data/post_img/mkf_pm_06.jpg"
+   ],
+   "lines": [
+    "全素披萨，菜单每周跟着季节换。",
+    "72小时发酵酸面团，坐在门口路边吃是很Marrickville的体验。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "MMC Slice Shoppe",
+   "images": [
+    "data/post_img/mkf_mmc_02.jpg",
+    "data/post_img/mkf_mmc_06.jpg",
+    "data/post_img/mkf_mmc_12.jpg",
+    "data/post_img/mkf_mmc_00.jpg"
+   ],
+   "lines": [
+    "My Mother's Cousin团队去纽约取经后开的披萨店。",
+    "圆披萨和纽约式方块切片都有，复古装修很有味道。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Olympic Meats",
+   "images": [
+    "data/post_img/mkf_om_08.jpg",
+    "data/post_img/mkf_om_06.jpg",
+    "data/post_img/mkf_om_10.jpg",
+    "data/post_img/mkf_om_04.jpg"
+   ],
+   "lines": [
+    "希腊伯罗奔尼撒风味，大多数菜21澳元以内。",
+    "炭烤旋转烤肉、每天手拉的希腊酥皮派，柴火烤的手工皮塔饼，不接受预订。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Okami",
+   "images": [
+    "data/post_img/mkf_ok_02.jpg",
+    "data/post_img/mkf_ok_05.jpg",
+    "data/post_img/mkf_ok_03.jpg",
+    "data/post_img/mkf_ok_06.jpg"
+   ],
+   "lines": [
+    "人均40澳元以内的日料放题。",
+    "30多种选择：刺身拼盘、煎饺、烤牛肉、乌冬和麻薯。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "El Taco",
+   "images": [
+    "data/post_img/mkf_et_06.jpg",
+    "data/post_img/mkf_et_02.jpg",
+    "data/post_img/mkf_et_04.jpg",
+    "data/post_img/mkf_et_01.jpg"
+   ],
+   "lines": [
+    "墨西哥街头小吃餐车。",
+    "招牌是芝士焦脆的塔可、墨西哥饼和脆饼三合一。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Lazza",
+   "images": [
+    "data/post_img/mkf_lz_01.jpg",
+    "data/post_img/mkf_lz_04.jpg",
+    "data/post_img/mkf_lz_08.jpg",
+    "data/post_img/mkf_lz_07.jpg"
+   ],
+   "lines": [
+    "菲律宾手抓宴，不用餐具也不用盘子。",
+    "一大盘铺在蕉叶上，和朋友分着吃，分量多到夸张。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Tita",
+   "images": [
+    "data/post_img/mkf_ti_02.jpg",
+    "data/post_img/mkf_ti_01.jpg",
+    "data/post_img/mkf_ti_00.jpg"
+   ],
+   "lines": [
+    "Donut Papi团队开的菲律宾早餐店。",
+    "家常菲律宾早餐，还有菲式早餐汉堡。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Kurumac",
+   "images": [
+    "data/post_img/mkf_ku_08.jpg",
+    "data/post_img/mkf_ku_11.jpg",
+    "data/post_img/mkf_ku_07.jpg",
+    "data/post_img/mkf_ku_02.jpg"
+   ],
+   "lines": [
+    "Cool Mac团队开的日式小食堂。",
+    "日式早餐定食、饭团和刺身饭，周末是热门，早点去。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Brooklyn Boy Bagels",
+   "images": [
+    "data/post_img/mkf_bk_10.jpg",
+    "data/post_img/mkf_bk_05.jpg",
+    "data/post_img/mkf_bk_02.jpg",
+    "data/post_img/mkf_bk_07.jpg"
+   ],
+   "lines": [
+    "纽约式贝果得来速，常常很快卖完。",
+    "蓝莓和罂粟籽贝果最受欢迎。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Lox in a Box",
+   "images": [
+    "data/post_img/mkf_lx_05.jpg",
+    "data/post_img/mkf_lx_06.jpg",
+    "data/post_img/mkf_lx_04.jpg",
+    "data/post_img/mkf_lx_00.jpg"
+   ],
+   "lines": [
+    "Bondi的Lox in a Box第一家堂食店。",
+    "悉尼第一家贝果下午茶，还有黑麦面包夹热咸牛肉和牛胸肉卷饼。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Berta's Deli",
+   "images": [
+    "data/post_img/mkf_bd_03.jpg",
+    "data/post_img/mkf_bd_09.jpg",
+    "data/post_img/mkf_bd_10.jpg",
+    "data/post_img/mkf_bd_08.jpg"
+   ],
+   "lines": [
+    "三明治店，主角是松软的土耳其面包。",
+    "肉来自Whole Beast和LP's，酱和腌菜都自己做。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Gelato Messina",
+   "images": [
+    "data/post_img/mkf_gm_02.jpg",
+    "data/post_img/mkf_gm_04.jpg",
+    "data/post_img/mkf_gm_07.jpg",
+    "data/post_img/mkf_gm_00.jpg"
+   ],
+   "lines": [
+    "Messina的大型仓库总部。",
+    "口味最多的一家，楼上就是Messina团队的餐厅Erin。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Gelato Franco",
+   "images": [
+    "data/post_img/mkf_gf_10.jpg",
+    "data/post_img/mkf_gf_05.jpg",
+    "data/post_img/mkf_gf_06.jpg",
+    "data/post_img/mkf_gf_03.jpg"
+   ],
+   "lines": [
+    "大约18种应季口味。",
+    "用一台老式冰淇淋机，由做了几十年的老师傅现做。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Paesanella",
+   "images": [
+    "data/post_img/mkf_pa_09.jpg",
+    "data/post_img/mkf_pa_08.jpg",
+    "data/post_img/mkf_pa_12.jpg",
+    "data/post_img/mkf_pa_13.jpg"
+   ],
+   "lines": [
+    "意大利芝士和熟食店，芝士种类多到看不过来。",
+    "店里现做新鲜马苏里拉，前面还有咖啡馆。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Marrickville Organic Market",
+   "images": [
+    "data/post_img/mkf_mo_00.jpg",
+    "data/post_img/mkf_mo_07.jpg",
+    "data/post_img/mkf_mo_04.jpg",
+    "data/post_img/mkf_mo_05.jpg"
+   ],
+   "lines": [
+    "周日在老仓库院子里的有机农夫市集。",
+    "有机蔬果、鲜花、热食和小摊，氛围很嬉皮。"
+   ]
+  },
+  {
+   "layout": "list_clean",
+   "headline": "还有这几家",
+   "entries": [
+    {
+     "name": "Bay Tinh",
+     "text": "1986年开的越南老店，春卷、椒盐鱿鱼和酸汤。"
+    },
+    {
+     "name": "Corinthian",
+     "text": "老牌希腊烤肉馆，烤肉拼盘、炸小鱿鱼和果仁蜜饼。"
+    },
+    {
+     "name": "Pho PHD",
+     "text": "灯火通明的经典河粉店。"
+    },
+    {
+     "name": "Nguyen Garden / Gia Dinh",
+     "text": "Illawarra Road上的越南粉面小馆。"
+    },
+    {
+     "name": "Gribbels",
+     "text": "海鲜餐厅。"
+    },
+    {
+     "name": "Semola",
+     "text": "意大利菜，手工意面和意式土豆团子。"
+    }
+   ]
+  },
+  {
+   "layout": "list_clean",
+   "headline": "还有这几家",
+   "entries": [
+    {
+     "name": "Erin",
+     "text": "Messina楼上的农场直送品鉴餐厅。"
+    },
+    {
+     "name": "The Montague",
+     "text": "Illawarra Road上的老酒馆，楼上是Harriet's酒廊。"
+    },
+    {
+     "name": "Lucky Prawn",
+     "text": "Bob Hawke酒厂里的中餐小馆，虾多士和点心。"
+    },
+    {
+     "name": "Slim's Quality Burger",
+     "text": "Betty's Burgers团队的复古汉堡店，薯条手切。"
+    },
+    {
+     "name": "Papi's Birria",
+     "text": "餐车起家的墨西哥牛肉塔可，汤底值得专门去。"
+    },
+    {
+     "name": "San Pancho",
+     "text": "传统墨西哥塔可店。"
+    }
+   ]
+  },
+  {
+   "layout": "list_clean",
+   "headline": "还有这几家",
+   "entries": [
+    {
+     "name": "Souvlaki Boys",
+     "text": "希腊烤肉串。"
+    },
+    {
+     "name": "Bourke Street Bakery",
+     "text": "面包、肉派和挞。"
+    },
+    {
+     "name": "The Naked Baker",
+     "text": "10月新开，披萨佛卡夏、葡式蛋挞和肉桂卷。"
+    },
+    {
+     "name": "Lamia Super Deli / Faros Bros",
+     "text": "希腊熟食店和小型海鲜市场。"
+    },
+    {
+     "name": "Feather and Bone / Whole Beast",
+     "text": "两家用心的肉铺。"
+    }
+   ]
+  }
+ ]
+}
