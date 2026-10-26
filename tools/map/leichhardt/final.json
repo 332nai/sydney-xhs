@@ -1,0 +1,79 @@
+[
+ {
+  "key": "dp",
+  "name": "Dom Panino",
+  "cat": "r",
+  "lat": -33.884354,
+  "lon": 151.15071
+ },
+ {
+  "key": "cp",
+  "name": "Capriccio",
+  "cat": "r",
+  "lat": -33.881424,
+  "lon": 151.15707
+ },
+ {
+  "key": "br",
+  "name": "Barrel Room",
+  "cat": "c",
+  "lat": -33.886242,
+  "lon": 151.15714
+ },
+ {
+  "key": "cc",
+  "name": "Creek & Cella",
+  "cat": "c",
+  "lat": -33.886272,
+  "lon": 151.1571
+ },
+ {
+  "key": "ry",
+  "name": "The Royal",
+  "cat": "c",
+  "lat": -33.882053,
+  "lon": 151.1565
+ },
+ {
+  "key": "sb",
+  "name": "Sébastien Sans Gluten",
+  "cat": "c",
+  "lat": -33.8841,
+  "lon": 151.15196
+ },
+ {
+  "key": "ca",
+  "name": "The Carpenter",
+  "cat": "c",
+  "lat": -33.886887,
+  "lon": 151.1493
+ },
+ {
+  "key": "tk",
+  "name": "Tashkent",
+  "cat": "r",
+  "lat": -33.8868946,
+  "lon": 151.1581968
+ },
+ {
+  "key": "ap",
+  "name": "Aperitivo",
+  "cat": "r",
+  "lat": -33.8799989,
+  "lon": 151.1565846
+ },
+ {
+  "key": "sp",
+  "name": "Spicetown",
+  "cat": "r",
+  "lat": -33.8846,
+  "lon": 151.1576
+ },
+ {
+  "key": "lb",
+  "name": "La Botte D'Oro",
+  "cat": "r",
+  "lat": -33.8841129,
+  "lon": 151.1503654
+ }
+]

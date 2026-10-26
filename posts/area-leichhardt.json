@@ -1,0 +1,185 @@
+{
+ "id": "area-leichhardt",
+ "title": "悉尼Leichhardt附近吃什么",
+ "pages": [
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/lh_cover.png"
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/lh_map.png"
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Tashkent",
+   "images": [
+    "data/post_img/lh_tk_12.jpg",
+    "data/post_img/lh_tk_13.jpg",
+    "data/post_img/lh_tk_10.jpg",
+    "data/post_img/lh_tk_18.jpg"
+   ],
+   "lines": [
+    "10月刚开的乌兹别克餐厅，在Norton Street的Italian Forum里。",
+    "手包蒸饺manti配酸奶油，有南瓜和牛肉两种；馕坑现烤的酥皮肉饼somsa是招牌。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Dom Panino",
+   "images": [
+    "data/post_img/lh_dp_04.jpg",
+    "data/post_img/lh_dp_05.jpg",
+    "data/post_img/lh_dp_12.jpg",
+    "data/post_img/lh_dp_10.jpg"
+   ],
+   "lines": [
+    "悉尼第一家正经的意式帕尼尼店。",
+    "招牌是夹慢炖五小时猪肉小牛肉肉酱的帕尼尼，走之前带一个现炸的西西里甜甜圈。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Aperitivo",
+   "images": [
+    "data/post_img/lh_ap_05.jpg",
+    "data/post_img/lh_ap_03.jpg",
+    "data/post_img/lh_ap_07.jpg",
+    "data/post_img/lh_ap_09.jpg"
+   ],
+   "lines": [
+    "Norton Street上的意大利餐厅和披萨店。",
+    "前菜、手工意面和窑烤披萨都有，适合一群人分着吃。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Sébastien Sans Gluten",
+   "images": [
+    "data/post_img/lh_sb_09.jpg",
+    "data/post_img/lh_sb_02.jpg",
+    "data/post_img/lh_sb_11.jpg",
+    "data/post_img/lh_sb_04.jpg"
+   ],
+   "lines": [
+    "巴黎出生、法式训练的面包师开的无麸质面包店。",
+    "可颂花了六个月调配方，还有闪电泡芙、巴黎布雷斯特和肉派。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "La Botte D'Oro",
+   "images": [
+    "data/post_img/lh_lb_01.jpg",
+    "data/post_img/lh_lb_00.jpg",
+    "data/post_img/lh_lb_02.jpg"
+   ],
+   "lines": [
+    "Marion Street上的意大利小馆。",
+    "手工意面和窑烤披萨，松露意式饺子很出片。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Capriccio Osteria & Bar",
+   "images": [
+    "data/post_img/lh_cp_08.jpg",
+    "data/post_img/lh_cp_01.jpg",
+    "data/post_img/lh_cp_05.jpg",
+    "data/post_img/lh_cp_15.jpg"
+   ],
+   "lines": [
+    "Norton Street上的现代意大利菜。",
+    "传统意大利风味，做法更现代，配一杯Aperol spritz。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Spicetown",
+   "images": [
+    "data/post_img/lh_sp_17.jpg",
+    "data/post_img/lh_sp_19.jpg",
+    "data/post_img/lh_sp_13.jpg",
+    "data/post_img/lh_sp_16.jpg"
+   ],
+   "lines": [
+    "荒废多年的Leichhardt Hotel改成的两层美食市场，Burwood Chinatown同一个团队。",
+    "20多个摊位：炙烤扇贝、土耳其薄饼、韩式热狗、印尼炸鸡，楼上还有Cosmos Bar。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Creek & Cella",
+   "images": [
+    "data/post_img/lh_cc_02.jpg",
+    "data/post_img/lh_cc_06.jpg",
+    "data/post_img/lh_cc_10.jpg",
+    "data/post_img/lh_cc_15.jpg"
+   ],
+   "lines": [
+    "欧洲风格的酒吧，什么场合都合适。",
+    "有冷肉柜，配一盘冷肉和一杯spritz。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "The Royal Leichhardt",
+   "images": [
+    "data/post_img/lh_ry_19.jpg",
+    "data/post_img/lh_ry_01.jpg",
+    "data/post_img/lh_ry_08.jpg",
+    "data/post_img/lh_ry_13.jpg"
+   ],
+   "lines": [
+    "Norton Street上的老酒馆，装修像英国乡村酒吧。",
+    "绿植很多，有烤肉配约克郡布丁这类酒馆菜。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "The Carpenter",
+   "images": [
+    "data/post_img/lh_ca_10.jpg",
+    "data/post_img/lh_ca_11.jpg",
+    "data/post_img/lh_ca_04.jpg",
+    "data/post_img/lh_ca_00.jpg"
+   ],
+   "lines": [
+    "Flood Street上的咖啡馆，主厨来自Kindred。",
+    "高端咖啡机，早午餐招牌是意式乳清芝士松饼。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "The Barrel Room by Akasha",
+   "images": [
+    "data/post_img/lh_br_05.jpg",
+    "data/post_img/lh_br_08.jpg",
+    "data/post_img/lh_br_04.jpg",
+    "data/post_img/lh_br_02.jpg"
+   ],
+   "lines": [
+    "Akasha酒厂开的酒吧，专做野生酵母和橡木桶陈酿啤酒。",
+    "小批量的酒别处喝不到，也有鸡尾酒和下酒小食。"
+   ]
+  },
+  {
+   "layout": "list_clean",
+   "headline": "还有这几家",
+   "entries": [
+    {
+     "name": "Amami Mart",
+     "text": "香港老板开的日式便利店，有现做饭团和北海道牛奶软冰淇淋。"
+    },
+    {
+     "name": "Moretti",
+     "text": "罗马风格披萨店，招牌Trastevere披萨和提拉米苏。"
+    },
+    {
+     "name": "Monté",
+     "text": "Norton Street上的现代澳洲菜。"
+    }
+   ]
+  }
+ ]
+}
