@@ -3,16 +3,36 @@
  "title": "Mecca Coffee Foley Street",
  "pages": [
   {
-   "layout": "cover_sleeve",
-   "image": "data/post_img/mecca_02.jpg",
+   "layout": "cover_quad",
+   "gap": 0,
+   "images": [
+    "data/post_img/mecca_02.jpg",
+    "data/post_img/mecca_07.jpg",
+    "data/post_img/mecca_03.jpg",
+    "data/post_img/mecca_01.jpg"
+   ],
    "focus": [
-    0.45,
-    0.5
+    [
+     0.4,
+     0.5
+    ],
+    [
+     0.3,
+     0.5
+    ],
+    [
+     0.45,
+     0.5
+    ],
+    [
+     0.5,
+     0.5
+    ]
    ],
    "headline": [
-    "这家冰拿铁绝了！"
-   ],
-   "frame": false
+    "这家冰拿铁",
+    "绝了！"
+   ]
   },
   {
    "layout": "photo_full",
