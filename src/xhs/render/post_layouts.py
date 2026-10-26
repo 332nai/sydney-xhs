@@ -580,7 +580,49 @@ def closing_photo(p, ctx):
     return img
 
 
-REGISTRY = {"photo_full": photo_full, "photo_duo": photo_duo, "closing_photo": closing_photo, "cover_photo": cover_photo, "cover_full": cover_full, "cover_quad": cover_quad, "cover_five": cover_five, "cover_film": cover_film, "cover_hero": cover_hero, "cover_sleeve": cover_sleeve, "cover_bignum": cover_bignum, "cover_mosaic": cover_mosaic, "spot": spot, "spot_list": spot_list, "spot_clean": spot_clean, "list_clean": list_clean, "cover_split": cover_split, "photo_grid": photo_grid, "compare": compare,
+
+def spot_rich(p, ctx):
+    """详细单店卡：上面4到6张照片拼图，下面店名、奖项、地点和一整段介绍，字号自动缩放放得下。"""
+    img = Image.new("RGB", (W, H), CREAM)
+    imgs = p.get("images", [])[:6]
+    foci = p.get("focus") or [None] * len(imgs)
+    G = 5
+    ph = p.get("photo_h", 600)
+    n = len(imgs)
+    if n == 4:
+        cells = [(0, 0, 2, 1), (2, 0, 2, 1), (0, 1, 2, 1), (2, 1, 2, 1)]; cols = 4
+    elif n == 5:
+        cells = [(0, 0, 3, 1), (3, 0, 3, 1), (0, 1, 2, 1), (2, 1, 2, 1), (4, 1, 2, 1)]; cols = 6
+    else:
+        cells = [(0, 0, 2, 1), (2, 0, 2, 1), (4, 0, 2, 1), (0, 1, 2, 1), (2, 1, 2, 1), (4, 1, 2, 1)]; cols = 6
+    cw = (W - G * (cols - 1)) / cols; rh = (ph - G) / 2
+    for i, (cx, cy, sw, sh) in enumerate(cells[:n]):
+        x0 = round(cx * (cw + G)); y0 = round(cy * (rh + G))
+        x1 = round((cx + sw) * (cw + G) - G) if cx + sw < cols else W
+        y1 = round((cy + sh) * (rh + G) - G) if cy + sh < 2 else ph
+        img.paste(_fit_focus(imgs[i], (x1 - x0, y1 - y0), foci[i] if i < len(foci) else None), (x0, y0))
+    d = ImageDraw.Draw(img)
+    y = ph + 46
+    if p.get("award"):
+        af = F("sans", "bold", 30)
+        aw = tw(af, p["award"])
+        rrect(d, [M, y, M + aw + 36, y + 50], 25, fill=ACCENT if "ACCENT" in globals() else (214, 98, 40))
+        d.text((M + 18, y + 6), p["award"], font=af, fill=(255, 255, 255))
+        y += 72
+    nf = fit("sans", "black", p["name"], W - 2 * M, 60, 40)
+    d.text((M, y), p["name"], font=nf, fill=INK); y += int(nf.size * 1.35)
+    if p.get("where"):
+        d.text((M, y), p["where"], font=F("sans", "medium", 28), fill=(120, 110, 100)); y += 50
+    y += 6
+    text = p.get("text", "")
+    room = H - 50 - y
+    for size in range(32, 21, -1):
+        f = F("sans", "regular", size)
+        if para_height(text, f, W - 2 * M, 1.55) <= room: break
+    para(d, (M, y), text, f, INK, W - 2 * M, 1.55)
+    return img
+
+REGISTRY = {"spot_rich": spot_rich, "photo_full": photo_full, "photo_duo": photo_duo, "closing_photo": closing_photo, "cover_photo": cover_photo, "cover_full": cover_full, "cover_quad": cover_quad, "cover_five": cover_five, "cover_film": cover_film, "cover_hero": cover_hero, "cover_sleeve": cover_sleeve, "cover_bignum": cover_bignum, "cover_mosaic": cover_mosaic, "spot": spot, "spot_list": spot_list, "spot_clean": spot_clean, "list_clean": list_clean, "cover_split": cover_split, "photo_grid": photo_grid, "compare": compare,
             "story": story, "closing": closing, "venue": venue, "number": number}
 
 
