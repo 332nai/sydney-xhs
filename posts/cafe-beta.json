@@ -1,0 +1,81 @@
+{
+ "id": "cafe-beta",
+ "title": "Beta Coffee",
+ "pages": [
+  {
+   "layout": "cover_quad",
+   "images": [
+    "data/post_img/beta_02.jpg",
+    "data/post_img/beta_03.jpg",
+    "data/post_img/beta_01.jpg",
+    "data/post_img/beta_00.jpg"
+   ],
+   "focus": [
+    [
+     0.5,
+     0.5
+    ],
+    [
+     0.4,
+     0.5
+    ],
+    [
+     0.45,
+     0.5
+    ],
+    [
+     0.3,
+     0.5
+    ]
+   ],
+   "headline": [
+    "加蜂蜜的咖啡",
+    "悉尼这家太会了"
+   ]
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/beta_02.jpg",
+   "focus": [
+    0.55,
+    0.5
+   ]
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/beta_03.jpg",
+   "focus": [
+    0.45,
+    0.5
+   ]
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/beta_04.jpg",
+   "focus": [
+    0.7,
+    0.5
+   ]
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/beta_05.jpg",
+   "focus": [
+    0.35,
+    0.5
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Beta Coffee",
+   "images": [
+    "data/post_img/beta_01.jpg",
+    "data/post_img/beta_00.jpg"
+   ],
+   "lines": [
+    "Surry Hills的小咖啡吧，主理人是获奖咖啡师Chris Maybury，豆子在店里自己烘。",
+    "招牌Cafe con Miel加了野生蜂蜜和肉桂，手冲单像酒单一样按时价排。"
+   ]
+  }
+ ]
+}
