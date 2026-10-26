@@ -613,6 +613,8 @@ def spot_rich(p, ctx):
     d.text((M, y), p["name"], font=nf, fill=INK); y += int(nf.size * 1.35)
     if p.get("where"):
         d.text((M, y), p["where"], font=F("sans", "medium", 28), fill=(120, 110, 100)); y += 50
+    if p.get("price"):
+        d.text((M, y), p["price"], font=F("sans", "bold", 30), fill=(196, 84, 30)); y += 54
     y += 6
     text = p.get("text", "")
     room = H - 50 - y
