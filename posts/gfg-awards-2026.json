@@ -3,35 +3,35 @@
  "title": "悉尼年度美食大奖获奖餐厅",
  "pages": [
   {
-   "layout": "cover_bignum",
-   "image": "data/post_img/gfg_vs_02.jpg",
+   "layout": "cover_quad",
+   "gap": 0,
+   "images": [
+    "data/post_img/gfg_vs_02.jpg",
+    "data/post_img/gfg_lu_17.jpg",
+    "data/post_img/gfg_cc_11.jpg",
+    "data/post_img/gfg_bd_41.jpg"
+   ],
    "focus": [
-    0.45,
-    0.5
-   ],
-   "big": "12",
-   "unit": "家",
-   "big_size": 320,
-   "headline": [
-    "悉尼年度最强餐厅",
-    "今年拿奖的全在这"
-   ],
-   "stripe": [
     [
-     230,
-     90,
-     40
+     0.45,
+     0.5
     ],
     [
-     245,
-     190,
-     60
+     0.5,
+     0.5
     ],
     [
-     250,
-     245,
-     235
+     0.5,
+     0.5
+    ],
+    [
+     0.6,
+     0.5
     ]
+   ],
+   "headline": [
+    "悉尼年度最强12家",
+    "今年拿奖的全在这"
    ]
   },
   {
