@@ -1,0 +1,70 @@
+{
+ "id": "cafe-mecca-foley",
+ "title": "Mecca Coffee Foley Street",
+ "pages": [
+  {
+   "layout": "cover_sleeve",
+   "image": "data/post_img/mecca_02.jpg",
+   "focus": [
+    0.45,
+    0.5
+   ],
+   "headline": [
+    "在一整块红石上",
+    "喝咖啡"
+   ]
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/mecca_07.jpg",
+   "focus": [
+    0.3,
+    0.5
+   ]
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/mecca_03.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ]
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/mecca_01.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ]
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/mecca_06.jpg",
+   "focus": [
+    0.45,
+    0.5
+   ]
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/mecca_04.jpg",
+   "focus": [
+    0.25,
+    0.5
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Mecca Coffee Foley Street",
+   "images": [
+    "data/post_img/mecca_00.jpg",
+    "data/post_img/mecca_05.jpg"
+   ],
+   "lines": [
+    "Mecca在Darlinghurst的旗舰店，吧台用西澳Pilbara一整块红色白云石切出来，天花板圆灯会变色。",
+    "有拼配豆、生产者系列单品和香料冷萃，每天7点到4点。"
+   ]
+  }
+ ]
+}
