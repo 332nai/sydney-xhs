@@ -1,0 +1,72 @@
+{
+ "id": "venue-stanley-manly",
+ "title": "Stanley",
+ "pages": [
+  {
+   "layout": "cover_quad",
+   "gap": 0,
+   "images": [
+    "data/post_img/stan_05.jpg",
+    "data/post_img/stan_06.jpg",
+    "data/post_img/stan_04.jpg",
+    "data/post_img/stan_03.jpg"
+   ],
+   "focus": [
+    [
+     0.5,
+     0.5
+    ],
+    [
+     0.5,
+     0.5
+    ],
+    [
+     0.5,
+     0.5
+    ],
+    [
+     0.5,
+     0.5
+    ]
+   ],
+   "headline": [
+    "Manly码头新开粤菜",
+    "一开就拿两顶帽"
+   ]
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/stan_05.jpg"
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/stan_04.jpg"
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/stan_06.jpg"
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/stan_10.jpg"
+  },
+  {
+   "layout": "photo_full",
+   "image": "data/post_img/stan_00.jpg"
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Stanley",
+   "images": [
+    "data/post_img/stan_03.jpg",
+    "data/post_img/stan_09.jpg",
+    "data/post_img/stan_11.jpg",
+    "data/post_img/stan_14.jpg"
+   ],
+   "lines": [
+    "Manly码头上的粤菜馆，主厨Louis Tikaram，Brisbane名店的悉尼分店。",
+    "招牌是柴火烤炉烤的北京烤鸭，还有活海鲜、点心拼盘和蟹肉炒饭。"
+   ]
+  }
+ ]
+}
