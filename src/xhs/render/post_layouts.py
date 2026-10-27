@@ -512,10 +512,27 @@ def cover_quad(p, ctx):
     bw = max(tw(f, line) for line in lines) + 2 * 56
     bh = step * len(lines) + 2 * 44 - (step - size)
     bx, by = (W - bw) // 2, (H - bh) // 2
-    d.rectangle([bx, by, bx + bw, by + bh], fill=CREAM)
-    y = by + 40
-    for line in lines:
-        d.text(((W - tw(f, line)) // 2, y), line, font=f, fill=INK)
+    if p.get("box", True):
+        d.rectangle([bx, by, bx + bw, by + bh], fill=CREAM)
+        y = by + 40
+        for line in lines:
+            d.text(((W - tw(f, line)) // 2, y), line, font=f, fill=INK)
+            y += step
+        return img
+    # 无底框：中间一条柔和暗带，白字加描边
+    size = min(fit("sans", "black", line, W - 120, 120, 60).size for line in lines)
+    f = F("sans", "black", size); step = int(size * 1.22)
+    th = step * len(lines); cy = H // 2
+    band = Image.new("L", (1, H), 0)
+    for yy in range(H):
+        t = abs(yy - cy) / (th * 0.95 + 120)
+        band.putpixel((0, yy), int(170 * max(0, 1 - t) ** 1.2))
+    img = Image.composite(Image.new("RGB", (W, H), (8, 6, 6)), img, band.resize((W, H)))
+    d = ImageDraw.Draw(img)
+    y = cy - th // 2 - int(size * 0.12)
+    for k, line in enumerate(lines):
+        col = tuple(p.get("accent", (255, 196, 60))) if k == len(lines) - 1 else (255, 255, 255)
+        d.text(((W - tw(f, line)) // 2, y), line, font=f, fill=col, stroke_width=4, stroke_fill=(0, 0, 0))
         y += step
     return img
 
