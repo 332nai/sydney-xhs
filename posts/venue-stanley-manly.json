@@ -3,49 +3,24 @@
  "title": "Stanley",
  "pages": [
   {
-   "layout": "cover_mosaic",
-   "images": [
-    "data/post_img/stan_10.jpg",
-    "data/post_img/stan_09.jpg",
-    "data/post_img/stan_12.jpg",
-    "data/post_img/stan_01.jpg"
-   ],
+   "layout": "cover_full",
+   "image": "data/post_img/stan_05.jpg",
    "focus": [
-    [
-     0.5,
-     0.5
-    ],
-    [
-     0.5,
-     0.5
-    ],
-    [
-     0.5,
-     0.5
-    ],
-    [
-     0.5,
-     0.5
-    ]
+    0.4,
+    0.5
    ],
    "headline": [
-    "Manly码头这家粤菜",
-    "一开业就杀疯了！"
-   ],
-   "accent": true,
-   "accent_rgb": [
-    255,
-    140,
-    60
+    "悉尼这只烤鸭",
+    "让整个Manly排队"
    ]
   },
   {
    "layout": "photo_full",
-   "image": "data/post_img/stan_05.jpg"
+   "image": "data/post_img/stan_04.jpg"
   },
   {
    "layout": "photo_full",
-   "image": "data/post_img/stan_04.jpg"
+   "image": "data/post_img/stan_fl14.jpg"
   },
   {
    "layout": "photo_full",
@@ -57,7 +32,7 @@
   },
   {
    "layout": "photo_full",
-   "image": "data/post_img/stan_00.jpg"
+   "image": "data/post_img/stan_12.jpg"
   },
   {
    "layout": "spot_clean",
