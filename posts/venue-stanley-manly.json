@@ -3,15 +3,34 @@
  "title": "Stanley",
  "pages": [
   {
-   "layout": "cover_full",
-   "image": "data/post_img/stan_05.jpg",
+   "layout": "cover_hero3",
+   "images": [
+    "data/post_img/stan_05.jpg",
+    "data/post_img/stan_10.jpg",
+    "data/post_img/stan_09.jpg",
+    "data/post_img/stan_11.jpg"
+   ],
    "focus": [
-    0.4,
-    0.5
+    [
+     0.45,
+     0.5
+    ],
+    [
+     0.5,
+     0.5
+    ],
+    [
+     0.5,
+     0.5
+    ],
+    [
+     0.5,
+     0.5
+    ]
    ],
    "headline": [
-    "悉尼这只烤鸭",
-    "让整个Manly排队"
+    "这只烤鸭要做五天",
+    "悉尼直接拿两顶帽！"
    ]
   },
   {

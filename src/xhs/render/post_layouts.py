@@ -624,7 +624,34 @@ def spot_rich(p, ctx):
     para(d, (M, y), text, f, INK, W - 2 * M, 1.55)
     return img
 
-REGISTRY = {"spot_rich": spot_rich, "photo_full": photo_full, "photo_duo": photo_duo, "closing_photo": closing_photo, "cover_photo": cover_photo, "cover_full": cover_full, "cover_quad": cover_quad, "cover_five": cover_five, "cover_film": cover_film, "cover_hero": cover_hero, "cover_sleeve": cover_sleeve, "cover_bignum": cover_bignum, "cover_mosaic": cover_mosaic, "spot": spot, "spot_list": spot_list, "spot_clean": spot_clean, "list_clean": list_clean, "cover_split": cover_split, "photo_grid": photo_grid, "compare": compare,
+
+def cover_hero3(p, ctx):
+    """封面：上面一张大图铺满，底部渐暗压大标题；下面一排三张小图，白缝。"""
+    img = Image.new("RGB", (W, H), (255, 255, 255))
+    imgs = p["images"]; foci = p.get("focus") or [None] * 4
+    G = 6; bh = p.get("hero_h", 1000)
+    hero = _fit_focus(imgs[0], (W, bh), foci[0]).convert("RGB")
+    grad = Image.new("L", (1, bh), 0)
+    for yy in range(bh):
+        grad.putpixel((0, yy), int(235 * max(0, (yy - bh * 0.45) / (bh * 0.55)) ** 1.4))
+    hero = Image.composite(Image.new("RGB", (W, bh), (8, 6, 6)), hero, grad.resize((W, bh)))
+    img.paste(hero, (0, 0))
+    sw = (W - 2 * G) // 3
+    for i in range(3):
+        x = i * (sw + G)
+        img.paste(_fit_focus(imgs[i + 1], (W - 2 * (sw + G) if i == 2 else sw, H - bh - G), foci[i + 1]), (x, bh + G))
+    d = ImageDraw.Draw(img)
+    lines = p.get("headline", [])
+    y = bh - 60 - sum(int(fit("sans", "black", l, W - 2 * M, 120, 70).size * 1.18) for l in lines)
+    for k, l in enumerate(lines):
+        f = fit("sans", "black", l, W - 2 * M, 120, 70)
+        col = tuple(p.get("accent", (255, 196, 60))) if k == len(lines) - 1 else (255, 255, 255)
+        d.text((M + 4, y + 4), l, font=f, fill=(0, 0, 0))
+        d.text((M, y), l, font=f, fill=col)
+        y += int(f.size * 1.18)
+    return img
+
+REGISTRY = {"cover_hero3": cover_hero3, "spot_rich": spot_rich, "photo_full": photo_full, "photo_duo": photo_duo, "closing_photo": closing_photo, "cover_photo": cover_photo, "cover_full": cover_full, "cover_quad": cover_quad, "cover_five": cover_five, "cover_film": cover_film, "cover_hero": cover_hero, "cover_sleeve": cover_sleeve, "cover_bignum": cover_bignum, "cover_mosaic": cover_mosaic, "spot": spot, "spot_list": spot_list, "spot_clean": spot_clean, "list_clean": list_clean, "cover_split": cover_split, "photo_grid": photo_grid, "compare": compare,
             "story": story, "closing": closing, "venue": venue, "number": number}
 
 
