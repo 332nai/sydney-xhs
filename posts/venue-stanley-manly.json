@@ -10,7 +10,7 @@
     "data/post_img/stan_05.jpg",
     "data/post_img/stan_06.jpg",
     "data/post_img/stan_09.jpg",
-    "data/post_img/stan_10c.jpg"
+    "data/post_img/stan_ds.jpg"
    ],
    "focus": [
     [
@@ -26,7 +26,7 @@
      0.5
     ],
     [
-     0.47,
+     0.5,
      0.5
     ]
    ],
@@ -49,7 +49,7 @@
   },
   {
    "layout": "photo_full",
-   "image": "data/post_img/stan_10.jpg"
+   "image": "data/post_img/stan_ds.jpg"
   },
   {
    "layout": "photo_full",
