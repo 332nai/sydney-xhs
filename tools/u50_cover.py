@@ -29,7 +29,7 @@ def stroke_text(d, xy, t, f, fill, sw=8, sc=(0, 0, 0)):
     d.text(xy, t, font=f, fill=fill, stroke_width=sw, stroke_fill=sc)
 
 img = Image.new("RGB", (W, H))
-BIGC, BIGS = ((228, 30, 36), "white") if len(sys.argv) > 2 else (GOLD, (0, 0, 0))
+BIGC, BIGS = ("white", (0, 0, 0)) if len(sys.argv) > 2 else (GOLD, (0, 0, 0))
 cw, ch = W // 2, H // 3
 if len(sys.argv) > 2:
     n, fx, fy, z = sys.argv[2].split(",")
@@ -51,6 +51,8 @@ f1 = F("k", 84); t1 = "悉尼人均"
 fb = F("k", 300); big = "$50"; fu = F("k", 110); unit = "以内"
 bw = fb.getlength(big); uw = fu.getlength(unit)
 tx = (W - bw - uw - 16) / 2
+fg = F("k", 64); tg = "Good Food Guide"
+stroke_text(d, ((W - fg.getlength(tg)) / 2, cy - 420), tg, fg, "white", 6)
 stroke_text(d, ((W - f1.getlength(t1)) / 2, cy - 310), t1, f1, "white", 6)
 stroke_text(d, (tx, cy - 250), big, fb, BIGC, 12, BIGS)
 stroke_text(d, (tx + bw + 16, cy - 25), unit, fu, BIGC, 9, BIGS)
