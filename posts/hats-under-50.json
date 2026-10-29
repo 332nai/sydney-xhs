@@ -1,0 +1,197 @@
+{
+ "id": "hats-under-50",
+ "title": "悉尼人均50的帽子餐厅",
+ "pages": [
+  {
+   "layout": "cover_quad",
+   "gap": 0,
+   "box": false,
+   "images": [
+    "data/post_img/ch_pork_13.jpg",
+    "data/post_img/ch_tida_24.jpg",
+    "data/post_img/ch_yeo_03.jpg",
+    "data/post_img/ch_shunde_01.jpg"
+   ],
+   "focus": [
+    [
+     0.5,
+     0.5
+    ],
+    [
+     0.5,
+     0.5
+    ],
+    [
+     0.5,
+     0.5
+    ],
+    [
+     0.5,
+     0.5
+    ]
+   ],
+   "headline": [
+    "悉尼人均50",
+    "也能吃帽子餐厅"
+   ]
+  },
+  {
+   "layout": "spot_rich",
+   "name": "Yeodongsik",
+   "award": "一帽",
+   "where": "Eastwood",
+   "images": [
+    "data/post_img/ch_yeo_03.jpg",
+    "data/post_img/ch_yeo_02.jpg",
+    "data/post_img/ch_yeo_07.jpg",
+    "data/post_img/ch_yeo_04.jpg",
+    "data/post_img/ch_yeo_08.jpg",
+    "data/post_img/ch_yeo_05.jpg"
+   ],
+   "text": "Eastwood火车站旁的韩国家常小馆，今年第一次拿帽。招牌是醒酒汤，端上桌自己加紫苏粉、虾酱和辣椒调味；紫苏油荞麦面香得很直接，泡菜煎饼和牛骨汤饭也常点。环境就是街坊食堂，份量大，一个人一碗汤饭就能吃饱。",
+   "price": "人均约$25–45"
+  },
+  {
+   "layout": "spot_rich",
+   "name": "Tida Persian Food",
+   "award": "一帽",
+   "where": "North Willoughby",
+   "images": [
+    "data/post_img/ch_tida_05.jpg",
+    "data/post_img/ch_tida_08.jpg",
+    "data/post_img/ch_tida_04.jpg",
+    "data/post_img/ch_tida_03.jpg",
+    "data/post_img/ch_tida_07.jpg",
+    "data/post_img/ch_tida_11.jpg"
+   ],
+   "text": "只有14个座位的波斯家庭小馆，可以自带酒水。烤串是重点，肉末串koobideh多汁，藏红花米饭底下那层锅巴tahdig一定要抢。烟熏茄子蘸酱配饼$25，核桃石榴炖鸡$32，最后来一份藏红花奶冻收尾。座位少，记得提前订。",
+   "price": "人均约$35–50"
+  },
+  {
+   "layout": "spot_rich",
+   "name": "Taste of Shunde",
+   "award": "一帽",
+   "where": "Hurstville",
+   "images": [
+    "data/post_img/ch_shunde_01.jpg",
+    "data/post_img/ch_shunde_04.jpg",
+    "data/post_img/ch_shunde_03.jpg",
+    "data/post_img/ch_shunde_07.jpg",
+    "data/post_img/ch_shunde_06.jpg",
+    "data/post_img/ch_shunde_00.jpg"
+   ],
+   "text": "悉尼很少见的顺德菜，招牌烧鹅皮脆肉嫩，鱼皮饺、大良炒鲜奶都是顺德的代表做法。中午的点心很划算，顺德虾饺、脆皮虾肠粉每笼$11.8，炸鲜奶卷$7.8。带爸妈来吃最合适。",
+   "price": "人均约$40"
+  },
+  {
+   "layout": "spot_rich",
+   "name": "Abhi's",
+   "award": "一帽",
+   "where": "North Strathfield",
+   "images": [
+    "data/post_img/cc_abhis_11.jpg",
+    "data/post_img/cc_abhis_05.jpg",
+    "data/post_img/cc_abhis_14.jpg",
+    "data/post_img/cc_abhis_13.jpg",
+    "data/post_img/cc_abhis_15.jpg",
+    "data/post_img/cc_abhis_10.jpg"
+   ],
+   "text": "开了几十年的印度菜老牌，拿帽很多年。招牌椒盐风味的香辣鱿鱼配罗望子酱，果阿鱼咖喱浓稠香，羊肉咖喱带一点甜，用千层抛饼蘸着吃。价格在帽子餐厅里属于最低一档。",
+   "price": "人均约$45"
+  },
+  {
+   "layout": "spot_rich",
+   "name": "Porkfat",
+   "award": "一帽",
+   "where": "Haymarket",
+   "images": [
+    "data/post_img/ch_pork_13.jpg",
+    "data/post_img/ch_pork_07.jpg",
+    "data/post_img/ch_pork_01.jpg",
+    "data/post_img/ch_pork_03.jpg",
+    "data/post_img/ch_pork_11.jpg",
+    "data/post_img/ch_pork_09.jpg"
+   ],
+   "text": "唐人街里30个座位的泰国小馆，主厨来自Long Chim。猪油拌的猪肉拉帕配烟熏辣椒，罗望子焦糖鸡翅，香脆金目鲈配青芒果沙拉，猪颊肉青咖喱配荔枝，每道味道都很冲。可以自带酒水，收开瓶费。",
+   "price": "人均约$50"
+  },
+  {
+   "layout": "spot_rich",
+   "name": "Yan",
+   "award": "一帽",
+   "where": "Wolli Creek",
+   "images": [
+    "data/post_img/ch_yan_01.jpg",
+    "data/post_img/ch_yan_04.jpg",
+    "data/post_img/ch_yan_05.jpg",
+    "data/post_img/ch_yan_03.jpg",
+    "data/post_img/ch_yan_12.jpg",
+    "data/post_img/ch_yan_07.jpg"
+   ],
+   "text": "把粤菜和烟熏结合起来的餐厅。烟熏羊排配茄子和亚洲风味青酱$43，烟熏鸡排配叉烧酱$32，黑椒炸鱿鱼$21。几乎每桌都点的是整个椰青装的椰子雪糕。三四个人分享点菜最划算。",
+   "price": "人均约$50"
+  },
+  {
+   "layout": "spot_rich",
+   "name": "Olympic Meats",
+   "award": "一帽",
+   "where": "Marrickville",
+   "images": [
+    "data/post_img/mkf_om_04.jpg",
+    "data/post_img/mkf_om_06.jpg",
+    "data/post_img/mkf_om_08.jpg",
+    "data/post_img/mkf_om_10.jpg"
+   ],
+   "text": "希腊伯罗奔尼撒风味的烤肉馆，大部分菜在$21以内。炭火转着烤的肉，每天手拉的希腊酥皮派，柴火烤的手工皮塔饼，配上蘸酱就是一顿。不接受预订，人多早点去。",
+   "price": "人均约$35–50"
+  },
+  {
+   "layout": "spot_rich",
+   "name": "Kindred",
+   "award": "一帽",
+   "where": "Darlington",
+   "images": [
+    "data/post_img/ch_kindred_06.jpg",
+    "data/post_img/ch_kindred_09.jpg",
+    "data/post_img/ch_kindred_12.jpg",
+    "data/post_img/ch_kindred_01.jpg",
+    "data/post_img/ch_kindred_00.jpg",
+    "data/post_img/ch_kindred_05.jpg"
+   ],
+   "text": "前A Tavola厨师开的意大利小馆，就在悉尼大学旁边。意面全部手工做，牛尾波特菇宽面、黑蘑菇酱汁土豆团子、焦黄油胡萝卜饺都是招牌。两道菜加起来不到$45，还有自酿啤酒和自然酒。",
+   "price": "两道菜不到$45"
+  },
+  {
+   "layout": "spot_rich",
+   "name": "Ho Jiak Town Hall",
+   "award": "一帽",
+   "where": "CBD",
+   "images": [
+    "data/post_img/ch_hojiak_04.jpg",
+    "data/post_img/ch_hojiak_01.jpg",
+    "data/post_img/ch_hojiak_03.jpg",
+    "data/post_img/ch_hojiak_08.jpg",
+    "data/post_img/ch_hojiak_06.jpg",
+    "data/post_img/ch_hojiak_02.jpg"
+   ],
+   "text": "城里最热闹的马来西亚餐厅，主厨Junda Khoo把马来西亚各地的家常菜做得很地道。炒粿条锅气足，叻沙浓郁，还有各种南洋小吃和热带风鸡尾酒。在CBD中心，下班约饭很方便。",
+   "price": "人均约$50"
+  },
+  {
+   "layout": "spot_rich",
+   "name": "Postino Osteria",
+   "award": "一帽",
+   "where": "Summer Hill",
+   "images": [
+    "data/post_img/ch_postino_05.jpg",
+    "data/post_img/ch_postino_03.jpg",
+    "data/post_img/ch_postino_08.jpg",
+    "data/post_img/ch_postino_07.jpg",
+    "data/post_img/ch_postino_04.jpg",
+    "data/post_img/ch_postino_00.jpg"
+   ],
+   "text": "Ormeggio团队在一座老邮局里开的意大利小馆。米兰炸肉丸配蒜泥蛋黄酱必点，手工吉他弦面配四十颗小肉丸，柠檬酱扁面配烤巴尔曼虾，最后来一份开心果提拉米苏。一份意面加一杯spritz很满足。",
+   "price": "人均约$50"
+  }
+ ]
+}
