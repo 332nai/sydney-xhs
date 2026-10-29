@@ -50,6 +50,6 @@ stroke_text(d, ((W - f1.getlength(t1)) / 2, cy - 310), t1, f1, "white", 6)
 stroke_text(d, (tx, cy - 250), big, fb, GOLD, 10)
 stroke_text(d, (tx + bw + 16, cy - 25), unit, fu, GOLD, 8)
 # 第三行
-f3 = F("k", 82); t3 = "也能吃到的10家帽子餐厅"
+f3 = F("k", 82); t3 = "也能吃到的10家得奖餐厅"
 stroke_text(d, ((W - f3.getlength(t3)) / 2, cy + 140), t3, f3, "white", 7)
 img.save(sys.argv[1], quality=93)
