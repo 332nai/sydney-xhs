@@ -25,13 +25,18 @@ def hat(d, cx, cy, s, col):
         d.ellipse([cx + dx - r, cy + dy - r, cx + dx + r, cy + dy + r], fill=col)
     d.rectangle([cx - r * 1.25, cy, cx + r * 1.25, cy + s * .55], fill=col)
 
-def stroke_text(d, xy, t, f, fill, sw=8):
-    d.text(xy, t, font=f, fill=fill, stroke_width=sw, stroke_fill=(0, 0, 0))
+def stroke_text(d, xy, t, f, fill, sw=8, sc=(0, 0, 0)):
+    d.text(xy, t, font=f, fill=fill, stroke_width=sw, stroke_fill=sc)
 
 img = Image.new("RGB", (W, H))
+BIGC, BIGS = ((228, 30, 36), "white") if len(sys.argv) > 2 else (GOLD, (0, 0, 0))
 cw, ch = W // 2, H // 3
-for i, (n, fx, fy) in enumerate(TILES):
-    img.paste(fill(SRC + n + ".jpg", cw, ch, fx, fy, 1.25), ((i % 2) * cw, (i // 2) * ch))
+if len(sys.argv) > 2:
+    n, fx, fy, z = sys.argv[2].split(",")
+    img.paste(fill(SRC + n + ".jpg", W, H, float(fx), float(fy), float(z)), (0, 0))
+else:
+    for i, (n, fx, fy) in enumerate(TILES):
+        img.paste(fill(SRC + n + ".jpg", cw, ch, fx, fy, 1.25), ((i % 2) * cw, (i // 2) * ch))
 # 中间压暗带
 ov = Image.new("L", (1, H))
 for y in range(H):
@@ -47,8 +52,8 @@ fb = F("k", 300); big = "$50"; fu = F("k", 110); unit = "以内"
 bw = fb.getlength(big); uw = fu.getlength(unit)
 tx = (W - bw - uw - 16) / 2
 stroke_text(d, ((W - f1.getlength(t1)) / 2, cy - 310), t1, f1, "white", 6)
-stroke_text(d, (tx, cy - 250), big, fb, GOLD, 10)
-stroke_text(d, (tx + bw + 16, cy - 25), unit, fu, GOLD, 8)
+stroke_text(d, (tx, cy - 250), big, fb, BIGC, 12, BIGS)
+stroke_text(d, (tx + bw + 16, cy - 25), unit, fu, BIGC, 9, BIGS)
 # 第三行
 f3 = F("k", 82); t3 = "也能吃到的10家得奖餐厅"
 stroke_text(d, ((W - f3.getlength(t3)) / 2, cy + 140), t3, f3, "white", 7)
