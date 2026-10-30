@@ -1,0 +1,140 @@
+{
+ "id": "late-night-sydney",
+ "title": "悉尼深夜食堂",
+ "pages": [
+  {
+   "layout": "external",
+   "file": "tools/late_cover.py",
+   "args": [
+    "data/post_img/ln_cat_06.jpg",
+    0.5,
+    0.62,
+    1.0
+   ]
+  },
+  {
+   "layout": "spot_rich",
+   "name": "The Caterpillar Club",
+   "award": "凌晨4点",
+   "where": "CBD",
+   "images": [
+    "data/post_img/ln_cat_06.jpg",
+    "data/post_img/ln_cat_13.jpg",
+    "data/post_img/ln_cat_07.jpg",
+    "data/post_img/ln_cat_05.jpg",
+    "data/post_img/ln_cat_02.jpg",
+    "data/post_img/ln_cat_00.jpg"
+   ],
+   "text": "Swillhouse团队开在地下室的深夜酒吧，Pitt Street走楼梯下去。招牌烟熏芝士汉堡是悉尼宵夜界的顶流，菠萝椰子鸡尾酒也是必点。晚上有现场乐队，DJ放的是全球最大的私人黑胶收藏之一。",
+   "price": "每天开到凌晨3点，周五周六到4点"
+  },
+  {
+   "layout": "spot_rich",
+   "name": "Maisy's",
+   "award": "凌晨3点",
+   "where": "Neutral Bay",
+   "images": [
+    "data/post_img/ln_maisy_03.jpg",
+    "data/post_img/ln_maisy_02.jpg",
+    "data/post_img/ln_maisy_01.jpg",
+    "data/post_img/ln_maisy_00.jpg"
+   ],
+   "text": "北岸少有的深夜咖啡餐厅，凌晨也能吃到全天早餐。招牌超大份早餐有鸡蛋、培根、香肠、薯饼和豆子，还有牛肉汉堡、肉酱意面和热巧克力布朗尼。人均20多刀，夜班和刚下飞机都合适。",
+   "price": "每天下午3点开到凌晨3点"
+  },
+  {
+   "layout": "spot_rich",
+   "name": "MuMu",
+   "award": "凌晨2点",
+   "where": "CBD",
+   "images": [
+    "data/post_img/ln_mumu_11.jpg",
+    "data/post_img/ln_mumu_04.jpg",
+    "data/post_img/ln_mumu_01.jpg",
+    "data/post_img/ln_mumu_07.jpg",
+    "data/post_img/ln_mumu_03.jpg",
+    "data/post_img/ln_mumu_05.jpg"
+   ],
+   "text": "Merivale集团的东南亚街头菜，George Street上最热闹的一家。越南汁生蚝、蛤蜊丛林咖喱、金边炸鸡，鱼露黄油炒大虾很下酒。柚子冰沙鸡尾酒是招牌，适合一群朋友深夜续摊。",
+   "price": "周一到周六开到凌晨2点，周日到晚上10点"
+  },
+  {
+   "layout": "spot_rich",
+   "name": "Pelicano",
+   "award": "凌晨2点",
+   "where": "Potts Point",
+   "images": [
+    "data/post_img/ln_pel_01.jpg",
+    "data/post_img/ln_pel_00.jpg",
+    "data/post_img/ln_pel_02.jpg",
+    "data/post_img/ln_pel_03.jpg"
+   ],
+   "text": "Franca团队把当年Double Bay的Pelicano搬到了Kings Cross原Hugos Lounge的位置。墙上挂满艺术作品，吃完楼上还能跳舞。推荐炸海鲜拼盘、金枪鱼酱小牛肉吐司和德尔莫尼科牛排，配一杯柠檬酒spritz。",
+   "price": "周五周六出餐到凌晨2点"
+  },
+  {
+   "layout": "spot_rich",
+   "name": "Dodee Paidang",
+   "award": "凌晨1点",
+   "where": "Haymarket",
+   "images": [
+    "data/post_img/ln_dodee_07.jpg",
+    "data/post_img/ln_dodee_03.jpg",
+    "data/post_img/ln_dodee_05.jpg",
+    "data/post_img/ln_dodee_00.jpg",
+    "data/post_img/ln_dodee_09.jpg",
+    "data/post_img/ln_dodee_08.jpg"
+   ],
+   "text": "唐人街旁边的泰国街头粉面馆，可以自带酒水。招牌Dodee Monster冬阴功粉加满肉丸和鱼丸，号称悉尼最辣的汤粉之一，口味完全没有为西方人调淡。烤猪肉串配糯米饭、泰式炒河粉也常点。",
+   "price": "每天开到凌晨1点"
+  },
+  {
+   "layout": "spot_rich",
+   "name": "El Primo Sanchez",
+   "award": "凌晨1点",
+   "where": "Surry Hills",
+   "images": [
+    "data/post_img/ln_eps_04.jpg",
+    "data/post_img/ln_eps_09.jpg",
+    "data/post_img/ln_eps_06.jpg",
+    "data/post_img/ln_eps_07.jpg",
+    "data/post_img/ln_eps_00.jpg",
+    "data/post_img/ln_eps_03.jpg"
+   ],
+   "text": "Maybe Sammy团队的墨西哥鸡尾酒吧，从Paddington搬到Surry Hills，空间更大。龙舌兰护照可以集章，米浆椰子冰沙是招牌，玛格丽特种类很多。还能订卡拉OK包间，配塔可和玉米片一路唱到深夜。",
+   "price": "周五周六开到凌晨1点，周三周四到晚上11点"
+  },
+  {
+   "layout": "spot_rich",
+   "name": "Tanuki",
+   "award": "午夜12点",
+   "where": "Double Bay",
+   "images": [
+    "data/post_img/ln_tanuki_05.jpg",
+    "data/post_img/ln_tanuki_01.jpg",
+    "data/post_img/ln_tanuki_03.jpg",
+    "data/post_img/ln_tanuki_07.jpg",
+    "data/post_img/ln_tanuki_02.jpg",
+    "data/post_img/ln_tanuki_06.jpg"
+   ],
+   "text": "Matteo团队开的日料酒吧，可以坐在生食吧台看炭火烤串，也可以在老枫香树下的庭院喝一杯清酒马天尼配三明治。生鱼片、煎饺和炉端烧都做得精致，Double Bay少有的晚吃选择。",
+   "price": "周三周四和周六开到午夜，周日到晚上10点"
+  },
+  {
+   "layout": "spot_rich",
+   "name": "Bar Bruno",
+   "award": "午夜12点",
+   "where": "CBD",
+   "images": [
+    "data/post_img/ln_bruno_02.jpg",
+    "data/post_img/ln_bruno_04.jpg",
+    "data/post_img/ln_bruno_03.jpg",
+    "data/post_img/ln_bruno_08.jpg",
+    "data/post_img/ln_bruno_01.jpg",
+    "data/post_img/ln_bruno_07.jpg"
+   ],
+   "text": "Odd Culture团队今年在York Street开的意大利小馆，从早上一直开到午夜。生蚝、米兰炸猪排配黑蒜蛋黄酱、帕玛森汤底的墨累鳕鱼都是招牌。楼下就是Razz Room迪斯科酒吧，吃完直接下楼跳舞。",
+   "price": "周一到周六开到午夜"
+  }
+ ]
+}
