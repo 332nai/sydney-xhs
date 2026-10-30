@@ -31,6 +31,21 @@
   },
   {
    "layout": "spot_rich",
+   "name": "Huamoom Thai Town",
+   "award": "凌晨4点",
+   "award2": "人均$25-40",
+   "where": "Haymarket",
+   "images": [
+    "data/post_img/ln_hm_05.jpg",
+    "data/post_img/ln_hm_07.jpg",
+    "data/post_img/ln_hm_08.jpg",
+    "data/post_img/ln_hm_06.jpg"
+   ],
+   "price": "每天上午11点开到凌晨4点",
+   "text": "Thai Town里开得最晚的泰国餐厅之一，Pitt Street上一直开到凌晨4点。招牌牛肉船面$24.9，还有泰北酸肉肠、烤牛舌、猪肉末沙拉这些地道泰国东北菜。隔壁是同一家开的泰国小超市，周五还有$25一小时的泰式自助。"
+  },
+  {
+   "layout": "spot_rich",
    "name": "Maisy's",
    "award": "凌晨3点",
    "where": "Neutral Bay",
@@ -143,6 +158,40 @@
    "text": "Odd Culture团队今年在York Street开的意大利小馆，从早上一直开到午夜。生蚝、米兰炸猪排配黑蒜蛋黄酱、帕玛森汤底的墨累鳕鱼都是招牌。楼下就是Razz Room迪斯科酒吧，吃完直接下楼跳舞。",
    "price": "周一到周六开到午夜",
    "award2": "人均$70-110"
+  },
+  {
+   "layout": "spot_rich",
+   "name": "Rei Izakaya",
+   "award": "午夜12点",
+   "award2": "人均$50-80",
+   "where": "CBD",
+   "images": [
+    "data/post_img/ln_rei_01.jpg",
+    "data/post_img/ln_rei_04.jpg",
+    "data/post_img/ln_rei_07.jpg",
+    "data/post_img/ln_rei_10.jpg",
+    "data/post_img/ln_rei_12.jpg",
+    "data/post_img/ln_rei_19.jpg"
+   ],
+   "price": "周五周六开到午夜，其他日子到晚上11点",
+   "text": "Sussex Street上的日式居酒屋，下班来一串烤串配一杯烧酒最舒服。烤鸡肝、鸡软骨、牛舌、五花肉串都是现烤，关东煮和日式炸鸡也很下酒。清酒、烧酒和日本威士忌选择多，还有生啤。"
+  },
+  {
+   "layout": "spot_rich",
+   "name": "Late Night Table",
+   "award": "午夜12点",
+   "award2": "人均$40-70",
+   "where": "North Strathfield",
+   "images": [
+    "data/post_img/ln_lnt_07.jpg",
+    "data/post_img/ln_lnt_11.jpg",
+    "data/post_img/ln_lnt_13.jpg",
+    "data/post_img/ln_lnt_02.jpg",
+    "data/post_img/ln_lnt_16.jpg",
+    "data/post_img/ln_lnt_01.jpg"
+   ],
+   "price": "周二到周六开到午夜，周日到晚上11点，周一休息",
+   "text": "Inner West很火的韩式深夜酒馆，名字就叫深夜餐桌。招牌是蜂巢配米酒、刺身拼盘加海胆辣面，还有一大锅奶油虾意面、辣炒鸡和生拌牛肉鸟蛤拌饭。适合一群人点一桌喝到半夜。"
   }
  ]
 }

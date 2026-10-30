@@ -22,5 +22,5 @@ def st(y, t, f, sw):
     d.text(((W - f.getlength(t)) / 2, y), t, font=f, fill="white", stroke_width=sw, stroke_fill=(0, 0, 0))
 st(90, "悉尼", F(96), 6)
 st(200, "深夜食堂", F(230), 10)
-st(505, "开到深夜的8家店", F(84), 7)
+st(505, "开到深夜的11家店", F(84), 7)
 img.save(out, quality=93)
