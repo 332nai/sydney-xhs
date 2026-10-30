@@ -625,6 +625,10 @@ def spot_rich(p, ctx):
         aw = tw(af, p["award"])
         rrect(d, [M, y, M + aw + 36, y + 50], 25, fill=ACCENT if "ACCENT" in globals() else (214, 98, 40))
         d.text((M + 18, y + 6), p["award"], font=af, fill=(255, 255, 255))
+        if p.get("award2"):
+            x2 = M + aw + 36 + 14; a2 = tw(af, p["award2"])
+            rrect(d, [x2, y, x2 + a2 + 36, y + 50], 25, fill=(40, 40, 44))
+            d.text((x2 + 18, y + 6), p["award2"], font=af, fill=(255, 255, 255))
         y += 72
     nf = fit("sans", "black", p["name"], W - 2 * M, 60, 40)
     d.text((M, y), p["name"], font=nf, fill=INK); y += int(nf.size * 1.35)
