@@ -59,7 +59,7 @@ def listpage(title, sub, rows, col, out, rowh=150):
     img = Image.new("RGB", (W, H), CREAM); d = ImageDraw.Draw(img)
     d.text((70, 80), title, font=F("k", 72), fill=INK)
     d.text((72, 180), sub, font=F("m", 32), fill=GREY)
-    y = 270
+    y = 252
     for price, name, area, when, extra in rows:
         fp = F("k", 64 if len(price) <= 2 else 52)
         d.text((70, y + 8), price, font=fp, fill=col)
@@ -67,10 +67,10 @@ def listpage(title, sub, rows, col, out, rowh=150):
         d.text((x, y), name, font=F("b", 46), fill=INK)
         d.text((x + F("b", 46).getlength(name) + 18, y + 14), area, font=F("m", 30), fill=GREY)
         d.text((x, y + 66), when, font=F("m", 33), fill=col)
-        d.text((x, y + 114), extra, font=F("r", 32), fill=(70, 66, 62))
+        d.text((x, y + 110), extra, font=F("r", 30), fill=(70, 66, 62))
         y += rowh
-        d.line([(70, y - 8), (W - 70, y - 8)], fill=LINE, width=2)
+        d.line([(70, y - 6), (W - 70, y - 6)], fill=LINE, width=2)
     img.save(out)
-listpage("生蚝Happy Hour", "价格是一只生蚝的价格", OY, CORAL, f"{od}/hh_oy1.png", 166)
+listpage("生蚝Happy Hour", "价格是一只生蚝的价格", OY, CORAL, f"{od}/hh_oy1.png", 170)
 listpage("生蚝Happy Hour（续）", "价格是一只生蚝的价格", OY2, CORAL, f"{od}/hh_oy2.png", 190)
 listpage("5到6刀喝一杯", "价格是一杯啤酒或葡萄酒", DR, TEAL, f"{od}/hh_dr.png", 210)
