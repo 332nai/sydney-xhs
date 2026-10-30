@@ -5,7 +5,7 @@ W, H = 1080, 1440
 NOTO = "/usr/share/fonts/opentype/noto/"
 def F(w, s): return ImageFont.truetype(NOTO + {"k": "NotoSansCJK-Black.ttc", "b": "NotoSansCJK-Bold.ttc", "m": "NotoSansCJK-Medium.ttc", "r": "NotoSansCJK-Regular.ttc"}[w], s, index=2)
 CREAM, INK, CORAL, TEAL, GREY, LINE = (247, 242, 233), (28, 26, 24), (226, 92, 60), (0, 128, 128), (120, 112, 104), (226, 216, 202)
-od = sys.argv[1]
+od = sys.argv[1] if __name__ == "__main__" else None
 
 import re
 def wrap(d, text, font, maxw):
@@ -23,19 +23,6 @@ CAL = [("周一", "Pier Bar、The Rover、The Roosevelt、Jane、The Winery、Th
        ("周五", "周一那几家，加上Corner House、Rose of Australia全天、The London"),
        ("周六", "Bat & Ball（$1，卖完即止）、The Rover、The Roosevelt、Jane、The Charles、Corner House、The Erko"),
        ("周日", "The Roosevelt、Jane、The Charles、Corner House、The Erko")]
-img = Image.new("RGB", (W, H), CREAM); d = ImageDraw.Draw(img)
-d.text((70, 80), "一周生蚝日历", font=F("k", 78), fill=INK)
-d.text((72, 190), "每天都有地方吃便宜生蚝", font=F("m", 34), fill=GREY)
-y = 290; fd, ft = F("k", 46), F("r", 36)
-for day, txt in CAL:
-    d.rounded_rectangle([70, y, 190, y + 64], 18, fill=CORAL)
-    d.text((86, y + 4), day, font=fd, fill="white")
-    ls = wrap(d, txt, ft, W - 230 - 70)
-    for i, l in enumerate(ls): d.text((230, y + 8 + i * 52), l.strip("、"), font=ft, fill=INK)
-    y += max(64, 10 + len(ls) * 52) + 44
-    d.line([(70, y - 18), (W - 70, y - 18)], fill=LINE, width=2)
-img.save(f"{od}/hh_cal.png")
-
 # 优惠清单
 OY = [("$1", "Bat & Ball Hotel", "Redfern", "周六，卖完即止", "悉尼最便宜的生蚝，去晚了就没了"),
       ("$1.5", "Harbour View Hotel", "The Rocks", "周四晚上6点到7点", "海港大桥脚下的老酒吧"),
@@ -71,6 +58,19 @@ def listpage(title, sub, rows, col, out, rowh=150):
         y += rowh
         d.line([(70, y - 6), (W - 70, y - 6)], fill=LINE, width=2)
     img.save(out)
-listpage("生蚝Happy Hour", "价格是一只生蚝的价格", OY, CORAL, f"{od}/hh_oy1.png", 170)
-listpage("生蚝Happy Hour（续）", "价格是一只生蚝的价格", OY2, CORAL, f"{od}/hh_oy2.png", 190)
-listpage("5到6刀喝一杯", "价格是一杯啤酒或葡萄酒", DR, TEAL, f"{od}/hh_dr.png", 210)
+if __name__ == "__main__":
+    img = Image.new("RGB", (W, H), CREAM); d = ImageDraw.Draw(img)
+    d.text((70, 80), "一周生蚝日历", font=F("k", 78), fill=INK)
+    d.text((72, 190), "每天都有地方吃便宜生蚝", font=F("m", 34), fill=GREY)
+    y = 290; fd, ft = F("k", 46), F("r", 36)
+    for day, txt in CAL:
+        d.rounded_rectangle([70, y, 190, y + 64], 18, fill=CORAL)
+        d.text((86, y + 4), day, font=fd, fill="white")
+        ls = wrap(d, txt, ft, W - 230 - 70)
+        for i, l in enumerate(ls): d.text((230, y + 8 + i * 52), l.strip("、"), font=ft, fill=INK)
+        y += max(64, 10 + len(ls) * 52) + 44
+        d.line([(70, y - 18), (W - 70, y - 18)], fill=LINE, width=2)
+    img.save(f"{od}/hh_cal.png")
+    listpage("生蚝Happy Hour", "价格是一只生蚝的价格", OY, CORAL, f"{od}/hh_oy1.png", 170)
+    listpage("生蚝Happy Hour（续）", "价格是一只生蚝的价格", OY2, CORAL, f"{od}/hh_oy2.png", 190)
+    listpage("5到6刀喝一杯", "价格是一杯啤酒或葡萄酒", DR, TEAL, f"{od}/hh_dr.png", 210)

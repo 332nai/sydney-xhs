@@ -4,24 +4,11 @@
  "pages": [
   {
    "layout": "external",
-   "file": "tools/text_cover.py",
+   "file": "tools/hh_neon.py",
    "args": [
-    "data/post_img/hh_pier.jpg",
-    0.5,
-    0.5,
-    1.0,
-    "悉尼",
-    "Happy Hour",
-    "生蚝1刀起，啤酒5刀"
+    "/home/claude/hh/geo.json"
    ]
-  },
-  {
-   "layout": "external",
-   "file": "tools/map/hh/make_map_hh.py"
-  },
-  {
-   "layout": "external",
-   "file": "tools/hh_pages.py"
   }
- ]
+ ],
+ "style": "neon"
 }
