@@ -4,11 +4,11 @@
  "pages": [
   {
    "layout": "external",
-   "file": "tools/hh_neon.py",
+   "file": "tools/hh_editorial.py",
    "args": [
     "/home/claude/hh/geo.json"
    ]
   }
  ],
- "style": "neon"
+ "style": "editorial"
 }
