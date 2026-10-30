@@ -3,8 +3,8 @@
  "title": "悉尼蓝花楹打卡地图",
  "pages": [
   {
-   "layout": "photo_full",
-   "image": "/home/claude/jac/cover.jpg"
+   "layout": "external",
+   "file": "tools/map/jac/cartoon_cover.py"
   },
   {
    "layout": "photo_full",
