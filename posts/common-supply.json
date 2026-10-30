@@ -1,0 +1,91 @@
+{
+ "id": "common-supply",
+ "title": "悉尼版Erewhon凭什么天天排队",
+ "pages": [
+  {
+   "layout": "external",
+   "file": "tools/text_cover.py",
+   "args": [
+    "data/post_img/cs_a_03.jpg",
+    0.5,
+    0.6,
+    1.0,
+    "悉尼版Erewhon",
+    "排队排到街角",
+    "Common Supply凭什么这么火"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "开业就排到街角",
+   "images": [
+    "data/post_img/cs_b_00.jpg"
+   ],
+   "lines": [
+    "2025年10月在Bondi Beach的Campbell Parade开业，开业周末刚下普拉提课的本地人排满了整条街。",
+    "很多人第一次来，就是想看看大家口中的悉尼版Erewhon长什么样。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "悉尼版Erewhon",
+   "images": [
+    "data/post_img/cs_a_02.jpg",
+    "data/post_img/cs_b_01.jpg"
+   ],
+   "lines": [
+    "Erewhon是洛杉矶最出名的高端健康超市，明星同款冰沙一杯卖到20多美元。",
+    "Common Supply把咖啡吧、冰沙吧、热食和有机杂货放进一家店，一整面墙的冷压果汁很有既视感。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "不用籽油的蛋白餐盘",
+   "images": [
+    "data/post_img/cs_a_00.jpg"
+   ],
+   "lines": [
+    "厨房完全不用籽油，只用橄榄油和牛油果油，正好踩中现在最火的健康话题。",
+    "餐盘自己搭，草饲牛排、野生三文鱼配紫色味噌薯泥，一份大约25到30刀。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "16刀一杯的冰沙",
+   "images": [
+    "data/post_img/cs_gc_21.jpg",
+    "data/post_img/cs_gc_29.jpg",
+    "data/post_img/cs_gc_44.jpg"
+   ],
+   "lines": [
+    "招牌Choccy Supply是榛子酱、可可、香蕉加灵芝，一杯16刀。",
+    "枫糖海盐拿铁、蘑菇可可、加胶原蛋白的拿铁，拿在手上就是Bondi的标配。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "像精品店一样的店",
+   "images": [
+    "data/post_img/cs_b_02.jpg",
+    "data/post_img/cs_a_01.jpg"
+   ],
+   "lines": [
+    "不锈钢台面配落地窗，点单全靠iPad自助，拿了就走。",
+    "背后是开过Pocket和Makaveli的Bondi本地团队，很懂这里的人要什么。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "一年开了三家",
+   "images": [
+    "data/post_img/cs_gc_48.jpg",
+    "data/post_img/cs_gc_50.jpg",
+    "data/post_img/cs_gc_53.jpg"
+   ],
+   "lines": [
+    "2026年5月在CBD的Clarence Street开了第二家，7月去伦敦办快闪，9月在黄金海岸Nobby Beach开了昆州第一家。",
+    "黄金海岸更大的旗舰店也已经在计划中。"
+   ]
+  }
+ ]
+}
