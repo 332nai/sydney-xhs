@@ -1,0 +1,121 @@
+{
+ "id": "jacaranda-2026",
+ "title": "悉尼蓝花楹打卡地图",
+ "pages": [
+  {
+   "layout": "photo_full",
+   "image": "/home/claude/jac/cover.jpg"
+  },
+  {
+   "layout": "photo_full",
+   "image": "/home/claude/jac/map.png"
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Kirribilli McDougall Street",
+   "images": [
+    "data/post_img/jac_kirri1.jpg",
+    "data/post_img/jac_kirri2.jpg"
+   ],
+   "lines": [
+    "两边的树在头顶连成一条紫色隧道，是悉尼最出名的蓝花楹街。",
+    "周末上午10点到下午2点人最多，早上或工作日去，拍照别挡住住户车道。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Lavender Bay 秘密花园",
+   "images": [
+    "data/post_img/jac_lav1.jpg",
+    "data/post_img/jac_lav2.jpg",
+    "data/post_img/jac_lav3.jpg"
+   ],
+   "lines": [
+    "Wendy Whiteley亲手打理的秘密花园，蓝花楹后面就是海港大桥。",
+    "带块野餐垫坐在树下，避开中午最挤的时候。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "皇家植物园",
+   "images": [
+    "data/post_img/jac_bot1.jpg",
+    "data/post_img/jac_bot2.jpg",
+    "data/post_img/jac_bot3.jpg"
+   ],
+   "lines": [
+    "园里有澳洲最老的一棵蓝花楹，19世纪50年代种下，在Farm Cove旁边的低处花园。",
+    "附近的母马与小马雕像旁还有一棵少见的白色蓝花楹。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "The Rocks First Fleet Park",
+   "images": [
+    "data/post_img/jac_rocks3.jpg",
+    "data/post_img/jac_rocks1.jpg",
+    "data/post_img/jac_rocks2.jpg"
+   ],
+   "lines": [
+    "环形码头渡轮码头和当代艺术馆之间的一排树，能同时拍到歌剧院和海港大桥。",
+    "黄昏人少光线好，拍完顺路去The Rocks吃晚饭。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "悉尼大学主楼",
+   "images": [
+    "data/post_img/jac_usyd1.jpg",
+    "data/post_img/jac_usyd2.jpg"
+   ],
+   "lines": [
+    "砂岩主楼四方院配紫花，是悉尼最经典的蓝花楹画面之一。",
+    "院里那棵是2016年老树枯死后克隆的新树，Physics Road上也有好几棵大树。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Paddington Five Ways",
+   "images": [
+    "data/post_img/jac_paddo1.jpg"
+   ],
+   "lines": [
+    "Glenmore Road、Five Ways和Oxford Street一带，联排老房配蓝花楹很有味道。",
+    "Victoria Barracks草坪上也有，走进小街人更少。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Hunters Hill",
+   "images": [
+    "data/post_img/jac_hunt1.jpg"
+   ],
+   "lines": [
+    "从Hunters Hill Club往下坡走，Alexandra Street两边都是蓝花楹和老石头房子。",
+    "附近的Woolwich、Greenwich、Longueville也有不少，可以连成一条散步路线。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Woolloomooloo",
+   "images": [
+    "data/post_img/jac_wool1.jpg"
+   ],
+   "lines": [
+    "Cathedral Street整条街都是蓝花楹，透过花能看到悉尼塔，却意外地很少有人来。",
+    "适合不想排队拍照的人。"
+   ]
+  },
+  {
+   "layout": "spot_clean",
+   "name": "Greenwich",
+   "images": [
+    "data/post_img/jac_green1.jpg"
+   ],
+   "lines": [
+    "北岸的Greenwich能拍到蓝花楹配城市天际线。",
+    "地方安静，适合慢慢拍。"
+   ]
+  }
+ ]
+}
