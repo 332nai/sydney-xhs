@@ -1,0 +1,10 @@
+{
+ "id": "melbourne-cup-2026",
+ "title": "墨尔本杯，你需要知道的一切",
+ "pages": [
+  {
+   "layout": "external",
+   "file": "tools/mc_pages.py"
+  }
+ ]
+}
