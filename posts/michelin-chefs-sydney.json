@@ -93,16 +93,19 @@
    "images": [
     "data/post_img/mi_x_14.jpg",
     "data/post_img/mi_x_15.jpg",
-    "data/post_img/mi_x_13.jpg"
+    "data/post_img/mi_fr_sth.jpg",
+    "data/post_img/mi_fr_zen.jpg",
+    "data/post_img/mi_fr_fzn.jpg"
    ],
-   "text": "瑞典主厨Björn Frantzén旗下的斯德哥尔摩Frantzén、新加坡Zén和迪拜FZN同时拿着米其林三星，他是唯一做到这一点的厨师。他的菜融合北欧、亚洲和法式技法。悉尼新店开在Crown Sydney高层，可以看到悉尼港，会用澳洲本地食材。",
+   "text": "瑞典主厨Björn Frantzén旗下的斯德哥尔摩Frantzén、新加坡Zén和迪拜FZN同时拿着米其林三星，他是唯一做到这一点的厨师。他的菜融合北欧、亚洲和法式技法。悉尼新店开在Crown Sydney高层，可以看到悉尼港，会用澳洲本地食材。照片是他在斯德哥尔摩、新加坡和迪拜的三星餐厅。",
    "price": "预计2027年初开业",
-   "photo_h": 720,
    "focus": [
     [
      0.5,
-     0.35
+     0.3
     ],
+    null,
+    null,
     null,
     null
    ]
@@ -114,20 +117,27 @@
    "where": "Crown Sydney",
    "images": [
     "data/post_img/mi_x_06.jpg",
-    "data/post_img/mi_x_07.jpg"
+    "data/post_img/mi_pt_og.jpg",
+    "data/post_img/mi_pt_dish.jpg",
+    "data/post_img/mi_x_07.jpg",
+    "data/post_img/mi_pt_set.jpg",
+    "data/post_img/mi_pt_room.jpg"
    ],
-   "text": "Chef Pam是曼谷米其林星级餐厅Potong的主厨，2025年被评为世界最佳女厨师。SEK是她第一家开在泰国以外的高级餐厅，在Crown Sydney三楼，只有40个座位，做现代泰国菜品鉴菜单，开放式厨房，还会有餐桌边的表演和甜品推车。",
+   "text": "Chef Pam是曼谷米其林星级餐厅Potong的主厨，2025年被评为世界最佳女厨师。SEK是她第一家开在泰国以外的高级餐厅，在Crown Sydney三楼，只有40个座位，做现代泰国菜品鉴菜单，开放式厨房，还会有餐桌边的表演和甜品推车。照片是她在曼谷的Potong。",
    "price": "预计2027年开业",
-   "photo_h": 720,
    "focus": [
     [
      0.5,
-     0.35
+     0.3
     ],
+    null,
+    null,
     [
      0.5,
-     0.35
-    ]
+     0.3
+    ],
+    null,
+    null
    ]
   },
   {
@@ -137,17 +147,20 @@
    "where": "环形码头",
    "images": [
     "data/post_img/mi_x_20.jpg",
-    "data/post_img/mi_x_18.jpg",
-    "data/post_img/mi_x_17.jpg"
+    "data/post_img/mi_cs_gwen.jpg",
+    "data/post_img/mi_cs_gwen2.jpg",
+    "data/post_img/mi_cs_gwenroom.jpg",
+    "data/post_img/mi_x_18.jpg"
    ],
-   "text": "澳洲出身的Curtis Stone在洛杉矶开的Maude和Gwen都拿过米其林一星。这是他在澳洲开的第一家餐厅，在环形码头新开的Waldorf Astoria酒店24楼，有100个座位，主打炭火海鲜和肉，可以单点，25楼还有一个酒吧。餐厅名字还没公布。",
+   "text": "澳洲出身的Curtis Stone在洛杉矶开的Maude和Gwen都拿过米其林一星。这是他在澳洲开的第一家餐厅，在环形码头新开的Waldorf Astoria酒店24楼，有100个座位，主打炭火海鲜和肉，可以单点，25楼还有一个酒吧。餐厅名字还没公布。照片是他在洛杉矶的Gwen和悉尼新店所在的酒店。",
    "price": "预计2027年初开业",
-   "photo_h": 720,
    "focus": [
     [
      0.5,
      0.3
     ],
+    null,
+    null,
     null,
     null
    ]
