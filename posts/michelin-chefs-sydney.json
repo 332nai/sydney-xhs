@@ -1,0 +1,156 @@
+{
+ "id": "michelin-chefs-sydney",
+ "title": "米其林厨房出来的厨师在悉尼开的店",
+ "pages": [
+  {
+   "layout": "external",
+   "file": "tools/mich_cover.py"
+  },
+  {
+   "layout": "spot_rich",
+   "name": "LuMi",
+   "award": "东京三星龙吟出身",
+   "where": "Pyrmont",
+   "images": [
+    "data/post_img/mi_lumi_11.jpg",
+    "data/post_img/mi_lumi_05.jpg",
+    "data/post_img/mi_lumi_08.jpg",
+    "data/post_img/mi_lumi_06.jpg",
+    "data/post_img/mi_lumi_00.jpg",
+    "data/post_img/mi_lumi_03.jpg"
+   ],
+   "text": "主厨Federico Zanellato是意大利人，在东京的米其林三星餐厅龙吟（RyuGin）工作过，之后来到悉尼。LuMi把意大利菜和日本料理的技法放在一起，做手工意面，也做极其精细的日式前菜。餐厅在Pyrmont海边，从窗户就能看到码头的游艇，现在是两帽餐厅。",
+   "price": "品鉴菜单 约$265/人"
+  },
+  {
+   "layout": "spot_rich",
+   "name": "Firedoor",
+   "award": "西班牙星级烤肉店出身",
+   "where": "Surry Hills",
+   "images": [
+    "data/post_img/mi_fire_09.jpg",
+    "data/post_img/mi_fire_06.jpg",
+    "data/post_img/mi_fire_12.jpg",
+    "data/post_img/mi_fire_08.jpg",
+    "data/post_img/mi_fire_07.jpg",
+    "data/post_img/mi_fire_05.jpg"
+   ],
+   "text": "主厨Lennox Hastie在西班牙巴斯克的Asador Etxebarri给主厨当了多年副手。那家米其林星级餐厅常年排在世界前列，所有菜都在炭火上完成。他回悉尼开的Firedoor也是这样，厨房里没有煤气和电炉，每道菜都靠不同木柴烧出来的火，现在是两帽餐厅。",
+   "price": "午市套餐 $160 · 晚市套餐 $240"
+  },
+  {
+   "layout": "spot_rich",
+   "name": "Kuro",
+   "award": "巴黎和东京星级餐厅出身",
+   "where": "CBD",
+   "images": [
+    "data/post_img/mi_kuro_01.jpg",
+    "data/post_img/mi_kuro_08.jpg",
+    "data/post_img/mi_kuro_10.jpg",
+    "data/post_img/mi_kuro_05.jpg",
+    "data/post_img/mi_kuro_04.jpg",
+    "data/post_img/mi_kuro_12.jpg"
+   ],
+   "text": "主厨寺本Taka在巴黎的Restaurant Pages和东京的Florilège工作过，两家都是米其林星级餐厅。Kuro用澳洲本地食材做日式料理，白天是咖啡店，晚上是餐厅和鸡尾酒吧，还有只坐几个人的主厨餐台，是CBD里很少见的一店三用。",
+   "price": "368 Kent Street"
+  },
+  {
+   "layout": "spot_rich",
+   "name": "Infinity by Mark Best",
+   "award": "米其林训练出身",
+   "where": "悉尼塔81楼",
+   "images": [
+    "data/post_img/mi_inf_01.jpg",
+    "data/post_img/mi_inf_02.jpg",
+    "data/post_img/mi_inf_04.jpg",
+    "data/post_img/mi_inf_03.jpg",
+    "data/post_img/mi_inf_00.jpg",
+    "data/post_img/mi_inf_06.jpg"
+   ],
+   "text": "Mark Best是在米其林厨房里训练出来的澳洲主厨，他以前开的Marque连续三年上了世界50最佳餐厅榜。现在他接手了悉尼塔81楼的旋转餐厅，转一圈大约70分钟，整个悉尼的景色都会从窗外经过。酒单只放澳洲本地的葡萄酒和烈酒。",
+   "price": "三道菜 $160起"
+  },
+  {
+   "layout": "spot_rich",
+   "name": "Vito's",
+   "award": "英国二星餐厅出身",
+   "where": "CBD",
+   "images": [
+    "data/post_img/mi_x_05.jpg",
+    "data/post_img/mi_x_04.jpg",
+    "data/post_img/mi_x_00.jpg",
+    "data/post_img/mi_x_01.jpg",
+    "data/post_img/mi_x_02.jpg"
+   ],
+   "text": "主厨Michael Fox在英国米其林二星餐厅Le Manoir aux Quat'Saisons工作过，也在香港的Carbone当过主厨。Vito's开在CBD的百年老楼Burns Philp大楼里，有170个座位，做意大利裔美式菜，招牌是十层千层面、扇贝意式饺子和压烤鸡。10月30日刚开业，之后还会加深夜纽约披萨。",
+   "price": "11 Bridge Street · 10月30日开业"
+  },
+  {
+   "layout": "spot_rich",
+   "name": "Én by Björn Frantzén",
+   "award": "三家店同时米其林三星",
+   "where": "Crown Sydney",
+   "images": [
+    "data/post_img/mi_x_14.jpg",
+    "data/post_img/mi_x_15.jpg",
+    "data/post_img/mi_x_13.jpg"
+   ],
+   "text": "瑞典主厨Björn Frantzén旗下的斯德哥尔摩Frantzén、新加坡Zén和迪拜FZN同时拿着米其林三星，他是唯一做到这一点的厨师。他的菜融合北欧、亚洲和法式技法。悉尼新店开在Crown Sydney高层，可以看到悉尼港，会用澳洲本地食材。",
+   "price": "预计2027年初开业",
+   "photo_h": 720,
+   "focus": [
+    [
+     0.5,
+     0.35
+    ],
+    null,
+    null
+   ]
+  },
+  {
+   "layout": "spot_rich",
+   "name": "SEK by Chef Pam",
+   "award": "2025年世界最佳女厨师",
+   "where": "Crown Sydney",
+   "images": [
+    "data/post_img/mi_x_06.jpg",
+    "data/post_img/mi_x_07.jpg"
+   ],
+   "text": "Chef Pam是曼谷米其林星级餐厅Potong的主厨，2025年被评为世界最佳女厨师。SEK是她第一家开在泰国以外的高级餐厅，在Crown Sydney三楼，只有40个座位，做现代泰国菜品鉴菜单，开放式厨房，还会有餐桌边的表演和甜品推车。",
+   "price": "预计2027年开业",
+   "photo_h": 720,
+   "focus": [
+    [
+     0.5,
+     0.35
+    ],
+    [
+     0.5,
+     0.35
+    ]
+   ]
+  },
+  {
+   "layout": "spot_rich",
+   "name": "Curtis Stone新店",
+   "award": "洛杉矶两家餐厅都拿过米其林星",
+   "where": "环形码头",
+   "images": [
+    "data/post_img/mi_x_20.jpg",
+    "data/post_img/mi_x_18.jpg",
+    "data/post_img/mi_x_17.jpg"
+   ],
+   "text": "澳洲出身的Curtis Stone在洛杉矶开的Maude和Gwen都拿过米其林一星。这是他在澳洲开的第一家餐厅，在环形码头新开的Waldorf Astoria酒店24楼，有100个座位，主打炭火海鲜和肉，可以单点，25楼还有一个酒吧。餐厅名字还没公布。",
+   "price": "预计2027年初开业",
+   "photo_h": 720,
+   "focus": [
+    [
+     0.5,
+     0.3
+    ],
+    null,
+    null
+   ]
+  }
+ ]
+}

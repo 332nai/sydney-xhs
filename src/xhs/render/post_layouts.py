@@ -606,7 +606,13 @@ def spot_rich(p, ctx):
     G = 5
     ph = p.get("photo_h", 600)
     n = len(imgs)
-    if n == 4:
+    if n == 1:
+        cells = [(0, 0, 2, 2)]; cols = 2
+    elif n == 2:
+        cells = [(0, 0, 1, 2), (1, 0, 1, 2)]; cols = 2
+    elif n == 3:
+        cells = [(0, 0, 2, 2), (2, 0, 1, 1), (2, 1, 1, 1)]; cols = 3
+    elif n == 4:
         cells = [(0, 0, 2, 1), (2, 0, 2, 1), (0, 1, 2, 1), (2, 1, 2, 1)]; cols = 4
     elif n == 5:
         cells = [(0, 0, 3, 1), (3, 0, 3, 1), (0, 1, 2, 1), (2, 1, 2, 1), (4, 1, 2, 1)]; cols = 6
