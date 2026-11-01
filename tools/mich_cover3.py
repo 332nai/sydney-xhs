@@ -21,6 +21,8 @@ for yy in range(H):
     ov.putpixel((0, yy), int(max(0, min(1, t)) ** 1.1 * 215))
 img = Image.composite(Image.new("RGB", (W, H), (12, 10, 8)), img, ov.resize((W, H)))
 d = ImageDraw.Draw(img)
-d.text((80, H - 400), "米其林厨师", font=S("Black", 150), fill="white")
-d.text((80, H - 200), "在悉尼开的店", font=S("SemiBold", 86), fill="white")
+K = ImageFont.truetype(NOTO + "NotoSansCJK-Medium.ttc", 92, index=2)
+d.text((W / 2 + 4, 600), "2027", font=K, fill=(250, 246, 244), anchor="mm")   # 牌匾上的年份
+d.text((80, H - 430), "米其林厨师", font=S("Black", 140), fill="white")
+d.text((80, H - 250), "在悉尼开的店", font=S("Black", 140), fill="white")
 img.save(sys.argv[1], quality=93)
