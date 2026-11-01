@@ -17,13 +17,25 @@ img = im.crop((x0, 0, x0 + W, H)).filter(ImageFilter.UnsharpMask(2, 60, 2))
 img = ImageEnhance.Contrast(img).enhance(1.05)
 ov = Image.new("L", (1, H))
 for yy in range(H):
-    t = (yy - H * .45) / (H * .45)
+    t = (yy - H * .55) / (H * .30)
     ov.putpixel((0, yy), int(max(0, min(1, t)) ** 1.1 * 215))
 img = Image.composite(Image.new("RGB", (W, H), (12, 10, 8)), img, ov.resize((W, H)))
 d = ImageDraw.Draw(img)
 K = ImageFont.truetype(NOTO + "NotoSansCJK-Medium.ttc", 92, index=2)
 d.text((W / 2 + 4, 600), "2027", font=K, fill=(250, 246, 244), anchor="mm")   # 牌匾上的年份
-d.text((80, H - 560), "米其林厨师", font=S("Black", 140), fill="white")
-d.text((80, H - 390), "在悉尼开的店", font=S("Black", 140), fill="white")
-d.text((80, H - 220), "有哪些？", font=S("Black", 140), fill="white")
+d.text((80, 872), "米其林厨师", font=S("Black", 98), fill="white")
+d.text((80, 980), "在悉尼开的店", font=S("Black", 98), fill="white")
+d.text((80, 1088), "有哪些？", font=S("Black", 98), fill="white")
+# 底部一排6张小方图，暗示后面有很多家餐厅
+TH = ["lumi_05", "fire_09", "kuro_08", "inf_02", "x_05", "x_15"]
+n, gap, M = len(TH), 10, 80
+sz = 128
+ty = H - sz - 48
+for i, t in enumerate(TH):
+    t_im = Image.open(f"data/post_img/mi_{t}.jpg").convert("RGB")
+    c = min(t_im.size); l = (t_im.width - c) // 2; u = (t_im.height - c) // 2
+    t_im = t_im.crop((l, u, l + c, u + c)).resize((sz, sz), Image.LANCZOS)
+    x = M + i * (sz + gap)
+    d.rectangle([x - 3, ty - 3, x + sz + 2, ty + sz + 2], fill="white")
+    img.paste(t_im, (x, ty))
 img.save(sys.argv[1], quality=93)
