@@ -28,14 +28,11 @@ d.text((80, 980), "在悉尼开的店", font=S("Black", 98), fill="white")
 d.text((80, 1088), "有哪些？", font=S("Black", 98), fill="white")
 # 底部一排6张小方图，暗示后面有很多家餐厅
 TH = ["lumi_05", "fire_09", "kuro_08", "inf_02", "x_05", "x_15"]
-n, gap, M = len(TH), 10, 80
-sz = 128
-ty = H - sz - 48
+n = len(TH); sz = W // n
+ty = H - sz
 for i, t in enumerate(TH):
     t_im = Image.open(f"data/post_img/mi_{t}.jpg").convert("RGB")
     c = min(t_im.size); l = (t_im.width - c) // 2; u = (t_im.height - c) // 2
     t_im = t_im.crop((l, u, l + c, u + c)).resize((sz, sz), Image.LANCZOS)
-    x = M + i * (sz + gap)
-    d.rectangle([x - 3, ty - 3, x + sz + 2, ty + sz + 2], fill="white")
-    img.paste(t_im, (x, ty))
+    img.paste(t_im, (i * sz, ty))
 img.save(sys.argv[1], quality=93)
