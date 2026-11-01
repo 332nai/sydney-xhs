@@ -26,11 +26,11 @@ d.text((W / 2 + 4, 600), "2027", font=K, fill=(250, 246, 244), anchor="mm")   # 
 d.text((80, 930), "这些米其林主厨", font=S("Black", 104), fill="white")
 d.text((80, 1066), "都跑来悉尼开店了", font=S("Black", 104), fill="white")
 # 底部一排6张小方图，暗示后面有很多家餐厅
-TH = ["lumi_05", "fire_09", "kuro_08", "inf_02", "x_05", "x_15"]
+TH = ["2_lumi_0", "fire_09", "2_kuro_1", "2_inf_1", "2_vito_0", "x_15"]
 n = len(TH); sz = W // n
 ty = H - sz
 for i, t in enumerate(TH):
-    t_im = Image.open(f"data/post_img/mi_{t}.jpg").convert("RGB")
+    t_im = Image.open(f"data/post_img/mi{"" if t.startswith("2_") else "_"}{t}.jpg").convert("RGB")
     c = min(t_im.size); l = (t_im.width - c) // 2; u = (t_im.height - c) // 2
     t_im = t_im.crop((l, u, l + c, u + c)).resize((sz, sz), Image.LANCZOS)
     img.paste(t_im, (i * sz, ty))
