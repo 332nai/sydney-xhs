@@ -23,9 +23,8 @@ img = Image.composite(Image.new("RGB", (W, H), (12, 10, 8)), img, ov.resize((W, 
 d = ImageDraw.Draw(img)
 K = ImageFont.truetype(NOTO + "NotoSansCJK-Medium.ttc", 92, index=2)
 d.text((W / 2 + 4, 600), "2027", font=K, fill=(250, 246, 244), anchor="mm")   # 牌匾上的年份
-d.text((80, 872), "米其林厨师", font=S("Black", 98), fill="white")
-d.text((80, 980), "在悉尼开的店", font=S("Black", 98), fill="white")
-d.text((80, 1088), "有哪些？", font=S("Black", 98), fill="white")
+d.text((80, 930), "这些米其林主厨", font=S("Black", 104), fill="white")
+d.text((80, 1066), "都跑来悉尼开店了", font=S("Black", 104), fill="white")
 # 底部一排6张小方图，暗示后面有很多家餐厅
 TH = ["lumi_05", "fire_09", "kuro_08", "inf_02", "x_05", "x_15"]
 n = len(TH); sz = W // n
