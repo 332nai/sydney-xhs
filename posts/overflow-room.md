@@ -1,10 +1,8 @@
-标题：悉尼奶油咖啡Algorithm躲进小巷开新店了
-备选：Surry Hills这条小巷，最近多了一家奶油咖啡
-备选：悉尼那杯奶油冷萃，开到了巷子里
+标题：悉尼这条小巷，有点日本那味了
 
-Algorithm在Surry Hills开了第三家店，名字叫Overflow Room，上周刚开门。
+Surry Hills有条小巷叫Marys Place，Algorithm刚在这里开了第三家店Overflow Room。老板Angelina说，走进这条巷子，有种被带到日本的感觉。
 
-店在Marys Place，一条连着Bourke St和South Dowling St的小巷。店面只有几米宽，一大半空间给了开放式吧台，木头墙面加圆角，整个色调很暖。位子不多，不少人直接坐在门口的塑料箱上喝。老板Angelina说，这条巷子让她想到日本。
+巷子一头连着Bourke St，另一头通往South Dowling St。店面只有几米宽，一大半空间给了开放式吧台，木头墙面加圆角，整个色调很暖。位子不多，不少人直接坐在门口的塑料箱上，或者靠着墙边坐在路沿上喝。
 
 招牌还是Rhythm。冷萃咖啡上面盖一层很厚的奶油，奶油里有橙皮和香草的味道。豆子是Algorithm和悉尼烘焙商Headlands Coffee一起做的拼配，口感接近蒙布朗。
 
