@@ -1,4 +1,4 @@
-标题：悉尼这条小巷，有点日本那味了
+标题：悉尼这家新咖啡店，有点东京那味了
 
 Surry Hills有条小巷叫Marys Place，Algorithm刚在这里开了第三家店Overflow Room。老板Angelina说，走进这条巷子，有种被带到日本的感觉。
 
