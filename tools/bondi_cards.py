@@ -58,14 +58,18 @@ card("02.jpg", "02", "PORCH AND PARLOUR", "North Bondi泳前咖啡老店",
      [("pp00.jpg", .5, .5), ("pp01.jpg", .5, .5), ("pp06.jpg", .5, .5), ("pp03.jpg", .5, .5)])
 card("03.jpg", "03", "GLORY DAYS", "Bondi Pavilion里的海景早午餐",
      [("gd_cp32.jpg", .5, .5), ("gd_cp25.jpg", .5, .5), ("gd_to5.jpg", .5, .5), ("gd_to2.jpg", .5, .5)])
-card("04.jpg", "04", "SKITTLE LANE", "店里自己烘豆，还有手冲吧台",
+card("04.jpg", "04", "WILL & CO", "本地烘焙商的品鉴吧台",
+     [("wc_wl2.jpg", .45, .5), ("wc_s01.jpg", .3, .5), ("wc_wl0.jpg", .5, .5), ("wc_wl1.jpg", .6, .5)])
+card("05.jpg", "05", "SKITTLE LANE", "店里自己烘豆，还有手冲吧台",
      [("sk_site3.jpg", .5, .5), ("sk_wl0.jpg", .5, .5), ("sk_wl2.jpg", .5, .5), ("sk_lc0.jpg", .5, .5)])
-card("05.jpg", "05", "BLACKWOOD", "从Cronulla开过来的人气早午餐",
+card("06.jpg", "06", "BLACKWOOD", "从Cronulla开过来的人气早午餐",
      [("bw_to01.jpg", .5, .5), ("bw_to04.jpg", .5, .5), ("bw_to00.jpg", .5, .5), ("bw_cp1.jpg", .5, .5)])
-card("06.jpg", "06", "LOX STOCK AND BARREL", "每天现煮的手工贝果",
+card("07.jpg", "07", "LOX STOCK AND BARREL", "每天现煮的手工贝果",
      [("lx05.jpg", .5, .5), ("lx07.jpg", .5, .5), ("lx01.jpg", .5, .5), ("lx10.jpg", .5, .5)])
-card("07.jpg", "07", "THE CRABBE HOLE", "藏在Icebergs泳池边",
+card("08.jpg", "08", "BENNETT STREET DAIRY", "咖啡像啤酒一样从龙头里打",
+     [("bsd04.jpg", .55, .5), ("bsd02.jpg", .5, .5), ("bsd01.jpg", .5, .5), ("bsd11.jpg", .5, .5)])
+card("09.jpg", "09", "THE CRABBE HOLE", "藏在Icebergs泳池边",
      [("ch04.jpg", .6, .5), ("ch02.jpg", .5, .5), ("ch05.jpg", .5, .5), ("ch01.jpg", .5, .5)])
-card("08.jpg", "08", "MYFLOWERMAN", "花店和咖啡窗开在一起",
+card("10.jpg", "10", "MYFLOWERMAN", "花店和咖啡窗开在一起",
      [("mf_al0.jpg", .22, .5), ("mf_al2.jpg", .8, .5), ("mf_al1.jpg", .5, .5), ("mf_al2.jpg", .22, .5)])
 print("ok")
