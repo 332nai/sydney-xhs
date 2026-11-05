@@ -1,7 +1,7 @@
 """Bondi咖啡店卡片（沿用Paddington版式）：封面单图大字，内页2x2拼图，店名压在中线。
 用法：python3 tools/pad_cards.py 图片目录 输出目录"""
 import sys, os
-from PIL import Image, ImageDraw, ImageFont, ImageEnhance, ImageFilter
+from PIL import Image, ImageDraw, ImageFont, ImageEnhance, ImageFilter, ImageOps
 
 W, H = 1080, 1440
 SRC, OUT = sys.argv[1], sys.argv[2]
@@ -20,7 +20,7 @@ def warm(img):
 def crop(spec, w, h):
     spec = list(spec) if isinstance(spec, tuple) else [spec]
     name, fx, fy, z = spec + [.5, .5, 1.0][len(spec) - 1:]
-    im = Image.open(f"{SRC}/{name}").convert("RGB")
+    im = ImageOps.exif_transpose(Image.open(f"{SRC}/{name}")).convert("RGB")
     s = max(w / im.width, h / im.height) * z
     im = im.resize((round(im.width * s), round(im.height * s)), Image.LANCZOS)
     x = min(max(fx * im.width - w / 2, 0), im.width - w); y = min(max(fy * im.height - h / 2, 0), im.height - h)
@@ -52,16 +52,20 @@ c = crop(("gd_sp12.jpg", .5, .5, 1.0), W, H)
 shadow_text(c, [(W / 2, 440, "A Little Cafe Guide To", en(50)), (W / 2, 520, "BONDI", en(170)), (W / 2, 720, "悉尼Bondi咖啡小指南", zh(48))])
 c.save(f"{OUT}/00.jpg", quality=93)
 
-card("01.jpg", "01", "GLORY DAYS", "Bondi Pavilion里的海景早午餐",
-     [("gd_cp32.jpg", .5, .5), ("gd_cp25.jpg", .5, .5), ("gd_to5.jpg", .5, .5), ("gd_to2.jpg", .5, .5)])
+card("01.jpg", "01", "JACKS NORTH BONDI", "自己种豆子的澳洲咖啡",
+     [("jk_site11.jpg", .5, .5), ("jk_site18.jpg", .5, .5), ("jk_site09.jpg", .5, .5), ("jk_wl0.jpg", .45, .5)])
 card("02.jpg", "02", "PORCH AND PARLOUR", "North Bondi泳前咖啡老店",
      [("pp00.jpg", .5, .5), ("pp01.jpg", .5, .5), ("pp06.jpg", .5, .5), ("pp03.jpg", .5, .5)])
-card("03.jpg", "03", "THE CRABBE HOLE", "藏在Icebergs泳池边",
-     [("ch04.jpg", .6, .5), ("ch02.jpg", .5, .5), ("ch05.jpg", .5, .5), ("ch01.jpg", .5, .5)])
-card("04.jpg", "04", "LOX STOCK AND BARREL", "每天现煮的手工贝果",
+card("03.jpg", "03", "GLORY DAYS", "Bondi Pavilion里的海景早午餐",
+     [("gd_cp32.jpg", .5, .5), ("gd_cp25.jpg", .5, .5), ("gd_to5.jpg", .5, .5), ("gd_to2.jpg", .5, .5)])
+card("04.jpg", "04", "SKITTLE LANE", "店里自己烘豆，还有手冲吧台",
+     [("sk_site3.jpg", .5, .5), ("sk_wl0.jpg", .5, .5), ("sk_wl2.jpg", .5, .5), ("sk_lc0.jpg", .5, .5)])
+card("05.jpg", "05", "BLACKWOOD", "从Cronulla开过来的人气早午餐",
+     [("bw_to01.jpg", .5, .5), ("bw_to04.jpg", .5, .5), ("bw_to00.jpg", .5, .5), ("bw_cp1.jpg", .5, .5)])
+card("06.jpg", "06", "LOX STOCK AND BARREL", "每天现煮的手工贝果",
      [("lx05.jpg", .5, .5), ("lx07.jpg", .5, .5), ("lx01.jpg", .5, .5), ("lx10.jpg", .5, .5)])
-card("05.jpg", "05", "BENNETT STREET DAIRY", "咖啡像啤酒一样从龙头里打",
-     [("bsd04.jpg", .55, .5), ("bsd02.jpg", .5, .5), ("bsd01.jpg", .5, .5), ("bsd11.jpg", .5, .5)])
-card("06.jpg", "06", "MYFLOWERMAN", "花店和咖啡窗开在一起",
+card("07.jpg", "07", "THE CRABBE HOLE", "藏在Icebergs泳池边",
+     [("ch04.jpg", .6, .5), ("ch02.jpg", .5, .5), ("ch05.jpg", .5, .5), ("ch01.jpg", .5, .5)])
+card("08.jpg", "08", "MYFLOWERMAN", "花店和咖啡窗开在一起",
      [("mf_al0.jpg", .22, .5), ("mf_al2.jpg", .8, .5), ("mf_al1.jpg", .5, .5), ("mf_al2.jpg", .22, .5)])
 print("ok")
