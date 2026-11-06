@@ -1,5 +1,5 @@
-"""Southwest Metro吃饭帖：五个首页方案，每个都带老杨动作包徽章小logo。
-用法：python3 tools/swm_covers.py 图片目录 徽章目录 输出目录"""
+"""Southwest Metro吃饭帖：五个首页方案，每个都带老杨动作包人物图标。
+用法：python3 tools/swm_covers.py 图片目录 图标目录 输出目录"""
 import sys, os
 from PIL import Image, ImageDraw, ImageFont, ImageEnhance, ImageFilter, ImageOps
 
@@ -40,19 +40,17 @@ def shadow_text(img, items, alpha=.75, blur=14):
     d = ImageDraw.Draw(img)
     for px, y, t, f in pos: d.text((px, y), t, font=f, fill="white")
 
-BADGE_DIR = AVATAR  # 动作包圆形徽章所在目录
-def logo(img, x, y, pose="04_开吃", size=150, dark=False):
-    """老杨动作包圆形徽章加一个小名牌"""
+ICON_DIR = AVATAR  # 老杨动作包透明图标所在目录
+def logo(img, x, y, pose="04_开吃", height=190, dark=False):
+    """只放老杨的人物图标：不加圆框，不写名字，带一点柔和投影"""
     img = img.convert("RGBA")
-    av = Image.open(f"{BADGE_DIR}/badge_{pose}.png").convert("RGBA").resize((size, size), Image.LANCZOS)
-    f = zh(30, "Bold"); t = "老杨"
-    pw = int(f.getlength(t)) + 44; ph = 52
-    ov = Image.new("RGBA", img.size, (0, 0, 0, 0)); d = ImageDraw.Draw(ov)
-    px, py = x + size - 22, y + (size - ph) // 2
-    d.rounded_rectangle((px, py, px + pw + 22, py + ph), ph // 2, fill=(255, 255, 255, 235) if not dark else (20, 20, 20, 200))
-    d.text((px + 36, py + 6), t, font=f, fill=(30, 30, 30) if not dark else (255, 255, 255))
-    img = Image.alpha_composite(img, ov)
-    img.alpha_composite(av, (x, y))
+    ic = Image.open(f"{ICON_DIR}/{pose}.png").convert("RGBA")
+    ic = ic.resize((round(ic.width * height / ic.height), height), Image.LANCZOS)
+    sh = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    a = ic.split()[3].point(lambda v: int(v * .35))
+    sh.paste((0, 0, 0, 255), (x + 4, y + 6), a)
+    img = Image.alpha_composite(img, sh.filter(ImageFilter.GaussianBlur(8)))
+    img.alpha_composite(ic, (x, y))
     return img.convert("RGB")
 
 def line_strip(img, box, label_color=(30, 30, 30), bg=(255, 255, 255, 235)):
@@ -128,7 +126,7 @@ for i, (s, dish, img) in enumerate(STOPS):
     dr.text((lx + 120, y - 52), s, font=zh(50, "Black"), fill=(28, 28, 28))
     dr.text((lx + 122, y + 10), dish, font=zh(36), fill=(90, 84, 76))
 dr.text((70, y0 - 20), "M", font=en(56), fill=TEAL)
-logo(dd, W - 330, 1250, "08_吃面").save(f"{OUT}/cover_D.jpg", quality=93)
+logo(dd, W - 300, 1200, "08_吃面", 200).save(f"{OUT}/cover_D.jpg", quality=93)
 
 # E：大数字12分钟，披萨铺满
 e = crop("fnq_04.jpg", W, H, .45, .42, 1.18)
