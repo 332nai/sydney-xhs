@@ -1,5 +1,5 @@
-"""Southwest Metro吃饭帖：五个首页方案，每个都带老杨头像小logo。
-用法：python3 tools/swm_covers.py 图片目录 头像png 输出目录"""
+"""Southwest Metro吃饭帖：五个首页方案，每个都带老杨动作包徽章小logo。
+用法：python3 tools/swm_covers.py 图片目录 徽章目录 输出目录"""
 import sys, os
 from PIL import Image, ImageDraw, ImageFont, ImageEnhance, ImageFilter, ImageOps
 
@@ -40,11 +40,11 @@ def shadow_text(img, items, alpha=.75, blur=14):
     d = ImageDraw.Draw(img)
     for px, y, t, f in pos: d.text((px, y), t, font=f, fill="white")
 
-AV = Image.open(AVATAR).convert("RGBA")
-def logo(img, x, y, size=118, dark=False):
-    """老杨头像加一个小名牌"""
+BADGE_DIR = AVATAR  # 动作包圆形徽章所在目录
+def logo(img, x, y, pose="04_开吃", size=150, dark=False):
+    """老杨动作包圆形徽章加一个小名牌"""
     img = img.convert("RGBA")
-    av = AV.resize((size, size), Image.LANCZOS)
+    av = Image.open(f"{BADGE_DIR}/badge_{pose}.png").convert("RGBA").resize((size, size), Image.LANCZOS)
     f = zh(30, "Bold"); t = "老杨"
     pw = int(f.getlength(t)) + 44; ph = 52
     ov = Image.new("RGBA", img.size, (0, 0, 0, 0)); d = ImageDraw.Draw(ov)
@@ -75,7 +75,7 @@ shadow_text(a, [(W / 2, 290, "Southwest Metro通车了", zh(54, "Bold"), "m"),
                 (W / 2, 380, "坐新地铁", zh(170, "Black"), "m"), (W / 2, 580, "去吃饭", zh(170, "Black"), "m"),
                 (W / 2, 800, "从Marrickville到Bankstown，每站吃一家", zh(46), "m")])
 a = line_strip(a, (40, 1150, W - 40, 1400))
-logo(a, 60, 70).save(f"{OUT}/cover_A.jpg", quality=93)
+logo(a, 50, 50, "04_开吃").save(f"{OUT}/cover_A.jpg", quality=93)
 
 # B：越南面包特写，文字压在下半部，地铁线在上
 b = crop("bmbn0.jpg", W, H, .62, .5)
@@ -86,7 +86,7 @@ shadow_text(b, [(80, 900, "悉尼新地铁通车", zh(60, "Bold"), "l"),
                 (72, 980, "每站下车吃一家", zh(124, "Black"), "l"),
                 (80, 1160, "Marrickville到Bankstown，6站6家店", zh(44), "l")], alpha=.5)
 b = line_strip(b, (40, 210, W - 40, 460))
-logo(b, 60, 60).save(f"{OUT}/cover_B.jpg", quality=93)
+logo(b, 50, 40, "15_美食推荐").save(f"{OUT}/cover_B.jpg", quality=93)
 
 # C：六宫格，每站一张图，中间一条青绿色标题带
 c = Image.new("RGB", (W, H), TEAL_D)
@@ -108,7 +108,7 @@ for k, (s_, _, _) in enumerate(STOPS):
     tw = fs.getlength(s_)
     d.rounded_rectangle((x, y - 6, x + tw + 28, y + 42), 20, fill=(255, 255, 255, 225))
     d.text((x + 14, y - 2), s_, font=fs, fill=(30, 30, 30))
-logo(c, 40, 40).save(f"{OUT}/cover_C.jpg", quality=93)
+logo(c, 30, 30, "13_探店").save(f"{OUT}/cover_C.jpg", quality=93)
 
 # D：青绿底的竖向线路图，每站一个圆形食物图
 dd = Image.new("RGB", (W, H), CREAM)
@@ -128,7 +128,7 @@ for i, (s, dish, img) in enumerate(STOPS):
     dr.text((lx + 120, y - 52), s, font=zh(50, "Black"), fill=(28, 28, 28))
     dr.text((lx + 122, y + 10), dish, font=zh(36), fill=(90, 84, 76))
 dr.text((70, y0 - 20), "M", font=en(56), fill=TEAL)
-logo(dd, W - 290, 1290 - 30).save(f"{OUT}/cover_D.jpg", quality=93)
+logo(dd, W - 330, 1250, "08_吃面").save(f"{OUT}/cover_D.jpg", quality=93)
 
 # E：大数字12分钟，披萨铺满
 e = crop("fnq_04.jpg", W, H, .45, .42, 1.18)
@@ -139,5 +139,5 @@ shadow_text(e, [(80, 220, "Marrickville到市中心", zh(56, "Bold"), "l"),
                 (70, 290, "12分钟", zh(230, "Black"), "l"),
                 (80, 590, "悉尼新地铁通车了", zh(64, "Bold"), "l"),
                 (80, 680, "沿线6站，每站下车吃一家", zh(48), "l")], alpha=.5)
-logo(e, 60, 60).save(f"{OUT}/cover_E.jpg", quality=93)
+logo(e, 50, 40, "04_开吃").save(f"{OUT}/cover_E.jpg", quality=93)
 print("ok")
