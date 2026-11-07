@@ -44,7 +44,8 @@ FRUITS = [
     ("strawberry/02.jpg", "草莓", "冬天昆士兰，夏天塔州", (960, 1230), [(147.55, -42.75)], (226, 50, 70)),
 ]
 
-def render(fn, bg, sea, land, border, state_cols, chip_bg, chip_txt, title_col, sub_col, pose):
+def render(fn, bg, sea, land, border, state_cols, chip_bg, chip_txt, title_col, sub_col, pose, fruits=None, titles=("悉尼吃的水果", "从哪里来"), labels=None, left=("蓝莓", "荔枝")):
+    fruits = fruits or FRUITS; labels = labels or LABELS
     img = Image.new("RGB", (W, H), bg)
     mp = Image.new("RGB", (W, H), sea); md = ImageDraw.Draw(mp)
     mask = Image.new("L", (W, H), 0); mk = ImageDraw.Draw(mask)
@@ -64,16 +65,16 @@ def render(fn, bg, sea, land, border, state_cols, chip_bg, chip_txt, title_col, 
     clip = Image.new("L", (W, H), 0); ImageDraw.Draw(clip).rounded_rectangle((30, 240, W - 30, H - 30), 40, fill=255)
     img.paste(mp, (0, 0), clip)
     d = ImageDraw.Draw(img)
-    for k, (t, lon, lat) in LABELS.items():
+    for k, (t, lon, lat) in labels.items():
         x, y = P(lon, lat); f = zh(34, "Bold"); d.text((x - f.getlength(t) / 2, y), t, font=f, fill=(*border,))
-    d.text((60, 50), "悉尼吃的水果", font=zh(64), fill=title_col)
-    d.text((60, 128), "从哪里来", font=zh(96), fill=title_col)
+    d.text((60, 50), titles[0], font=zh(64), fill=title_col)
+    d.text((60, 128), titles[1], font=zh(96), fill=title_col)
     # 连线和产地点
-    for spec, name, note, (bx, by), pts, col in FRUITS:
+    for spec, name, note, (bx, by), pts, col in fruits:
         for lon, lat in pts:
             x, y = P(lon, lat)
             d.line((bx, by, x, y), fill=col, width=4)
-    for spec, name, note, (bx, by), pts, col in FRUITS:
+    for spec, name, note, (bx, by), pts, col in fruits:
         r = 64
         ph = photo(spec, r); m = Image.new("L", (2 * r, 2 * r), 0); ImageDraw.Draw(m).ellipse((0, 0, 2 * r - 1, 2 * r - 1), fill=255)
         sh = Image.new("L", (W, H), 0); ImageDraw.Draw(sh).ellipse((bx - r + 3, by - r + 8, bx + r + 3, by + r + 8), fill=120)
@@ -83,12 +84,12 @@ def render(fn, bg, sea, land, border, state_cols, chip_bg, chip_txt, title_col, 
         f1, f2 = zh(34, "Black"), zh(24, "Bold")
         tw = max(f1.getlength(name), f2.getlength(note)) + 32
         x0 = min(max(bx - tw / 2, 40), W - 40 - tw); y0 = by + r + 6
-        if name in ("蓝莓", "荔枝"): x0, y0 = bx - r - 14 - tw, by - 42
+        if name in left: x0, y0 = bx - r - 14 - tw, by - 42
         d.rounded_rectangle((x0, y0, x0 + tw, y0 + 84), 18, fill=chip_bg)
         d.text((x0 + 16, y0 + 4), name, font=f1, fill=col)
         d.text((x0 + 16, y0 + 48), note, font=f2, fill=chip_txt)
     d = ImageDraw.Draw(img)
-    for spec, name, note, (bx, by), pts, col in FRUITS:
+    for spec, name, note, (bx, by), pts, col in fruits:
         for lon, lat in pts:
             x, y = P(lon, lat)
             d.ellipse((x - 11, y - 11, x + 11, y + 11), fill=col, outline="white", width=4)
@@ -104,4 +105,17 @@ pastel = {"Queensland": (250, 214, 150), "New South Wales": (196, 224, 170), "Vi
           "South Australia": (238, 200, 160), "Northern Territory": (232, 176, 140), "Western Australia": (226, 210, 170),
           "Australian Capital Territory": (196, 224, 170)}
 render("map_B.jpg", (255, 244, 220), (120, 190, 214), None, (255, 255, 255), pastel, "white", (90, 84, 76), INK, None, "15_美食推荐")
+FRUITS2 = [
+    ("atemoya/06.jpg", "释迦", "昆士兰、新州北部各占一半", (930, 330), [(145.48, -17.27)], (110, 150, 80)),
+    ("pineapple/00.jpg", "菠萝", "昆士兰沿海", (975, 620), [(150.74, -23.13), (152.95, -26.65)], (214, 170, 20)),
+    ("watermelon/05.jpg", "西瓜蜜瓜", "Chinchilla，号称澳洲甜瓜之都", (560, 720), [(150.63, -26.74)], (60, 150, 80)),
+    ("grape/14.jpg", "葡萄", "维州Sunraysia、Murray Valley", (200, 990), [(142.16, -34.19), (142.77, -34.58)], (120, 70, 140)),
+    ("peach/11.jpg", "桃子 李子", "维州Shepparton一带", (430, 1225), [(145.40, -36.38), (143.55, -35.34)], (236, 120, 80)),
+    ("apple/01.jpg", "苹果", "新州Batlow、Orange，塔州Huon", (965, 1170), [(148.15, -35.52), (149.10, -33.28), (146.95, -43.03)], (200, 50, 50)),
+]
+LABELS2 = dict(LABELS); LABELS2["South Australia"] = ("南澳", 132.0, -27.0)
+render("map2_A.jpg", (248, 243, 234), (176, 214, 226), (240, 226, 196), (170, 150, 120), None, "white", (90, 84, 76), INK, None, "01_看菜单",
+       FRUITS2, ("更多水果", "从哪里来"), LABELS2, ("菠萝",))
+render("map2_B.jpg", (255, 244, 220), (120, 190, 214), None, (255, 255, 255), pastel, "white", (90, 84, 76), INK, None, "14_打包",
+       FRUITS2, ("更多水果", "从哪里来"), LABELS2, ("菠萝",))
 print("ok")
