@@ -1,4 +1,4 @@
-"""悉尼房价跌回五年前：数据卡片（封面加8张），全部用PIL直接画图表。
+"""悉尼房价跌回五年前：数据卡片（封面加7张，按读者身份分开讲），全部用PIL直接画图表。
 数据来源：Cotality HVI 2026年11月报告（截至10月31日）、RBA 2026年11月3日决议、ATO税改页面。
 用法：python3 tools/hp_cards.py 老杨图标目录 输出目录"""
 import sys, os
@@ -51,7 +51,7 @@ d.ellipse((640 - 16, 300 - 16, 640 + 16, 300 + 16), fill=CREAM)
 d.text((600, 240), "2月高点", font=zh(32, "Bold"), fill=CREAM)
 d.text((80, 760), "悉尼房价", font=zh(84, "Black"), fill=CREAM)
 d.text((80, 870), "跌回五年前", font=zh(150, "Black"), fill=CREAM)
-for i, ln in enumerate(["比2月高点低10.1%", "比2021年10月还低1.5%", "利率、借款能力、税改、房租", "8张图讲清楚"]):
+for i, ln in enumerate(["比2月高点低10.1%", "比2021年10月还低1.5%", "买房、还贷、投资、租房", "各看一张就够"]):
     d.text((84, 1070 + i * 58), ln, font=zh(40), fill=(200, 196, 188))
 c = icon(c, "01_看菜单", W - 330, H - 300, 250)
 c.save(f"{OUT}/00.jpg", quality=93)
@@ -72,22 +72,8 @@ for lab, v, col in bars:
 d.text((80, base + 110), "现在的$1.18m，比2021年10月的$1.20m还低1.5%。", font=zh(32, "Bold"), fill=RED)
 img.save(f"{OUT}/01.jpg", quality=93)
 
-# ---------- 02 40年来最快 ----------
-img, d, y0 = page(2, "跌得多快", "40年来\n最快的一次下跌", "各次下跌开始后的头7个月，首府城市房价合计跌幅")
-rows = [("2017到2019年那轮", 1.2, NAVY, "当时是有记录以来最深的一次"), ("2022到2023年那轮", 7.0, NAVY, "加息最猛的那一年"),
-        ("2026年这一轮", 8.1, RED, "从3月高点算起")]
-y = y0 + 110; maxp = 9.0
-for lab, p, col, note in rows:
-    d.text((80, y), lab, font=zh(40, "Bold"), fill=INK)
-    d.text((80, y + 56), note, font=zh(28), fill=GREY)
-    bl = (p / maxp) * 820
-    d.rectangle((80, y + 110, 80 + bl, y + 180), fill=col)
-    d.text((80 + bl + 20, y + 112), f"-{p}%", font=num(56), fill=col)
-    y += 300
-img.save(f"{OUT}/02.jpg", quality=93)
-
-# ---------- 03 加息五次 ----------
-img, d, y0 = page(3, "为什么跌", "今年加息5次\n利率回到18年最高", "澳储行现金利率")
+# ---------- 02 加息五次 ----------
+img, d, y0 = page(2, "为什么跌", "今年加息5次\n利率回到18年最高", "澳储行现金利率")
 pts = [("25年2月", 4.10), ("25年5月", 3.85), ("25年8月", 3.60), ("26年2月", 3.85), ("26年3月", 4.10), ("26年5月", 4.35), ("26年9月", 4.60), ("26年11月", 4.85)]
 lo, hi = 3.4, 5.0; top, base = y0 + 90, 1200; left, right = 110, 1000
 def py(v): return base - (v - lo) / (hi - lo) * (base - top)
@@ -107,68 +93,47 @@ for i, (lab, v) in enumerate(pts):
     ctext(d, x, base + 20, lab, zh(24), GREY)
     prev = (x, y)
 d.text((left, base + 80), "去年降息3次，今年2月起转为加息，11月3日这次是今年第5次。", font=zh(30), fill=INK)
+img.save(f"{OUT}/02.jpg", quality=93)
+
+# ---------- 03 有房贷的人 ----------
+img, d, y0 = page(3, "如果你有房贷", "每100万贷款\n每月多还约$806", "平均浮动利率从约5.45%升到约6.7%，30年本息还款计算")
+rows = [("50万贷款", 403), ("80万贷款", 645), ("100万贷款", 806), ("150万贷款", 1209)]
+y = y0 + 60
+for lab, v in rows:
+    d.text((80, y + 14), lab, font=zh(40, "Bold"), fill=INK)
+    bl = v / 1300 * 400
+    d.rectangle((360, y, 360 + bl, y + 76), fill=RED if lab.startswith("100") else NAVY)
+    d.text((360 + bl + 18, y + 8), f"+${v:,}/月", font=num(46), fill=RED if lab.startswith("100") else NAVY)
+    y += 120
+y += 40
+d.rounded_rectangle((80, y, 1000, y + 300), 24, fill="white")
+yy = y + 34
+for ln, f, col in [("可以做的事", zh(38, "Black"), INK), ("老客户的利率常常比新客户高。", zh(34), (70, 66, 60)),
+                   ("拿着别家给新客户的报价去问自己的银行，", zh(34), (70, 66, 60)), ("谈不下来就考虑转贷。", zh(34), (70, 66, 60))]:
+    d.text((116, yy), ln, font=f, fill=col); yy += 60
 img.save(f"{OUT}/03.jpg", quality=93)
 
-# ---------- 04 借款能力 ----------
-img, d, y0 = page(4, "加息意味着什么", "同样的收入\n能借的钱少了10万以上", "一个中位收入家庭的借款能力变化")
-y = y0 + 80
-d.rectangle((80, y, 1000, y + 120), fill=NAVY)
-d.text((110, y + 30), "加息前能借到的额度", font=zh(40, "Bold"), fill="white")
-d.text((820, y + 24), "100%", font=num(52), fill="white")
-y += 170
-d.rectangle((80, y, 80 + 920 * 0.885, y + 120), fill=RED)
-d.rectangle((80 + 920 * 0.885, y, 1000, y + 120), outline=RED, width=4)
-d.text((110, y + 30), "现在", font=zh(40, "Bold"), fill="white")
-d.text((80 + 920 * 0.885 - 190, y + 24), "88.5%", font=num(52), fill="white")
-y += 200
-d.text((80, y), "-11.5%", font=num(150), fill=RED)
-d.text((80, y + 200), "约等于少借10.5万澳币以上", font=zh(48, "Bold"), fill=INK)
-y += 300
-for ln in ["银行批贷款看的是你每月还不还得起。利率每升一次，", "同一份收入能撑起的贷款就小一截。这比全国房价从", "3月高点跌掉的约6.3万澳币还要多。"]:
-    d.text((80, y), ln, font=zh(34), fill=(70, 66, 60)); y += 54
+# ---------- 04 想买房的人 ----------
+img, d, y0 = page(4, "如果你想买房", "买家能谈价了\n但能借的也少了", "现在是买方市场的几个信号")
+cards = [("39天", "平均挂牌时间", "2020年8月以来最长"), ("4.7%", "平均砍价幅度", "2019年5月以来最大"),
+         ("-30%", "悉尼成交量", "比去年同期少三成"), ("-11.5%", "借款额度", "同样收入能借的钱")]
+gx, gy = 80, y0 + 40; cw, chh = 450, 330
+for i, (big, lab, note) in enumerate(cards):
+    x = gx + (i % 2) * (cw + 20); y = gy + (i // 2) * (chh + 20)
+    d.rounded_rectangle((x, y, x + cw, y + chh), 24, fill="white")
+    d.text((x + 36, y + 30), big, font=num(80 if len(big) < 5 else 68), fill=RED)
+    d.text((x + 36, y + 170), lab, font=zh(38, "Black"), fill=INK)
+    d.text((x + 36, y + 232), note, font=zh(30), fill=GREY)
+y = gy + 2 * (chh + 20) + 30
+for ln in ["年初拿到的贷款预批额度要重新算。", "房子挂得越久越好谈，可以多看几套再出价。", "悉尼独立屋一年跌了10.8%，公寓跌了5.6%。"]:
+    d.text((80, y), ln, font=zh(36), fill=(70, 66, 60)); y += 58
 img.save(f"{OUT}/04.jpg", quality=93)
 
-# ---------- 05 独立屋vs公寓 ----------
-img, d, y0 = page(5, "谁跌得多", "独立屋\n比公寓跌得多", "悉尼过去12个月价格变化和现在的中位价")
-cols = [("独立屋", -10.8, 1438090, RED), ("公寓", -5.6, 857872, NAVY)]
-base = y0 + 140; x = 140
-for lab, p, mv, col in cols:
-    h = abs(p) / 12 * 640
-    d.rectangle((x, base, x + 300, base + h), fill=col)
-    ctext(d, x + 150, base + h + 20, f"{p}%", num(70), col)
-    ctext(d, x + 150, base - 70, lab, zh(44, "Black"), INK)
-    ctext(d, x + 150, base + h + 120, f"中位价 ${mv/1e6:.2f}m", zh(34), GREY)
-    x += 480
-d.line((100, base, 980, base), fill=INK, width=3)
-img.save(f"{OUT}/05.jpg", quality=93)
-
-# ---------- 06 房租还在涨 ----------
-img, d, y0 = page(6, "房租呢", "房价在跌\n房租还在涨", "悉尼过去12个月的变化")
-y = y0 + 90
-rows = [("独立屋", -10.8, 4.6), ("公寓", -5.6, 3.0)]
-mid = 540
-d.line((mid, y - 20, mid, y + 520), fill=INK, width=3)
-d.text((mid - 260, y - 70), "房价", font=zh(34, "Bold"), fill=RED)
-d.text((mid + 160, y - 70), "房租", font=zh(34, "Bold"), fill=TEAL)
-for lab, pv, rv in rows:
-    d.text((80, y + 40), lab, font=zh(38, "Black"), fill=INK)
-    bl = abs(pv) / 12 * 360
-    d.rectangle((mid - bl, y + 120, mid, y + 190), fill=RED)
-    d.text((mid - bl - 4 - num(40).getlength(f"{pv}%"), y + 125), f"{pv}%", font=num(40), fill=RED) if mid - bl > 260 else d.text((mid - bl + 10, y + 125), f"{pv}%", font=num(40), fill="white")
-    rl = rv / 12 * 360
-    d.rectangle((mid, y + 120, mid + rl, y + 190), fill=TEAL)
-    d.text((mid + rl + 16, y + 125), f"+{rv}%", font=num(40), fill=TEAL)
-    y += 260
-y += 60
-for ln in ["一涨一跌，悉尼的租金回报率到了3.5%。", "首府城市平均3.77%，是2015年5月以来最高。", "但投资贷款利率已经接近7%，", "大多数投资房仍然是每月倒贴。"]:
-    d.text((80, y), ln, font=zh(36), fill=(70, 66, 60)); y += 58
-img.save(f"{OUT}/06.jpg", quality=93)
-
-# ---------- 07 税改时间线 ----------
-img, d, y0 = page(7, "另一个原因", "负扣税和资本利得税\n2027年7月1日起改", "5月联邦预算宣布，现在已经立法")
-y = y0 + 80; lx = 140
-d.line((lx, y, lx, y + 760), fill=INK, width=6)
-events = [("2026年5月12日晚7:30", "预算公布。这个时间点之前已经持有的\n投资房，不受负扣税新规影响。", NAVY),
+# ---------- 05 投资者 ----------
+img, d, y0 = page(5, "如果你是投资者", "负扣税和资本利得税\n2027年7月1日起改", "5月联邦预算宣布，现在已经立法")
+y = y0 + 60; lx = 140
+d.line((lx, y, lx, y + 620), fill=INK, width=6)
+events = [("2026年5月12日晚7:30", "这个时间点之前已经持有的投资房，\n不受负扣税新规影响。", NAVY),
           ("2027年7月1日起：负扣税", "5月12日之后买的二手投资房，出租亏损\n不能再抵工资收入的税。新建房不受影响。", RED),
           ("2027年7月1日起：资本利得税", "50%折扣取消，改成按通胀调整成本，\n另设30%的最低税率。只算这天之后的增值。", RED)]
 for t, desc, col in events:
@@ -177,24 +142,42 @@ for t, desc, col in events:
     yy = y + 56
     for ln in desc.split("\n"):
         d.text((lx + 50, yy), ln, font=zh(32), fill=(70, 66, 60)); yy += 48
-    y += 270
-d.text((80, y + 10), "6月季度新增投资贷款跌了8.6%，是2022年9月以来最大的季度跌幅。", font=zh(30), fill=INK)
-img.save(f"{OUT}/07.jpg", quality=93)
+    y += 230
+y += 20
+for ln in ["悉尼租金回报率3.5%，投资贷款利率接近7%，", "大多数投资房每月都在倒贴。算账时，", "倒贴的部分以后能不能抵税，结果差很多。"]:
+    d.text((80, y), ln, font=zh(34), fill=INK); y += 54
+img.save(f"{OUT}/05.jpg", quality=93)
 
-# ---------- 08 接下来看什么 ----------
-img, d, y0 = page(8, "接下来看什么", "四个信号\n决定会不会继续跌")
-cards = [("-30%", "悉尼成交量", "比去年同期少三成，\n买家明显变少"),
-         ("39天", "平均挂牌时间", "2020年8月以来最长"),
-         ("4.7%", "平均砍价幅度", "2019年5月以来最大"),
-         ("12月8日", "下次议息", "有经济学家预计\n明年2月还会再加")]
-gx, gy = 80, y0 + 60; cw, chh = 450, 420
-for i, (big, lab, note) in enumerate(cards):
-    x = gx + (i % 2) * (cw + 20); y = gy + (i // 2) * (chh + 20)
-    d.rounded_rectangle((x, y, x + cw, y + chh), 24, fill="white")
-    d.text((x + 36, y + 40), big, font=num(84 if len(big) < 5 else 66), fill=RED)
-    d.text((x + 36, y + 180), lab, font=zh(38, "Black"), fill=INK)
-    yy = y + 246
-    for ln in note.split("\n"):
-        d.text((x + 36, yy), ln, font=zh(30), fill=GREY); yy += 44
-img.save(f"{OUT}/08.jpg", quality=93)
+# ---------- 06 租房的人 ----------
+img, d, y0 = page(6, "如果你在租房", "房租还在涨\n但涨得慢了", "悉尼过去12个月房租变化")
+y = y0 + 70
+for lab, v in [("独立屋", 4.6), ("公寓", 3.0)]:
+    d.text((80, y + 12), lab, font=zh(40, "Bold"), fill=INK)
+    bl = v / 6 * 600
+    d.rectangle((300, y, 300 + bl, y + 80), fill=TEAL)
+    d.text((300 + bl + 18, y + 6), f"+{v}%", font=num(54), fill=TEAL)
+    y += 130
+y += 40
+for big, txt in [("2.3%", "全国空置率，2022年1月以来最高"), ("0.9%", "全国近三个月房租涨幅，2025年1月以来最低")]:
+    d.text((80, y), big, font=num(90), fill=RED)
+    d.text((80 + num(90).getlength(big) + 30, y + 40), txt, font=zh(34), fill=INK)
+    y += 150
+y += 20
+d.rounded_rectangle((80, y, 1000, y + 190), 24, fill="white")
+d.text((116, y + 32), "续租时可以试着谈", font=zh(38, "Black"), fill=INK)
+d.text((116, y + 96), "空房多了，房东找新租客要花时间。", font=zh(34), fill=(70, 66, 60))
+img.save(f"{OUT}/06.jpg", quality=93)
+
+# ---------- 07 饭桌上的三个数 ----------
+img, d, y0 = page(7, "饭桌上说得出来的", "三个数\n记住就够了")
+items = [("40年", "最快的一次下跌", "首府城市7个月跌了8.1%，比2022年那轮还快"),
+         ("0个", "悉尼没有一个区在涨", "过去12个月涨幅最高的Wollondilly也跌了1.4%"),
+         ("4.85%", "18年来最高的利率", "11月3日加息后，是2008年以来最高")]
+y = y0 + 40
+for big, lab, note in items:
+    d.text((80, y), big, font=num(120), fill=RED)
+    d.text((80, y + 160), lab, font=zh(44, "Black"), fill=INK)
+    d.text((80, y + 222), note, font=zh(30), fill=GREY)
+    y += 320
+img.save(f"{OUT}/07.jpg", quality=93)
 print("ok")
