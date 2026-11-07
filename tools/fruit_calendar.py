@@ -1,5 +1,5 @@
 """悉尼一年水果季节：日历卡。数据来自Sydney Markets四季应季指南（每月应季水果清单）。
-用法：python3 tools/fruit_calendar.py 输出目录"""
+用法：python3 tools/fruit_calendar.py 输出目录（输出calendar.jpg，作为第01张）"""
 import sys, os
 from PIL import Image, ImageDraw, ImageFont
 
