@@ -51,7 +51,7 @@ d.ellipse((640 - 16, 300 - 16, 640 + 16, 300 + 16), fill=CREAM)
 d.text((600, 240), "2月高点", font=zh(32, "Bold"), fill=CREAM)
 d.text((80, 760), "悉尼房价", font=zh(84, "Black"), fill=CREAM)
 d.text((80, 870), "跌回五年前", font=zh(150, "Black"), fill=CREAM)
-for i, ln in enumerate(["比2月高点低10.1%", "比2021年10月还低1.5%", "买房、还贷、投资、租房", "各看一张就够"]):
+for i, ln in enumerate(["比2021年10月还低"]):
     d.text((84, 1070 + i * 58), ln, font=zh(40), fill=(200, 196, 188))
 c = icon(c, "01_看菜单", W - 330, H - 300, 250)
 c.save(f"{OUT}/00.jpg", quality=93)
