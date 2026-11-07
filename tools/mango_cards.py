@@ -67,7 +67,7 @@ CAKE = ("enze_3094.jpg", .5, .5)
 # A：芒果班戟铺满，讲来历
 a = fade(crop(("pal_mango.webp", .5, .55, 1.0), W, H), (40, 20, 4), True, .55, 1.1, 200)
 shadow_text(a, [(76, 150, "悉尼卖芒果班戟", zh(96, "Black"), "l"), (70, 280, "比满记还早", zh(150, "Black"), "l"),
-                (80, 480, "芒果季，这4家芒果甜品现在去吃", zh(46, "Bold"), "l")], alpha=.55)
+                (80, 480, "芒果季，这7家芒果甜品现在去吃", zh(46, "Bold"), "l")], alpha=.55)
 icon(a, "09_吃甜品", W - 280, H - 300, 240).save(f"{OUT}/cover_A.jpg", quality=93)
 
 # B：四宫格，中间芒果色标题带
@@ -76,7 +76,7 @@ for i, p in enumerate([PANCAKE, STICKY, FERRY, CAKE]): b.paste(crop(p, cw, ch), 
 d = ImageDraw.Draw(b, "RGBA")
 d.rectangle((0, ch - 170, W, ch + 170), fill=(*MANGO, 245))
 f1 = zh(118, "Black"); t = "悉尼芒果季"; d.text(((W - f1.getlength(t)) / 2, ch - 150), t, font=f1, fill=INK)
-f2 = zh(52, "Bold"); t = "这4样芒果甜品，现在吃"; d.text(((W - f2.getlength(t)) / 2, ch + 40), t, font=f2, fill=INK)
+f2 = zh(52, "Bold"); t = "这7家芒果甜品，现在吃"; d.text(((W - f2.getlength(t)) / 2, ch + 40), t, font=f2, fill=INK)
 icon(b, "05_品尝", 30, 30, 200).save(f"{OUT}/cover_B.jpg", quality=93)
 
 # C：AP芒果酥特写，文字在下
@@ -124,3 +124,27 @@ card("04.jpg", "03", "AP BAKERY MANLY", "限定芒果奶油酥，$15一个",
 card("05.jpg", "04", "ENZE", "戚风芒果奶油蛋糕，6寸$71",
      [CAKE, ("enze_3096.jpg", .5, .5), ("enze_3098.jpg", .5, .5), ("enze_3100.jpg", .5, .5)])
 print("ok")
+
+# ---------- 06 还有这3家 ----------
+x6 = Image.new("RGB", (W, H), CREAM); d = ImageDraw.Draw(x6)
+d.rectangle((0, 0, W, 210), fill=MANGO)
+d.text((64, 50), "还有这3家", font=zh(96, "Black"), fill=INK)
+rows = [("lulu.png", .5, .5, "LULU 露记", "杨枝甘露、芒果双皮奶", "新出的芒果系列", "Eastwood"),
+        ("azuki_drink.png", .5, .5, "AZUKI", "芒果冰沙、芒果蛋糕", "日式面包店的芒果季", "Wolli Creek"),
+        ("gb.png", .5, .5, "GOLDEN BROWN", "芒果芝士雪冰 $26.9", "一大份，两个人分刚好", "CBD")]
+y = 250
+for f, fx, fy, name, dish, note, area in rows:
+    ph = crop((f, fx, fy), 500, 360)
+    m = Image.new("L", (500, 360), 0); ImageDraw.Draw(m).rounded_rectangle((0, 0, 499, 359), 28, fill=255)
+    x6.paste(ph, (50, y), m); d = ImageDraw.Draw(x6)
+    fn = zh(50, "Black")
+    while fn.getlength(name) > 460: fn = zh(fn.size - 2, "Black")
+    d.text((590, y + 30), name, font=fn, fill=INK)
+    d.text((590, y + 110), dish, font=zh(40, "Black"), fill=DEEP)
+    d.text((590, y + 180), note, font=zh(34), fill=(90, 80, 66))
+    fa = zh(30, "Bold"); tw = fa.getlength(area)
+    d.rounded_rectangle((590, y + 252, 590 + tw + 40, y + 304), 26, fill=INK)
+    d.text((610, y + 256), area, font=fa, fill="white")
+    y += 395
+x6.save(f"{OUT}/06.jpg", quality=93)
+print("06 ok")
