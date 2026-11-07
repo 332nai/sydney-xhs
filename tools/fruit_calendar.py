@@ -20,6 +20,12 @@ FRUITS = [("枇杷", [11], (236, 168, 60)), ("樱桃", span(11, 1), (176, 30, 50
           ("芒果", span(9, 2), (250, 170, 30)), ("菠萝", span(9, 2), (232, 190, 40)), ("西瓜蜜瓜", span(10, 2), (90, 160, 90)),
           ("蓝莓", span(10, 2), (70, 90, 160))]
 
+def _key(f):
+    idx = sorted(MONTHS.index(m) for m in f[1])
+    end = idx[0]
+    while end + 1 in idx: end += 1
+    return (idx[0], -end)
+FRUITS.sort(key=_key)
 img = Image.new("RGB", (W, H), CREAM); d = ImageDraw.Draw(img)
 d.text((70, 60), "悉尼水果日历", font=zh(96, "Black"), fill=INK)
 d.text((74, 190), "每种水果在悉尼的应季月份，从现在的11月排起", font=zh(34), fill=GREY)
