@@ -17,7 +17,7 @@ Balmoral海滩上的文物保护老建筑，白墙、棕榈树，餐厅里是蓝
 📍4 The Esplanade, Balmoral
 
 🌊Martinez｜戛纳酒店风
-名字来自戛纳的Hôtel Martinez，在Quay Quarter Tower楼上，有餐厅、楼顶露台和茴香酒吧，露台能看到海港大桥。从Young St一侧的专用电梯上去。
+名字来自戛纳的Hôtel Martinez，在Quay Quarter Tower楼上。楼顶露台是蓝白花纹卡座配红色桌子，能看到海港大桥，傍晚上去喝一杯spritz正好。从Young St一侧的专用电梯上楼。
 📍50 Bridge St, Sydney
 
 🌊Whalebridge｜地中海海边小馆
