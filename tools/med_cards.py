@@ -128,7 +128,7 @@ for no, name, tag, style, intro, chips, pa, pb, acc in V:
 T1, T2, T3 = "不用飞欧洲", "悉尼的地中海夏天", "6家海边餐厅，阿马尔菲、蔚蓝海岸、爱琴海"
 # A：St Siandra沙滩椅铺满，大字在上
 a = fade(crop(("ss25_0.jpg", .5, .5, 1.0), W, H), (10, 30, 60), True, .5, 1.1, 190)
-shadow_text(a, [(76, 140, T1, zh(84, "Black"), "l"), (70, 250, T2, zh(118, "Black"), "l"), (80, 420, T3, zh(40, "Bold"), "l")], alpha=.5)
+shadow_text(a, [(76, 140, T1, zh(84, "Black"), "l"), (70, 250, T2, zh(118, "Black"), "l")], alpha=.5)
 icon(a, "06_拍照打卡", W - 290, H - 300, 240).save(f"{OUT}/cover_A.jpg", quality=93)
 
 # B：六宫格，中间海蓝标题带
@@ -136,21 +136,20 @@ b = Image.new("RGB", (W, H)); cw, ch = W // 2, H // 3
 for i, p in enumerate([("ss25_0.jpg", .5, .5), ("ak_c10.jpg", .5, .5), ("bp_mom1.jpg", .5, .5), ("ma_sw13.jpg", .5, .5), ("wb25_mia.jpg", .5, .5), ("wb_ca1.jpg", .5, .5)]):
     b.paste(crop(p, cw, ch), ((i % 2) * cw, (i // 2) * ch))
 d = ImageDraw.Draw(b, "RGBA")
-d.rectangle((0, 560, W, 880), fill=(*SEA, 242))
-f1 = zh(112, "Black"); d.text(((W - f1.getlength(T2)) / 2, 585), T2, font=f1, fill="white")
-f2 = zh(46, "Bold"); t = "不用飞欧洲，这6家海边餐厅就够"; d.text(((W - f2.getlength(t)) / 2, 780), t, font=f2, fill=(220, 236, 250))
+d.rectangle((0, 600, W, 840), fill=(*SEA, 242))
+f1 = zh(112, "Black"); d.text(((W - f1.getlength(T2)) / 2, 640), T2, font=f1, fill="white")
+
 icon(b, "06_拍照打卡", 30, 30, 190).save(f"{OUT}/cover_B.jpg", quality=93)
 
 # C：Akti粉色沙滩椅，文字在下
 c = fade(crop(("ak_c10.jpg", .5, .45, 1.0), W, H), (60, 26, 20), False, .5, 1.1, 200)
-shadow_text(c, [(70, 960, T2, zh(118, "Black"), "l"), (76, 1130, T1 + "，这6家就够", zh(50, "Bold"), "l")], alpha=.5)
+shadow_text(c, [(70, 1050, T2, zh(118, "Black"), "l")], alpha=.5)
 icon(c, "12_聚餐", 40, 40, 190).save(f"{OUT}/cover_C.jpg", quality=93)
 
 # D：奶油底，蓝色大字，三张拱形图
 dd = Image.new("RGB", (W, H), CREAM); d = ImageDraw.Draw(dd)
 d.text((70, 90), T1, font=zh(80, "Black"), fill=SEA)
 d.text((70, 200), T2, font=zh(118, "Black"), fill=INK)
-d.text((76, 360), T3, font=zh(38, "Bold"), fill=(120, 110, 96))
 aw, ah, gap = 300, 860, 30; x0 = (W - 3 * aw - 2 * gap) // 2
 for i, p in enumerate([("ss25_0.jpg", .5, .5), ("ak_c10.jpg", .5, .5), ("wb25_mia.jpg", .5, .5)]):
     ph = crop(p, aw, ah); m = Image.new("L", (aw, ah), 0); md = ImageDraw.Draw(m)
