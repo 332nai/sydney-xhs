@@ -59,19 +59,71 @@ def card(fn, no, name, tag, photos, three=False):
     shadow_text(img, [(W / 2, ch - 106, f"( {no} )", en(36), "m"), (W / 2, ch - 46, name, f, "m"), (W / 2, ch + 64, tag, zh(40), "m")], alpha=.75)
     img.save(f"{OUT}/{fn}", quality=93)
 
-# ---------- 店卡 ----------
-card("01.jpg", "01", "ST SIANDRA", "阿马尔菲海岸风，门口就是海滩",
-     [("ss25_0.jpg", .5, .5), ("ss26_b.jpg", .5, .5), ("ss25_1.jpg", .45, .5), ("ss26_c.jpg", .6, .5)])
-card("02.jpg", "02", "AKTI", "爱琴海日落色，白伞下吃希腊菜",
-     [("ak_to0.jpg", .5, .6), ("ak_c10.jpg", .5, .5), ("ak_med.jpg", .5, .5), ("ak_c7.jpg", .5, .5)])
-card("03.jpg", "03", "SAILS ON LAVENDER BAY", "蔚蓝海岸风装修，正对海港大桥",
-     [("sa_h.jpg", .5, .5), ("sa_g02.jpg", .5, .5), ("sa_g08.jpg", .5, .5), ("sa_g03.jpg", .5, .5)])
-card("04.jpg", "04", "MARTINEZ", "戛纳酒店风，楼顶露台看大桥",
-     [("ma_sq0.jpg", .45, .5), ("ma_sq1.jpg", .5, .5), ("ma_sq2.jpg", .5, .5), ("ma26_ig1.jpg", .5, .5)])
-card("05.jpg", "05", "WHALEBRIDGE", "全露天，对着歌剧院吃海鲜塔",
-     [("wb25_mia.jpg", .5, .5), ("wb25_menu.jpg", .5, .5), ("wb25_bev.jpg", .5, .5), ("wb26_s113.jpg", .5, .5)])
-card("06.jpg", "06", "CLUB AMALFI", "Watsons Bay每月一次的海滩派对",
-     [("wb_ca1.jpg", .5, .5), ("wb_ca0.jpg", .5, .5), ("wb_ca2.jpg", .5, .5)], three=True)
+# ---------- 店卡：每家两张，A是2x2拼图，B是三图加简介 ----------
+def wrap(text, font, width):
+    import re
+    toks = re.findall(r"[A-Za-z0-9&'.$ôé]+|.", text)
+    lines, cur = [], ""
+    for t in toks:
+        if font.getlength(cur + t) > width and cur and t not in "，。、！？）：；":
+            lines.append(cur); cur = t.lstrip()
+        else: cur += t
+    if cur: lines.append(cur)
+    return lines
+
+def info(fn, no, name, style, intro, chips, photos, accent):
+    img = Image.new("RGB", (W, H), CREAM)
+    img.paste(crop(photos[0], 640, 780), (0, 0))
+    img.paste(crop(photos[1], 434, 387), (646, 0)); img.paste(crop(photos[2], 434, 387), (646, 393))
+    d = ImageDraw.Draw(img)
+    y = 830
+    d.text((70, y), f"( {no} )", font=en(34), fill=accent)
+    f = en(70)
+    while f.getlength(name) > 940: f = en(f.size - 2)
+    d.text((70, y + 52), name, font=f, fill=INK)
+    d.text((72, y + 150), style, font=zh(50, "Black"), fill=accent)
+    fy = y + 240
+    for ln in wrap(intro, zh(40), 940):
+        d.text((72, fy), ln, font=zh(40), fill=(70, 66, 60)); fy += 62
+    cx, fc = 72, zh(32, "Bold")
+    cy = fy + 30
+    for c in chips:
+        tw = fc.getlength(c)
+        if cx + tw + 40 > W - 60: cx = 72; cy += 66
+        d.rounded_rectangle((cx, cy, cx + tw + 40, cy + 54), 27, fill=accent)
+        d.text((cx + 20, cy + 6), c, font=fc, fill="white"); cx += tw + 56
+    img.save(f"{OUT}/{fn}", quality=93)
+
+V = [
+ ("01", "ST SIANDRA", "阿马尔菲海岸风，门口就是海滩", "阿马尔菲海岸风",
+  "在The Spit的海滩边，金黄墙面、陶土地砖、白色大理石吧台。夏天沙滩上摆满条纹沙滩椅和阳伞，还可以坐船直接到。",
+  ["Mosman · The Spit", "周一周二休息"],
+  [("ss25_0.jpg", .5, .5), ("ss26_b.jpg", .5, .5), ("ss25_1.jpg", .45, .5), ("ss26_c.jpg", .6, .5)],
+  [("ss_r3.jpg", .6, .5), ("ss26_a.jpg", .5, .5), ("ss_ft2.jpg", .5, .6)], (196, 140, 40)),
+ ("02", "AKTI", "爱琴海日落色，白伞下吃希腊菜", "爱琴海日落色",
+  "Woolloomooloo码头上的希腊餐厅，整间店是蜜桃粉加暖黄，户外一排白色阳伞。现烤皮塔饼配蘸酱，小羊肩冒着烟端上桌。",
+  ["Woolloomooloo码头", "Happy hour每天4点到6点"],
+  [("ak_to0.jpg", .5, .6), ("ak_c10.jpg", .5, .5), ("ak_med.jpg", .5, .5), ("ak_c7.jpg", .5, .5)],
+  [("ak_baraki.jpg", .5, .5), ("ak_hh.jpg", .5, .5), ("ak_c3.jpg", .5, .5)], (214, 110, 100)),
+ ("04", "MARTINEZ", "戛纳酒店风，楼顶露台看大桥", "戛纳酒店风",
+  "名字来自戛纳的Hôtel Martinez。楼顶露台是蓝白花纹卡座配红色桌子，能看到海港大桥，傍晚上来喝一杯spritz正好。",
+  ["Circular Quay楼顶", "Young St专用电梯上楼"],
+  [("ma_sw13.jpg", .5, .5), ("ma_sq1.jpg", .5, .5), ("ma_sq2.jpg", .5, .5), ("ma_es.jpg", .5, .5)],
+  [("ma_sw10.jpg", .5, .5), ("ma_y48.jpg", .5, .5), ("ma_sw11.jpg", .5, .5)], (40, 80, 150)),
+ ("05", "WHALEBRIDGE", "全露天，对着海港吃海鲜塔", "地中海海边小馆",
+  "全露天，几乎每桌都对着海港大桥和歌剧院。招牌是马赛鱼汤，海鲜塔可以自己挑龙虾、生蚝、鱼子酱，再配一桶香槟。",
+  ["Circular Quay East", "没有室内座位，看天气"],
+  [("wb25_mia.jpg", .5, .5), ("wb25_menu.jpg", .5, .5), ("wb25_bev.jpg", .5, .5), ("wb26_s113.jpg", .5, .5)],
+  [("wb25_v1.jpg", .5, .5), ("wb26_platter.jpg", .5, .5), ("wb26_spritz.jpg", .5, .5)], (30, 110, 140)),
+ ("06", "CLUB AMALFI", "Watsons Bay每月一次的海滩派对", "海滩俱乐部周日派对",
+  "Watsons Bay Hotel翻新后的顶层平台，每月一个周日变成地中海海滩俱乐部，有分享套餐、Hugo Spritz和DJ，一玩就是4个小时。",
+  ["Watsons Bay", "$89一位", "下一场11月15日"],
+  [("wbh_ext.jpg", .5, .5), ("wb_ca1.jpg", .5, .5), ("wbh_fr.jpg", .5, .5), ("wb_ca0.jpg", .5, .5)],
+  [("wbh_top2.jpg", .5, .5), ("wb_ca2.jpg", .5, .5), ("wbh_sun.jpg", .5, .5)], (30, 70, 130)),
+]
+for no, name, tag, style, intro, chips, pa, pb, acc in V:
+    card(f"{no}a.jpg", no, name, tag, pa)
+    info(f"{no}b.jpg", no, name, style, intro, chips, pb, acc)
 
 # ---------- 首页 ----------
 T1, T2, T3 = "不用飞欧洲", "悉尼的地中海夏天", "6家海边餐厅，阿马尔菲、蔚蓝海岸、爱琴海"
@@ -82,7 +134,7 @@ icon(a, "06_拍照打卡", W - 290, H - 300, 240).save(f"{OUT}/cover_A.jpg", qua
 
 # B：六宫格，中间海蓝标题带
 b = Image.new("RGB", (W, H)); cw, ch = W // 2, H // 3
-for i, p in enumerate([("ss25_0.jpg", .5, .5), ("ak_c10.jpg", .5, .5), ("sa_g02.jpg", .5, .5), ("ma_sq0.jpg", .45, .5), ("wb25_mia.jpg", .5, .5), ("wb_ca1.jpg", .5, .5)]):
+for i, p in enumerate([("ss25_0.jpg", .5, .5), ("ak_c10.jpg", .5, .5), ("ak_c7.jpg", .5, .5), ("ma_sw13.jpg", .5, .5), ("wb25_mia.jpg", .5, .5), ("wb_ca1.jpg", .5, .5)]):
     b.paste(crop(p, cw, ch), ((i % 2) * cw, (i // 2) * ch))
 d = ImageDraw.Draw(b, "RGBA")
 d.rectangle((0, 560, W, 880), fill=(*SEA, 242))
