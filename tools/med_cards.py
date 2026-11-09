@@ -61,28 +61,28 @@ def card(fn, no, name, tag, photos, three=False):
 
 # ---------- 店卡 ----------
 card("01.jpg", "01", "ST SIANDRA", "阿马尔菲海岸风，门口就是海滩",
-     [("ss_to2.jpg", .5, .6), ("ss_cp6.jpg", .5, .5), ("ss_cp7.jpg", .5, .5), ("ss_cp0.jpg", .5, .5)])
+     [("ss25_0.jpg", .5, .5), ("ss26_b.jpg", .5, .5), ("ss25_1.jpg", .45, .5), ("ss26_c.jpg", .6, .5)])
 card("02.jpg", "02", "AKTI", "爱琴海日落色，白伞下吃希腊菜",
      [("ak_to0.jpg", .5, .6), ("ak_c10.jpg", .5, .5), ("ak_med.jpg", .5, .5), ("ak_c7.jpg", .5, .5)])
 card("03.jpg", "03", "SAILS ON LAVENDER BAY", "蔚蓝海岸风装修，正对海港大桥",
-     [("sa_to0.jpg", .5, .5), ("sa_to3.jpg", .5, .5), ("sa_to2.jpg", .5, .5), ("sa_to1.jpg", .5, .5)])
+     [("sa_h.jpg", .5, .5), ("sa_g02.jpg", .5, .5), ("sa_g08.jpg", .5, .5), ("sa_g03.jpg", .5, .5)])
 card("04.jpg", "04", "MARTINEZ", "戛纳酒店风，楼顶露台看大桥",
-     [("ma_sq0.jpg", .45, .5), ("ma_b12.webp", .5, .5), ("ma_sq2.jpg", .5, .5), ("ma_b3.webp", .5, .5)])
+     [("ma_sq0.jpg", .45, .5), ("ma_sq1.jpg", .5, .5), ("ma_sq2.jpg", .5, .5), ("ma26_ig1.jpg", .5, .5)])
 card("05.jpg", "05", "WHALEBRIDGE", "全露天，对着歌剧院吃海鲜塔",
-     [("wh_b15.jpg", .5, .5), ("wh_b6.jpg", .5, .5), ("wh_b11.jpg", .5, .5), ("wh_b1.jpg", .5, .5)])
+     [("wb25_mia.jpg", .5, .5), ("wb25_menu.jpg", .5, .5), ("wb25_bev.jpg", .5, .5), ("wb26_s113.jpg", .5, .5)])
 card("06.jpg", "06", "CLUB AMALFI", "Watsons Bay每月一次的海滩派对",
      [("wb_ca1.jpg", .5, .5), ("wb_ca0.jpg", .5, .5), ("wb_ca2.jpg", .5, .5)], three=True)
 
 # ---------- 首页 ----------
 T1, T2, T3 = "不用飞欧洲", "悉尼的地中海夏天", "6家海边餐厅，阿马尔菲、蔚蓝海岸、爱琴海"
 # A：St Siandra沙滩椅铺满，大字在上
-a = fade(crop(("ss_cp6.jpg", .42, .5, 1.0), W, H), (10, 30, 60), True, .5, 1.1, 190)
+a = fade(crop(("ss25_0.jpg", .5, .5, 1.0), W, H), (10, 30, 60), True, .5, 1.1, 190)
 shadow_text(a, [(76, 140, T1, zh(84, "Black"), "l"), (70, 250, T2, zh(118, "Black"), "l"), (80, 420, T3, zh(40, "Bold"), "l")], alpha=.5)
 icon(a, "06_拍照打卡", W - 290, H - 300, 240).save(f"{OUT}/cover_A.jpg", quality=93)
 
 # B：六宫格，中间海蓝标题带
 b = Image.new("RGB", (W, H)); cw, ch = W // 2, H // 3
-for i, p in enumerate([("ss_to2.jpg", .5, .6), ("ak_c10.jpg", .5, .5), ("sa_to3.jpg", .5, .5), ("ma_sq0.jpg", .45, .5), ("wh_b15.jpg", .5, .5), ("wb_ca1.jpg", .5, .5)]):
+for i, p in enumerate([("ss25_0.jpg", .5, .5), ("ak_c10.jpg", .5, .5), ("sa_g02.jpg", .5, .5), ("ma_sq0.jpg", .45, .5), ("wb25_mia.jpg", .5, .5), ("wb_ca1.jpg", .5, .5)]):
     b.paste(crop(p, cw, ch), ((i % 2) * cw, (i // 2) * ch))
 d = ImageDraw.Draw(b, "RGBA")
 d.rectangle((0, 560, W, 880), fill=(*SEA, 242))
@@ -101,7 +101,7 @@ d.text((70, 90), T1, font=zh(80, "Black"), fill=SEA)
 d.text((70, 200), T2, font=zh(118, "Black"), fill=INK)
 d.text((76, 360), T3, font=zh(38, "Bold"), fill=(120, 110, 96))
 aw, ah, gap = 300, 860, 30; x0 = (W - 3 * aw - 2 * gap) // 2
-for i, p in enumerate([("ss_to2.jpg", .5, .6), ("ak_c10.jpg", .5, .5), ("wh_b15.jpg", .5, .5)]):
+for i, p in enumerate([("ss25_0.jpg", .5, .5), ("ak_c10.jpg", .5, .5), ("wb25_mia.jpg", .5, .5)]):
     ph = crop(p, aw, ah); m = Image.new("L", (aw, ah), 0); md = ImageDraw.Draw(m)
     md.rectangle((0, aw // 2, aw, ah), fill=255); md.ellipse((0, 0, aw - 1, aw), fill=255)
     dd.paste(ph, (x0 + i * (aw + gap), 480), m)
