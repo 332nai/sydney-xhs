@@ -56,7 +56,7 @@ def card(fn, no, name, tag, photos, three=False):
         for i, p in enumerate(photos): img.paste(crop(p, cw, ch), ((i % 2) * cw, (i // 2) * ch))
     f = en(92)
     while f.getlength(name) > 980: f = en(f.size - 4)
-    shadow_text(img, [(W / 2, ch - 106, f"( {no} )", en(36), "m"), (W / 2, ch - 46, name, f, "m"), (W / 2, ch + 64, tag, zh(40), "m")], alpha=.75)
+    shadow_text(img, [(W / 2, ch - 50, name, f, "m"), (W / 2, ch + 60, tag, zh(40), "m")], alpha=.75)
     img.save(f"{OUT}/{fn}", quality=93)
 
 # ---------- 店卡：每家两张，A是2x2拼图，B是三图加简介 ----------
@@ -76,22 +76,16 @@ def info(fn, no, name, style, intro, chips, photos, accent):
     img.paste(crop(photos[0], 640, 780), (0, 0))
     img.paste(crop(photos[1], 434, 387), (646, 0)); img.paste(crop(photos[2], 434, 387), (646, 393))
     d = ImageDraw.Draw(img)
-    y = 830
-    d.text((70, y), f"( {no} )", font=en(34), fill=accent)
-    f = en(70)
+    f = en(80)
     while f.getlength(name) > 940: f = en(f.size - 2)
-    d.text((70, y + 52), name, font=f, fill=INK)
-    d.text((72, y + 150), style, font=zh(50, "Black"), fill=accent)
-    fy = y + 240
-    for ln in wrap(intro, zh(40), 940):
-        d.text((72, fy), ln, font=zh(40), fill=(70, 66, 60)); fy += 62
-    cx, fc = 72, zh(32, "Bold")
-    cy = fy + 30
-    for c in chips:
-        tw = fc.getlength(c)
-        if cx + tw + 40 > W - 60: cx = 72; cy += 66
-        d.rounded_rectangle((cx, cy, cx + tw + 40, cy + 54), 27, fill=accent)
-        d.text((cx + 20, cy + 6), c, font=fc, fill="white"); cx += tw + 56
+    fi = zh(44); lines = wrap(intro, fi, 940)
+    block = 100 + 90 + len(lines) * 68
+    y = 780 + (660 - block) // 2
+    d.text((70, y), name, font=f, fill=INK)
+    d.text((72, y + 100), style, font=zh(56, "Black"), fill=accent)
+    fy = y + 190
+    for ln in lines:
+        d.text((72, fy), ln, font=fi, fill=(70, 66, 60)); fy += 68
     img.save(f"{OUT}/{fn}", quality=93)
 
 V = [
