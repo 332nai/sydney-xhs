@@ -12,9 +12,9 @@
 Woolloomooloo码头上的希腊餐厅，整间店是蜜桃粉加暖黄，户外一排白色阳伞。招牌是现烤皮塔饼配蘸酱、烤大虾，小羊肩冒着烟端上桌。旁边的Baraki Bar每天4点到6点有happy hour。
 📍6 Cowper Wharf Roadway, Woolloomooloo
 
-🌊Sails on Lavender Bay｜蔚蓝海岸风
-照着法国蔚蓝海岸重新装修，窗外就是歌剧院和海港大桥。11月15日之前有Spring Club活动，生蚝$3一只，Taittinger香槟$99一瓶。周末加收12%。
-📍2 Henry Lawson Ave, McMahons Point
+🌊Bathers' Pavilion｜海滩度假风
+Balmoral海滩上的文物保护老建筑，白墙、棕榈树，餐厅里是蓝白条纹卡座，窗外就是海湾。餐厅两道菜$105、三道菜$125，旁边还有小酒馆和海边外卖亭，买份炸鱼薯条坐在沙滩上吃也行。
+📍4 The Esplanade, Balmoral
 
 🌊Martinez｜戛纳酒店风
 名字来自戛纳的Hôtel Martinez，在Quay Quarter Tower楼上，有餐厅、楼顶露台和茴香酒吧，露台能看到海港大桥。从Young St一侧的专用电梯上去。

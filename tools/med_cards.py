@@ -105,6 +105,11 @@ V = [
   ["Woolloomooloo码头", "Happy hour每天4点到6点"],
   [("ak_to0.jpg", .5, .6), ("ak_c10.jpg", .5, .5), ("ak_med.jpg", .5, .5), ("ak_c7.jpg", .5, .5)],
   [("ak_baraki.jpg", .5, .5), ("ak_hh.jpg", .5, .5), ("ak_c3.jpg", .5, .5)], (214, 110, 100)),
+ ("03", "BATHERS' PAVILION", "Balmoral海滩上的白色老建筑", "海滩度假风",
+  "文物保护的装饰艺术风老建筑，就在Balmoral海滩上，白墙、棕榈树、蓝白条纹卡座。餐厅两道菜$105、三道菜$125，旁边还有小酒馆和海边外卖亭。",
+  ["Balmoral Beach", "两道菜$105起"],
+  [("bp_mom1.jpg", .5, .5), ("bp_y002.jpg", .5, .5), ("bp_to106395839.jpg", .5, .5), ("bp_tv.jpg", .5, .5)],
+  [("bp_mom2.jpg", .45, .5), ("bp_to106395838.jpg", .5, .5), ("bp_to106395841.jpg", .5, .5)], (34, 72, 120)),
  ("04", "MARTINEZ", "戛纳酒店风，楼顶露台看大桥", "戛纳酒店风",
   "名字来自戛纳的Hôtel Martinez。楼顶露台是蓝白花纹卡座配红色桌子，能看到海港大桥，傍晚上来喝一杯spritz正好。",
   ["Circular Quay楼顶", "Young St专用电梯上楼"],
@@ -134,7 +139,7 @@ icon(a, "06_拍照打卡", W - 290, H - 300, 240).save(f"{OUT}/cover_A.jpg", qua
 
 # B：六宫格，中间海蓝标题带
 b = Image.new("RGB", (W, H)); cw, ch = W // 2, H // 3
-for i, p in enumerate([("ss25_0.jpg", .5, .5), ("ak_c10.jpg", .5, .5), ("ak_c7.jpg", .5, .5), ("ma_sw13.jpg", .5, .5), ("wb25_mia.jpg", .5, .5), ("wb_ca1.jpg", .5, .5)]):
+for i, p in enumerate([("ss25_0.jpg", .5, .5), ("ak_c10.jpg", .5, .5), ("bp_mom1.jpg", .5, .5), ("ma_sw13.jpg", .5, .5), ("wb25_mia.jpg", .5, .5), ("wb_ca1.jpg", .5, .5)]):
     b.paste(crop(p, cw, ch), ((i % 2) * cw, (i // 2) * ch))
 d = ImageDraw.Draw(b, "RGBA")
 d.rectangle((0, 560, W, 880), fill=(*SEA, 242))
