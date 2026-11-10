@@ -88,28 +88,35 @@ def info(fn, no, name, style, intro, chips, photos, accent):
         d.text((72, fy), ln, font=fi, fill=(70, 66, 60)); fy += 68
     img.save(f"{OUT}/{fn}", quality=93)
 
-def card6(fn, name, tag, photos):
-    """一家一张：2x3六宫格，店名和一句介绍压在正中"""
-    img = Image.new("RGB", (W, H)); cw, ch = W // 2, H // 3
-    for i, p in enumerate(photos): img.paste(crop(p, cw, ch), ((i % 2) * cw, (i // 2) * ch))
-    f = en(92)
-    while f.getlength(name) > 980: f = en(f.size - 4)
-    shadow_text(img, [(W / 2, H // 2 - 92, name, f, "m"), (W / 2, H // 2 + 20, tag, zh(42, "Bold"), "m")], alpha=.8)
+def card6(fn, name, intro, photos):
+    """一家一张：上方3x2六张图，下方留白写店名和30到80字介绍"""
+    img = Image.new("RGB", (W, H), CREAM); cw, ch = W // 3, 480
+    for i, p in enumerate(photos): img.paste(crop(p, cw + 1, ch), ((i % 3) * cw, (i // 3) * ch))
+    d = ImageDraw.Draw(img)
+    f = en(66)
+    while f.getlength(name) > 940: f = en(f.size - 2)
+    fi = zh(40); lines = wrap(intro, fi, 940)
+    block = 96 + len(lines) * 62
+    y = 960 + (480 - block) // 2
+    d.text((70, y), name, font=f, fill=INK)
+    fy = y + 96
+    for ln in lines:
+        d.text((72, fy), ln, font=fi, fill=(70, 66, 60)); fy += 62
     img.save(f"{OUT}/{fn}", quality=93)
 
 # 每家6张：至少2张环境图
 V6 = [
- ("01.jpg", "ST SIANDRA", "阿马尔菲海岸风，门口就是海滩",
+ ("01.jpg", "ST SIANDRA", "The Spit海滩边，黄墙、陶土地砖的阿马尔菲风，可以坐船直接到。生蚝半打$36起，小羊肩$48，整只烤鸡$46。周一周二休息。",
   [("ss25_0.jpg", .5, .5), ("ss26_b.jpg", .5, .5), ("ss_r3.jpg", .6, .5), ("ss26_c.jpg", .6, .5), ("ss25_1.jpg", .45, .5), ("ss_ft2.jpg", .5, .6)]),
- ("02.jpg", "AKTI", "爱琴海日落色，白伞下吃希腊菜",
+ ("02.jpg", "AKTI", "Woolloomooloo码头上，蜜桃粉配一排白色阳伞。招牌现烤皮塔饼、烤大虾和冒烟的小羊肩，分享套餐$80一位起，每天4点到6点happy hour。",
   [("ak_to0.jpg", .5, .6), ("ak_med.jpg", .5, .5), ("ak_c10.jpg", .5, .5), ("ak_hh.jpg", .5, .5), ("ak_c7.jpg", .5, .5), ("ak_baraki.jpg", .5, .5)]),
- ("03.jpg", "BATHERS' PAVILION", "Balmoral海滩上的白色老建筑",
+ ("03.jpg", "BATHERS' PAVILION", "Balmoral海滩上的白色老建筑，蓝白条纹卡座对着海湾。餐厅两道菜$105、三道菜$125，有烤章鱼、蜜汁猪排和法式吐司。",
   [("bp_mom1.jpg", .5, .5), ("bp_to106395839.jpg", .5, .5), ("bp_mom2.jpg", .45, .5), ("bp_tv.jpg", .5, .5), ("bp_y002.jpg", .5, .5), ("bp_to106395841.jpg", .5, .5)]),
- ("04.jpg", "MARTINEZ", "戛纳酒店风，楼顶露台看大桥",
+ ("04.jpg", "MARTINEZ", "Circular Quay的Quay Quarter Tower楼顶，蓝白花纹卡座看海港大桥。工作日3点到6点happy hour，Aperol Spritz $16，任选两份披萨$36。",
   [("ma_sw13.jpg", .5, .5), ("ma_sq1.jpg", .5, .5), ("ma_sw10.jpg", .5, .5), ("ma_es.jpg", .5, .5), ("ma_sq2.jpg", .5, .5), ("ma_sw11.jpg", .5, .5)]),
- ("05.jpg", "WHALEBRIDGE", "全露天，对着海港吃海鲜塔",
+ ("05.jpg", "WHALEBRIDGE", "Circular Quay East全露天，对着歌剧院和海港大桥。招牌马赛鱼汤和海鲜塔，剧前两道菜$62，工作日4点到6点spritz $12。",
   [("wb25_mia.jpg", .5, .5), ("wb25_menu.jpg", .5, .5), ("wb26_s113.jpg", .5, .5), ("wb26_platter.jpg", .5, .5), ("wb25_v1.jpg", .5, .5), ("wb25_bev.jpg", .5, .5)]),
- ("06.jpg", "CLUB AMALFI", "Watsons Bay每月一次的海滩派对",
+ ("06.jpg", "CLUB AMALFI", "Watsons Bay Hotel顶层平台，每月一个周日变成海滩俱乐部。$89一位，含分享套餐、一杯Hugo Spritz和4小时DJ，下一场11月15日。",
   [("wbh_ext.jpg", .5, .5), ("wb_ca1.jpg", .5, .5), ("wbh_fr.jpg", .5, .5), ("wb_ca0.jpg", .5, .5), ("wbh_top2.jpg", .5, .5), ("wb_ca2.jpg", .5, .5)]),
 ]
 for fn, name, tag, ph in V6: card6(fn, name, tag, ph)
