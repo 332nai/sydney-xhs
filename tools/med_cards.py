@@ -146,12 +146,13 @@ icon(c, "12_聚餐", 40, 40, 190).save(f"{OUT}/cover_C.jpg", quality=93)
 
 # D：奶油底，蓝色大字，三张拱形图
 dd = Image.new("RGB", (W, H), CREAM); d = ImageDraw.Draw(dd)
-d.text((70, 90), T1, font=zh(80, "Black"), fill=SEA)
-d.text((70, 200), T2, font=zh(124, "Black"), fill=INK)
-aw, ah, gap = 300, 860, 30; x0 = (W - 3 * aw - 2 * gap) // 2
+ft = ImageFont.truetype("/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc", 104, index=2)
+d.text((70, 100), T1, font=ft, fill=INK)
+d.text((70, 236), T2, font=ft, fill=INK)
+aw, ah, gap = 300, 900, 30; x0 = (W - 3 * aw - 2 * gap) // 2
 for i, p in enumerate([("ss25_0.jpg", .5, .5), ("ak_c10.jpg", .5, .5), ("wb25_mia.jpg", .5, .5)]):
     ph = crop(p, aw, ah); m = Image.new("L", (aw, ah), 0); md = ImageDraw.Draw(m)
     md.rectangle((0, aw // 2, aw, ah), fill=255); md.ellipse((0, 0, aw - 1, aw), fill=255)
-    dd.paste(ph, (x0 + i * (aw + gap), 480), m)
+    dd.paste(ph, (x0 + i * (aw + gap), 450), m)
 icon(dd, "06_拍照打卡", W - 270, 60, 200).save(f"{OUT}/cover_D.jpg", quality=93)
 print("ok")
