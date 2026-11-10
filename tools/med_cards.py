@@ -88,41 +88,31 @@ def info(fn, no, name, style, intro, chips, photos, accent):
         d.text((72, fy), ln, font=fi, fill=(70, 66, 60)); fy += 68
     img.save(f"{OUT}/{fn}", quality=93)
 
-V = [
- ("01", "ST SIANDRA", "阿马尔菲海岸风，门口就是海滩", "阿马尔菲海岸风",
-  "在The Spit的海滩边，金黄墙面、陶土地砖、白色大理石吧台。夏天沙滩上摆满条纹沙滩椅和阳伞，还可以坐船直接到。",
-  ["Mosman · The Spit", "周一周二休息"],
-  [("ss25_0.jpg", .5, .5), ("ss26_b.jpg", .5, .5), ("ss25_1.jpg", .45, .5), ("ss26_c.jpg", .6, .5)],
-  [("ss_r3.jpg", .6, .5), ("ss26_a.jpg", .5, .5), ("ss_ft2.jpg", .5, .6)], (196, 140, 40)),
- ("02", "AKTI", "爱琴海日落色，白伞下吃希腊菜", "爱琴海日落色",
-  "Woolloomooloo码头上的希腊餐厅，整间店是蜜桃粉加暖黄，户外一排白色阳伞。现烤皮塔饼配蘸酱，小羊肩冒着烟端上桌。",
-  ["Woolloomooloo码头", "Happy hour每天4点到6点"],
-  [("ak_to0.jpg", .5, .6), ("ak_c10.jpg", .5, .5), ("ak_med.jpg", .5, .5), ("ak_c7.jpg", .5, .5)],
-  [("ak_baraki.jpg", .5, .5), ("ak_hh.jpg", .5, .5), ("ak_c3.jpg", .5, .5)], (214, 110, 100)),
- ("03", "BATHERS' PAVILION", "Balmoral海滩上的白色老建筑", "海滩度假风",
-  "文物保护的装饰艺术风老建筑，就在Balmoral海滩上，白墙、棕榈树、蓝白条纹卡座。餐厅两道菜$105、三道菜$125，旁边还有小酒馆和海边外卖亭。",
-  ["Balmoral Beach", "两道菜$105起"],
-  [("bp_mom1.jpg", .5, .5), ("bp_y002.jpg", .5, .5), ("bp_to106395839.jpg", .5, .5), ("bp_tv.jpg", .5, .5)],
-  [("bp_mom2.jpg", .45, .5), ("bp_to106395838.jpg", .5, .5), ("bp_to106395841.jpg", .5, .5)], (34, 72, 120)),
- ("04", "MARTINEZ", "戛纳酒店风，楼顶露台看大桥", "戛纳酒店风",
-  "名字来自戛纳的Hôtel Martinez。楼顶露台是蓝白花纹卡座配红色桌子，能看到海港大桥，傍晚上来喝一杯spritz正好。",
-  ["Circular Quay楼顶", "Young St专用电梯上楼"],
-  [("ma_sw13.jpg", .5, .5), ("ma_sq1.jpg", .5, .5), ("ma_sq2.jpg", .5, .5), ("ma_es.jpg", .5, .5)],
-  [("ma_sw10.jpg", .5, .5), ("ma_y48.jpg", .5, .5), ("ma_sw11.jpg", .5, .5)], (40, 80, 150)),
- ("05", "WHALEBRIDGE", "全露天，对着海港吃海鲜塔", "地中海海边小馆",
-  "全露天，几乎每桌都对着海港大桥和歌剧院。招牌是马赛鱼汤，海鲜塔可以自己挑龙虾、生蚝、鱼子酱，再配一桶香槟。",
-  ["Circular Quay East", "没有室内座位，看天气"],
-  [("wb25_mia.jpg", .5, .5), ("wb25_menu.jpg", .5, .5), ("wb25_bev.jpg", .5, .5), ("wb26_s113.jpg", .5, .5)],
-  [("wb25_v1.jpg", .5, .5), ("wb26_platter.jpg", .5, .5), ("wb26_spritz.jpg", .5, .5)], (30, 110, 140)),
- ("06", "CLUB AMALFI", "Watsons Bay每月一次的海滩派对", "海滩俱乐部周日派对",
-  "Watsons Bay Hotel翻新后的顶层平台，每月一个周日变成地中海海滩俱乐部，有分享套餐、Hugo Spritz和DJ，一玩就是4个小时。",
-  ["Watsons Bay", "$89一位", "下一场11月15日"],
-  [("wbh_ext.jpg", .5, .5), ("wb_ca1.jpg", .5, .5), ("wbh_fr.jpg", .5, .5), ("wb_ca0.jpg", .5, .5)],
-  [("wbh_top2.jpg", .5, .5), ("wb_ca2.jpg", .5, .5), ("wbh_sun.jpg", .5, .5)], (30, 70, 130)),
+def card6(fn, name, tag, photos):
+    """一家一张：2x3六宫格，店名和一句介绍压在正中"""
+    img = Image.new("RGB", (W, H)); cw, ch = W // 2, H // 3
+    for i, p in enumerate(photos): img.paste(crop(p, cw, ch), ((i % 2) * cw, (i // 2) * ch))
+    f = en(92)
+    while f.getlength(name) > 980: f = en(f.size - 4)
+    shadow_text(img, [(W / 2, H // 2 - 92, name, f, "m"), (W / 2, H // 2 + 20, tag, zh(42, "Bold"), "m")], alpha=.8)
+    img.save(f"{OUT}/{fn}", quality=93)
+
+# 每家6张：至少2张环境图
+V6 = [
+ ("01.jpg", "ST SIANDRA", "阿马尔菲海岸风，门口就是海滩",
+  [("ss25_0.jpg", .5, .5), ("ss26_b.jpg", .5, .5), ("ss_r3.jpg", .6, .5), ("ss26_c.jpg", .6, .5), ("ss25_1.jpg", .45, .5), ("ss_ft2.jpg", .5, .6)]),
+ ("02.jpg", "AKTI", "爱琴海日落色，白伞下吃希腊菜",
+  [("ak_to0.jpg", .5, .6), ("ak_med.jpg", .5, .5), ("ak_c10.jpg", .5, .5), ("ak_hh.jpg", .5, .5), ("ak_c7.jpg", .5, .5), ("ak_baraki.jpg", .5, .5)]),
+ ("03.jpg", "BATHERS' PAVILION", "Balmoral海滩上的白色老建筑",
+  [("bp_mom1.jpg", .5, .5), ("bp_to106395839.jpg", .5, .5), ("bp_mom2.jpg", .45, .5), ("bp_tv.jpg", .5, .5), ("bp_y002.jpg", .5, .5), ("bp_to106395841.jpg", .5, .5)]),
+ ("04.jpg", "MARTINEZ", "戛纳酒店风，楼顶露台看大桥",
+  [("ma_sw13.jpg", .5, .5), ("ma_sq1.jpg", .5, .5), ("ma_sw10.jpg", .5, .5), ("ma_es.jpg", .5, .5), ("ma_sq2.jpg", .5, .5), ("ma_sw11.jpg", .5, .5)]),
+ ("05.jpg", "WHALEBRIDGE", "全露天，对着海港吃海鲜塔",
+  [("wb25_mia.jpg", .5, .5), ("wb25_menu.jpg", .5, .5), ("wb26_s113.jpg", .5, .5), ("wb26_platter.jpg", .5, .5), ("wb25_v1.jpg", .5, .5), ("wb25_bev.jpg", .5, .5)]),
+ ("06.jpg", "CLUB AMALFI", "Watsons Bay每月一次的海滩派对",
+  [("wbh_ext.jpg", .5, .5), ("wb_ca1.jpg", .5, .5), ("wbh_fr.jpg", .5, .5), ("wb_ca0.jpg", .5, .5), ("wbh_top2.jpg", .5, .5), ("wb_ca2.jpg", .5, .5)]),
 ]
-for no, name, tag, style, intro, chips, pa, pb, acc in V:
-    card(f"{no}a.jpg", no, name, tag, pa)
-    info(f"{no}b.jpg", no, name, style, intro, chips, pb, acc)
+for fn, name, tag, ph in V6: card6(fn, name, tag, ph)
 
 # ---------- 首页 ----------
 T1, T2, T3 = "不用飞欧洲", "悉尼的地中海夏天", "6家海边餐厅，阿马尔菲、蔚蓝海岸、爱琴海"
