@@ -75,29 +75,18 @@ V = [
 ]
 for fn, name, price, intro, ph in V: card(fn, name, price, intro, ph)
 
-L1, L2 = "悉尼最贵跨年晚餐", "排行第一$3,250一位"
-ft = serif(94)
-# A：Altitude烟花俯瞰铺满
-a = crop(("al_nye.jpg", .5, .55, 1.0), W, H)
-ov = Image.new("L", (1, H))
-for yy in range(H): ov.putpixel((0, yy), int(max(0, 1 - yy / (H * .45)) ** 1.2 * 200))
-a = Image.composite(Image.new("RGB", (W, H), (6, 8, 20)), a, ov.resize((W, H)))
-d = ImageDraw.Draw(a); d.text((70, 110), L1, font=ft, fill="white"); d.text((70, 230), L2, font=ft, fill="white")
-icon(a, "01_看菜单", W - 290, H - 300, 240).save(f"{OUT}/cover_A.jpg", quality=93)
-# B：米色底，三张拱形图
-b = Image.new("RGB", (W, H), CREAM); d = ImageDraw.Draw(b)
-fb = serif(94); d.text((70, 100), L1, font=fb, fill=INK); d.text((70, 230), L2, font=fb, fill=INK)
-aw, ah, gap = 300, 900, 30; x0 = (W - 3 * aw - 2 * gap) // 2
-for i, p in enumerate(["bn_t105455397.jpg", ("al_rk1.jpg", .78, .5), "sa_nye3.jpg"]):
-    ph = crop(p, aw, ah); m = Image.new("L", (aw, ah), 0); md = ImageDraw.Draw(m)
-    md.rectangle((0, aw // 2, aw, ah), fill=255); md.ellipse((0, 0, aw - 1, aw), fill=255)
-    b.paste(ph, (x0 + i * (aw + gap), 450), m)
-icon(b, "01_看菜单", W - 230, 70, 180).save(f"{OUT}/cover_B.jpg", quality=93)
-# C：Bennelong帆形屋顶下的夜景，字在下
-c = crop(("bn_t105455397.jpg", .5, .5, 1.0), W, H)
-ov = Image.new("L", (1, H))
-for yy in range(H): ov.putpixel((0, yy), int(max(0, (yy - H * .5) / (H * .5)) ** 1.1 * 215))
-c = Image.composite(Image.new("RGB", (W, H), (10, 8, 6)), c, ov.resize((W, H)))
-d = ImageDraw.Draw(c); d.text((70, 1050), L1, font=ft, fill="white"); d.text((70, 1170), L2, font=ft, fill="white")
-icon(c, "01_看菜单", 50, 50, 200).save(f"{OUT}/cover_C.jpg", quality=93)
+# 首页：像真实分享，整张实拍照片，白色普通粗体字，轻阴影，不加色块和拱形
+L1, L2 = "悉尼最贵的跨年晚餐", "一位要$3,250"
+fc = zh(92, "Bold")
+def plain_cover(fn, spec, pose, ty=120, ix=None):
+    im = crop(spec, W, H)
+    sh = Image.new("L", (W, H), 0); sd = ImageDraw.Draw(sh)
+    for i, t in enumerate((L1, L2)): sd.text((72, ty + i * 128), t, font=fc, fill=235, stroke_width=6, stroke_fill=235)
+    im.paste((0, 0, 0), (0, 0), sh.filter(ImageFilter.GaussianBlur(10)))
+    d = ImageDraw.Draw(im)
+    for i, t in enumerate((L1, L2)): d.text((72, ty + i * 128), t, font=fc, fill="white")
+    icon(im, pose, W - 250, H - 270, 210).save(f"{OUT}/{fn}", quality=93)
+plain_cover("cover_A.jpg", ("al_nye.jpg", .5, .55), "01_看菜单")
+plain_cover("cover_B.jpg", ("bn_t105455397.jpg", .5, .5), "01_看菜单")
+plain_cover("cover_C.jpg", ("ar_t105913818.jpg", .45, .5), "01_看菜单")
 print("ok")
