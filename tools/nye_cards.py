@@ -55,38 +55,38 @@ def card(fn, name, price, intro, photos):
 
 V = [
  ("01.jpg", "BENNELONG", "$2,250到$3,250一位",
-  "在歌剧院里面，帆形屋顶下吃饭。四到五道菜配酒，香槟到店和零点各一杯。最贵的是楼上Dress Circle，能看到海港大桥。订位要全额付款。",
+  "菜单还没公布。主餐厅是小食加四道菜配酒，楼上Dress Circle是五道菜配更高级的酒，香槟到店和零点各一杯。",
   ["bn_t105455397.jpg", "bn_b13.webp", "bn_t105455388.jpg", "bn_nye.jpg", "bn_t105455402.jpg", "bn_t105455385.jpg"]),
  ("02.jpg", "ALTITUDE", "$1,750到$2,500一位",
-  "香格里拉酒店36楼，从高处看整个海港的烟花。八道菜品鉴套餐配酒，最长可以坐5小时。$1,750是普通座位，$2,500保证靠窗。",
+  "菜单还没公布。八道菜品鉴套餐，每道配酒，最长可以坐5小时。$2,500保证靠窗座位。",
   [("al_rk1.jpg", .5, .5), "al_wl0.jpg", "al_nye.jpg", ("al_rk2.jpg", .5, .5), "al_wl2.jpg", "al_wl1.jpg"]),
  ("03.jpg", "ARIA", "$1,950一位",
-  "Circular Quay，正对歌剧院和海港大桥。晚8点场六道菜配六款酒，香槟到店和零点各一杯。想便宜一点可以选早场$350，或者站着的酒会$795。",
+  "芦笋配水牛奶酪和鱼子酱、西澳黑马龙虾、乳鸽配樱桃、M9+和牛配牛尾、芒果香槟、黑松露巧克力，六道菜配六款酒。",
   ["ar_t105913818.jpg", "ar_b6.jpg", "ar_b8.jpg", "ar_b16.jpg", "ar_b1.jpg", "ar_b9.jpg"]),
  ("04.jpg", "WHALEBRIDGE", "$1,200到$1,500一位",
-  "Circular Quay East全露天，对着海港大桥。香槟整晚无限量，有鱼子酱、海鲜拼盘和和牛。$1,500是水边座位，$1,200是海港景观座位。",
+  "鱼子酱挞、生蚝虎虾扇贝拼盘、松露鹅肝肉冻，主菜烤珊瑚鳟和安格斯牛柳，最后是法国奶酪和朗姆酒蛋糕，香槟整晚无限量。",
   ["wb25_mia.jpg", "wb25_v1.jpg", "wb25_menu.jpg", "wb25_v3.jpg", "wb25_bev.jpg", "wb26_s113.jpg"]),
  ("05.jpg", "SAILS", "$1,495一位",
-  "Lavender Bay水边，就在海港大桥旁边。晚上7点只有一场，六道菜加酒水套餐。",
+  "蛙蟹挞配鱼子酱、珊瑚鳟刺身、大虾扇贝卷配海胆、干式熟成鸭胸、M9+西冷配羊肚菌、黄桃慕斯，含酒水。",
   ["sa_nye.jpg", "sa_nye3.jpg", "sa_g02.jpg", "sa_to2.jpg", "sa_h.jpg", "sa_nye2.jpg"]),
  ("06.jpg", "几百块的选择", "$295到$395一位",
-  "同样在海港边：Akti晚场分享套餐加一杯香槟$295，Ripples Chowder Bay五道菜含酒水$335，Riva晚场五道菜$395。",
+  "Akti $295：皮塔饼、和牛肉丸、红酒炖牛肉、小羊肩、希腊新年蛋糕。Ripples $335：生蚝、龙虾卷、炸鹌鹑、T骨牛排。Riva $395：蛙蟹配海胆、龙虾意面、罗西尼牛柳。",
   ["ak_to0.jpg", "ak_nye.png", "rc_7.jpg", "rc_3.jpg", "rv_0.jpg", "rv_5.jpg"]),
 ]
 for fn, name, price, intro, ph in V: card(fn, name, price, intro, ph)
 
-L1, L2 = "悉尼跨年一顿饭", "$3,250值不值"
-ft = serif(110)
+L1, L2 = "悉尼最贵跨年晚餐", "排行第一$3,250一位"
+ft = serif(94)
 # A：Altitude烟花俯瞰铺满
 a = crop(("al_nye.jpg", .5, .55, 1.0), W, H)
 ov = Image.new("L", (1, H))
 for yy in range(H): ov.putpixel((0, yy), int(max(0, 1 - yy / (H * .45)) ** 1.2 * 200))
 a = Image.composite(Image.new("RGB", (W, H), (6, 8, 20)), a, ov.resize((W, H)))
-d = ImageDraw.Draw(a); d.text((70, 110), L1, font=ft, fill="white"); d.text((70, 250), L2, font=ft, fill="white")
+d = ImageDraw.Draw(a); d.text((70, 110), L1, font=ft, fill="white"); d.text((70, 230), L2, font=ft, fill="white")
 icon(a, "01_看菜单", W - 290, H - 300, 240).save(f"{OUT}/cover_A.jpg", quality=93)
 # B：米色底，三张拱形图
 b = Image.new("RGB", (W, H), CREAM); d = ImageDraw.Draw(b)
-fb = serif(100); d.text((70, 100), L1, font=fb, fill=INK); d.text((70, 230), L2, font=fb, fill=INK)
+fb = serif(94); d.text((70, 100), L1, font=fb, fill=INK); d.text((70, 230), L2, font=fb, fill=INK)
 aw, ah, gap = 300, 900, 30; x0 = (W - 3 * aw - 2 * gap) // 2
 for i, p in enumerate(["bn_t105455397.jpg", ("al_rk1.jpg", .78, .5), "sa_nye3.jpg"]):
     ph = crop(p, aw, ah); m = Image.new("L", (aw, ah), 0); md = ImageDraw.Draw(m)
@@ -98,6 +98,6 @@ c = crop(("bn_t105455397.jpg", .5, .5, 1.0), W, H)
 ov = Image.new("L", (1, H))
 for yy in range(H): ov.putpixel((0, yy), int(max(0, (yy - H * .5) / (H * .5)) ** 1.1 * 215))
 c = Image.composite(Image.new("RGB", (W, H), (10, 8, 6)), c, ov.resize((W, H)))
-d = ImageDraw.Draw(c); d.text((70, 1050), L1, font=ft, fill="white"); d.text((70, 1190), L2, font=ft, fill="white")
+d = ImageDraw.Draw(c); d.text((70, 1050), L1, font=ft, fill="white"); d.text((70, 1170), L2, font=ft, fill="white")
 icon(c, "01_看菜单", 50, 50, 200).save(f"{OUT}/cover_C.jpg", quality=93)
 print("ok")
