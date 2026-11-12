@@ -107,3 +107,12 @@ for i, t in enumerate((L1, L2)):
     d.text((70, 150 + i * 125), t, font=fc, fill=(255, 222, 60), stroke_width=7, stroke_fill=(20, 20, 20))
 icon(c, "01_看菜单", W - 250, H - 270, 210).save(f"{OUT}/cover_C.jpg", quality=93)
 print("ok")
+
+# 选定版：Bennelong夜景，宋体白字在下，两人价格
+c = crop(("bn_t105455397.jpg", .5, .5, 1.0), W, H)
+ov = Image.new("L", (1, H))
+for yy in range(H): ov.putpixel((0, yy), int(max(0, (yy - H * .5) / (H * .5)) ** 1.1 * 215))
+c = Image.composite(Image.new("RGB", (W, H), (10, 8, 6)), c, ov.resize((W, H)))
+d = ImageDraw.Draw(c); fs_ = serif(110)
+d.text((70, 1050), "悉尼跨年一顿饭", font=fs_, fill="white"); d.text((70, 1190), "两人$6,500值不值", font=fs_, fill="white")
+icon(c, "01_看菜单", 50, 50, 200).save(f"{OUT}/cover.jpg", quality=93)
