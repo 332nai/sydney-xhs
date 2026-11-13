@@ -62,46 +62,58 @@ def stats(d, y, items):
         fn = en(78); d.text((x + (w - fn.getlength(num)) / 2, y + 18), num, font=fn, fill="white")
         fl = zh(32, "Medium"); d.text((x + (w - fl.getlength(lab)) / 2, y + 114), lab, font=fl, fill=(210, 222, 240))
 
-def page(fn, key, title, sub, photo, st, text):
+def tag(img, x, y, t, col):
+    d = ImageDraw.Draw(img); f = zh(34, "Black"); w = f.getlength(t) + 32
+    d.rectangle((x, y, x + w, y + 54), fill=col); d.text((x + 16, y + 4), t, font=f, fill="white")
+
+def page(fn, key, title, sub, photo, st, text, old=None, oldtag=""):
     img = Image.new("RGB", (W, H), BG); header(img, title, sub, key); d = ImageDraw.Draw(img)
-    f = zh(36, "Medium"); lines = wrap(text, f, 960)
-    ph = H - 240 - 200 - len(lines) * 56 - 60
-    img.paste(crop(photo, W - 120, ph), (60, 240)); y = 240 + ph + 20
+    f = zh(34, "Medium"); lines = wrap(text, f, 960)
+    ph = H - 240 - 200 - len(lines) * 52 - 50
+    hw = (W - 140) // 2
+    img.paste(crop(old, hw, ph).convert("L").convert("RGB"), (60, 240)); img.paste(crop(photo, hw, ph), (80 + hw, 240))
+    tag(img, 60, 240 + ph - 54, oldtag, INK); tag(img, 80 + hw, 240 + ph - 54, "今天", RED)
+    y = 240 + ph + 20
     stats(d, y, st); y += 200
-    for ln in lines: d.text((60, y), ln, font=f, fill=INK); y += 56
-    assert y < H - 8 and ph > 420, (fn, y, ph)
+    for ln in lines: d.text((60, y), ln, font=f, fill=INK); y += 52
+    assert y < H - 8 and ph > 380, (fn, y, ph)
     img.save(f"{OUT}/{fn}", quality=93)
 
 P = [
- ("02.jpg", "车士活", "车士活 Chatswood", "北岸最大的商圈和换乘站", ("chats1.jpg", .5, .5),
+ ("02.jpg", "车士活", "车士活 Chatswood", "左：1936年的Kings戏院", ("chats1.jpg", .5, .5),
   [("23.3%", "在家说普通话"), ("12.3%", "在家说粤语"), ("5.5%", "香港出生")],
-  "1980年代起，香港、台湾和东南亚来的专业人士家庭多选北岸。研究悉尼华人分布的学者发现，从香港、马来西亚、新加坡来的粤语家庭，很多落脚在Hornsby、Ku-ring-gai这些收入较高的北岸地区。Chatswood是北岸最大的商圈和换乘站，2001年的研究统计，购物区里已经有50家香港人开的店，1996年还建了华人文化中心。"),
- ("03.jpg", "伊士活", "伊士活 Eastwood", "从果园小镇到华人和韩国人的生活区", ("eastwood2.jpg", .5, .5),
+  "车士活1876年开始有人定居，1890年北岸铁路通车，1932年海港大桥通车后人口越来越多。华人在这里很早就有根：1885年的悉尼名录里，华人菜园就分布在车士活所在的Willoughby。1980年代起，香港、马来西亚、新加坡来的粤语专业人士家庭多选北岸。1990年代车士活开始盖高楼，吸引了更多华人和韩国人。2001年左右，购物区已经有50家香港人开的店，1996年建了华人文化中心。",
+  ("old_chats1936.jpg", .5, .5), "1936"),
+ ("03.jpg", "伊士活", "伊士活 Eastwood", "左：1947年Odeon戏院里看电影的孩子", ("eastwood2.jpg", .5, .5),
   [("48.8%", "华人血统"), ("28.3%", "在家说普通话"), ("14.5%", "在家说粤语")],
-  "100年前这里是果园和菜园，到1920年代末已经有14个华人菜园。1980年代起华人和韩国人陆续搬来，2001年说粤语的居民还比说普通话的多，到2011年反了过来。研究者发现，这里学区有几所口碑很好的公立学校，周末开着5所中文学校，离麦考瑞大学不到5公里，是典型的家庭型华人区。"),
- ("04.jpg", "好市围", "好市围 Hurstville", "澳洲华人最集中的城区之一", ("hurst1.jpg", .5, .55),
+  "伊士活火车站1886年开通。100年前这里是果园和菜园，1920年代末已经有14个华人菜园。左边照片里的Odeon戏院，1976年拆了改成今天的伊士活购物中心。1960年代先来的是意大利人和希腊人，1980年代初起华人和韩国人陆续搬来。2001年说粤语的居民还比说普通话的多，到2011年反了过来。",
+  ("old_eastwood1947.jpg", .5, .45), "1947"),
+ ("04.jpg", "好市围", "好市围 Hurstville", "左：1951年的Forest Road", ("hurst1.jpg", .5, .55),
   [("47.1%", "华人血统"), ("26.1%", "在家说普通话"), ("16.2%", "在家说粤语")],
-  "1980年代末开始有中国大陆出生的人搬来，1990年代来了很多香港移民，2000年后大陆移民快速增加。2001年中国出生的居民占16%，2016年升到37%，比澳洲出生的还多。研究者在火车站周围数到至少二十几家补习班，周末全悉尼的华人家庭都会把孩子送来上课。"),
- ("05.jpg", "宝活", "宝活 Burwood", "说普通话的人比例最高", ("burwood1.jpg", .5, .5),
+  "好市围1884年通火车，Forest Road是一百多年的老商业街。1960年代末起，希腊人、意大利人从内城往南搬到这里，后来又来了前南斯拉夫的移民，那时是一个工薪阶层的区。1980年代末开始有中国大陆出生的人搬来，1990年代来了很多香港移民，2000年后大陆移民快速增加。2001年中国出生的居民占16%，2016年升到37%。",
+  ("old_hurst1951.jpg", .5, .5), "1951"),
+ ("05.jpg", "宝活", "宝活 Burwood", "左：1938年Astor戏院的大堂", ("burwood1.jpg", .5, .5),
   [("48.3%", "华人血统"), ("32.1%", "在家说普通话"), ("10.8%", "在家说粤语")],
-  "学者发现，从中国北方、华东和上海来的留学生，以及1989年后获准留下的那批中国学生，很多住进了Burwood、Canterbury和Concord一带。今天Burwood Road旁边有一条宝活中国城美食街，在家说普通话的居民占三成以上，是这几个区里最高的。"),
- ("06.jpg", "Rhodes", "Rhodes", "化工厂原址上长出来的新华人区", ("rhodes1.jpg", .5, .5),
+  "宝活是悉尼最老的郊区之一，1855年通火车时是悉尼到Parramatta线上最早的6个站之一。二战后，Burwood Road旁边的老宅Woodstock做过移民宿舍。学者发现，从中国北方、华东和上海来的留学生，以及1980年代末获准留下的那批中国学生，很多住进了宝活、Canterbury和Concord一带。今天在家说普通话的居民占三成以上，是这几个区里最高的。",
+  ("old_burwood1938.jpg", .5, .5), "1938"),
+ ("06.jpg", "Rhodes", "Rhodes", "左：2009年，化工厂原址还在清理污染", ("rhodes1.jpg", .5, .5),
   [("43.2%", "华人血统"), ("30.2%", "在家说普通话"), ("11.6%", "韩裔")],
-  "1930年代到1980年代中期，Rhodes西边是化工厂。工厂搬走后，2000年代原址建起大片公寓，如今四成多居民有华人血统。这类靠近火车站、全是新公寓的区，是新一代华人区的样子，市中心南边的Zetland也是一样，那里一半以上的华人居民是学生。"),
+  "1911年这里建起一家大型铸铁管厂，工业从此进来。从1930年代到1980年代中期，Rhodes西边一直是化工厂。1986年ICI工厂爆炸，5个工人遇难。工厂搬走后，原址花了很多年清理污染，2000年代起建起大片公寓，如今四成多居民有华人血统。靠近火车站、全是新公寓，是新一代华人区的样子。",
+  ("old_rhodes2009.jpg", .5, .5), "2009"),
 ]
-for fn, key, title, sub, ph_, st, tx in P: page(fn, key, title, sub, ph_, st, tx)
+for fn, key, title, sub, ph_, st, tx, od, ot in P: page(fn, key, title, sub, ph_, st, tx, od, ot)
 
 # 01 时间线
 img = Image.new("RGB", (W, H), BG); header(img, "华人是怎么来的", "1970年代到今天，三波移民"); d = ImageDraw.Draw(img)
 T = [("1970s", "白澳政策取消", "第一批新移民里，大约八成来自香港、台湾和东南亚，两成来自中国大陆。"),
      ("1980s", "技术和商业移民增加", "香港、台湾的技术移民和商业移民在1980、1990年代大幅增加。"),
-     ("1989", "中国留学生获准留下", "澳洲政府给了当时在澳的2万名中国留学生四年临时居留，后来很多人留了下来。"),
+     ("1980年代末", "中国留学生获准留下", "1980年代末，澳洲政府给了当时在澳的2万名中国留学生临时居留，后来很多人留了下来。"),
      ("2000s", "大陆移民快速增加", "今天在中国大陆出生的人，是澳洲第二大海外出生群体，仅次于英国出生的人。")]
 y = 270; x = 150
 d.line((x, y + 20, x, y + 4 * 270 - 120), fill=BLUE, width=8)
 for yr, t, s in T:
     d.ellipse((x - 26, y - 6, x + 26, y + 46), fill=RED, outline="white", width=4)
-    d.text((x + 60, y - 18), yr, font=en(56), fill=RED); d.text((x + 60, y + 50), t, font=zh(48, "Black"), fill=INK)
+    d.text((x + 60, y - 18 if yr.isascii() else y - 24), yr, font=en(56) if yr.isascii() else zh(56, "Black"), fill=RED); d.text((x + 60, y + 50), t, font=zh(48, "Black"), fill=INK)
     yy = y + 118
     for ln in wrap(s, zh(34, "Medium"), 820): d.text((x + 60, yy), ln, font=zh(34, "Medium"), fill=GREY); yy += 50
     y += 270
@@ -110,8 +122,8 @@ img.save(f"{OUT}/01.jpg", quality=93)
 # 07 规律
 img = Image.new("RGB", (W, H), BG); header(img, "华人选区的三条规律", "研究悉尼华人分布的学者总结"); d = ImageDraw.Draw(img)
 R = [("1", "跟着同乡和方言走", "说粤语的香港、东南亚家庭多去北岸，从华北、华东来的说普通话的移民多去Burwood一带。同乡多的地方，买菜、看病、找工作都方便。"),
-     ("2", "跟着学校和补习班走", "Eastwood学区有好公立学校，周末有中文学校；Hurstville火车站边上二十几家补习班。有孩子的家庭会为了上学搬家。"),
-     ("3", "先读书，后落脚", "研究发现，不少在悉尼读完书的华人先住在UNSW所在的Randwick，住满大约十年后，再搬去上北岸、Hurstville和Kogarah。")]
+     ("2", "跟着学校和补习班走", "伊士活的老居民说，很多人是看中这里学生成绩好才搬来的；好市围火车站边上有二十几家补习班。有孩子的家庭会为了上学搬家。"),
+     ("3", "跟着火车站走", "这几个华人区都长在大火车站旁边：宝活1855年、好市围1884年、伊士活1886年、车士活1890年通火车。有车站就有商圈，进城上班也方便。")]
 y = 270
 for n, t, s in R:
     d.ellipse((60, y, 160, y + 100), fill=BLUE); d.text((110 - en(60).getlength(n) / 2, y + 16), n, font=en(60), fill="white")
@@ -167,8 +179,8 @@ para(d, y + 10, "下面一步一步看。", 38)
 img.save(f"{OUT}/a01.jpg", quality=93)
 
 # A03 种子：1966年华人最多的十个区
-img, d = tpage("第一步：种子", "1966年，华人最多的十个地方政府区")
-L = [("Randwick", 151.241, -33.914), ("Canterbury", 151.117, -33.912), ("Marrickville", 151.165, -33.928), ("Ashfield", 151.135, -33.890),
+img, d = tpage("第一步：种子", "1966年，华人最多的地方政府区里的9个")
+L = [("Canterbury", 151.117, -33.912), ("Marrickville", 151.165, -33.928), ("Ashfield", 151.135, -33.890),
      ("Rockdale", 151.138, -33.952), ("Waverley", 151.255, -33.893), ("Willoughby", 151.190, -33.800), ("Ku-ring-gai", 151.150, -33.73),
      ("Burwood", 151.104, -33.877), ("Ryde", 151.105, -33.815)]
 NOTE = {"Willoughby": "今天的车士活", "Ryde": "伊士活一部分", "Rockdale": "好市围旁边", "Burwood": "宝活"}
@@ -182,14 +194,14 @@ for n, lo, la in L:
     d.ellipse((x - 14, y - 14, x + 14, y + 14), fill=RED if hot else BLUE, outline="white", width=3)
     f = en(30); d.text((x + 20, y - 34), n, font=f, fill=INK)
     if hot: d.text((x + 20, y + 2), NOTE[n], font=zh(30, "Bold"), fill=RED)
-y = para(d, 1090, "这份名单出自1975年的研究。那时白澳政策还没完全取消，悉尼华人不多，但已经分散在这些区。很多小聚居点跟早年的华人菜园有关：伊士活一带在1920年代末就有14个华人菜园。1951年起来读书的东南亚、香港学生，不少也留了下来。后来的新移民，很多就落在这些已经有华人的地方。", 34)
+y = para(d, 1090, "那时白澳政策还没完全取消，悉尼华人不多，但已经散在这些区。很多小聚居点跟早年的华人菜园有关：1885年的悉尼名录里，华人菜园就分布在Willoughby、Canterbury、Marrickville一带。1951年起来读书的东南亚、香港学生，不少也留了下来。后来的新移民，很多就落在这些已经有华人的地方。", 34)
 assert y < H, y
 img.save(f"{OUT}/a03.jpg", quality=93)
 
 # A04 分流
 img, d = tpage("第二步：按方言和出身分流", "学者Burnley在2001年的研究发现")
 rows = [("香港、马来西亚、新加坡来的\n粤语专业人士家庭", "上北岸\nHornsby等"),
-        ("大陆来的粤语移民\n多是技术移民的亲属和89年留下的学生", "好市围\nStrathfield等"),
+        ("大陆来的粤语移民\n多是技术移民的亲属和80年代末留下的学生", "好市围\nStrathfield等"),
         ("华北、华东和上海来的\n说普通话的留学生", "宝活\nConcord等"),
         ("华南来的收入较低的移民", "Fairfield")]
 y = 260
@@ -203,7 +215,7 @@ for a, b in rows:
     for k, ln in enumerate(b.split("\n")):
         f = zh(44 if k == 0 else 30, "Black" if k == 0 else "Medium"); d.text((716, yy), ln, font=f, fill="white"); yy += 64 if k == 0 else 44
     y += 215
-y = para(d, y + 10, "同一个方言、同一种出身的人住在一起，买菜、看病、找工作都方便。还有一条路径：在UNSW读完书的华人，先住在Randwick，大约十年后再搬去上北岸、好市围和Kogarah。", 34)
+y = para(d, y + 10, "同一个方言、同一种出身的人住在一起，买菜、看病、找工作都方便。后来的同乡，又顺着这条路找过来。", 34)
 assert y < H, y
 img.save(f"{OUT}/a04.jpg", quality=93)
 
