@@ -6,11 +6,11 @@
 
 最早来悉尼的华人是广东人麦世英，1818年到这里，在Parramatta落脚。1848年第一批契约劳工坐船抵达，1851年新州发现金矿，大批华人从广东过来。
 
-第一站在The Rocks。淘金热退潮后，很多华人回到悉尼，聚在离码头最近的Lower George St和Cambridge St，开店铺、饭馆、寄宿屋和家具作坊，最有钱的华商也住在这里。1861年悉尼只有189个华人，1881年已经有1,321人。
+第一站在The Rocks，就是今天海港大桥脚下的老城区。金矿挖完后，很多华人回到悉尼，先住在离码头最近的这一片，沿着George St开杂货店、饭馆、同乡宿舍和家具作坊。1861年悉尼只有189个华人，1881年已经有1,321人。
 
-第二站在Campbell St一带，就是今天Capitol Theatre那里。Capitol Theatre的老楼原来是Belmore Markets，华人菜农把菜运到这里卖，常在附近过夜，Campbell St、Goulburn St一直到Surry Hills的Wexford St，慢慢开起了寄宿屋、杂货铺和饭馆。1906年市政府拆掉整条Wexford St，724人被赶走，原址修成了今天的Wentworth Ave。
+第二站在城南Haymarket，George St东边的Campbell St。那时候这里有个大菜市场叫Belmore Markets，楼今天还在，改成了演音乐剧的Capitol Theatre。华人菜农每天把菜拉来卖，晚上就近住下，周围几条街开起了宿舍、杂货铺和小饭馆，一直延伸到东边的Wexford St。1906年市政府拆掉整条Wexford St，724人被赶走，原址修成了今天的Wentworth Ave。
 
-第三站就是Dixon St。1909到1915年，新的City Markets在George St西边建成，也就是今天的Paddy's Markets，华人跟着市场过了George St。第二站和第三站其实都在Haymarket，只隔了几百米。到1930年代，Dixon St已经是公认的唐人街，1942年中国海员工会就在这条街上成立。
+第三站就是Dixon St。1909到1915年，George St西边盖起了新的大菜市场，就是今天Market City楼下的Paddy's Markets，旧菜市场1912年关掉，华人也跟着过了George St。第二站和第三站都在Haymarket，只隔了几百米。到1930年代，Dixon St已经是公认的唐人街，1942年中国海员工会就在这条街上成立。
 
 白澳政策实行后，华人越来越少，直到1970年代政策取消，唐人街才重新热闹起来。1979年中秋节起，Dixon St永久封路改成步行街，1980年悉尼市长主持开街，街两头立起华裔建筑师Henry Tsang设计的牌楼。
 
