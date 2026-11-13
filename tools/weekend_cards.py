@@ -120,7 +120,7 @@ tw = f.getlength(TITLE); d.text(((W - tw) / 2 + 60, H / 2 - 54), TITLE, font=f, 
 icon(b, "06_拍照打卡", 30, H // 2 - 85, 170).save(f"{OUT}/cover_grid_B.jpg", quality=93)
 
 # 四宫格v2：更亮的现场图，每格写活动和地点，中间写日期
-def pop(im): return ImageEnhance.Contrast(ImageEnhance.Brightness(ImageEnhance.Color(im).enhance(1.2)).enhance(1.06)).enhance(1.08)
+def pop(im): return ImageEnhance.Brightness(ImageEnhance.Color(im).enhance(1.1)).enhance(1.04)
 G2 = [(("to_106058892.jpg", .55, .5), "希腊美食街", "Burwood"), (("fk_241.jpg", .45, .5), "设计师市集", "Eveleigh"),
       (("to_106466668.jpg", .5, .35), "精酿啤酒节", "Inner West"), (("to_106465311.jpg", .5, .5), "海边露天电影", "Bondi")]
 def grid2(f, style):
