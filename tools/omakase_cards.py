@@ -87,27 +87,26 @@ img.save(f"{OUT}/01.jpg", quality=93)
 
 # 首页：12宫格，每格写店名和价格
 G = [("kisuke_3.jpg", "Kisuke", "$220"), ("ora_2.jpg", "Ora", "$260"), ("moku_1.jpg", "Moku", "$268"),
-     ("bes_105869422.jpg", "Besuto", "$280"), ("kuon_1.jpg", "Kuon", "$280"), ("raita_0.jpg", "R by Raita Noda", "$290"),
+     ("bes_105869422.jpg", "Besuto", "$280"), ("kuon_1.jpg", "Kuon", "$280"), ("raita_0.jpg", "Raita Noda", "$290"),
      ("gs_3.jpg", "Green Shiso", "$298"), ("sokyo_1.jpg", "Sokyo", "$300"), ("sa_luxurious-otoro-nigiri-sushi.jpg", "Sano", "$300"),
      ("oe_7.webp", "Sushi Oe", "$350"), ("taka_1.jpg", "Taka's", "$365"), ("yo_26.jpg", "Yoshii's", "$380")]
-def grid12(fn, band):
-    g = Image.new("RGB", (W, H)); cw, ch = W // 3, H // 4
+CRM = (255, 244, 214); BRN = (38, 26, 16)
+def fit(text, maxw, start, w="Black"):
+    sz = start
+    while zh(sz, w).getlength(text) > maxw and sz > 20: sz -= 2
+    return zh(sz, w)
+def outlined(d, xy, text, f, sw):
+    d.text(xy, text, font=f, fill=CRM, stroke_width=sw, stroke_fill=BRN)
+def grid12(fn, big_top="price"):
+    g = Image.new("RGB", (W, H), (240, 236, 228)); cw, ch = W // 3, H // 4
     for i, (p, n, pr) in enumerate(G):
-        t = crop(p, cw, ch); ov = Image.new("L", (1, ch))
-        for yy in range(ch): ov.putpixel((0, yy), int(max(0, (yy - ch * .45) / (ch * .55)) * 190))
-        t = Image.composite(Image.new("RGB", (cw, ch), (8, 6, 4)), t, ov.resize((cw, ch)))
-        d = ImageDraw.Draw(t); fn_ = zh(36 if len(n) < 12 else 30, "Bold"); fp = zh(44, "Black")
-        d.text((18, ch - 112), n, font=fn_, fill="white"); d.text((18, ch - 64), pr, font=fp, fill=(255, 214, 64))
-        g.paste(t, ((i % 3) * cw, (i // 3) * ch))
-    d = ImageDraw.Draw(g)
-    for k in range(1, 3): d.line((k * cw, 0, k * cw, H), fill=(250, 246, 238), width=4)
-    for k in range(1, 4): d.line((0, k * ch, W, k * ch), fill=(250, 246, 238), width=4)
-    if band:
-        f = zh(78, "Black"); lines = ["悉尼omakase价格", "12家从低到高"]; lh = 100; bh = lh * 2 + 40; y0 = (H - bh) // 2
-        d.rectangle((0, y0, W, y0 + bh), fill=band)
-        for i, t in enumerate(lines): d.text(((W - f.getlength(t)) / 2, y0 + 22 + i * lh), t, font=f, fill=INK if band != INK else "white")
+        t = crop(p, cw - 3, ch - 3); d = ImageDraw.Draw(t)
+        top, bot = (pr, n) if big_top == "price" else (n, pr)
+        ft = fit(top, cw - 40, 118); fb = fit(bot, cw - 30, 54)
+        tw = ft.getlength(top); outlined(d, ((cw - 3 - tw) / 2, 14), top, ft, 9)
+        bw = fb.getlength(bot); outlined(d, ((cw - 3 - bw) / 2, ch - 3 - fb.size - 34), bot, fb, 6)
+        g.paste(t, ((i % 3) * cw + 1, (i // 3) * ch + 1))
     g.save(f"{OUT}/{fn}", quality=93)
-grid12("cover_A.jpg", None)
-grid12("cover_B.jpg", (255, 214, 64))
-grid12("cover_C.jpg", (250, 246, 238))
+grid12("cover_A.jpg", "price")
+grid12("cover_B.jpg", "name")
 print("ok")
