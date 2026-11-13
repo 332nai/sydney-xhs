@@ -60,16 +60,16 @@ def card(fn, head, sub, olds, new, text):
 
 C = [
  ("02.jpg", "第一站 The Rocks", "1850年代到1900年前后",
-  [("old_116.jpg", "George St 192号"), (("old_176.jpg", .5, .45), "1908")], (("now_231george.jpg", .5, .55), "今天"),
+  [("old_116.jpg", "华人家具厂"), (("old_176.jpg", .5, .45), "1908 华人商号")], (("now_231george.jpg", .5, .55), "今天的George St，The Rocks"),
   "淘金热之后，华人从各地回到悉尼，先聚在码头边的The Rocks，在Lower George St和后面的Cambridge St开店、开寄宿屋、做家具。1861年悉尼只登记了189个华人，1881年已经有1,321人。"),
  ("03.jpg", "第二站 Haymarket", "1890年代到1906年",
-  [(("old_131.jpg", .5, .5), "1906年前")], (("now_wentworth.jpg", .5, .55), "今天"),
+  [(("old_131.jpg", .5, .5), "1906年拆之前的Wexford St")], (("now_wentworth.jpg", .5, .55), "原址，今天的Wentworth Ave"),
   "菜农把菜运到Belmore Markets，常在附近过夜，Campbell St、Goulburn St和Wexford St一带开起寄宿屋、杂货铺和饭馆。1906年市政府拆掉整条Wexford St，724人被迫搬走，原址修成今天的Wentworth Ave。"),
  ("04.jpg", "第三站 Dixon St", "1910年代到今天",
-  [(("old_015.jpg", .45, .45, 1.08), "1954"), (("old_089.jpg", .5, .5), "1970年代")], (("now_dixon2.jpg", .5, .6), "2026"),
+  [(("old_015.jpg", .45, .45, 1.08), "1954 Dixon St"), (("old_089.jpg", .5, .5), "1970年代")], (("now_dixon2.jpg", .5, .6), "2026年的Dixon St"),
   "1909到1915年，新的City Markets在Hay St一带建成，也就是今天的Paddy's Markets。华人跟着市场往西搬，到1930年代，Dixon St已经是唐人街。1942年中国海员工会就在这条街上成立。"),
  ("05.jpg", "牌楼 1980", "Dixon St变成步行街",
-  [(("old_097.jpg", .5, .5), "1980"), (("old_062.jpg", .5, .5), "1985")], (("now_dixon1.jpg", .5, .45), "2026"),
+  [(("old_097.jpg", .5, .5), "1980年开街"), (("old_062.jpg", .5, .5), "1985")], (("now_dixon1.jpg", .5, .45), "2026年的牌楼"),
   "1979年中秋节起，Dixon St永久封路改成步行街。1980年悉尼市长主持开街，街两头立起华裔建筑师Henry Tsang设计的牌楼。1970年代以后，新移民从中国大陆、台湾、香港和东南亚过来，很多是专业人士。"),
 ]
 for c in C: card(*c)
