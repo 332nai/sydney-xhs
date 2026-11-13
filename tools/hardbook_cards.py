@@ -64,29 +64,35 @@ V = [
   "未来4周开门20天，只有3天还有位，最早11月26日晚上6点。",
   "每月1号在官网放下个月的位，量很少，建议定闹钟。也可以打电话或发邮件订。"],
   ["yo_seat.jpg", "yo_24.jpg", ("yo_sash.jpg", .5, .45), "yo_chef.jpg", "yo_26.jpg"]),
- ("02.jpg", "SUSHI OE", None, [
+ ("02.jpg", "SANO OMAKASE", None, [
+  "藏在CBD日料店Azuma里的板前omakase，Sano师傅做了三十多年寿司，待过Tetsuya's和Sokyo。每晚6点半准时开始，菜单每天跟着时令走，食客吃到过大腹、中腹、三文鱼籽蟹肉饭、星鳗，都是他当面一道道做。",
+  "迟到错过的菜不补，过敏和忌口一律不能照顾。预订前14天中午以后取消，或者减人数，每人收$300。",
+  "现在不接受直接预订，只能在Azuma官网填等位表，有位了才发邮件通知。官网写明周六等得比平日更久，食客分享的经验是要等半年到一年。",
+  "填表时选平日，等得会短一些。指定某一天的话，那天订满会自动把你从名单里移掉，所以别只填一天。"],
+  ["sa_chef-sano-prepping-sushi-nigiri.jpg", "sa_luxurious-otoro-nigiri-sushi.jpg", "sa_dining.jpg", "sa_salmon-roe-spanner-crab-combination.jpg", "sa_sano-san-garnishing-tuna-seaweed-wrap.jpg", "sa_sea-eel-crispy-seaweed-nigiri.jpg"]),
+ ("03.jpg", "SUSHI OE", None, [
   "新悉尼鱼市场里的8座寿司店，Oe师傅一晚只做一场，大约30道，菜单每天跟着当天进的鱼变。金枪鱼、龙虾刺身都在他手里一道一道出来，节奏很慢，坐下就是一整晚。",
   "一个月的位放出来，几分钟就订完。",
   "关注它的Instagram，每个月会公布放位时间，到点马上按它说的方式联系。去之前问清楚价格和能不能带酒。"],
   ["oe_10.webp", "oe_7.webp", "oe_2.webp", "oe_4.webp", "oe_16.webp", "oe_5.webp"]),
- ("03.jpg", "BISTECCA", None, [
+ ("04.jpg", "BISTECCA", None, [
   "CBD小巷里推开一扇门，下楼先是一间老式鸡尾酒吧，再推一扇门才是餐厅，正中间是烧着火的炉子。只做佛罗伦萨T骨牛排，用新州Riverina的牛，按重量点，在炉前切好给你看，再用铁皮木和炭烤到三分熟。",
   "建议600克起，800克最好。配菜有球芽甘蓝配佩科里诺芝士、炭烤葡萄配菊苣，酒单以意大利红酒为主。进门会请你把手机锁进抽屉。",
   "未来4周只有2天订得到晚餐，最早11月16日周一下午5点半。",
   "订不到就早点去前面的酒吧坐着，点杯鸡尾酒、来份烤猪肉三明治或者意式面疙瘩，边吃边等位。"],
   ["bi_1.jpg", "bi_3.jpg", "bi_to105294526.jpg", "bi_2.jpg", "bi_to105294529.jpg", "bi_to105294527.jpg"]),
- ("04.jpg", "SAINT PETER", "$395", [
+ ("05.jpg", "SAINT PETER", "$395", [
   "Josh Niland的鱼料理，搬进Paddington的Grand National酒店后更难订，楼上就是酒店客房。开放式厨房里堆着铁皮木烤架，挂着晒干的海带，一条鱼从鱼鳞、鱼肠吃到鱼眼。",
   "晚餐十道菜$395，午餐三道菜$195，只有周四到周日有午餐。厨房前面还有5个座位的主厨桌。用墨累鳕鱼油调的马天尼是招牌。",
   "提前6个月开放，每天往后放一天。吃不到正餐就去前面的酒吧，不接受预订，直接进去点芝士汉堡和马天尼。"],
   ["sp_to106185014.jpg", "sp_to106185023.jpg", "sp_to106186949.jpg", "sp_to106186947.jpg", "sp_to106186950.jpg", "sp_to106186948.jpg"]),
- ("05.jpg", "THE GIDLEY", None, [
+ ("06.jpg", "THE GIDLEY", None, [
   "King St一扇没招牌的灰门，按铃进去下楼，是丝绒卡座加帘子的美式牛排馆，2019年开，跟Bistecca同一个老板。",
   "招牌是自家肉铺熟成的Riverina肋眼，后来加了很多海鲜：生蚝、龙虾、鲍鱼叠成的海鲜塔，24小时慢烤乳猪，最后桌边点火的波本巴巴蛋糕。",
   "未来4周一半日子有位，但几乎全是晚上9点半那一场，正常饭点要等到12月以后。",
   "不介意吃晚点就订9点半当宵夜，菜单是一样的。"],
   ["gi_to105730414.jpg", "gi_to105730412.jpg", "gi_1.jpg", "gi_to105730411.jpg", "gi_to105730415.jpg", "gi_to105730413.jpg"]),
- ("06.jpg", "FIREDOOR", None, [
+ ("07.jpg", "FIREDOOR", None, [
   "Surry Hills，Lennox Hastie的柴火餐厅，厨房里没有煤气灶，所有菜都靠火。他会按食材挑木头，铁皮木、果树枝、葡萄藤都用。菜单只列食材，大虾从水箱捞出来直接上火烤，每晚一种牛排现切。",
   "晚餐只开周三到周六，午餐有$155的主厨套餐。",
   "未来4周开门20天，12天能订，周末要提前两三周。",
@@ -100,7 +106,7 @@ def grad(c, a=.45, k=215):
     ov = Image.new("L", (1, H))
     for yy in range(H): ov.putpixel((0, yy), int(max(0, (yy - H * a) / (H * (1 - a))) ** 1.1 * k))
     return Image.composite(Image.new("RGB", (W, H), (10, 8, 6)), c, ov.resize((W, H)))
-L = ["吐血整理", "悉尼真正订不到的", "6家餐厅"]
+L = ["吐血整理！", "悉尼真正订不到的", "只有这7家"]
 # A：一张大图，白色宋体
 a = grad(crop(("yo_seat.jpg", .5, .5), W, H), .35); d = ImageDraw.Draw(a); f = serif(104)
 for i, t in enumerate(L): d.text((70, 900 + i * 135), t, font=f, fill="white")
@@ -116,8 +122,8 @@ for i, t in enumerate(L):
 icon(b, "13_探店", 30, 30, 180).save(f"{OUT}/cover_B.jpg", quality=93)
 # C：深色底大字，下面四张小图
 c = Image.new("RGB", (W, H), (22, 20, 18)); d = ImageDraw.Draw(c); f = zh(110, "Black")
-d.text((70, 110), "吐血整理", font=f, fill=(255, 214, 64))
-d.text((70, 250), "悉尼真正订不到的", font=f, fill="white"); d.text((70, 390), "6家餐厅", font=f, fill="white")
+d.text((70, 110), "吐血整理！", font=f, fill=(255, 214, 64))
+d.text((70, 250), "悉尼真正订不到的", font=f, fill="white"); d.text((70, 390), "只有这7家", font=f, fill="white")
 for i, p in enumerate(["oe_7.webp", "bi_1.jpg", "yo_26.jpg", "fd_11.jpg"]):
     c.paste(crop(p, 470, 400), (70 + (i % 2) * 470, 600 + (i // 2) * 400 + (i // 2) * 20) if False else (60 + (i % 2) * 490, 600 + (i // 2) * 410))
 icon(c, "13_探店", W - 250, 90, 210).save(f"{OUT}/cover_C.jpg", quality=93)
