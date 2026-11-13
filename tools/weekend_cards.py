@@ -148,7 +148,7 @@ icon(grid2(zh(70, "Black"), "stroke"), "06_拍照打卡", W - 200, H // 2 - 220,
 # 拼贴版首页：纯色底，四张白边照片微微歪着贴，照片下写活动、地点、时间
 P = [(("to_106058892.jpg", .55, .5), "希腊美食街", "Burwood 周六"),
      (("fk_cpStall.jpg", .5, .45), "设计师市集", "Eveleigh 周五到周日"),
-     (("hm_to106278662.jpg", .5, .5), "自然酒节", "Surry Hills 周六"),
+     (("to_106466668.jpg", .5, .3), "内西精酿啤酒节", "Inner West 周五到周日"),
      (("to_106465311.jpg", .5, .55), "海边露天电影", "Bondi 周五到周日")]
 def collage(fn, bg, ink, tag_bg, tag_ink):
     c = Image.new("RGB", (W, H), bg); d = ImageDraw.Draw(c)
