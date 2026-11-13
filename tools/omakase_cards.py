@@ -87,7 +87,7 @@ img.save(f"{OUT}/01.jpg", quality=93)
 
 # 首页：12宫格，每格写店名和价格
 G = [("kisuke_3.jpg", "Kisuke", "$220"), ("ora_2.jpg", "Ora", "$260"), ("moku_1.jpg", "Moku", "$268"),
-     ("bes_105869422.jpg", "Besuto", "$280"), ("kuon_1.jpg", "Kuon", "$280"), ("raita_0.jpg", "Raita Noda", "$290"),
+     ("bes_105869422.jpg", "Besuto", "$280"), ("kuon_1.jpg", "Kuon Omakase", "$280"), ("raita_0.jpg", "R by Raita Noda", "$290"),
      ("gs_3.jpg", "Green Shiso", "$298"), ("sokyo_1.jpg", "Sokyo", "$300"), ("sa_luxurious-otoro-nigiri-sushi.jpg", "Sano", "$300"),
      ("oe_7.webp", "Sushi Oe", "$350"), ("taka_1.jpg", "Taka's", "$365"), ("yo_26.jpg", "Yoshii's", "$380")]
 CRM = (255, 244, 214); BRN = (38, 26, 16)
@@ -97,14 +97,28 @@ def fit(text, maxw, start, w="Black"):
     return zh(sz, w)
 def outlined(d, xy, text, f, sw):
     d.text(xy, text, font=f, fill=CRM, stroke_width=sw, stroke_fill=BRN)
+def wrap_words(text, f, maxw):
+    lines, cur = [], ""
+    for w in text.split(" "):
+        t = (cur + " " + w).strip()
+        if f.getlength(t) > maxw and cur: lines.append(cur); cur = w
+        else: cur = t
+    return lines + [cur]
 def grid12(fn, big_top="price"):
-    g = Image.new("RGB", (W, H), (240, 236, 228)); cw, ch = W // 3, H // 4
+    g = Image.new("RGB", (W, H), (240, 236, 228)); cw, ch = W // 3, H // 4; tw_ = cw - 3; th_ = ch - 3
+    fprice = zh(118, "Black"); fname = zh(62, "Black") if big_top == "price" else zh(68, "Black")
+    fsmall = zh(60, "Black")
     for i, (p, n, pr) in enumerate(G):
-        t = crop(p, cw - 3, ch - 3); d = ImageDraw.Draw(t)
-        top, bot = (pr, n) if big_top == "price" else (n, pr)
-        ft = fit(top, cw - 40, 118); fb = fit(bot, cw - 30, 54)
-        tw = ft.getlength(top); outlined(d, ((cw - 3 - tw) / 2, 14), top, ft, 9)
-        bw = fb.getlength(bot); outlined(d, ((cw - 3 - bw) / 2, ch - 3 - fb.size - 34), bot, fb, 6)
+        t = crop(p, tw_, th_); d = ImageDraw.Draw(t)
+        if big_top == "price":
+            outlined(d, ((tw_ - fprice.getlength(pr)) / 2, 14), pr, fprice, 9)
+            ls = wrap_words(n, fname, tw_ - 30); lh = fname.size + 6
+            y = th_ - 30 - lh * len(ls)
+            for ln in ls: outlined(d, ((tw_ - fname.getlength(ln)) / 2, y), ln, fname, 7); y += lh
+        else:
+            ls = wrap_words(n, fname, tw_ - 30); lh = fname.size + 8; y = 14
+            for ln in ls: outlined(d, ((tw_ - fname.getlength(ln)) / 2, y), ln, fname, 8); y += lh
+            outlined(d, ((tw_ - fsmall.getlength(pr)) / 2, th_ - 30 - fsmall.size - 6), pr, fsmall, 7)
         g.paste(t, ((i % 3) * cw + 1, (i // 3) * ch + 1))
     g.save(f"{OUT}/{fn}", quality=93)
 grid12("cover_A.jpg", "price")
