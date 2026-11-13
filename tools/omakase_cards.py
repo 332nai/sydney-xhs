@@ -52,71 +52,62 @@ def tier(fn, title, photos, items, ph=420):
     img.save(f"{OUT}/{fn}", quality=93)
 
 T = [
- ("02.jpg", "$100以内", ["kok_1.jpg", "kok_to.jpg", "kok_2.jpg"], [
-  ("Sushi e", "$60", "Merivale旗下，在CBD的Establishment楼上。Omakase Express一位$60，想先试试omakase是什么感觉，这个最划算。订位要留信用卡。"),
-  ("Kokumai", "$60起", "Barangaroo的寿司店，$60是8贯寿司加一条手卷和味噌汤，另有$80和$100的升级版。价格是2024年的，去之前再确认。"),
-  ("Hachioji", "$100以内", "Crows Nest的寿司吧台，把omakase带到北岸，人均$100以内。不想订位也可以直接去点单。")]),
- ("03.jpg", "$160左右", ["haco_105869764.jpg", "haco_105869765.jpg", "haco_105869766.jpg"], [
-  ("Gold Class Daruma", "$160", "CBD的Grace酒店里。主厨寿司套餐$160，周一、周五、周六有；11月17日起周二到周六还有$180的寿司怀石。周六另收5%。"),
-  ("Tsuzumi", "$160 / $250", "Barangaroo，菜单每天看鱼市进什么。午餐$160，晚餐$250，周日周一休息。"),
- ]),
- ("04.jpg", "$185到200", ["haco_105869765.jpg", "haco_105869766.jpg", "haco_105869764.jpg"], [
-  ("Haco", "$185", "Chaco Bar老板Keita Abe开的，12个座位围着厨房，晚餐大约20道，主打天妇罗。午餐有$130的天妇罗套餐，更便宜。"),
-  ("Kappo Yama", "$185", "Bridge St上8个座位的桧木吧台，大约12道，90分钟。严格说是割烹，适合一两个人去，建议提前三到五周订。"),
-  ("Kuon Sushi Sei", "约$195", "Haymarket的寿司吧台，Kuon旗下。食客分享晚餐omakase大约$195，周四到周日也有午餐。")]),
- ("05.jpg", "$200到270", ["ora_1.jpg", "ora_2.jpg", "moku_1.jpg"], [
-  ("Kisuke", "约$220", "Potts Point，Morita夫妇两个人打理，只有6个座位，最像日本街坊里的寿司店。只提前30天开放订位。"),
+ ("02.jpg", "$220到268", ["kisuke_3.jpg", "ora_2.jpg", "moku_1.jpg"], [
+  ("Kisuke", "$220", "Potts Point，Morita夫妇两个人打理，只有6个座位，最像日本街坊里的寿司店。每月1号下午1点在官网放下个月的位，只接2人、4人、6人。"),
+  ("Tsuzumi", "$250", "Barangaroo，菜单每天看鱼市进什么。晚餐$250，午餐有$160的版本，周日周一休息。"),
   ("Ora", "$260", "Waterloo，Nobuyuki Ura主厨的怀石风格omakase，9道，10个座位，周三到周六晚上6点半开始。$260只含食物，建议提前四周订。"),
   ("Moku", "$268", "Darlinghurst的两层小店，主厨来自Sokyo。omakase只在周三周四晚上，每场6个人，5点半或8点15两场。")]),
- ("06.jpg", "$280", ["bes_105869422.jpg", "bes_1.jpg", "bes_2.jpg"], [
-  ("Besuto", "$280", "Circular Quay，Joel Best开的。清酒配酒另加$185，日本威士忌很多。18岁以上才能订。"),
-  ("Kuon Omakase", "$280", "Surry Hills小巷里，主打熟成寿司配清酒。订位时每人先付$50订金。"),
-  ("R by Raita Noda", "约$280", "Redfern，Raita Noda主厨2025年开的新店，15个座位，10道，周二到周六晚上7点开始。"),
- ]),
- ("07.jpg", "$298到300", ["gs_3.jpg", "gs_1.jpg", "sa_luxurious-otoro-nigiri-sushi.jpg"], [
-  ("Green Shiso", "$298", "CBD的Quay Quarter Lanes，4月起涨到$298，菜单每三个月换一次。"),
-  ("Sokyo", "$300", "Pyrmont的The Star，每晚只接一桌6个人，最多23道。每月1号上午10点放未来三个月的位。"),
-  ("Sano Omakase", "$300", "CBD日料店Azuma里，7个座位，Sano师傅做了三十多年寿司。只能填等位表，周六等得最久。")]),
- ("08.jpg", "$350以上", ["oe_7.webp", "oe_10.webp", "yo_26.jpg"], [
-  ("Sushi Oe", "$350", "搬到新鱼市场后变成10个座位，Oe师傅掌板，一晚一场。现在可以在OpenTable上直接订。"),
-  ("Prefecture 48", "$365", "大约22道：A5和牛寿喜烧、北海道海胆、大腹、中腹、星鳗，最后用龙虾头煮味噌汤，再来一卷配鱼子酱的寿司。"),
-  ("Yoshii's Omakase", "$380", "Crown Sydney里10个座位，十道。每月1号放下个月的位。12月24到31日涨到$500。")]),
+ ("03.jpg", "$280到290", ["bes_105869422.jpg", "kuon_1.jpg", "raita_0.jpg"], [
+  ("Besuto", "$280", "Circular Quay，Joel Best开的。清酒配酒另加$185，日本威士忌很多。18岁以上才能订，4天内取消收全额。"),
+  ("Kuon Omakase", "$280", "Surry Hills小巷里，主打熟成寿司配清酒。订位时每人先付$50订金，周二到周日晚上都开。"),
+  ("R by Raita Noda", "$290", "Redfern的Wunderlich Lane，Raita Noda主厨的十道菜，周一到周六晚上7点开始，可以打电话或发短信订。")]),
+ ("04.jpg", "$298到300", ["gs_3.jpg", "sokyo_1.jpg", "sa_luxurious-otoro-nigiri-sushi.jpg"], [
+  ("Green Shiso", "$298", "CBD的Quay Quarter Lanes，4月起涨到$298，菜单每三个月换一次，周四到周六有5点半和8点半两场。"),
+  ("Sokyo", "$300", "Pyrmont的The Star，每晚只接一桌6个人，最多23道，只开周一到周四。每月1号上午10点放未来三个月的位，48小时内取消收全额。"),
+  ("Sano Omakase", "$300", "CBD日料店Azuma里，7个座位，Sano师傅做了三十多年寿司。请客人别喷香水、少看手机。只能填等位表，周六等得最久。")]),
+ ("05.jpg", "$350以上", ["oe_7.webp", "taka_1.jpg", "yo_26.jpg"], [
+  ("Sushi Oe", "$350", "搬到新鱼市场后变成10个座位，Oe师傅掌板，一晚一场，现在可以在OpenTable上直接订。"),
+  ("Taka's Omakase", "$365", "Prefecture 48二楼，Takashi Yamamoto主厨。大约22道：A5和牛寿喜烧、北海道海胆、大腹、中腹、星鳗，最后用龙虾头煮味噌汤，再来一卷配鱼子酱的寿司。"),
+  ("Yoshii's Omakase", "$380", "Crown Sydney里10个座位，十道。每月1号放下个月的位，12月24到31日涨到$500。")]),
 ]
 for fn, title, ph_, items in T: tier(fn, title, ph_, items)
 
 # 价格总览
 ALL = [(n, p) for _, _, _, items in T for n, p, _ in items]
 img = Image.new("RGB", (W, H), CREAM); d = ImageDraw.Draw(img)
-d.text((60, 60), "悉尼omakase价格", font=serif(72), fill=INK); d.text((60, 160), "从低到高，一位的价格", font=zh(34), fill=GREY)
-fn_ = zh(36, "Medium"); fp = zh(36, "Bold"); y = 250; lh = 56
+d.text((60, 70), "悉尼omakase价格", font=serif(84), fill=INK); d.text((62, 190), "从低到高，一位的价格，11月中查", font=zh(38), fill=GREY)
+fn_ = zh(46, "Medium"); fp = zh(46, "Bold"); y = 290; lh = (H - 330) // len(ALL)
 for i, (n, p) in enumerate(ALL):
     d.text((60, y), f"{i + 1:>2}", font=fp, fill=GREY); d.text((130, y), n, font=fn_, fill=INK)
     d.text((W - 60 - fp.getlength(p), y), p, font=fp, fill=INK)
     x0 = 130 + fn_.getlength(n) + 20; x1 = W - 60 - fp.getlength(p) - 20
-    for xx in range(int(x0), int(x1), 14): d.ellipse((xx, y + 26, xx + 3, y + 29), fill=LINE)
+    for xx in range(int(x0), int(x1), 14): d.ellipse((xx, y + 34, xx + 4, y + 38), fill=LINE)
     y += lh
 img.save(f"{OUT}/01.jpg", quality=93)
 
-# 首页
-def grad(c, a=.45, k=220):
-    ov = Image.new("L", (1, H))
-    for yy in range(H): ov.putpixel((0, yy), int(max(0, (yy - H * a) / (H * (1 - a))) ** 1.1 * k))
-    return Image.composite(Image.new("RGB", (W, H), (10, 8, 6)), c, ov.resize((W, H)))
-L = ["悉尼omakase", "从$60到$380", "20家价格全整理"]
-a = grad(crop(("oe_7.webp", .5, .5), W, H), .4); d = ImageDraw.Draw(a); f = serif(104)
-for i, t in enumerate(L): d.text((70, 930 + i * 135), t, font=f, fill="white")
-icon(a, "13_探店", 50, 50, 200).save(f"{OUT}/cover_A.jpg", quality=93)
-b = Image.new("RGB", (W, H)); cw, ch = W // 2, H // 3
-for i, p in enumerate(["oe_7.webp", "bes_105869422.jpg", "yo_26.jpg", "gs_3.jpg", "sa_luxurious-otoro-nigiri-sushi.jpg", "ora_2.jpg"]):
-    b.paste(crop(p, cw, ch), ((i % 2) * cw, (i // 2) * ch))
-d = ImageDraw.Draw(b); f = zh(88, "Black"); lh = 112; y0 = H // 2 - lh * 3 // 2
-for i, t in enumerate(L):
-    w = f.getlength(t); d.rectangle(((W - w) / 2 - 26, y0 + i * lh - 4, (W + w) / 2 + 26, y0 + i * lh + lh - 10), fill=(255, 214, 64))
-    d.text(((W - w) / 2, y0 + i * lh), t, font=f, fill=INK)
-icon(b, "13_探店", 30, 30, 180).save(f"{OUT}/cover_B.jpg", quality=93)
-c = Image.new("RGB", (W, H), (22, 20, 18)); d = ImageDraw.Draw(c); f = zh(104, "Black")
-d.text((70, 110), "悉尼omakase", font=f, fill="white"); d.text((70, 250), "从$60到$380", font=f, fill=(255, 214, 64)); d.text((70, 390), "20家价格全整理", font=f, fill="white")
-for i, p in enumerate(["oe_7.webp", "bes_105869422.jpg", "yo_26.jpg", "sa_luxurious-otoro-nigiri-sushi.jpg"]):
-    c.paste(crop(p, 470, 400), (60 + (i % 2) * 490, 600 + (i // 2) * 410))
-icon(c, "13_探店", W - 250, 90, 210).save(f"{OUT}/cover_C.jpg", quality=93)
+# 首页：12宫格，每格写店名和价格
+G = [("kisuke_3.jpg", "Kisuke", "$220"), ("ora_2.jpg", "Ora", "$260"), ("moku_1.jpg", "Moku", "$268"),
+     ("bes_105869422.jpg", "Besuto", "$280"), ("kuon_1.jpg", "Kuon", "$280"), ("raita_0.jpg", "R by Raita Noda", "$290"),
+     ("gs_3.jpg", "Green Shiso", "$298"), ("sokyo_1.jpg", "Sokyo", "$300"), ("sa_luxurious-otoro-nigiri-sushi.jpg", "Sano", "$300"),
+     ("oe_7.webp", "Sushi Oe", "$350"), ("taka_1.jpg", "Taka's", "$365"), ("yo_26.jpg", "Yoshii's", "$380")]
+def grid12(fn, band):
+    g = Image.new("RGB", (W, H)); cw, ch = W // 3, H // 4
+    for i, (p, n, pr) in enumerate(G):
+        t = crop(p, cw, ch); ov = Image.new("L", (1, ch))
+        for yy in range(ch): ov.putpixel((0, yy), int(max(0, (yy - ch * .45) / (ch * .55)) * 190))
+        t = Image.composite(Image.new("RGB", (cw, ch), (8, 6, 4)), t, ov.resize((cw, ch)))
+        d = ImageDraw.Draw(t); fn_ = zh(36 if len(n) < 12 else 30, "Bold"); fp = zh(44, "Black")
+        d.text((18, ch - 112), n, font=fn_, fill="white"); d.text((18, ch - 64), pr, font=fp, fill=(255, 214, 64))
+        g.paste(t, ((i % 3) * cw, (i // 3) * ch))
+    d = ImageDraw.Draw(g)
+    for k in range(1, 3): d.line((k * cw, 0, k * cw, H), fill=(250, 246, 238), width=4)
+    for k in range(1, 4): d.line((0, k * ch, W, k * ch), fill=(250, 246, 238), width=4)
+    if band:
+        f = zh(78, "Black"); lines = ["悉尼omakase价格", "12家从低到高"]; lh = 100; bh = lh * 2 + 40; y0 = (H - bh) // 2
+        d.rectangle((0, y0, W, y0 + bh), fill=band)
+        for i, t in enumerate(lines): d.text(((W - f.getlength(t)) / 2, y0 + 22 + i * lh), t, font=f, fill=INK if band != INK else "white")
+    g.save(f"{OUT}/{fn}", quality=93)
+grid12("cover_A.jpg", None)
+grid12("cover_B.jpg", (255, 214, 64))
+grid12("cover_C.jpg", (250, 246, 238))
 print("ok")
