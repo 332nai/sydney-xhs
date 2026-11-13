@@ -141,3 +141,110 @@ for k, (e, lo, la) in SUB.items():
     d.text((bx + 18, by + 6), k, font=f, fill="white"); d.text((bx + 18, by + 72), PCT[k], font=fp, fill=(255, 214, 64))
 icon(c, "13_探店", W - 220, 1210, 180).save(f"{OUT}/cover.jpg", quality=93)
 print("ok")
+
+# ===== 深度分析页 =====
+def tpage(title, sub):
+    img = Image.new("RGB", (W, H), BG); header(img, title, sub); return img, ImageDraw.Draw(img)
+def para(d, y, text, size=38, color=INK, width=960, lh=None):
+    f = zh(size, "Medium"); lh = lh or int(size * 1.55)
+    for ln in wrap(text, f, width): d.text((60, y), ln, font=f, fill=color); y += lh
+    return y
+
+# A01 三步
+img, d = tpage("华人区是怎么形成的", "三步：种子、分流、滚雪球")
+steps = [("种子", "1960年代，一些区已经住着少量华人，很多跟早年的华人菜园有关。"),
+         ("分流", "1980年代以后的新移民，按方言和出身，去了不同的区。"),
+         ("滚雪球", "先有人，再有店；店多了、学校好了，又吸引更多人搬来。")]
+y = 270
+for i, (t, s) in enumerate(steps):
+    d.rounded_rectangle((60, y, W - 60, y + 300), radius=18, fill=(232, 226, 212))
+    d.ellipse((90, y + 40, 210, y + 160), fill=BLUE); d.text((150 - en(70).getlength(str(i + 1)) / 2, y + 58), str(i + 1), font=en(70), fill="white")
+    d.text((240, y + 50), t, font=zh(64, "Black"), fill=INK)
+    yy = y + 150
+    for ln in wrap(s, zh(36, "Medium"), 760): d.text((240, yy), ln, font=zh(36, "Medium"), fill=GREY); yy += 52
+    y += 330
+para(d, y + 10, "下面一步一步看。", 38)
+img.save(f"{OUT}/a01.jpg", quality=93)
+
+# A03 种子：1966年华人最多的十个区
+img, d = tpage("第一步：种子", "1966年，华人最多的十个地方政府区")
+L = [("Randwick", 151.241, -33.914), ("Canterbury", 151.117, -33.912), ("Marrickville", 151.165, -33.928), ("Ashfield", 151.135, -33.890),
+     ("Rockdale", 151.138, -33.952), ("Waverley", 151.255, -33.893), ("Willoughby", 151.190, -33.800), ("Ku-ring-gai", 151.150, -33.73),
+     ("Burwood", 151.104, -33.877), ("Ryde", 151.105, -33.815)]
+NOTE = {"Willoughby": "今天的车士活", "Ryde": "伊士活一部分", "Rockdale": "好市围旁边", "Burwood": "宝活"}
+lo0, lo1, la0, la1 = 151.02, 151.30, -33.70, -33.99; y0, y1 = 240, 1060
+X = lambda lo: 40 + (lo - lo0) / (lo1 - lo0) * (W - 80); Y = lambda la: y0 + (la - la0) / (la1 - la0) * (y1 - y0)
+d.polygon([(X(a), Y(b)) for a, b in SEA], fill=WATER)
+p = [(X(a), Y(b)) for a, b in HARB]
+for k in range(len(p) - 1): d.line((p[k], p[k + 1]), fill=WATER, width=max(8, 24 - 2 * k))
+for n, lo, la in L:
+    x, y = X(lo), Y(la); hot = n in NOTE
+    d.ellipse((x - 14, y - 14, x + 14, y + 14), fill=RED if hot else BLUE, outline="white", width=3)
+    f = en(30); d.text((x + 20, y - 34), n, font=f, fill=INK)
+    if hot: d.text((x + 20, y + 2), NOTE[n], font=zh(30, "Bold"), fill=RED)
+y = para(d, 1090, "这份名单出自1975年的研究。那时白澳政策还没完全取消，悉尼华人不多，但已经分散在这些区。很多小聚居点跟早年的华人菜园有关：伊士活一带在1920年代末就有14个华人菜园。1951年起来读书的东南亚、香港学生，不少也留了下来。后来的新移民，很多就落在这些已经有华人的地方。", 34)
+assert y < H, y
+img.save(f"{OUT}/a03.jpg", quality=93)
+
+# A04 分流
+img, d = tpage("第二步：按方言和出身分流", "学者Burnley在2001年的研究发现")
+rows = [("香港、马来西亚、新加坡来的\n粤语专业人士家庭", "上北岸\nHornsby等"),
+        ("大陆来的粤语移民\n多是技术移民的亲属和89年留下的学生", "好市围\nStrathfield等"),
+        ("华北、华东和上海来的\n说普通话的留学生", "宝活\nConcord等"),
+        ("华南来的收入较低的移民", "Fairfield")]
+y = 260
+for a, b in rows:
+    d.rounded_rectangle((60, y, 600, y + 190), radius=14, fill=(232, 226, 212)); d.rounded_rectangle((690, y, W - 60, y + 190), radius=14, fill=BLUE)
+    yy = y + 26
+    for ln in a.split("\n"):
+        for l2 in wrap(ln, zh(32, "Bold"), 500): d.text((86, yy), l2, font=zh(32, "Bold"), fill=INK); yy += 46
+    d.polygon([(612, y + 70), (676, y + 95), (612, y + 120)], fill=RED)
+    yy = y + 40
+    for k, ln in enumerate(b.split("\n")):
+        f = zh(44 if k == 0 else 30, "Black" if k == 0 else "Medium"); d.text((716, yy), ln, font=f, fill="white"); yy += 64 if k == 0 else 44
+    y += 215
+y = para(d, y + 10, "同一个方言、同一种出身的人住在一起，买菜、看病、找工作都方便。还有一条路径：在UNSW读完书的华人，先住在Randwick，大约十年后再搬去上北岸、好市围和Kogarah。", 34)
+assert y < H, y
+img.save(f"{OUT}/a04.jpg", quality=93)
+
+# A05 滚雪球
+img, d = tpage("第三步：先有人，再有店", "店是结果，不是原因")
+img.paste(crop(("eastwood1.jpg", .5, .5), W - 120, 520), (60, 240))
+y = para(d, 790, "研究悉尼族裔社区的学者发现，华人超市、餐馆、社团通常是在华人住多了之后才出现的，并不是它们先把人吸引过来。伊士活就是这样：1990年代以前这里还是白人为主的老区，先是开了一两家亚洲小店，后来越开越多，买菜方便了，又有火车站，搬来的华人家庭也越来越多。车士活在2001年左右，购物区已经有50家香港人开的店。店一多，新来的人更愿意住这里，雪球就滚起来了。", 36)
+assert y < H, y
+img.save(f"{OUT}/a05.jpg", quality=93)
+
+# A06 学校和火车站
+img, d = tpage("两个加速器", "学校和火车站")
+img.paste(crop(("hurst2.jpg", .5, .5), (W - 140) // 2, 420), (60, 240)); img.paste(crop(("chats1.jpg", .5, .5), (W - 140) // 2, 420), (80 + (W - 140) // 2, 240))
+y = 700
+d.text((60, y), "学校", font=zh(54, "Black"), fill=RED); y += 80
+y = para(d, y, "在伊士活住了多年的居民说，很多人搬来是看中这里的学生成绩好。好市围火车站周围至少有二十几家补习班，放学后和周六，全悉尼的华人家庭都会送孩子过来。", 34)
+y += 20; d.text((60, y), "火车站", font=zh(54, "Black"), fill=RED); y += 80
+y = para(d, y, "这几个华人区都是围着大火车站长出来的：好市围站1884年开通，伊士活站1886年开通，镇中心就沿着车站发展。有车站就有商圈，坐火车进城上班也方便。", 34)
+assert y < H, y
+img.save(f"{OUT}/a06.jpg", quality=93)
+
+# A07 换代：粤语变普通话
+img, d = tpage("粤语区，变成了普通话区", "在家说粤语和普通话的居民比例")
+data = [("好市围", 2001, 18, 11), ("好市围", 2016, 18, 32), ("伊士活", 2001, 13, 6), ("伊士活", 2016, 15, 25)]
+y = 280; bw = 600
+d.rectangle((60, y, 100, y + 40), fill=(220, 150, 60)); d.text((112, y - 2), "粤语", font=zh(36, "Bold"), fill=INK)
+d.rectangle((260, y, 300, y + 40), fill=BLUE); d.text((312, y - 2), "普通话", font=zh(36, "Bold"), fill=INK)
+y += 90
+for name, yr, ca, ma in data:
+    d.text((60, y + 30), f"{name} {yr}", font=zh(40, "Black"), fill=INK)
+    for k, (v, col) in enumerate(((ca, (220, 150, 60)), (ma, BLUE))):
+        yy = y + k * 62; d.rectangle((380, yy, 380 + v * 18, yy + 50), fill=col); d.text((390 + v * 18, yy + 4), f"{v}%", font=en(40), fill=INK)
+    y += 160
+y = para(d, y + 10, "1990年代先到的是香港来的粤语移民，2000年以后大陆来的普通话移民越来越多。第二波人选择落脚的地方，正好是第一波人已经住熟了的区。所以今天走在好市围的Forest Road，既能看到老式港式茶餐厅和烧腊店，也能看到新开的奶茶店。", 34)
+assert y < H, y
+img.save(f"{OUT}/a07.jpg", quality=93)
+
+# A08 华人区也会搬家
+img, d = tpage("华人区也会搬家", "老的会散，新的会长")
+img.paste(crop(("rhodes1.jpg", .5, .5), W - 120, 460), (60, 240))
+y = para(d, 740, "1966年华人最多的十个区里有东区的Waverley，到了2000年代，那里已经不算华人聚居区了。与此同时，Rhodes、Zetland这些新公寓区冒了出来：Rhodes原来是化工厂，Zetland的华人居民一半以上是学生，因为离市中心的大学近。研究者说，族裔聚居区本来就是临时的，它跟着每一代移民所处的阶段在变。", 36)
+assert y < H, y
+img.save(f"{OUT}/a08.jpg", quality=93)
+print("deep ok")
