@@ -93,3 +93,31 @@ cover("cover_A.jpg", ("to_106058891.jpg", .45, .5))
 cover("cover_B.jpg", ("fk_cpOverhead.jpg", .5, .5))
 cover("cover_C.jpg", ("to_106465311.jpg", .5, .5))
 print("ok")
+
+# 四宫格首页：四个活动各一格，格子上写活动名，中间写标题
+G = [(("to_106058891.jpg", .5, .2), "希腊美食街"), (("fk_cpOverhead.jpg", .5, .5), "设计师市集"),
+     (("to_106465311.jpg", .5, .5), "海边露天电影"), (("po_gallery-c2uqg0.webp", .5, .5), "草地马球日")]
+TITLE = "悉尼这周末去哪"
+def grid():
+    g = Image.new("RGB", (W, H)); cw, ch = W // 2, H // 2
+    for i, (p, _) in enumerate(G): g.paste(crop(p, cw, ch), ((i % 2) * cw, (i // 2) * ch))
+    return g
+def labels(g, f, box):
+    d = ImageDraw.Draw(g); cw, ch = W // 2, H // 2
+    for i, (_, t) in enumerate(G):
+        x0, y0 = (i % 2) * cw, (i // 2) * ch
+        y = y0 + ch - 130 if i >= 2 else y0 + 40
+        x = x0 + (cw - f.getlength(t)) / 2
+        if box: d.rectangle((x - 22, y - 4, x + f.getlength(t) + 22, y + 92), fill=CREAM); d.text((x, y), t, font=f, fill=INK)
+        else: d.text((x, y), t, font=f, fill="white", stroke_width=3, stroke_fill=(0, 0, 0))
+    return g
+# A：米白底黑字，标题一条横在中线
+f = serif(76); a = labels(grid(), f, True); d = ImageDraw.Draw(a)
+tw = f.getlength(TITLE); d.rectangle(((W - tw) / 2 + 20, H / 2 - 62, (W + tw) / 2 + 100, H / 2 + 62), fill=CREAM)
+d.text(((W - tw) / 2 + 60, H / 2 - 50), TITLE, font=f, fill=INK)
+icon(a, "06_拍照打卡", 30, H // 2 - 85, 170).save(f"{OUT}/cover_grid_A.jpg", quality=93)
+# B：白字黑描边，中线一条深色横带写标题
+f = serif(80); b = labels(grid(), f, False); d = ImageDraw.Draw(b)
+d.rectangle((0, H / 2 - 70, W, H / 2 + 70), fill=(20, 18, 16))
+tw = f.getlength(TITLE); d.text(((W - tw) / 2 + 60, H / 2 - 54), TITLE, font=f, fill="white")
+icon(b, "06_拍照打卡", 30, H // 2 - 85, 170).save(f"{OUT}/cover_grid_B.jpg", quality=93)
