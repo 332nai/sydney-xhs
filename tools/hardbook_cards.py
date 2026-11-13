@@ -39,60 +39,62 @@ def wrap(text, font, width):
     return lines
 
 ROWS = {3: [1, 2], 4: [2, 2], 5: [2, 3], 6: [3, 3]}
-def card(fn, name, price, intro, test, how, photos, ph=640):
+def card(fn, name, price, paras, photos, ph=600):
     img = Image.new("RGB", (W, H), CREAM); rows = ROWS[len(photos)]; rh = ph // len(rows); k = 0
     for r, n in enumerate(rows):
         cw = W // n
         for c in range(n): img.paste(crop(photos[k], cw + 1, rh + 1), (c * cw, r * rh)); k += 1
     d = ImageDraw.Draw(img)
-    fn_ = serif(62); fp = zh(42, "Bold"); fi = zh(36); fl = zh(36, "Bold")
-    il = wrap(intro, fi, 940); tl = wrap(test, fi, 800); hl = wrap(how, fi, 800)
-    lh = 54; block = 84 + len(il) * lh + 22 + len(tl) * lh + 16 + len(hl) * lh
-    y = ph + max(30, (H - ph - block) // 2)
-    d.text((70, y), name, font=fn_, fill=INK)
-    if price: d.text((70 + fn_.getlength(name) + 26, y + 12), price, font=fp, fill=RED)
-    y += 84
-    for ln in il: d.text((72, y), ln, font=fi, fill=GREY); y += lh
-    y += 22
-    for tag, ls in (("实测", tl), ("怎么订", hl)):
-        d.text((72, y), tag, font=fl, fill=RED)
-        for ln in ls: d.text((230, y), ln, font=fi, fill=INK if tag == "实测" else GREY); y += lh
-        y += 16
+    fn_ = serif(60); fp = zh(38, "Bold"); fi = zh(30); lh = 46
+    ls = [wrap(t, fi, 950) for t in paras]
+    block = 82 + sum(len(l) * lh for l in ls) + 20 * (len(ls) - 1)
+    y = ph + max(36, (H - ph - block) // 2)
+    d.text((64, y), name, font=fn_, fill=INK)
+    if price: d.text((64 + fn_.getlength(name) + 26, y + 14), price, font=fp, fill=INK)
+    y += 82
+    for l in ls:
+        for ln in l: d.text((66, y), ln, font=fi, fill=GREY); y += lh
+        y += 20
     img.save(f"{OUT}/{fn}", quality=93)
 
 V = [
- ("01.jpg", "YOSHII'S OMAKASE", "$380",
-  "Barangaroo的Crown酒店里，只有10个座位的板前寿司。Yoshii师傅当面捏，十道omakase，周五周六分6点和8点45两场。",
+ ("01.jpg", "YOSHII'S OMAKASE", "$380", [
+  "Barangaroo的Crown Sydney酒店里，只有10个座位的板前寿司。Yoshii师傅和团队就在面前捏，十道omakase，$380一位。周二到周四晚上营业，周五周六分两场，6点和8点45。",
+  "订位要先留信用卡，位子不能转让，周六另收10%附加费。16岁以下要有家长陪同。",
   "未来4周开门20天，只有3天还有位，最早11月26日晚上6点。",
-  "每月1号放位，这家是真要定闹钟抢的。",
+  "每月1号在官网放下个月的位，量很少，建议定闹钟。也可以打电话或发邮件订。"],
   ["yo_seat.jpg", "yo_24.jpg", ("yo_sash.jpg", .5, .45), "yo_chef.jpg", "yo_26.jpg"]),
- ("02.jpg", "SUSHI OE", None,
-  "新鱼市场里的8座寿司店，Oe师傅一晚只做一场，大约30道，菜单每天跟着当天的鱼变。",
-  "不在网上订位系统里，一个月的位几分钟就没了。",
-  "关注它的Instagram，每个月公布放位时间，到点马上联系。",
+ ("02.jpg", "SUSHI OE", None, [
+  "新悉尼鱼市场里的8座寿司店，Oe师傅一晚只做一场，大约30道，菜单每天跟着当天进的鱼变。金枪鱼、龙虾刺身都在他手里一道一道出来，节奏很慢，坐下就是一整晚。",
+  "它不在网上订位系统里，查不到实时空位。Broadsheet的说法是，一个月的位几分钟就订完。",
+  "关注它的Instagram，每个月会公布放位时间，到点马上按它说的方式联系。去之前问清楚价格和能不能带酒。"],
   ["oe_10.webp", "oe_7.webp", "oe_2.webp", "oe_4.webp", "oe_16.webp", "oe_5.webp"]),
- ("03.jpg", "BISTECCA", "按重量点",
-  "CBD小巷里推门下楼的地下牛排馆，只做佛罗伦萨T骨牛排，建议600克起点。进门会请你把手机锁进抽屉。",
-  "未来4周只有2天能订到晚餐，最早11月16日周一下午5点半。",
-  "订不到就早点去前面的酒吧坐着，喝一杯吃点小食等位。",
+ ("03.jpg", "BISTECCA", None, [
+  "CBD小巷里推开一扇门，下楼先是一间老式鸡尾酒吧，再推一扇门才是餐厅，正中间是烧着火的炉子。只做佛罗伦萨T骨牛排，用新州Riverina的牛，按重量点，在炉前切好给你看，再用铁皮木和炭烤到三分熟。",
+  "建议600克起，800克最好。配菜有球芽甘蓝配佩科里诺芝士、炭烤葡萄配菊苣，酒单以意大利红酒为主。进门会请你把手机锁进抽屉。",
+  "未来4周只有2天订得到晚餐，最早11月16日周一下午5点半。",
+  "订不到就早点去前面的酒吧坐着，点杯鸡尾酒、来份烤猪肉三明治或者意式面疙瘩，边吃边等位。"],
   ["bi_1.jpg", "bi_3.jpg", "bi_to105294526.jpg", "bi_2.jpg", "bi_to105294529.jpg", "bi_to105294527.jpg"]),
- ("04.jpg", "SAINT PETER", "$395",
-  "Josh Niland的鱼料理，搬进Paddington的Grand National酒店后更难订。晚餐十道菜$395，午餐三道菜$195，整条鱼从鱼鳞吃到鱼眼。",
-  "订位系统查不到实时空位，靠规则抢。",
-  "提前6个月开放，每天往后放一天。吃不到正餐就去酒吧，不接受预订，直接进去点汉堡和马天尼。",
+ ("04.jpg", "SAINT PETER", "$395", [
+  "Josh Niland的鱼料理，搬进Paddington的Grand National酒店后更难订，楼上就是酒店客房。开放式厨房里堆着铁皮木烤架，挂着晒干的海带，一条鱼从鱼鳞、鱼肠吃到鱼眼。",
+  "晚餐十道菜$395，午餐三道菜$195，只有周四到周日有午餐。厨房前面还有5个座位的主厨桌。用墨累鳕鱼油调的马天尼是招牌。",
+  "它用的是另一套订位系统，查不到实时空位，只能靠规则抢。",
+  "提前6个月开放，每天往后放一天。吃不到正餐就去前面的酒吧，不接受预订，直接进去点芝士汉堡和马天尼。"],
   ["sp_to106185014.jpg", "sp_to106185023.jpg", "sp_to106186949.jpg", "sp_to106186947.jpg", "sp_to106186950.jpg", "sp_to106186948.jpg"]),
- ("05.jpg", "THE GIDLEY", None,
-  "King St一扇没招牌的灰门进去，下楼是丝绒卡座的美式牛排馆，跟Bistecca同一个老板。",
+ ("05.jpg", "THE GIDLEY", None, [
+  "King St一扇没招牌的灰门，按铃进去下楼，是丝绒卡座加帘子的美式牛排馆，2019年开，跟Bistecca同一个老板。",
+  "招牌是自家肉铺熟成的Riverina肋眼，后来加了很多海鲜：生蚝、龙虾、鲍鱼叠成的海鲜塔，24小时慢烤乳猪，最后桌边点火的波本巴巴蛋糕。",
   "未来4周一半日子有位，但几乎全是晚上9点半那一场，正常饭点要等到12月以后。",
-  "不介意吃晚点，就订9点半当宵夜。",
+  "不介意吃晚点就订9点半当宵夜，菜单是一样的。"],
   ["gi_to105730414.jpg", "gi_to105730412.jpg", "gi_1.jpg", "gi_to105730411.jpg", "gi_to105730415.jpg", "gi_to105730413.jpg"]),
- ("06.jpg", "FIREDOOR", None,
-  "Surry Hills，Lennox Hastie的柴火餐厅，没有煤气灶，所有菜都用不同的木头烤。招牌是长时间干式熟成牛排。",
+ ("06.jpg", "FIREDOOR", None, [
+  "Surry Hills，Lennox Hastie的柴火餐厅，厨房里没有煤气灶，所有菜都靠火。他会按食材挑木头，铁皮木、果树枝、葡萄藤都用。菜单只列食材，大虾从水箱捞出来直接上火烤，每晚一种牛排现切。",
+  "晚餐只开周三到周六，午餐有$155的主厨套餐。",
   "未来4周开门20天，12天能订，周末要提前两三周。",
-  "提前6个月开放。周三周四最好订，午餐有$155的主厨套餐。",
+  "提前6个月开放。周三周四最好订，周五周六尽量提前三周以上。"],
   ["fd_11.jpg", "fd_1.jpg", "fd_3.jpg", "fd_5.jpg", "fd_10.jpg", "fd_4.jpg"]),
 ]
-for fn, *a in V: card(fn, *a)
+for fn, name, price, paras, ph_ in V: card(fn, name, price, paras, ph_)
 
 # 首页
 def grad(c, a=.45, k=215):
