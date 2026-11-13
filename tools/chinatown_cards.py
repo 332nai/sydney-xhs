@@ -37,40 +37,49 @@ def stamp(d, x, y, text, size=56):
     f = serif(size); w = f.getlength(text)
     d.rectangle((x, y, x + w + 36, y + size + 26), fill=PAPER); d.text((x + 18, y + 6), text, font=f, fill=INK)
 
-def framed(img, photo, box, label, old):
-    x0, y0, x1, y1 = box; pad = 14
+
+def framed(img, photo, box, label, old, size=48):
+    x0, y0, x1, y1 = box; pad = 12
     ImageDraw.Draw(img).rectangle(box, fill="white")
     im = crop(photo, x1 - x0 - 2 * pad, y1 - y0 - 2 * pad, old); img.paste(im, (x0 + pad, y0 + pad))
-    stamp(ImageDraw.Draw(img), x0 + pad, y1 - pad - 82, label, 48)
+    stamp(ImageDraw.Draw(img), x0 + pad, y1 - pad - size - 34, label, size)
 
 def card(fn, head, sub, olds, new, text):
     img = Image.new("RGB", (W, H), PAPER); d = ImageDraw.Draw(img)
     d.text((60, 46), head, font=serif(70), fill=INK); d.text((62, 140), sub, font=serifr(38), fill=SEP)
     d.line((60, 205, W - 60, 205), fill=INK, width=3)
-    top, mid = 230, 690
-    if len(olds) == 2:
-        framed(img, olds[0][0], (60, top, 535, mid), olds[0][1], True); framed(img, olds[1][0], (545, top, W - 60, mid), olds[1][1], True)
-    else:
-        framed(img, olds[0][0], (60, top, W - 60, mid), olds[0][1], True)
-    framed(img, new[0], (60, mid + 14, W - 60, 1130), new[1], False)
-    f = serifr(33); y = 1158
-    for ln in wrap(text, f, 960): d.text((60, y), ln, font=f, fill=INK); y += 50
-    assert y < H - 10, (fn, y)
+    top = 228; gh = 300 if new else 450; xs = [(60, 535), (545, W - 60)]
+    for i, (ph, lab) in enumerate(olds):
+        r, c = divmod(i, 2); x0, x1 = xs[c]; y0 = top + r * (gh + 10)
+        framed(img, ph, (x0, y0, x1, y0 + gh), lab, True, 38)
+    ny = top + 2 * (gh + 10)
+    if new: framed(img, new[0], (60, ny, W - 60, ny + 300), new[1], False, 40); ny += 310
+    f = serifr(33); y = ny + 18
+    for ln in wrap(text, f, 960): d.text((60, y), ln, font=f, fill=INK); y += 49
+    assert y < H - 8, (fn, y)
     img.save(f"{OUT}/{fn}", quality=93)
 
 C = [
  ("02.jpg", "第一站 The Rocks", "1850年代到1900年前后",
-  [("old_116.jpg", "华人家具厂"), (("old_176.jpg", .5, .45), "1908 华人商号")], (("now_231george.jpg", .5, .55), "今天的George St，The Rocks"),
+  [("old_352.jpg", "码头边"), ("old_116.jpg", "华人家具厂"), (("old_137.jpg", .5, .5), "1900 华人宿舍"), (("old_176.jpg", .5, .45), "1908 华人商号")],
+  (("now_231george.jpg", .5, .55), "今天的George St，The Rocks"),
   "淘金热之后，华人从各地回到悉尼，先聚在码头边的The Rocks，在Lower George St和后面的Cambridge St开店、开寄宿屋、做家具。1861年悉尼只登记了189个华人，1881年已经有1,321人。"),
  ("03.jpg", "第二站 Haymarket", "1890年代到1906年",
-  [(("old_131.jpg", .5, .5), "1906年拆之前的Wexford St")], (("now_wentworth.jpg", .5, .55), "原址，今天的Wentworth Ave"),
+  [(("c_wexford.jpg", .5, .55), "1900 Wexford St"), (("c_wexford_bedroom.jpg", .5, .55), "1900 华人住的后院"), (("c_campbell1900.jpg", .5, .55), "1900 Campbell St"), (("old_131.jpg", .5, .5), "1906年拆之前")],
+  (("now_wentworth.jpg", .5, .55), "原址，今天的Wentworth Ave"),
   "菜农把菜运到Belmore Markets，常在附近过夜，Campbell St、Goulburn St和Wexford St一带开起寄宿屋、杂货铺和饭馆。1906年市政府拆掉整条Wexford St，724人被迫搬走，原址修成今天的Wentworth Ave。"),
  ("04.jpg", "第三站 Dixon St", "1910年代到今天",
-  [(("old_015.jpg", .45, .45, 1.08), "1954 Dixon St"), (("old_089.jpg", .5, .5), "1970年代")], (("now_dixon2.jpg", .5, .6), "2026年的Dixon St"),
+  [(("old_315.jpg", .5, .5), "1933 Hay St水果车"), (("old_223.png", .5, .4), "1950 Dixon St"), (("old_015.jpg", .45, .45, 1.08), "1954 Dixon St"), (("old_089.jpg", .5, .5), "1970年代")],
+  (("now_dixon2.jpg", .5, .6), "2026年的Dixon St"),
   "1909到1915年，新的City Markets在Hay St一带建成，也就是今天的Paddy's Markets。华人跟着市场往西搬，到1930年代，Dixon St已经是唐人街。1942年中国海员工会就在这条街上成立。"),
  ("05.jpg", "牌楼 1980", "Dixon St变成步行街",
-  [(("old_097.jpg", .5, .5), "1980年开街"), (("old_062.jpg", .5, .5), "1985")], (("now_dixon1.jpg", .5, .45), "2026年的牌楼"),
+  [(("old_226.jpg", .5, .5), "1979 Tai Yuen酒楼"), (("old_097.jpg", .5, .5), "1980年开街"), (("old_080.jpg", .5, .5), "1984"), (("old_062.jpg", .5, .5), "1985")],
+  (("now_dixon1.jpg", .5, .45), "2026年的牌楼"),
   "1979年中秋节起，Dixon St永久封路改成步行街。1980年悉尼市长主持开街，街两头立起华裔建筑师Henry Tsang设计的牌楼。1970年代以后，新移民从中国大陆、台湾、香港和东南亚过来，很多是专业人士。"),
+ ("06.jpg", "老照片里的华人生活", "1900年代到1970年代",
+  [(("old_108.jpg", .5, .5), "1900年代 菜贩"), (("old_227.jpg", .5, .5), "1979 Tai Yuen餐馆"), (("old_128.jpg", .5, .5), "Surry Hills的孩子"), (("old_222.jpg", .5, .5), "1949 新中国酒家")],
+  None,
+  "早期华人在悉尼多是菜农、小贩、家具工人和店主。菜农挑着担子走街串巷，市场旁边就是他们的寄宿屋和饭馆。1901年白澳政策实行后，华人人口一路下降，直到1970年代政策取消，唐人街才重新热闹起来。"),
 ]
 for c in C: card(*c)
 
