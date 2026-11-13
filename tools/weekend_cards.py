@@ -144,3 +144,28 @@ def grid2(f, style):
     return g
 icon(grid2(zh(70, "Black"), "box"), "06_拍照打卡", W - 200, H // 2 - 220, 170).save(f"{OUT}/cover_grid_C.jpg", quality=93)
 icon(grid2(zh(70, "Black"), "stroke"), "06_拍照打卡", W - 200, H // 2 - 220, 170).save(f"{OUT}/cover_grid_D.jpg", quality=93)
+
+# 拼贴版首页：纯色底，四张白边照片微微歪着贴，照片下写活动、地点、时间
+P = [(("to_106058892.jpg", .55, .5), "希腊美食街", "Burwood 周六"),
+     (("fk_cpStall.jpg", .5, .45), "设计师市集", "Eveleigh 周五到周日"),
+     (("hm_to106278662.jpg", .5, .5), "自然酒节", "Surry Hills 周六"),
+     (("to_106465311.jpg", .5, .55), "海边露天电影", "Bondi 周五到周日")]
+def collage(fn, bg, ink, tag_bg, tag_ink):
+    c = Image.new("RGB", (W, H), bg); d = ImageDraw.Draw(c)
+    ft = zh(118, "Black"); fd = zh(60, "Black"); fc = zh(48, "Black"); fl = zh(36, "Bold")
+    d.text((60, 50), "悉尼这周末", font=ft, fill=ink); d.text((60, 190), "去哪玩", font=ft, fill=ink)
+    s = "11月13日到15日"; w = fd.getlength(s)
+    d.rectangle((60, 350, 60 + w + 40, 440), fill=tag_bg); d.text((80, 360), s, font=fd, fill=tag_ink)
+    pw, ph = 445, 300; rots = [-3, 2.5, 2, -2.5]; pos = [(40, 470), (555, 465), (45, 950), (560, 955)]
+    for (p, name, where), r, (x, y) in zip(P, rots, pos):
+        card_ = Image.new("RGB", (pw + 30, ph + 140), "white")
+        card_.paste(pop(crop(p, pw, ph)), (15, 15)); dc = ImageDraw.Draw(card_)
+        dc.text((18, ph + 28), name, font=fc, fill=INK); dc.text((20, ph + 92), where, font=fl, fill=(110, 100, 90))
+        card_ = card_.convert("RGBA").rotate(r, expand=True, resample=Image.BICUBIC)
+        sh = Image.new("RGBA", c.size, (0, 0, 0, 0)); sh.paste((0, 0, 0, 90), (x + 8, y + 12), card_.split()[3])
+        c = Image.alpha_composite(c.convert("RGBA"), sh.filter(ImageFilter.GaussianBlur(10)))
+        c.alpha_composite(card_, (x, y)); c = c.convert("RGB")
+    icon(c, "06_拍照打卡", W - 270, 70, 230).save(f"{OUT}/{fn}", quality=94)
+collage("cover_E.jpg", (255, 210, 63), INK, INK, (255, 210, 63))
+collage("cover_F.jpg", (32, 92, 150), "white", (255, 210, 63), INK)
+collage("cover_G.jpg", (226, 98, 62), "white", "white", (226, 98, 62))
