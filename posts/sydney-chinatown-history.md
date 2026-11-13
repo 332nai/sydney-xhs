@@ -4,14 +4,16 @@
 
 现在说起唐人街，大家想到的是Haymarket的Dixon St。但悉尼的唐人街，前后换过三个地方。
 
-第一站在The Rocks。1850年代淘金热之后，很多华人从金矿回到悉尼，最先聚在码头边，在Lower George St和后面的Cambridge St开店、开寄宿屋、做家具。1861年悉尼只登记了189个华人，到1881年已经有1,321人。
+最早来悉尼的华人是广东人麦世英，1818年到这里，在Parramatta落脚。1848年第一批契约劳工坐船抵达，1851年新州发现金矿，大批华人从广东过来。
 
-第二站在Haymarket东边。华人菜农把菜运到Belmore Markets卖，常在附近过夜，Campbell St、Goulburn St和Wexford St一带慢慢开起了寄宿屋、杂货铺和饭馆。1906年市政府以清理贫民窟为由拆掉整条Wexford St，724人被迫搬走，原址修成了今天的Wentworth Ave。
+第一站在The Rocks。淘金热退潮后，很多华人回到悉尼，聚在离码头最近的Lower George St和Cambridge St，开店铺、饭馆、寄宿屋和家具作坊，最有钱的华商也住在这里。1861年悉尼只有189个华人，1881年已经有1,321人。
+
+第二站在Haymarket东边。华人菜农把菜运到Belmore Markets卖，常在附近过夜，Campbell St、Goulburn St和Wexford St一带慢慢开起了寄宿屋、杂货铺和饭馆。1906年市政府拆掉整条Wexford St，724人被赶走，原址修成了今天的Wentworth Ave。
 
 第三站就是Dixon St。1909到1915年，新的City Markets在Hay St一带建成，也就是今天的Paddy's Markets，华人跟着市场往西搬。到1930年代，Dixon St已经是公认的唐人街，1942年中国海员工会就在这条街上成立。
 
-1979年中秋节起，Dixon St永久封路改成步行街。1980年悉尼市长主持开街，街两头立起华裔建筑师Henry Tsang设计的牌楼。
+白澳政策实行后，华人越来越少，直到1970年代政策取消，唐人街才重新热闹起来。1979年中秋节起，Dixon St永久封路改成步行街，1980年悉尼市长主持开街，街两头立起华裔建筑师Henry Tsang设计的牌楼。
 
-所以下次去The Rocks逛，可以想一想，一百多年前那里才是悉尼的唐人街。
+从码头边到市场旁，唐人街一直跟着生计在走。下次去The Rocks逛，可以想一想，一百多年前那里才是悉尼的唐人街。
 
 #悉尼唐人街 #悉尼历史 #悉尼生活 #悉尼老照片 #悉尼冷知识 #Haymarket #TheRocks #澳洲华人

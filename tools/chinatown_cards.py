@@ -44,44 +44,73 @@ def framed(img, photo, box, label, old, size=48):
     im = crop(photo, x1 - x0 - 2 * pad, y1 - y0 - 2 * pad, old); img.paste(im, (x0 + pad, y0 + pad))
     stamp(ImageDraw.Draw(img), x0 + pad, y1 - pad - size - 34, label, size)
 
-def card(fn, head, sub, olds, new, text):
+def card(fn, head, sub, photos, text):
+    """一页一到两张大图，下面一大段文字。photos里每项是(图, 标签, 是否老照片)"""
     img = Image.new("RGB", (W, H), PAPER); d = ImageDraw.Draw(img)
     d.text((60, 46), head, font=serif(70), fill=INK); d.text((62, 140), sub, font=serifr(38), fill=SEP)
     d.line((60, 205, W - 60, 205), fill=INK, width=3)
-    top = 228; gh = 300 if new else 450; xs = [(60, 535), (545, W - 60)]
-    for i, (ph, lab) in enumerate(olds):
+    f = serifr(34); lines = wrap(text, f, 960); th = len(lines) * 52 + 30
+    avail = H - 228 - th - 40; n = len(photos); gh = (avail - 12 * (n - 1)) // n
+    y = 228
+    for ph, lab, old in photos:
+        framed(img, ph, (60, y, W - 60, y + gh), lab, old, 44); y += gh + 12
+    y += 22
+    for ln in lines: d.text((60, y), ln, font=f, fill=INK); y += 52
+    assert y < H - 8 and gh > 300, (fn, y, gh)
+    img.save(f"{OUT}/{fn}", quality=93)
+
+def gallery(fn, head, sub, photos, text):
+    img = Image.new("RGB", (W, H), PAPER); d = ImageDraw.Draw(img)
+    d.text((60, 46), head, font=serif(70), fill=INK); d.text((62, 140), sub, font=serifr(38), fill=SEP)
+    d.line((60, 205, W - 60, 205), fill=INK, width=3)
+    top = 228; gh = 470; xs = [(60, 535), (545, W - 60)]
+    for i, (ph, lab) in enumerate(photos):
         r, c = divmod(i, 2); x0, x1 = xs[c]; y0 = top + r * (gh + 10)
         framed(img, ph, (x0, y0, x1, y0 + gh), lab, True, 38)
-    ny = top + 2 * (gh + 10)
-    if new: framed(img, new[0], (60, ny, W - 60, ny + 300), new[1], False, 40); ny += 310
-    f = serifr(33); y = ny + 18
-    for ln in wrap(text, f, 960): d.text((60, y), ln, font=f, fill=INK); y += 49
+    f = serifr(34); y = top + 2 * (gh + 10) + 20
+    for ln in wrap(text, f, 960): d.text((60, y), ln, font=f, fill=INK); y += 52
     assert y < H - 8, (fn, y)
     img.save(f"{OUT}/{fn}", quality=93)
 
-C = [
- ("02.jpg", "第一站 The Rocks", "1850年代到1900年前后",
-  [("old_352.jpg", "码头边"), ("old_116.jpg", "华人家具厂"), (("old_137.jpg", .5, .5), "1900 华人宿舍"), (("old_176.jpg", .5, .45), "1908 华人商号")],
-  (("now_231george.jpg", .5, .55), "今天的George St，The Rocks"),
-  "淘金热之后，华人从各地回到悉尼，先聚在码头边的The Rocks，在Lower George St和后面的Cambridge St开店、开寄宿屋、做家具。1861年悉尼只登记了189个华人，1881年已经有1,321人。"),
- ("03.jpg", "第二站 Haymarket", "1890年代到1906年",
-  [(("c_wexford.jpg", .5, .55), "1900 Wexford St"), (("c_wexford_bedroom.jpg", .5, .55), "1900 华人住的后院"), (("c_campbell1900.jpg", .5, .55), "1900 Campbell St"), (("old_131.jpg", .5, .5), "1906年拆之前")],
-  (("now_wentworth.jpg", .5, .55), "原址，今天的Wentworth Ave"),
-  "菜农把菜运到Belmore Markets，常在附近过夜，Campbell St、Goulburn St和Wexford St一带开起寄宿屋、杂货铺和饭馆。1906年市政府拆掉整条Wexford St，724人被迫搬走，原址修成今天的Wentworth Ave。"),
- ("04.jpg", "第三站 Dixon St", "1910年代到今天",
-  [(("old_315.jpg", .5, .5), "1933 Hay St水果车"), (("old_223.png", .5, .4), "1950 Dixon St"), (("old_015.jpg", .45, .45, 1.08), "1954 Dixon St"), (("old_089.jpg", .5, .5), "1970年代")],
-  (("now_dixon2.jpg", .5, .6), "2026年的Dixon St"),
-  "1909到1915年，新的City Markets在Hay St一带建成，也就是今天的Paddy's Markets。华人跟着市场往西搬，到1930年代，Dixon St已经是唐人街。1942年中国海员工会就在这条街上成立。"),
- ("05.jpg", "牌楼 1980", "Dixon St变成步行街",
-  [(("old_226.jpg", .5, .5), "1979 Tai Yuen酒楼"), (("old_097.jpg", .5, .5), "1980年开街"), (("old_080.jpg", .5, .5), "1984"), (("old_062.jpg", .5, .5), "1985")],
-  (("now_dixon1.jpg", .5, .45), "2026年的牌楼"),
-  "1979年中秋节起，Dixon St永久封路改成步行街。1980年悉尼市长主持开街，街两头立起华裔建筑师Henry Tsang设计的牌楼。1970年代以后，新移民从中国大陆、台湾、香港和东南亚过来，很多是专业人士。"),
- ("06.jpg", "老照片里的华人生活", "1900年代到1970年代",
-  [(("old_108.jpg", .5, .5), "1900年代 菜贩"), (("old_227.jpg", .5, .5), "1979 Tai Yuen餐馆"), (("old_128.jpg", .5, .5), "Surry Hills的孩子"), (("old_222.jpg", .5, .5), "1949 新中国酒家")],
-  None,
-  "早期华人在悉尼多是菜农、小贩、家具工人和店主。菜农挑着担子走街串巷，市场旁边就是他们的寄宿屋和饭馆。1901年白澳政策实行后，华人人口一路下降，直到1970年代政策取消，唐人街才重新热闹起来。"),
+P = [
+ ("02.jpg", "起点：第一批华人", "1818年到1850年代",
+  [("old_352.jpg", "悉尼港码头", True)],
+  "有记录的第一位华人移民是广东人麦世英，1818年到悉尼，在Parramatta落脚，改名John Shying，1829年还拿到了Lion Inn旅馆的牌照。1848年，帆船Nimrod从华南带来121个契约劳工，一半留在悉尼。1851年新州发现金矿，消息传回广东，大批华人坐船过来，到1861年新州已经有13,000个华人。"),
+ ("03.jpg", "第一站 The Rocks", "1850年代到1900年前后",
+  [("old_116.jpg", "The Rocks的华人家具厂", True), (("old_137.jpg", .5, .5), "1900年 George St 230号 华人宿舍", True)],
+  "淘金热退潮后，很多华人从金矿回到悉尼，最先聚在离码头最近的The Rocks。Lower George St和后面的Cambridge St开满了华人的店铺、饭馆和寄宿屋，至少有五家华人家具作坊。19世纪末，悉尼最有钱的华商也住在这里。"),
+ ("04.jpg", "人越来越多", "1861年到1900年",
+  [(("old_176.jpg", .5, .45), "1908年 George St上的华人商号", True), (("now_231george.jpg", .5, .55), "今天的George St，The Rocks", False)],
+  "1861年悉尼只登记了189个华人，1871年336人，1881年已经有1,321人。人一多，限制也跟着来：1881年和1888年两次立法，华人入境要交人头税、领证明。到1900年，住在市区的华人大部分已经搬到Haymarket一带。"),
+ ("05.jpg", "第二站 Haymarket", "1890年代到1906年",
+  [(("c_wexford.jpg", .5, .55), "1900年 Wexford St", True), (("c_campbell1900.jpg", .5, .55), "1900年 Campbell St 82号", True)],
+  "华人菜农赶着马车把菜运到Belmore Markets卖，常常在附近过夜。于是Goulburn St、Pitt St和Campbell St一带开起了寄宿屋、杂货铺、熟食店和肉铺，房租便宜的旧厂房也吸引了家具作坊搬过来。这一片被叫作悉尼的第二个唐人街。"),
+ ("06.jpg", "一条街被整个拆掉", "1900年到1906年",
+  [(("c_wexford_bedroom.jpg", .5, .55), "1900年 Wexford St 50号后院", True), (("old_131.jpg", .5, .5), "1906年拆之前的Wexford St", True)],
+  "这几张照片都是1900年悉尼闹鼠疫时，政府清理检疫区拍下的。华人住处常被市政府盯着检查。1905年市政府拿到收地的权力，1906年拆掉整条Wexford St和周边几条街，724人被赶走。"),
+ ("07.jpg", "原址变成了大马路", "1906年以后",
+  [(("now_wentworth.jpg", .5, .55), "原址，今天的Wentworth Ave", False)],
+  "Wexford St拆掉后，沿着原来的街修成了通往中央车站的Wentworth Ave，就是今天这条路。被赶走的华人只能往西搬，正好那边在建新的市场，第三个唐人街就这样开始了。"),
+ ("08.jpg", "第三站 Dixon St", "1909年到1940年代",
+  [(("old_315.jpg", .5, .5), "1933年 Hay St的华人水果车", True), (("old_223.png", .5, .4), "1950年 Dixon St", True)],
+  "1909到1915年，新的City Markets在Hay St一带建成，也就是今天的Paddy's Markets。华人跟着市场往西搬，到1930年代，Dixon St已经是公认的唐人街。1930年代大萧条让菜农和摊贩很难过，但几家大华商撑了下来。1942年，中国海员工会就在Dixon St成立。"),
+ ("09.jpg", "战后的唐人街", "1940年代到1960年代",
+  [(("old_015.jpg", .45, .45, 1.08), "1954年 Dixon St的店铺", True), (("old_222.jpg", .5, .5), "1949年 新中国酒家", True)],
+  "入境限制加上1901年起的白澳政策，全澳华人从1880年的37,533人，降到1911年约23,000人。1947年政策开始松动，华商的太太和孩子可以留下来。1950年代又有一批东南亚华人学生通过科伦坡计划来读书，很多人被Haymarket的华人社区吸引过来。"),
+ ("10.jpg", "要不要把它变成唐人街", "1961年到1979年",
+  [(("old_089.jpg", .5, .5), "1970年代 还能通车的Dixon St", True), (("old_093.jpg", .5, .45), "1979年 Dixon St", True)],
+  "1961年市政府就讨论过把Dixon St做成唐人街。1960年代末批发市场搬去Flemington，这一片空出来可以重新规划。1970年代初白澳政策的最后条文被取消，市政府成立了Dixon Street Chinese Committee，开始推动改造。"),
+ ("11.jpg", "牌楼立起来了", "1979年到1980年",
+  [(("old_097.jpg", .5, .5), "1980年 开街当天", True), (("old_080.jpg", .5, .5), "1984年 Dixon St", True)],
+  "1979年中秋节起，Dixon St永久封路改成步行街。委员会拿出3万澳元做牌楼，请华裔建筑师Henry Tsang设计。1980年悉尼市长主持开街。牌楼柱子上的英文意思是：古老的中国举世闻名，守住自由与信任，就守住了过去的美德。"),
+ ("12.jpg", "今天的唐人街", "1970年代到2026年",
+  [(("now_dixon1.jpg", .5, .45), "2026年的牌楼", False), (("now_dixon2.jpg", .5, .6), "2026年的Dixon St", False)],
+  "1970年代以后，新移民从中国大陆、台湾、香港、新加坡、马来西亚和东南亚过来，跟一百多年前的契约劳工不同，很多是受过教育的专业人士。从码头边的The Rocks，到Belmore Markets旁的小街，再到今天的Dixon St，唐人街一直跟着市场和生计在走。"),
 ]
-for c in C: card(*c)
+for p_ in P: card(*p_)
+gallery("13.jpg", "老照片里的华人生活", "1900年代到1970年代",
+  [(("old_108.jpg", .5, .5), "1900年代 菜贩"), (("old_227.jpg", .5, .5), "1979 Tai Yuen餐馆"), (("old_128.jpg", .5, .5), "Surry Hills的孩子"), (("old_226.jpg", .5, .5), "1979 Tai Yuen酒楼")],
+  "早期华人在悉尼多是菜农、小贩、家具工人和店主。菜农天不亮就把菜运进城，挑着担子走街串巷，市场旁边就是他们的寄宿屋、饭馆和杂货铺。孩子们在小巷里跟邻居家的孩子一起玩。到了1970年代，Dixon St一带已经是一家接一家的酒楼。")
 
 # 01 路线图：George St从北到南
 img = Image.new("RGB", (W, H), PAPER); d = ImageDraw.Draw(img)
