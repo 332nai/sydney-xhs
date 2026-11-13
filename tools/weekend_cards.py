@@ -73,9 +73,6 @@ V = [
  ("05.jpg", "Huge Moves自然酒节", "$40起", "周六 下午1点到4点",
   "Surry Hills的Ace Hotel，一百多款自然酒可以慢慢试，配Studd兄妹的奶酪，3点开始有DJ。结束后还有after party，$10随机抽一杯。",
   ["hm_b.webp", "hm_a.webp", "hm_to106278662.jpg", "hm_to106278661.jpg"]),
- ("06.jpg", "F3 Polo马球日", "$120起", "周六 中午12点到晚上7点",
-  "Centennial Park草地上看马球，大部分人是去野餐、喝香槟、拍照的，穿好看一点去。普通票$120起，香槟露台VIP $269起。",
-  ["po_gallery-c2uqg0.webp", "po_featured-k7drh1.webp", "po_gallery-cjwvz2.webp", "po_gallery-qkzega.webp"]),
 ]
 for fn, *a in V: card(fn, *a)
 
@@ -121,3 +118,29 @@ f = serif(80); b = labels(grid(), f, False); d = ImageDraw.Draw(b)
 d.rectangle((0, H / 2 - 70, W, H / 2 + 70), fill=(20, 18, 16))
 tw = f.getlength(TITLE); d.text(((W - tw) / 2 + 60, H / 2 - 54), TITLE, font=f, fill="white")
 icon(b, "06_拍照打卡", 30, H // 2 - 85, 170).save(f"{OUT}/cover_grid_B.jpg", quality=93)
+
+# 四宫格v2：更亮的现场图，每格写活动和地点，中间写日期
+def pop(im): return ImageEnhance.Contrast(ImageEnhance.Brightness(ImageEnhance.Color(im).enhance(1.2)).enhance(1.06)).enhance(1.08)
+G2 = [(("to_106058892.jpg", .55, .5), "希腊美食街", "Burwood"), (("fk_241.jpg", .45, .5), "设计师市集", "Eveleigh"),
+      (("to_106466668.jpg", .5, .35), "精酿啤酒节", "Inner West"), (("to_106465311.jpg", .5, .5), "海边露天电影", "Bondi")]
+def grid2(f, style):
+    g = Image.new("RGB", (W, H)); cw, ch = W // 2, H // 2
+    for i, (p, *_) in enumerate(G2): g.paste(pop(crop(p, cw, ch)), ((i % 2) * cw, (i // 2) * ch))
+    d = ImageDraw.Draw(g); lh = f.size + 18
+    for i, (_, t, loc) in enumerate(G2):
+        x0, y0 = (i % 2) * cw, (i // 2) * ch
+        y = y0 + ch - 2 * lh - 40 if i >= 2 else y0 + 40
+        for k, s in enumerate((t, loc)):
+            x = x0 + (cw - f.getlength(s)) / 2; yy = y + k * lh
+            if style == "box":
+                d.rectangle((x - 20, yy - 2, x + f.getlength(s) + 20, yy + lh - 4), fill=(255, 226, 64)); d.text((x, yy), s, font=f, fill=INK)
+            else: d.text((x, yy), s, font=f, fill="white", stroke_width=5, stroke_fill=(0, 0, 0))
+    # 中间：标题和日期
+    for k, s in enumerate(("悉尼这周末去哪", "11月13日到15日")):
+        tw = f.getlength(s); yy = H / 2 - lh + k * lh
+        if style == "box":
+            d.rectangle(((W - tw) / 2 - 24, yy - 2, (W + tw) / 2 + 24, yy + lh - 4), fill=(255, 226, 64)); d.text(((W - tw) / 2, yy), s, font=f, fill=INK)
+        else: d.text(((W - tw) / 2, yy), s, font=f, fill="white", stroke_width=5, stroke_fill=(0, 0, 0))
+    return g
+icon(grid2(zh(70, "Black"), "box"), "06_拍照打卡", W - 200, H // 2 - 220, 170).save(f"{OUT}/cover_grid_C.jpg", quality=93)
+icon(grid2(zh(70, "Black"), "stroke"), "06_拍照打卡", W - 200, H // 2 - 220, 170).save(f"{OUT}/cover_grid_D.jpg", quality=93)
