@@ -82,18 +82,18 @@ P = [
  ("04.jpg", "人越来越多", "1861年到1900年",
   [(("old_176.jpg", .5, .45), "1908年 George St上的华人商号", True), (("now_231george.jpg", .5, .55), "今天的George St，The Rocks", False)],
   "1861年悉尼只登记了189个华人，1871年336人，1881年已经有1,321人。人一多，限制也跟着来：1881年和1888年两次立法，华人入境要交人头税、领证明。到1900年，住在市区的华人大部分已经搬到Haymarket一带。"),
- ("05.jpg", "第二站 Haymarket", "1890年代到1906年",
+ ("05.jpg", "第二站 Campbell St", "Haymarket，George St东边，1890年代到1906年",
   [(("c_wexford.jpg", .5, .55), "1900年 Wexford St", True), (("c_campbell1900.jpg", .5, .55), "1900年 Campbell St 82号", True)],
-  "华人菜农赶着马车把菜运到Belmore Markets卖，常常在附近过夜。于是Goulburn St、Pitt St和Campbell St一带开起了寄宿屋、杂货铺、熟食店和肉铺，房租便宜的旧厂房也吸引了家具作坊搬过来。这一片被叫作悉尼的第二个唐人街。"),
+  "Belmore Markets在Campbell St上，1893年开的新市场大楼，后来改成了今天的Capitol Theatre。华人菜农把菜运到这里卖，常常在附近过夜，于是Campbell St、Goulburn St一直到Surry Hills的Wexford St，开起了寄宿屋、杂货铺、熟食店和家具作坊。这一片就是悉尼的第二个唐人街。"),
  ("06.jpg", "一条街被整个拆掉", "1900年到1906年",
   [(("c_wexford_bedroom.jpg", .5, .55), "1900年 Wexford St 50号后院", True), (("old_131.jpg", .5, .5), "1906年拆之前的Wexford St", True)],
   "这几张照片都是1900年悉尼闹鼠疫时，政府清理检疫区拍下的。华人住处常被市政府盯着检查。1905年市政府拿到收地的权力，1906年拆掉整条Wexford St和周边几条街，724人被赶走。"),
  ("07.jpg", "原址变成了大马路", "1906年以后",
   [(("now_wentworth.jpg", .5, .55), "原址，今天的Wentworth Ave", False)],
-  "Wexford St拆掉后，沿着原来的街修成了通往中央车站的Wentworth Ave，就是今天这条路。被赶走的华人只能往西搬，正好那边在建新的市场，第三个唐人街就这样开始了。"),
- ("08.jpg", "第三站 Dixon St", "1909年到1940年代",
+  "Wexford St拆掉后，沿着原来的街修成了通往中央车站的Wentworth Ave，就是今天这条路。被赶走的华人只能往西搬，正好George St西边在建新的市场，第三个唐人街就这样开始了。"),
+ ("08.jpg", "第三站 Dixon St", "Haymarket，George St西边，1909年起",
   [(("old_315.jpg", .5, .5), "1933年 Hay St的华人水果车", True), (("old_223.png", .5, .4), "1950年 Dixon St", True)],
-  "1909到1915年，新的City Markets在Hay St一带建成，也就是今天的Paddy's Markets。华人跟着市场往西搬，到1930年代，Dixon St已经是公认的唐人街。1930年代大萧条让菜农和摊贩很难过，但几家大华商撑了下来。1942年，中国海员工会就在Dixon St成立。"),
+  "1909到1915年，新的City Markets在George St西边的Hay St一带建成，也就是今天的Paddy's Markets，Belmore Markets也在1912年搬走。华人跟着市场过了George St往西搬，其实只挪了几百米。到1930年代，Dixon St已经是公认的唐人街。1930年代大萧条让菜农和摊贩很难过，但几家大华商撑了下来。1942年，中国海员工会就在Dixon St成立。"),
  ("09.jpg", "战后的唐人街", "1940年代到1960年代",
   [(("old_015.jpg", .45, .45, 1.08), "1954年 Dixon St的店铺", True), (("old_222.jpg", .5, .5), "1949年 新中国酒家", True)],
   "入境限制加上1901年起的白澳政策，全澳华人从1880年的37,533人，降到1911年约23,000人。1947年政策开始松动，华商的太太和孩子可以留下来。1950年代又有一批东南亚华人学生通过科伦坡计划来读书，很多人被Haymarket的华人社区吸引过来。"),
@@ -112,21 +112,31 @@ gallery("13.jpg", "老照片里的华人生活", "1900年代到1970年代",
   [(("old_108.jpg", .5, .5), "1900年代 菜贩"), (("old_227.jpg", .5, .5), "1979 Tai Yuen餐馆"), (("old_128.jpg", .5, .5), "Surry Hills的孩子"), (("old_226.jpg", .5, .5), "1979 Tai Yuen酒楼")],
   "早期华人在悉尼多是菜农、小贩、家具工人和店主。菜农天不亮就把菜运进城，挑着担子走街串巷，市场旁边就是他们的寄宿屋、饭馆和杂货铺。孩子们在小巷里跟邻居家的孩子一起玩。到了1970年代，Dixon St一带已经是一家接一家的酒楼。")
 
-# 01 路线图：George St从北到南
+# 01 路线图：George St从北到南，第二、三站隔着George St一东一西
 img = Image.new("RGB", (W, H), PAPER); d = ImageDraw.Draw(img)
-d.text((60, 46), "唐人街搬家路线", font=serif(70), fill=INK); d.text((62, 140), "沿着George St，一路往南", font=serifr(38), fill=SEP)
+d.text((60, 46), "唐人街搬家路线", font=serif(70), fill=INK); d.text((62, 140), "沿着George St，从北搬到南", font=serifr(38), fill=SEP)
 d.line((60, 205, W - 60, 205), fill=INK, width=3)
-x = 300; y0, y1 = 300, 1330
-d.line((x, y0, x, y1), fill=INK, width=8)
-d.text((x - 120, y0 - 70), "Circular Quay", font=serifr(34), fill=SEP); d.text((x - 70, y1 + 16), "Central", font=serifr(34), fill=SEP)
-stops = [(390, "1850s", "The Rocks", "码头边，第一个唐人街"),
-         (900, "1890s", "Campbell St", "Belmore Markets旁，第二个"),
-         (1080, "1930s", "Dixon St", "跟着新市场西移，第三个"),
-         (1230, "1980", "牌楼落成", "Dixon St变成步行街")]
-for yy, yr, place, note in stops:
-    d.ellipse((x - 26, yy - 26, x + 26, yy + 26), fill=RED, outline=INK, width=4)
-    d.text((80, yy - 28), yr, font=serif(44), fill=RED)
-    d.text((x + 60, yy - 46), place, font=serif(50), fill=INK); d.text((x + 62, yy + 14), note, font=serifr(34), fill=SEP)
+x = W // 2; y0, y1 = 290, 1250
+d.line((x, y0, x, y1), fill=INK, width=10)
+fG = serif(40); d.text((x + 20, 560), "George St", font=fG, fill=SEP)
+fs, fb, fn = serifr(32), serif(46), serif(40)
+def dot(xx, yy): d.ellipse((xx - 22, yy - 22, xx + 22, yy + 22), fill=RED, outline=INK, width=4)
+d.text((x - 300, y0 - 64), "北：Circular Quay码头", font=fs, fill=SEP)
+dot(x, 360); d.text((x + 48, 318), "1850s 第一站", font=fn, fill=RED); d.text((x + 48, 372), "The Rocks", font=fb, fill=INK)
+d.text((x + 48, 436), "Lower George St一带", font=fs, fill=SEP)
+# Haymarket 区块
+d.rectangle((70, 820, W - 70, 1180), outline=SEP, width=3)
+d.text((90, 832), "Haymarket", font=serif(44), fill=SEP)
+d.line((x - 200, 1010, x, 1010), fill=RED, width=6); d.line((x, 1010, x + 200, 1010), fill=RED, width=6)
+dot(x + 210, 1010); dot(x - 210, 1010)
+d.text((x + 70, 900), "1890s 第二站", font=fn, fill=RED); d.text((x + 70, 1046), "Campbell St", font=fb, fill=INK)
+d.text((x + 70, 1106), "今天Capitol Theatre一带", font=fs, fill=SEP)
+d.text((90, 900), "1910s 第三站", font=fn, fill=RED); d.text((90, 1046), "Dixon St", font=fb, fill=INK)
+d.text((90, 1106), "今天Paddy's Markets旁边", font=fs, fill=SEP)
+d.text((x - 170, 940), "往西", font=serif(36), fill=RED)
+d.text((x - 120, y1 + 20), "南：Central车站", font=fs, fill=SEP)
+f = serifr(34); yy = 1330
+for ln in wrap("第二站和第三站其实都在Haymarket，只隔着一条George St，走路几分钟。", f, 960): d.text((60, yy), ln, font=f, fill=INK); yy += 50
 img.save(f"{OUT}/01.jpg", quality=93)
 
 # 首页：上旧下新，中间档案纸条写标题
