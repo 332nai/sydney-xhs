@@ -18,7 +18,9 @@ BOTANY = [(-33.995, 151.245), (-33.975, 151.215), (-33.960, 151.180), (-33.975, 
           (-34.020, 151.150), (-34.012, 151.200), (-34.008, 151.232)]
 CBD = (-33.858, 151.214)
 
-def minimap(lat, lon, label, font, w=250, h=330):
+def minimap(lat, lon, label, font, w=250, h=330, bounds=None):
+    global LAT0, LAT1, LON0, LON1
+    if bounds: LAT0, LAT1, LON0, LON1 = bounds
     S = 3; W, H = w * S, h * S; pad = 14 * S; mh = H - 70 * S
     def xy(la, lo):
         return (pad + (lo - LON0) / (LON1 - LON0) * (W - 2 * pad), pad + (la - LAT0) / (LAT1 - LAT0) * (mh - 2 * pad))
@@ -38,7 +40,7 @@ def minimap(lat, lon, label, font, w=250, h=330):
     md.polygon([xy(*p) for p in BOTANY], fill=sea)
     md.line(poly, fill=edge, width=3 * S, joint="curve")
     # 小浪花
-    for (la, lo) in ((-33.70, 151.36), (-33.97, 151.33), (-33.82, 151.37)):
+    for (la, lo) in ((LAT0 + (LAT1 - LAT0) * .22, LON1 - (LON1 - LON0) * .12), (LAT0 + (LAT1 - LAT0) * .55, LON1 - (LON1 - LON0) * .08), (LAT0 + (LAT1 - LAT0) * .85, LON1 - (LON1 - LON0) * .14)):
         x, y = xy(la, lo)
         for k in range(2):
             md.arc((x - 14 * S + k * 14 * S, y - 6 * S, x + k * 14 * S, y + 6 * S), 200, 340, fill=(255, 255, 255, 255), width=3 * S)

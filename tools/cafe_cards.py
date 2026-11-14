@@ -44,12 +44,6 @@ def blur_name(t, text, f, cx, y, r=6.5):
 
 # (店名, 人均, 标签, 结论, 介绍, 必点, 大图, [菜], [环境])
 V = [
- ("Dunes Kiosk", "$22", "最便宜", "Palm Beach最北头的小卖部，坐草地上看海，早餐$16起。",
-  "Governor Phillip Park里，Dunes餐厅旁边的外卖窗口，买了就坐在草地和沙滩边吃。周日旁边的Dunes餐厅还有早午餐，蟹肉蛋卷$28。",
-  "必点：牛油果吐司$16，玉米糙米饼$18，培根蛋卷$16。",
-  ("dunes/s_TJR_4276_-Edit_web.jpg", .5, .5),
-  [("dunes/s_Dunes__High-Res-103-scaled.jpg", .5, .5), ("dunes/s_Dunes__High-Res-91-scaled.jpg", .5, .5), ("dunes/s_Dunes__High-Res-51-scaled.jpg", .5, .5)],
-  [("dunes/dunes.jpg", .5, .5), ("dunes/s_TJR_4287__web.jpg", .5, .5)]),
  ("Gusto on the Beach", "$23", "带狗来", "冲浪救生俱乐部楼上，坐在窗边看海，咖啡$5。",
   "South Curl Curl海滩边，一整排窗户正对大海，阳台上也能坐。可以带狗，本地人遛狗顺路来吃早餐。",
   "必点：牛油果吐司$18，红薯饼$17，蔬菜碗$20。",
@@ -80,18 +74,6 @@ V = [
   ("shel3/277_5e03127827a7baa664fc98a56ca9ec3d.jpg", .5, .5),
   [("shel3/2559_IMG_0162.jpg", .5, .6), ("shel3/2607_20261004_FoH_Boatshed-Shelley-Beach_TomoO_High-100.jpg", .5, .5), ("shel3/2610_20261004_FoH_Boatshed-Shelley-Beach_TomoO_High-111.jpg", .5, .6)],
   [("shel3/2457_SB-Upper-Level-Seated-view-.jpg", .5, .5), ("shel3/1558_carousel-5.jpg", .5, .5)]),
- ("Next Door", "$28", "坐火车到", "坐火车就能到的海景早午餐，菜单最全。",
-  "Cronulla海滩边，早上6点半开门，窗外就是North Cronulla的沙滩。从早餐到午餐都有，带爸妈和小孩都好点。",
-  "必点：班戟$27，辣炒蛋$26，墨西哥早餐卷$22。",
-  ("nextdoor/0c00d19d77.jpg", .5, .5),
-  [("nextdoor/16f7d2e880.jpg", .5, .5), ("nextdoor/34f453fe78.jpg", .5, .5), ("nextdoor/b2e484f72e.jpg", .5, .5)],
-  [("nextdoor/f3f46dce11.jpg", .5, .5), ("nextdoor/5dfb54d369.jpg", .5, .4)]),
- ("Bianchini's", "$31", "落地窗", "一整排落地窗对着Elouera海滩，傍晚的光最好看。",
-  "Cronulla旁边Elouera海滩上，人少很多，停车也容易。不订位，早餐一直供应到下午2点半。",
-  "必点：日式松饼$26，土耳其鸡蛋$28，班尼迪克蛋$26。",
-  ("bianchinis/27d4d6_62f57d7db6ad4f67903e0799da1bc9b2~mv2.jpeg", .5, .5),
-  [("bianchinis/27d4d6_bd56545ecd234c988328d95312350c1c~mv2.jpg", .5, .5), ("bianchinis/27d4d6_f3db62337c4a444abf07c307c40e52eb~mv2.jpg", .5, .5), ("bianchinis/27d4d6_04be3b1f945c47d3857423b3c18e493a~mv2.jpeg", .5, .5)],
-  [("bianchinis/27d4d6_c1b2dcf787a24839ac3084ce83825543~mv2.jpg", .5, .5), ("bianchinis/27d4d6_b5d6d4c148c748178834c660558b5af7~mv2.jpeg", .5, .5)]),
  ("Sea Salt Clovelly", "", "最好拍", "绿白条纹遮阳伞对着Clovelly海湾，这几家里最好拍照。",
   "Clovelly海湾正对面，海水很平静，吃完可以下去浮潜。早餐8点到11点半，周末人很多。",
   "必点：昆士兰蟹肉蛋卷，松露炒蛋，牛油果吐司。",
@@ -110,7 +92,7 @@ def card(fn, v):
     name, price, tag, verdict, intro, order, hero, dishes, env = v
     img = Image.new("RGB", (W, H), CREAM); g = 4
     img.paste(crop(hero, W, 480), (0, 0)); y0 = 480 + g
-    la, lo, lab = LOC[name]; img = paste_map(img, minimap(la, lo, lab, zh(30 if len(lab) > 12 else 34, "Black")), W - 250 - 26, 22)
+    la, lo, lab = LOC[name]; img = paste_map(img, minimap(la, lo, lab, zh(30 if len(lab) > 12 else 34, "Black"), bounds=(-33.715, -33.95, 151.13, 151.34)), W - 250 - 26, 22)
     n = len(dishes); cw = (W - g * (n - 1)) // n
     for i, p in enumerate(dishes): img.paste(crop(p, cw, 300), (i * (cw + g), y0))
     y0 += 300 + g; cw = (W - g) // 2
@@ -134,7 +116,7 @@ for k, v in enumerate(V): card(f"{k + 2:02d}.jpg", v)
 img = Image.new("RGB", (W, H), CREAM); d = ImageDraw.Draw(img)
 d.text((60, 64), "悉尼海景早午餐人均", font=serif(80), fill=INK)
 d.text((62, 182), "一份早午餐加一杯咖啡，咖啡统一按$6算", font=zh(34), fill=GREY)
-fn_ = zh(46, "Medium"); fp = zh(46, "Bold"); ft = zh(32, "Bold"); y = 262; lh = 116
+fn_ = zh(46, "Medium"); fp = zh(46, "Bold"); ft = zh(32, "Bold"); y = 300; lh = 170
 for i, n in enumerate(NAMES):
     d.text((60, y), f"{i + 1}", font=fp, fill=GREY); d.text((120, y), n, font=fn_, fill=INK)
     d.text((122, y + 58), TAG[n], font=ft, fill=SEA)
@@ -175,7 +157,7 @@ def cov_four(fn, pick):
         img.paste(tile(n, cw - 4, ch - 4, zh(80, "Black"), zh(132, "Black"), zh(50, "Black"), tagy=30), ((i % 2) * cw + 2, (i // 2) * ch + 2))
     img.save(f"{OUT}/{fn}", quality=93)
 
-cov_five("cover_A.jpg", "悉尼海景早午餐", ("人均", "$22", "起"), ["The Boathouse Shelly Beach", "Gusto on the Beach", "Promenade Bondi", "The Boathouse Balmoral", "Bianchini's"])
-cov_five("cover_B.jpg", "悉尼看海吃早餐", ("人均", "$22", "起，坐沙滩上"), ["Promenade Bondi", "Pilu Baretto", "The Boathouse Shelly Beach", "The Boathouse Balmoral", "Next Door"])
-cov_four("cover_C.jpg", ["Promenade Bondi", "The Boathouse Shelly Beach", "The Boathouse Balmoral", "Bianchini's"])
+cov_five("cover_A.jpg", "悉尼海景早午餐", ("人均", "$23", "起"), ["The Boathouse Shelly Beach", "Gusto on the Beach", "Promenade Bondi", "The Boathouse Balmoral", "Pilu Baretto"])
+cov_five("cover_B.jpg", "悉尼看海吃早餐", ("人均", "$23", "起，坐沙滩上"), ["Promenade Bondi", "Pilu Baretto", "The Boathouse Shelly Beach", "The Boathouse Balmoral", "Gusto on the Beach"])
+cov_four("cover_C.jpg", ["Promenade Bondi", "The Boathouse Shelly Beach", "The Boathouse Balmoral", "Pilu Baretto"])
 print("ok")
