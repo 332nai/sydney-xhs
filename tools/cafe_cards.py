@@ -74,7 +74,7 @@ V = [
   ("shel3/277_5e03127827a7baa664fc98a56ca9ec3d.jpg", .5, .5),
   [("shel3/2559_IMG_0162.jpg", .5, .6), ("shel3/2607_20261004_FoH_Boatshed-Shelley-Beach_TomoO_High-100.jpg", .5, .5), ("shel3/2610_20261004_FoH_Boatshed-Shelley-Beach_TomoO_High-111.jpg", .5, .6)],
   [("shel3/2457_SB-Upper-Level-Seated-view-.jpg", .5, .5), ("shel3/1558_carousel-5.jpg", .5, .5)]),
- ("Sea Salt Clovelly", "", "最好拍", "绿白条纹遮阳伞对着Clovelly海湾，这几家里最好拍照。",
+ ("Sea Salt Clovelly", "$30", "最好拍", "绿白条纹遮阳伞对着Clovelly海湾，这几家里最好拍照。",
   "Clovelly海湾正对面，海水很平静，吃完可以下去浮潜。早餐8点到11点半，周末人很多。",
   "必点：昆士兰蟹肉蛋卷，松露炒蛋，牛油果吐司。",
   ("seasalt/0Y6A6332.jpg", .5, .5),
