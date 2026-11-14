@@ -151,15 +151,15 @@ def cover_full(fn, title):
         k = len(row); tw = (W - G * (k - 1)) // k; y0 = top + r * (rh + G)
         for i, (bar, drink, ph) in enumerate(row):
             t = crop(ph, tw, rh); dd = ImageDraw.Draw(t)
-            fd = fitf(drink, tw - 24, 66); fb = fitf(bar, tw - 30, 40, "Bold")
+            fd = fitf(drink, tw - 24, 66); fb = fitf(bar, tw - 30, 46, "Black")
             lay = Image.new("RGBA", t.size, (0, 0, 0, 0)); ld = ImageDraw.Draw(lay); bx = (tw - fb.getlength(bar)) / 2
             ld.rounded_rectangle((bx - 14, 18, bx + fb.getlength(bar) + 14, 30 + fb.size + 10), radius=8, fill=(0, 0, 0, 120))
             ld.text((bx, 22), bar, font=fb, fill=(255, 255, 255, 255))
             box = (int(bx - 20), 12, int(bx + fb.getlength(bar) + 20), int(40 + fb.size + 12))
-            lay.paste(lay.crop(box).filter(ImageFilter.GaussianBlur(6)), box)
+            lay.paste(lay.crop(box).filter(ImageFilter.GaussianBlur(2.6)), box)
             t = t.convert("RGBA"); t.alpha_composite(lay); t = t.convert("RGB"); dd = ImageDraw.Draw(t)
             outlined(dd, ((tw - fd.getlength(drink)) / 2, rh - fd.size - 40), drink, fd, max(6, fd.size // 10))
             img.paste(t, (i * (tw + G), y0))
     img.save(f"{OUT}/{fn}", quality=93)
-cover_full("cover_C.jpg", "悉尼最好喝的鸡尾酒！")
+cover_full("cover_C.jpg", "悉尼最好喝的鸡尾酒")
 print("cover ok")
