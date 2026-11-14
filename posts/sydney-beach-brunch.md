@@ -10,7 +10,7 @@ South Curl Curl冲浪救生俱乐部楼上，一整排窗户对着海，咖啡$5
 看邦迪：Promenade Bondi，人均$24
 邦迪海滩正中间，红白遮阳伞对着整片沙滩。早餐只有周末早上，不订位。
 
-冲浪看早餐：Pilu Baretto，人均$24
+边吃边看冲浪：Pilu Baretto，人均$24
 Freshwater海滩上，Pilu楼下的小咖啡店，早上6点半开门，鸡蛋意式培根卷$18。
 
 东南亚早餐：The Boathouse Balmoral，人均$25

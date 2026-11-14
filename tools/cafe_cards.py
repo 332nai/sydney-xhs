@@ -56,7 +56,7 @@ V = [
   ("promenade/7a969f17cf.jpg", .5, .55),
   [("promenade/69fc4b779b.jpg", .5, .5), ("promenade/3eb5dc7e24.jpg", .5, .5)],
   [("promenade/0c7b0a4b9d.jpg", .5, .5), ("promenade/3a3388c3d4.jpg", .5, .5)]),
- ("Pilu Baretto", "$24", "冲浪看早餐", "Pilu楼下的小咖啡店，同一片海，早餐价钱。",
+ ("Pilu Baretto", "$24", "边吃边看冲浪", "Pilu楼下的小咖啡店，同一片海，早餐价钱。",
   "Freshwater海滩上，早上6点半开门，一边吃一边看冲浪的人。不订位，坐长凳就能看到整个海湾。咖啡只要$5。",
   "必点：鸡蛋意式培根卷$18，牛油果吐司$18，西葫芦吐司$20。",
   ("baretto/Baretto-Nights-outlook-scaled.jpg", .5, .5),
