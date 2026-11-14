@@ -143,17 +143,22 @@ def cover_full(fn, title):
     img = Image.new("RGB", (W, H), BG); d = ImageDraw.Draw(img)
     ft = fitf(title, W - 100, 120); d.text(((W - ft.getlength(title)) / 2, 50), title, font=ft, fill=IVORY)
     top = 250
-    rows = [[("Spice Temple", "生肖鸡尾酒", "st_07.jpg"), ("Saké", "绿茶梅酒", "sk_01.jpg"), ("Teahouse", "茉莉抹茶", "th_05.jpg")],
+    rows = [[("Spice Temple", "草莓柚子", "st_07.jpg"), ("Saké", "绿茶梅酒", "sk_01.jpg"), ("Teahouse", "茉莉抹茶", "th_05.jpg")],
             [("Bar See See", "茅台调酒", "ss_04.jpg"), ("Bennelong", "茉莉荔枝", "ben_02.jpg"), ("Maybe Sammy", "荔枝马天尼", ("ms_06.jpg", .6, .5))],
-            [("Bar Bridge", "柚子马天尼", ("bb_00.png", .45, .5)), ("Grain", "黄油米香", "gr_00.jpg"), ("Eau de Vie", "烟熏威士忌", ("edv1.webp", .45, .5))]]
+            [("Bar Bridge", "柚子马天尼", ("bb_00.png", .45, .5)), ("Grain", "黄油米香", "gr_00.jpg"), ("Eau de Vie", "柚子姜汁", "edv5.jpg")]]
     rh = (H - top - G * 2) // 3
     for r, row in enumerate(rows):
         k = len(row); tw = (W - G * (k - 1)) // k; y0 = top + r * (rh + G)
         for i, (bar, drink, ph) in enumerate(row):
             t = crop(ph, tw, rh); dd = ImageDraw.Draw(t)
             fd = fitf(drink, tw - 24, 66); fb = fitf(bar, tw - 30, 40, "Bold")
+            lay = Image.new("RGBA", t.size, (0, 0, 0, 0)); ld = ImageDraw.Draw(lay); bx = (tw - fb.getlength(bar)) / 2
+            ld.rounded_rectangle((bx - 14, 18, bx + fb.getlength(bar) + 14, 30 + fb.size + 10), radius=8, fill=(0, 0, 0, 120))
+            ld.text((bx, 22), bar, font=fb, fill=(255, 255, 255, 255))
+            box = (int(bx - 20), 12, int(bx + fb.getlength(bar) + 20), int(40 + fb.size + 12))
+            lay.paste(lay.crop(box).filter(ImageFilter.GaussianBlur(6)), box)
+            t = t.convert("RGBA"); t.alpha_composite(lay); t = t.convert("RGB"); dd = ImageDraw.Draw(t)
             outlined(dd, ((tw - fd.getlength(drink)) / 2, rh - fd.size - 40), drink, fd, max(6, fd.size // 10))
-            outlined(dd, ((tw - fb.getlength(bar)) / 2, 22), bar, fb, 5)
             img.paste(t, (i * (tw + G), y0))
     img.save(f"{OUT}/{fn}", quality=93)
 cover_full("cover_C.jpg", "悉尼最好喝的鸡尾酒！")
