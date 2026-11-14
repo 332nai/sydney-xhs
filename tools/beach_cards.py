@@ -89,13 +89,52 @@ def half(img, y0, hh, v, ph=300):
     for ln in wrap(order, fi, 960): d.text((62, y), ln, font=fi, fill=INK); y += lh
     assert y < y0 + hh - 6, (name, y - y0)
 
-def page(fn, a, b=None):
-    img = Image.new("RGB", (W, H), CREAM)
-    if b: half(img, 0, 720, a, 270); half(img, 720, 720, b, 270); ImageDraw.Draw(img).rectangle((0, 716, W, 724), fill=CREAM)
-    else: half(img, 0, H, a, 1000)
+# 每家一张卡：第一张是大图海景，其余至少三张环境图
+PICS = {
+ "North Bondi RSL": [("rsl/s_Nth_Bondi_RSL_Interiors_0271_paul.jpg", .5, .5), ("rsl/s_Nth_Bondi_RSL_Interiors_0121_paul-scaled.jpg", .5, .5),
+                     ("rsl/s_DAE460DF-DC77-4A3C-A6AB-C99EA14272DF_1_201_a-scaled.jpeg", .5, .5), ("rsl/s_Nth_Bondi_RSL_Interiors_0251_paul-scaled.jpg", .5, .5),
+                     ("rsl/s_492365243_1502904180693855_6526830898225430598_n.jpg", .5, .45)],
+ "Scarborough Hotel": [("scar/a_1780907752595.jpg", .3, .35, 1.2), ("scar2/0c0217b4.jpg", .5, .25), ("scar2/9306a803.jpg", .5, .5),
+                       ("scar/a_1781251328494.jpg", .5, .35), ("scar/s_20251203-scarborough+hotel+030_1.jpg", .5, .5)],
+ "Bobbys": [("bobbys3/98bfed635fcc8b9b5dea6110b82c8a65.webp", .5, .5), ("bobbys3/2b2b88919bc786d73bf4016398456abc.webp", .5, .5),
+            ("bobbys3/915f0cbd2201b3c46099fb4230ac1d19.webp", .5, .5), ("bobbys/s_GesUDh3esVPeiX36SM3XPNtE4c.jpg", .5, .5),
+            ("bobbys3/5f3be81e0b7fb602c14e9bdfa79d0530.webp", .5, .5)],
+ "Rick Stein": [("rick/to_106335075.jpg", .5, .45), ("rick2/cp_10-1.jpg", .5, .5), ("rick2/cp_11-2.jpg", .5, .5),
+                ("rick2/cp_14.jpg", .5, .5), ("rick/to_106349876.jpg", .5, .5)],
+ "Pilu": [("pilu/s_IMG001-scaled.jpg", .5, .5), ("pilu/s_7-Pilu-at-Freshwater-173-scaled.jpg", .5, .5), ("pilu/s_WH0004-scaled.jpg", .5, .5),
+          ("pilu/s_dn3ulNkA-scaled.jpg", .5, .5), ("pilu/s_7-Pilu-at-Freshwater-139-scaled.jpg", .5, .5)],
+ "Sean's": [("seans2/f1d5f6188bf147588c16143ffc2b2e6c.webp", .5, .5), ("seans2/f4b7826c6597b35667d1aa19cd1845f7.webp", .5, .5),
+            ("seans2/fda023f0cae7ffd8037057cad46805ed.webp", .5, .5), ("seans/to_106155430.jpg", .55, .5),
+            ("seans/to_106155434.jpg", .5, .5)],
+ "Jonah's": [("jonahs/s_mo_main.jpg", .5, .3), ("jonahs/s_Header-V2-scaled.jpg", .55, .8, 1.5), ("jonahs/s_IMG_3574-Copy-scaled.jpg", .5, .5),
+             ("jonahs/s_CN_PRINT_407-scaled.jpg", .5, .5)],
+}
+
+def card(fn, v):
+    name, price, tag, verdict, intro, order, _ = v
+    img = Image.new("RGB", (W, H), CREAM); ps = PICS[name]; g = 4
+    hh = 580; img.paste(crop(ps[0], W, hh), (0, 0)); rest = ps[1:]; y0 = hh + g
+    if len(rest) == 4:
+        cw, ch = (W - g) // 2, 270
+        for i, p in enumerate(rest): img.paste(crop(p, cw, ch), ((i % 2) * (cw + g), y0 + (i // 2) * (ch + g)))
+        y = y0 + 2 * ch + g
+    else:
+        n = len(rest); cw, ch = (W - g * (n - 1)) // n, 480
+        for i, p in enumerate(rest): img.paste(crop(p, cw, ch), (i * (cw + g), y0))
+        y = y0 + ch
+    d = ImageDraw.Draw(img); fn_ = serif(54); fp = zh(46, "Black"); fv = zh(34, "Bold"); fi = zh(31); lh = 44
+    y += 20
+    d.text((60, y), name, font=fn_, fill=INK); t = "人均" + price
+    d.text((W - 60 - fp.getlength(t), y + 4), t, font=fp, fill=INK); y += 76
+    for ln in wrap(verdict, fv, 960): d.text((62, y), ln, font=fv, fill=SEA); y += 50
+    y += 4
+    for ln in wrap(intro, fi, 960): d.text((62, y), ln, font=fi, fill=GREY); y += lh
+    y += 6
+    for ln in wrap(order, fi, 960): d.text((62, y), ln, font=fi, fill=INK); y += lh
+    assert y < H - 10, (name, y)
     img.save(f"{OUT}/{fn}", quality=93)
 
-page("03.jpg", V[0], V[1]); page("04.jpg", V[2], V[3]); page("05.jpg", V[4], V[5]); page("06.jpg", V[6])
+for k, v in enumerate(V): card(f"{k + 3:02d}.jpg", v)
 
 # 01 排行
 img = Image.new("RGB", (W, H), CREAM); d = ImageDraw.Draw(img)
