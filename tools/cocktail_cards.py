@@ -27,6 +27,12 @@ def wrap(text, font, width):
     return lines
 
 G = 6
+LABEL = {"Spice Temple": "草莓柚子", "Saké": "绿茶梅酒", "Teahouse": "茉莉抹茶", "Bar See See": "茅台调酒", "Bennelong Bar": "茉莉荔枝",
+         "Maybe Sammy": "荔枝马天尼", "Bar Bridge": "柚子马天尼", "Grain": "黄油米香", "Eau de Vie": "柚子姜汁"}
+def label(img, text, box):
+    x0, y0, x1, y1 = box; d = ImageDraw.Draw(img); f = zh(84, "Black")
+    while f.getlength(text) > (x1 - x0) - 40: f = zh(f.size - 4, "Black")
+    d.text((x0 + ((x1 - x0) - f.getlength(text)) / 2, y1 - f.size - 44), text, font=f, fill=(255, 244, 222), stroke_width=8, stroke_fill=(24, 14, 10))
 def mosaic(img, photos, top, hp):
     """4到6张拼图：左上一张大图，其余排在右边和下面"""
     n = len(photos); bigw = int(W * .62); r1 = int(hp * .62)
@@ -39,6 +45,7 @@ def mosaic(img, photos, top, hp):
         k = n - 3; bw = (W - G * (k - 1)) // k
         boxes += [(i * (bw + G), top + r1 + G, i * (bw + G) + bw, top + hp) for i in range(k)]
     for p, (x0, y0, x1, y1) in zip(photos, boxes): img.paste(crop(p, x1 - x0, y1 - y0), (x0, y0))
+    return boxes[0]
 
 def card(fn, name, where, intro, drinks, photos):
     fn_ = zh(32, "Bold"); fd = zh(28); fi = zh(30)
@@ -46,7 +53,8 @@ def card(fn, name, where, intro, drinks, photos):
     for dn, price, desc in drinks: th += 46 + len(wrap(desc, fd, 950)) * 40 + 12
     hp = min(860, H - th - 60)
     img = Image.new("RGB", (W, H), BG); d = ImageDraw.Draw(img)
-    mosaic(img, photos, 0, hp)
+    b0 = mosaic(img, photos, 0, hp)
+    if name in LABEL: label(img, LABEL[name], b0)
     y = hp + 30
     d.text((60, y), name, font=serif(58), fill=IVORY); y += 84
     d.text((62, y), where, font=zh(28), fill=GOLD); y += 52
@@ -86,26 +94,26 @@ BARS = [
   "2025年10月开的白酒酒吧，酒单以茅台为主角，装修用了茅台飞天的图案，下酒菜是Lee Ho Fook做的椒盐莲藕片和生蚝。",
   [("High Low Martini", "$29", "店里的招牌马天尼。"),
    ("Strawberry & Yuzu Spritz", "$23", "草莓加柚子的气泡酒，酒感轻。")],
-  ["ss_01.jpg", "ss_00.jpg", "ss_04.jpg", "ss_03.jpg", "ss_05.jpg", "ss_02.jpg"]),
+  ["ss_04.jpg", "ss_00.jpg", "ss_01.jpg", "ss_03.jpg", "ss_05.jpg", "ss_02.jpg"]),
  ("Bennelong Bar", "悉尼歌剧院里",
   "坐在歌剧院的帆顶下面喝酒，窗外是海港和CBD夜景。现在的酒单叫Sip the Canvas，每一杯都以一幅名画命名。",
   [("戴珍珠耳环的少女", "$34", "茉莉花金酒加Lillet、柚子酒和荔枝苏打，花香果香都很淡雅。"),
    ("神奈川冲浪里", "$30", "日本Roku金酒加日本味美思和卡波斯柑，偏咸鲜。"),
    ("荔枝薄荷茶（无酒精）", "$22", "澄清的荔枝和茶，加柑橘、蜂蜜和薄荷。")],
-  ["ben_04.jpg", "ben_02.jpg", "ben_03.jpg", "ben_07.jpg", "ben_08.jpg"]),
+  ["ben_02.jpg", "ben_04.jpg", "ben_03.jpg", "ben_07.jpg", "ben_08.jpg"]),
  ("Maybe Sammy", "The Rocks",
   "多次入选世界50佳酒吧，主题是60年代的拉斯维加斯，调酒师穿粉色西装。现在的酒单叫Showtime，每一杯对应一部电影或剧。",
   [("迷你荔枝马天尼", "$15", "小杯装，下午欢乐时光$8。"),
    ("迷你茉莉花Negroni", "$15", "经典Negroni加茉莉花茶。"),
    ("Peaky Blinders", "$27", "威士忌加雪莉酒、茉莉、苹果蜂蜜酒和绿茶苏打。"),
    ("Mad Men", "$30", "黑麦和波本威士忌加味美思、乌龙茶和谷物。")],
-  [("ms_14.jpg", .5, .5), "ms_15.jpg", "ms_06.jpg", "ms_09.jpg", "ms_04.jpg"]),
+  [("ms_06.jpg", .6, .5), "ms_14.jpg", "ms_15.jpg", "ms_09.jpg", "ms_04.jpg"]),
  ("Bar Bridge", "CBD，Bridge Street地下，离环形码头几分钟",
   "2026年4月开的马天尼酒吧，Bar Planet同一个团队。红色丝绒卡座和台灯，下午4点到6点马天尼$13。",
   [("柚子马天尼", "", "柚子金酒加柑橘伏特加，清爽带果香。"),
    ("Highlight", "", "哈密瓜加玄米茶苏打，很清爽。"),
    ("泡菜马天尼", "", "牡蛎壳金酒加泡菜调味和海带伏特加，咸鲜重口。")],
-  ["bb_01.png", "bb_00.png", "bb_03.png", "bb_02.png", "bb_05.jpg"]),
+  [("bb_00.png", .45, .5), "bb_01.png", "bb_03.png", "bb_02.png", "bb_05.jpg"]),
  ("Grain", "环形码头旁，四季酒店一楼",
   "酒店里的酒吧，安静，适合小酌聊天。每杯招牌鸡尾酒都配一口小吃。",
   [("Golden Grain", "$34", "波本加黑麦威士忌和黄油米，有一股米香。"),
@@ -116,7 +124,7 @@ BARS = [
   "澳洲最早的一批隐藏式鸡尾酒吧，曾经排进世界50佳酒吧第13名。灯光很暗，调酒师爱用火、烟和干冰做表演。",
   [("Yuzu Mule", "$26起", "柚子酱、蜂蜜、青柠加姜汁啤酒，先有姜的微辣，最后是柚子香。"),
    ("Smokey Rob Roy", "$36.5", "老板的招牌，几款威士忌加朗姆和自制甜味美思，罩在木烟里端上桌。")],
-  [("edv1.webp", .45, .5), "edv3.jpg", "edv2.jpg", "edv4.jpg", "edv5.jpg", "edv6.jpg"]),
+  ["edv5.jpg", "edv3.jpg", ("edv1.webp", .45, .5), "edv4.jpg", "edv2.jpg", "edv6.jpg"]),
 ]
 for i, (n, w, intro, dr, ph) in enumerate(BARS):
     card(f"{i + 1:02d}.jpg", n, w, intro, dr, ph)
