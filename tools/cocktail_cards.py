@@ -61,48 +61,62 @@ def card(fn, name, where, intro, drinks, photos):
     img.save(f"{OUT}/{fn}", quality=93)
 
 BARS = [
+ ("Spice Temple", "CBD，Bligh Street的地下室",
+  "Neil Perry创办的川湘云菜馆，酒单按十二生肖设计，每个属相一杯，点自己属相那杯最有意思。还有茅台调的鸡尾酒。",
+  [("兔 Rabbit", "$29", "金酒加茉莉和接骨木花，花香清新。"),
+   ("猪 Pig", "$44", "皮斯科加玫瑰水、荔枝和Prosecco，一壶可以分着喝。"),
+   ("羊 Sheep", "$29", "皮斯科加草莓、清酒和柚子，酸甜顺口。"),
+   ("茅台王子", "$28", "茅台王子酒加菠萝、柠檬和苦酒，酱香里带热带水果味。")],
+  ["st_07.jpg", "st_00.jpg", "st_13.jpg", "st_14.jpg", "st_09.jpg", "st_04.jpg"]),
+ ("Teahouse", "Barangaroo，Crown Sydney三楼",
+  "丝绒沙发、金色装饰、鸟笼卡座，户外露台看得到海港。鸡尾酒大多用中国茶入酒，还能配点心。",
+  [("Jade Sour 翡翠酸酒", "$26", "金酒加茉莉花茶和杏仁，蛋白泡沫上撒抹茶粉。"),
+   ("荔枝玫瑰马天尼", "$26", "伏特加加荔枝和玫瑰茶。"),
+   ("Blossom Breeze 桂花", "$26", "桂花茶泡过的龙舌兰，加西柚和一点盐。"),
+   ("四川Boulevardier", "$26", "花椒泡过的威士忌，加Aperol和甜味美思。")],
+  ["th_05.jpg", "th_01.jpg", "th_02.jpg", "th_04.jpg", "th_06.jpg"]),
+ ("Saké", "The Rocks",
+  "日料餐厅，酒单拿过澳洲最佳清酒酒单。鸡尾酒大量用梅酒、绿茶、玄米茶和柚子。",
+  [("Hummingbird 蜂鸟", "$30", "青柠叶伏特加加绿茶梅酒和百香果。"),
+   ("Miss Wednesday", "$28", "烧酒加荔枝利口酒、玫瑰和香草。"),
+   ("Kogane Sour", "$29", "玄米茶泡过的伏特加，加烤西柚和柚子。"),
+   ("芝麻古典", "$32", "芝麻油洗过的Nikka威士忌，芝麻香很浓。")],
+  ["sk_01.jpg", "sk_10.jpg", "sk_11.jpg", "sk_00.jpg", "sk_07.jpg"]),
  ("Bar See See", "CBD，Porter House酒店顶楼，楼下是中餐厅Lee Ho Fook",
   "2025年10月开的白酒酒吧，酒单以茅台为主角，装修用了茅台飞天的图案，下酒菜是Lee Ho Fook做的椒盐莲藕片和生蚝。",
   [("High Low Martini", "$29", "店里的招牌马天尼。"),
    ("Strawberry & Yuzu Spritz", "$23", "草莓加柚子的气泡酒，酒感轻。")],
   ["ss_01.jpg", "ss_00.jpg", "ss_04.jpg", "ss_03.jpg", "ss_05.jpg", "ss_02.jpg"]),
- ("Teahouse", "Barangaroo，Crown Sydney三楼",
-  "丝绒沙发、金色装饰、鸟笼卡座，户外露台看得到海港。鸡尾酒大多用中国茶入酒，还能配点心。",
-  [("Jade Sour", "$26", "金酒加茉莉花茶和杏仁，蛋白打出绵密泡沫，上面撒抹茶粉。"),
-   ("Lychee and Rose Martini", "$26", "伏特加加荔枝和玫瑰茶，蛋白打出泡沫。"),
-   ("Blossom Breeze", "$26", "桂花茶泡过的龙舌兰，加西柚和一点盐，咸香清爽。"),
-   ("Sichuan Boulevardier", "$26", "花椒泡过的威士忌，加Aperol和甜味美思。")],
-  ["th_05.jpg", "th_01.jpg", "th_02.jpg", "th_04.jpg", "th_06.jpg"]),
- ("Eau de Vie", "CBD，Wynyard火车站旁边的小巷里",
-  "澳洲最早的一批隐藏式鸡尾酒吧，曾经排进世界50佳酒吧第13名。灯光很暗，调酒师爱用火、烟和干冰做表演。",
-  [("Smokey Rob Roy", "$36.5", "老板的招牌，几款威士忌加朗姆和自制甜味美思，罩在木烟里端上桌。"),
-   ("Yuzu Mule", "$26起", "柚子酱、蜂蜜、青柠加姜汁啤酒，先有姜的微辣，最后是柚子香。"),
-   ("Kitty @ The Cocobongo", "$31.5", "伏特加加百香果、接骨木花和香草，蛋白泡沫很绵密。")],
-  [("edv1.webp", .45, .5), "edv3.jpg", "edv2.jpg", "edv4.jpg", "edv5.jpg", "edv6.jpg"]),
  ("Bennelong Bar", "悉尼歌剧院里",
   "坐在歌剧院的帆顶下面喝酒，窗外是海港和CBD夜景。现在的酒单叫Sip the Canvas，每一杯都以一幅名画命名。",
-  [("Girl with a Pearl Earring", "$34", "茉莉花金酒加Lillet、柚子酒和荔枝苏打，花香果香都很淡雅。"),
-   ("The Great Wave off Kanagawa", "$30", "日本Roku金酒加日本味美思和卡波斯柑，偏咸鲜。"),
-   ("Clouds of Passion", "$36", "草莓椰子伏特加加百香果和香草，上面盖一朵香气云，是十多年的招牌。")],
+  [("戴珍珠耳环的少女", "$34", "茉莉花金酒加Lillet、柚子酒和荔枝苏打，花香果香都很淡雅。"),
+   ("神奈川冲浪里", "$30", "日本Roku金酒加日本味美思和卡波斯柑，偏咸鲜。"),
+   ("荔枝薄荷茶（无酒精）", "$22", "澄清的荔枝和茶，加柑橘、蜂蜜和薄荷。")],
   ["ben_04.jpg", "ben_02.jpg", "ben_03.jpg", "ben_07.jpg", "ben_08.jpg"]),
- ("Bar Bridge", "CBD，Bridge Street地下，离环形码头几分钟",
-  "2026年4月开的马天尼酒吧，Bar Planet同一个团队。红色丝绒卡座和台灯，下午4点到6点马天尼$13。",
-  [("Citron Martini", "", "柚子金酒加柑橘伏特加，清爽带果香。"),
-   ("Highlight", "", "哈密瓜加玄米茶苏打，很清爽。"),
-   ("Kimchi Martini", "", "牡蛎壳金酒加泡菜调味和海带伏特加，咸鲜重口。")],
-  ["bb_01.png", "bb_00.png", "bb_03.png", "bb_02.png", "bb_05.jpg"]),
  ("Maybe Sammy", "The Rocks",
   "多次入选世界50佳酒吧，主题是60年代的拉斯维加斯，调酒师穿粉色西装。现在的酒单叫Showtime，每一杯对应一部电影或剧。",
-  [("Peaky Blinders", "$27", "Benriach威士忌加雪莉酒、茉莉、苹果蜂蜜酒和绿茶苏打，茶香明显。"),
-   ("迷你荔枝马天尼", "$15", "小杯装，下午欢乐时光$8。"),
-   ("迷你茉莉花Negroni", "$15", "经典Negroni加茉莉花茶。")],
+  [("迷你荔枝马天尼", "$15", "小杯装，下午欢乐时光$8。"),
+   ("迷你茉莉花Negroni", "$15", "经典Negroni加茉莉花茶。"),
+   ("Peaky Blinders", "$27", "威士忌加雪莉酒、茉莉、苹果蜂蜜酒和绿茶苏打。"),
+   ("Mad Men", "$30", "黑麦和波本威士忌加味美思、乌龙茶和谷物。")],
   [("ms_14.jpg", .5, .5), "ms_15.jpg", "ms_06.jpg", "ms_09.jpg", "ms_04.jpg"]),
+ ("Bar Bridge", "CBD，Bridge Street地下，离环形码头几分钟",
+  "2026年4月开的马天尼酒吧，Bar Planet同一个团队。红色丝绒卡座和台灯，下午4点到6点马天尼$13。",
+  [("柚子马天尼", "", "柚子金酒加柑橘伏特加，清爽带果香。"),
+   ("Highlight", "", "哈密瓜加玄米茶苏打，很清爽。"),
+   ("泡菜马天尼", "", "牡蛎壳金酒加泡菜调味和海带伏特加，咸鲜重口。")],
+  ["bb_01.png", "bb_00.png", "bb_03.png", "bb_02.png", "bb_05.jpg"]),
  ("Grain", "环形码头旁，四季酒店一楼",
   "酒店里的酒吧，安静，适合小酌聊天。每杯招牌鸡尾酒都配一口小吃。",
   [("Golden Grain", "$34", "波本加黑麦威士忌和黄油米，有一股米香。"),
    ("Woman in the City", "$28", "黑麦威士忌加芝麻酊和气泡葡萄，芝麻香很特别。"),
    ("Wings to a Poem", "$30", "波本加奶酪Campari，上面一层班兰香气。")],
   ["gr_00.jpg", "gr_07.jpg", "gr_03.png", "gr_04.jpg", "gr_05.jpg"]),
+ ("Eau de Vie", "CBD，Wynyard火车站旁边的小巷里",
+  "澳洲最早的一批隐藏式鸡尾酒吧，曾经排进世界50佳酒吧第13名。灯光很暗，调酒师爱用火、烟和干冰做表演。",
+  [("Yuzu Mule", "$26起", "柚子酱、蜂蜜、青柠加姜汁啤酒，先有姜的微辣，最后是柚子香。"),
+   ("Smokey Rob Roy", "$36.5", "老板的招牌，几款威士忌加朗姆和自制甜味美思，罩在木烟里端上桌。")],
+  [("edv1.webp", .45, .5), "edv3.jpg", "edv2.jpg", "edv4.jpg", "edv5.jpg", "edv6.jpg"]),
 ]
 for i, (n, w, intro, dr, ph) in enumerate(BARS):
     card(f"{i + 1:02d}.jpg", n, w, intro, dr, ph)
@@ -129,15 +143,15 @@ def cover_full(fn, title):
     img = Image.new("RGB", (W, H), BG); d = ImageDraw.Draw(img)
     ft = fitf(title, W - 100, 120); d.text(((W - ft.getlength(title)) / 2, 50), title, font=ft, fill=IVORY)
     top = 250
-    rows = [[("Teahouse", "茉莉抹茶酸酒", "th_05.jpg"), ("Bennelong", "戴珍珠耳环的少女", "ben_02.jpg")],
-            [("Eau de Vie", "烟熏罗布罗伊", ("edv1.webp", .45, .5)), ("Maybe Sammy", "浴血黑帮", ("ms_06.jpg", .5, .5))],
-            [("Bar See See", "高低马天尼", "ss_04.jpg"), ("Bar Bridge", "柚子马天尼", ("bb_00.png", .45, .5)), ("Grain", "黄金米香", "gr_00.jpg")]]
+    rows = [[("Spice Temple", "生肖鸡尾酒", "st_07.jpg"), ("Saké", "绿茶梅酒", "sk_01.jpg"), ("Teahouse", "茉莉抹茶", "th_05.jpg")],
+            [("Bar See See", "茅台调酒", "ss_04.jpg"), ("Bennelong", "茉莉荔枝", "ben_02.jpg"), ("Maybe Sammy", "荔枝马天尼", ("ms_06.jpg", .6, .5))],
+            [("Bar Bridge", "柚子马天尼", ("bb_00.png", .45, .5)), ("Grain", "黄油米香", "gr_00.jpg"), ("Eau de Vie", "烟熏威士忌", ("edv1.webp", .45, .5))]]
     rh = (H - top - G * 2) // 3
     for r, row in enumerate(rows):
         k = len(row); tw = (W - G * (k - 1)) // k; y0 = top + r * (rh + G)
         for i, (bar, drink, ph) in enumerate(row):
             t = crop(ph, tw, rh); dd = ImageDraw.Draw(t)
-            fd = fitf(drink, tw - 30, 76); fb = fitf(bar, tw - 30, 44, "Bold")
+            fd = fitf(drink, tw - 24, 66); fb = fitf(bar, tw - 30, 40, "Bold")
             outlined(dd, ((tw - fd.getlength(drink)) / 2, rh - fd.size - 40), drink, fd, max(6, fd.size // 10))
             outlined(dd, ((tw - fb.getlength(bar)) / 2, 22), bar, fb, 5)
             img.paste(t, (i * (tw + G), y0))
