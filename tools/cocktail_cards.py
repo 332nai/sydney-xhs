@@ -159,5 +159,5 @@ def cover_full(fn, title):
             outlined(dd, ((tw - fd.getlength(drink)) / 2, rh - fd.size - 40), drink, fd, max(6, fd.size // 10))
             img.paste(t, (i * (tw + G), y0))
     img.save(f"{OUT}/{fn}", quality=93)
-cover_full("cover_C.jpg", "悉尼最好喝的特调")
+cover_full("cover_C.jpg", "悉尼最好喝的cooktail")
 print("cover ok")
