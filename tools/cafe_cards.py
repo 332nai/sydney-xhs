@@ -2,6 +2,8 @@
 每家一张卡：一张大海景，三张菜，两张环境。
 用法：python3 tools/cafe_cards.py 图片目录 输出目录"""
 import sys, os, re
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from sydney_minimap import minimap, paste_map
 from PIL import Image, ImageDraw, ImageFont, ImageEnhance, ImageFilter, ImageOps
 Image.MAX_IMAGE_PIXELS = None
 W, H = 1080, 1440
@@ -90,19 +92,25 @@ V = [
   ("bianchinis/27d4d6_62f57d7db6ad4f67903e0799da1bc9b2~mv2.jpeg", .5, .5),
   [("bianchinis/27d4d6_bd56545ecd234c988328d95312350c1c~mv2.jpg", .5, .5), ("bianchinis/27d4d6_f3db62337c4a444abf07c307c40e52eb~mv2.jpg", .5, .5), ("bianchinis/27d4d6_04be3b1f945c47d3857423b3c18e493a~mv2.jpeg", .5, .5)],
   [("bianchinis/27d4d6_c1b2dcf787a24839ac3084ce83825543~mv2.jpg", .5, .5), ("bianchinis/27d4d6_b5d6d4c148c748178834c660558b5af7~mv2.jpeg", .5, .5)]),
- ("Sea Salt Clovelly", "不标价", "最好拍", "绿白条纹遮阳伞对着Clovelly海湾，这几家里最好拍照。",
-  "Clovelly海湾正对面，海水很平静，吃完可以下去浮潜。官网菜单不标价，所以没放进排名。早餐8点到11点半。",
+ ("Sea Salt Clovelly", "", "最好拍", "绿白条纹遮阳伞对着Clovelly海湾，这几家里最好拍照。",
+  "Clovelly海湾正对面，海水很平静，吃完可以下去浮潜。早餐8点到11点半，周末人很多。",
   "必点：昆士兰蟹肉蛋卷，松露炒蛋，牛油果吐司。",
   ("seasalt/0Y6A6332.jpg", .5, .5),
   [("seasalt/0Y6A6613.jpg", .5, .5), ("seasalt/0Y6A6381.jpg", .5, .45), ("seasalt/0Y6A6485.jpg", .5, .5)],
   [("seasalt/0Y6A6245.jpg", .5, .45), ("seasalt/0Y6A6306.jpg", .5, .5)]),
 ]
+LOC = {"Dunes Kiosk": (-33.588, 151.323, "Palm Beach"), "Gusto on the Beach": (-33.773, 151.296, "South Curl Curl"),
+       "Promenade Bondi": (-33.891, 151.278, "Bondi Beach"), "Pilu Baretto": (-33.780, 151.292, "Freshwater"),
+       "The Boathouse Balmoral": (-33.826, 151.253, "Balmoral"), "The Boathouse Shelly Beach": (-33.800, 151.297, "Manly"),
+       "Next Door": (-34.048, 151.157, "Cronulla"), "Bianchini's": (-34.040, 151.160, "Elouera"),
+       "Sea Salt Clovelly": (-33.913, 151.267, "Clovelly")}
 NAMES = [v[0] for v in V]; PR = {v[0]: v[1] for v in V}; TAG = {v[0]: v[2] for v in V}
 
 def card(fn, v):
     name, price, tag, verdict, intro, order, hero, dishes, env = v
     img = Image.new("RGB", (W, H), CREAM); g = 4
     img.paste(crop(hero, W, 480), (0, 0)); y0 = 480 + g
+    la, lo, lab = LOC[name]; img = paste_map(img, minimap(la, lo, lab, zh(30 if len(lab) > 12 else 34, "Black")), W - 250 - 26, 22)
     n = len(dishes); cw = (W - g * (n - 1)) // n
     for i, p in enumerate(dishes): img.paste(crop(p, cw, 300), (i * (cw + g), y0))
     y0 += 300 + g; cw = (W - g) // 2
@@ -110,7 +118,7 @@ def card(fn, v):
     y = y0 + 260 + 20
     d = ImageDraw.Draw(img); fn_ = serif(52); fp = zh(46, "Black"); fv = zh(34, "Bold"); fi = zh(31); lh = 44
     d.text((60, y), name, font=fn_, fill=INK); t = "人均" + price
-    d.text((W - 60 - fp.getlength(t), y + 4), t, font=fp, fill=INK) if price[0] == "$" else d.text((W - 60 - zh(36, "Bold").getlength(price), y + 12), price, font=zh(36, "Bold"), fill=GREY)
+    if price: d.text((W - 60 - fp.getlength(t), y + 4), t, font=fp, fill=INK)
     y += 74
     for ln in wrap(verdict, fv, 960): d.text((62, y), ln, font=fv, fill=SEA); y += 48
     y += 4
@@ -130,6 +138,7 @@ fn_ = zh(46, "Medium"); fp = zh(46, "Bold"); ft = zh(32, "Bold"); y = 262; lh = 
 for i, n in enumerate(NAMES):
     d.text((60, y), f"{i + 1}", font=fp, fill=GREY); d.text((120, y), n, font=fn_, fill=INK)
     d.text((122, y + 58), TAG[n], font=ft, fill=SEA)
+    if not PR[n]: y += lh; continue
     pw = fp.getlength(PR[n]); x0 = 120 + fn_.getlength(n) + 20; x1 = W - 60 - pw - 20
     for xx in range(int(x0), int(x1), 14): d.ellipse((xx, y + 32, xx + 4, y + 36), fill=LINE)
     d.text((W - 60 - pw, y), PR[n], font=fp, fill=INK); y += lh
