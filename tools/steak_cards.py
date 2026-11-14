@@ -166,9 +166,7 @@ def blur_name(t, text, f, cx, y, r=7):
     reg = lay.crop(box).filter(ImageFilter.GaussianBlur(r)); lay.paste(reg, box)
     base = t.convert("RGBA"); base.alpha_composite(lay); return base.convert("RGB")
 def pill(d, cx, y, text, f, pad=18, fill=REDB):
-    w = f.getlength(text) + pad * 2
-    d.rounded_rectangle((cx - w / 2, y, cx + w / 2, y + f.size + 22), radius=12, fill=fill)
-    d.text((cx - w / 2 + pad, y + 6), text, font=f, fill="white")
+    outlined(d, (cx - f.getlength(text) / 2, y), text, f, max(5, f.size // 12))
 ORDER = [v[1] for v in V]; PIC = {v[1]: v[0] for v in V}; PR = {v[1]: v[2] for v in V}
 # 首页上避开盘子上印的店名
 PIC["Bistecca"] = ("bistecca.jpg", .55, .62, 1.45); PIC["Alfie's"] = ("alfies.jpg", .28, .62, 1.6)
@@ -194,7 +192,6 @@ def cov_hero(fn):
     d.text((x, 160), "$55", font=zh(88, "Black"), fill=(255, 196, 64)); x += zh(88, "Black").getlength("$55") + 16
     d.text((x, 175), "到", font=f2, fill=CRM); x += f2.getlength("到") + 16
     d.text((x, 160), "$240", font=zh(88, "Black"), fill=(255, 196, 64))
-    pill(d, W - 60 - zh(44, "Black").getlength("12家排好了") / 2 - 18, 70, "12家排好了", zh(44, "Black"))
     cw, ch = (W - 6) // 2, (H - 300 - 6) // 3; ftag = zh(64, "Black"); fp = zh(96, "Black"); fname = zh(36, "Black")
     for i, n in enumerate(pick):
         t = crop(PIC[n], cw - 6, ch - 6); dd = ImageDraw.Draw(t)
@@ -215,9 +212,6 @@ def cov_four(fn):
         outlined(d, (((cw - 4) - fp.getlength("人均" + PR[n][1:]) * 0 - fp.getlength(PR[n])) / 2, ch / 2 - 40), PR[n], fp, 10)
         t = blur_name(t, n, fname, (cw - 4) / 2, ch - 90, r=8)
         img.paste(t, ((i % 2) * cw + 2, (i // 2) * ch + 2))
-    d = ImageDraw.Draw(img); f = zh(60, "Black"); s = "悉尼牛排人均排行"
-    w = f.getlength(s) + 60; d.rounded_rectangle(((W - w) / 2, H / 2 - 52, (W + w) / 2, H / 2 + 52), radius=20, fill=CRM)
-    d.text(((W - f.getlength(s)) / 2, H / 2 - 40), s, font=f, fill=BRN)
     img.save(f"{OUT}/{fn}", quality=93)
 
 def cov_versus(fn):
