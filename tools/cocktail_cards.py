@@ -117,3 +117,30 @@ def cover(fn, pics, t1, t2):
 cover("cover_A.jpg", ["th_05.jpg", ("edv1.webp", .45, .5), "ss_04.jpg", "bb_01.png", "ben_02.jpg", "gr_00.jpg"], "悉尼最适合华人的", "鸡尾酒")
 cover("cover_B.jpg", ["ss_01.jpg", "th_05.jpg", "gr_03.png", "ss_03.jpg", ("edv1.webp", .45, .5), "bb_00.png"], "茉莉、桂花、荔枝", "悉尼的东方鸡尾酒")
 print("ok")
+
+# 首页：标题 + 每家一格，写酒吧名和招牌酒中文名
+CRM = (255, 244, 222); BRN = (24, 14, 10)
+def outlined(d, xy, text, f, sw): d.text(xy, text, font=f, fill=CRM, stroke_width=sw, stroke_fill=BRN)
+def fitf(text, maxw, start, w="Black"):
+    s = start
+    while zh(s, w).getlength(text) > maxw and s > 24: s -= 2
+    return zh(s, w)
+def cover_full(fn, title):
+    img = Image.new("RGB", (W, H), BG); d = ImageDraw.Draw(img)
+    ft = fitf(title, W - 100, 120); d.text(((W - ft.getlength(title)) / 2, 50), title, font=ft, fill=IVORY)
+    top = 250
+    rows = [[("Teahouse", "茉莉抹茶酸酒", "th_05.jpg"), ("Bennelong", "戴珍珠耳环的少女", "ben_02.jpg")],
+            [("Eau de Vie", "烟熏罗布罗伊", ("edv1.webp", .45, .5)), ("Maybe Sammy", "浴血黑帮", ("ms_06.jpg", .5, .5))],
+            [("Bar See See", "高低马天尼", "ss_04.jpg"), ("Bar Bridge", "柚子马天尼", ("bb_00.png", .45, .5)), ("Grain", "黄金米香", "gr_00.jpg")]]
+    rh = (H - top - G * 2) // 3
+    for r, row in enumerate(rows):
+        k = len(row); tw = (W - G * (k - 1)) // k; y0 = top + r * (rh + G)
+        for i, (bar, drink, ph) in enumerate(row):
+            t = crop(ph, tw, rh); dd = ImageDraw.Draw(t)
+            fd = fitf(drink, tw - 30, 76); fb = fitf(bar, tw - 30, 44, "Bold")
+            outlined(dd, ((tw - fd.getlength(drink)) / 2, rh - fd.size - 40), drink, fd, max(6, fd.size // 10))
+            outlined(dd, ((tw - fb.getlength(bar)) / 2, 22), bar, fb, 5)
+            img.paste(t, (i * (tw + G), y0))
+    img.save(f"{OUT}/{fn}", quality=93)
+cover_full("cover_C.jpg", "悉尼最好喝的鸡尾酒！")
+print("cover ok")
