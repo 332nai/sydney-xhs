@@ -27,7 +27,7 @@ def wrap(text, font, width):
     return lines
 
 G = 6
-LABEL = {"Spice Temple": "草莓柚子", "Saké": "绿茶梅子", "Teahouse": "茉莉抹茶", "Bennelong": "茉莉荔枝",
+LABEL = {"Spice Temple": "草莓柚子", "Saké": "绿茶梅子", "Teahouse": "茉莉抹茶", "Bennelong": "茉莉荔枝", "Bar See See": "茅台特调",
          "Maybe Sammy": "迷你荔枝", "Bar Bridge": "柚子柑橘", "Grain": "黄油米香", "Eau de Vie": "柚子姜汁"}
 def label(img, text, box):
     x0, y0, x1, y1 = box; d = ImageDraw.Draw(img); f = zh(84, "Black")
@@ -88,6 +88,11 @@ BARS = [
    ("荔枝玫瑰", "$26", "荔枝加玫瑰茶，花香果香都有。"),
    ("Blossom Breeze 桂花", "$26", "桂花茶的香气，加西柚和一点盐，咸香清爽。")],
   ["th_05.jpg", "th_01.jpg", "th_02.jpg", "th_04.jpg", "th_06.jpg"]),
+ ("Bar See See", "CBD，Porter House顶楼，楼下是中餐厅Lee Ho Fook",
+  "2025年10月开的特调小店，主角是茅台，装修用了茅台飞天的图案。小食是Lee Ho Fook做的椒盐莲藕片和生蚝。",
+  [("High Low Martini", "$29", "店里的招牌。"),
+   ("Strawberry & Yuzu Spritz", "$23", "草莓加柚子的气泡特调，口感轻。")],
+  ["ss_04.jpg", "ss_00.jpg", "ss_01.jpg", "ss_03.jpg", "ss_05.jpg", "ss_02.jpg"]),
  ("Bennelong", "悉尼歌剧院里",
   "坐在歌剧院的帆顶下面，窗外是海港和CBD夜景。现在的特调单叫Sip the Canvas，每一杯都以一幅名画命名。",
   [("戴珍珠耳环的少女", "$34", "茉莉、柚子和荔枝苏打，花香果香都很淡雅。"),
@@ -143,7 +148,7 @@ def cover_full(fn, title):
     top = 250
     rows = [[("Spice Temple", "草莓柚子", "st_07.jpg"), ("Saké", "绿茶梅子", "sk_01c.jpg"), ("Teahouse", "茉莉抹茶", "th_05.jpg")],
             [("Bennelong", "茉莉荔枝", "ben_02.jpg"), ("Maybe Sammy", "迷你荔枝", ("ms_06.jpg", .6, .5)), ("Grain", "黄油米香", "gr_00.jpg")],
-            [("Bar Bridge", "柚子柑橘", ("bb_00.png", .45, .5)), ("Eau de Vie", "柚子姜汁", "edv5.jpg")]]
+            [("Bar See See", "茅台特调", "ss_04.jpg"), ("Bar Bridge", "柚子柑橘", ("bb_00.png", .45, .5)), ("Eau de Vie", "柚子姜汁", "edv5.jpg")]]
     rh = (H - top - G * 2) // 3
     for r, row in enumerate(rows):
         k = len(row); tw = (W - G * (k - 1)) // k; y0 = top + r * (rh + G)
