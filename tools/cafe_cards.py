@@ -161,3 +161,107 @@ cov_five("cover_A.jpg", "悉尼海景早午餐", ("人均", "$23", "起"), ["The
 cov_five("cover_B.jpg", "悉尼看海吃早餐", ("人均", "$23", "起，坐沙滩上"), ["Promenade Bondi", "Pilu Baretto", "The Boathouse Shelly Beach", "The Boathouse Balmoral", "Gusto on the Beach"])
 cov_four("cover_C.jpg", ["Promenade Bondi", "The Boathouse Shelly Beach", "The Boathouse Balmoral", "Pilu Baretto"])
 print("ok")
+
+# ===== 首页新风格 =====
+import math, random
+from sydney_minimap import COAST, HARBOUR, MIDDLE, BOTANY, CBD
+BND = (-33.73, -33.94, 151.08, 151.42)
+
+def cov_map(fn):
+    """大卡通地图，6个照片气泡连到图钉"""
+    img = Image.new("RGB", (W, H), (158, 212, 232)); d = ImageDraw.Draw(img)
+    S = 2; big = Image.new("RGB", (W * S, H * S), (158, 212, 232)); bd = ImageDraw.Draw(big)
+    la0, la1, lo0, lo1 = BND; top, bot = 300, H - 40
+    def xy(la, lo, s=S):
+        return ((lo - lo0) / (lo1 - lo0) * W * s, (top + (la - la0) / (la1 - la0) * (bot - top)) * s)
+    land = (246, 232, 196); edge = (30, 52, 70); sea = (158, 212, 232)
+    poly = [xy(la, lo) for la, lo in COAST]
+    bd.polygon([(0, top * S - 400)] + poly + [(0, H * S + 400)], fill=land)
+    for line, wd in ((HARBOUR, 26), (MIDDLE, 16)):
+        bd.line([xy(*p) for p in line], fill=sea, width=wd * S, joint="curve")
+    bd.polygon([xy(*p) for p in BOTANY], fill=sea)
+    bd.line(poly, fill=edge, width=5 * S, joint="curve")
+    for (la, lo) in ((-33.76, 151.325), (-33.86, 151.33), (-33.93, 151.32)):
+        x, y = xy(la, lo)
+        for k in range(3): bd.arc((x - 30 * S + k * 26 * S, y - 10 * S, x - 4 * S + k * 26 * S, y + 10 * S), 200, 340, fill=(255, 255, 255), width=5 * S)
+    cx, cy = xy(*CBD)
+    for i, r in enumerate((34, 25, 17)):
+        ox = cx - 28 * S + i * 22 * S; r *= S
+        bd.pieslice((ox - r, cy - r, ox + r, cy + r), 180, 270, fill=(255, 255, 255), outline=edge, width=4 * S)
+    img = big.resize((W, H), Image.LANCZOS); d = ImageDraw.Draw(img)
+    # 标题
+    d.rectangle((0, 0, W, 285), fill=(14, 26, 36))
+    d.text((60, 30), "悉尼海景早午餐", font=zh(104, "Black"), fill=CRM)
+    f2 = zh(64, "Black"); f3 = zh(92, "Black")
+    d.text((60, 182), "人均", font=f2, fill=CRM); x = 60 + f2.getlength("人均") + 16
+    d.text((x, 166), "$23", font=f3, fill=GOLD); x += f3.getlength("$23") + 12
+    d.text((x, 182), "起，坐着就能看海", font=f2, fill=CRM)
+    # 气泡：名字, 气泡中心
+    B = [("Gusto on the Beach", (915, 410)), ("Pilu Baretto", (330, 430)), ("The Boathouse Shelly Beach", (915, 700)),
+         ("The Boathouse Balmoral", (250, 760)), ("Promenade Bondi", (915, 1010)), ("Sea Salt Clovelly", (300, 1200))]
+    bs = 230; pins = []
+    for n, (bx, by) in B:
+        la, lo, _ = LOC[n]; px, py = xy(la, lo, 1); pins.append((px, py))
+        for t in range(0, 100, 4):
+            a = t / 100; b = (t + 2) / 100
+            d.line((bx + (px - bx) * a, by + (py - by) * a, bx + (px - bx) * b, by + (py - by) * b), fill=edge, width=4)
+    for n, (bx, by) in B:
+        t = crop(CP[n], bs, bs); td = ImageDraw.Draw(t)
+        ftag = zh(42, "Black"); outlined(td, ((bs - ftag.getlength(TAG[n])) / 2, 10), TAG[n], ftag, 5)
+        if PR[n]:
+            fp = zh(76, "Black"); outlined(td, ((bs - fp.getlength(PR[n])) / 2, bs / 2 - 36), PR[n], fp, 7)
+        t = blur_name(t, SHORT.get(n, n), zh(30, "Black"), bs / 2, bs - 52)
+        frame = Image.new("RGB", (bs + 16, bs + 16), "white"); frame.paste(t, (8, 8))
+        sh = Image.new("RGBA", img.size, (0, 0, 0, 0)); ImageDraw.Draw(sh).rectangle((bx - bs / 2 + 4, by - bs / 2 + 10, bx + bs / 2 + 20, by + bs / 2 + 26), fill=(0, 0, 0, 90))
+        img = Image.alpha_composite(img.convert("RGBA"), sh.filter(ImageFilter.GaussianBlur(10))).convert("RGB")
+        img.paste(frame, (int(bx - bs / 2 - 8), int(by - bs / 2 - 8)))
+    d = ImageDraw.Draw(img)
+    for px, py in pins:
+        r = 17; d.ellipse((px - r, py - 2.6 * r, px + r, py - 0.6 * r), fill=(226, 64, 52), outline="white", width=3)
+        d.polygon([(px - .75 * r, py - 1.25 * r), (px + .75 * r, py - 1.25 * r), (px, py)], fill=(226, 64, 52))
+        d.ellipse((px - 6, py - 1.98 * r, px + 6, py - 1.98 * r + 12), fill="white")
+    img.save(f"{OUT}/{fn}", quality=93)
+
+def cov_polaroid(fn):
+    """沙色背景，拍立得照片散放，底部白边写标签和价格"""
+    random.seed(7)
+    img = Image.new("RGB", (W, H), (240, 230, 210)).convert("RGBA")
+    nz = Image.effect_noise((W, H), 18).convert("L"); img = Image.blend(img, Image.merge("RGBA", (nz, nz, nz, Image.new("L", (W, H), 255))), .06)
+    d = ImageDraw.Draw(img)
+    d.text((60, 46), "悉尼海景早午餐", font=serif(108), fill=INK)
+    f2 = zh(60, "Black"); f3 = zh(88, "Black")
+    d.text((62, 196), "人均", font=f2, fill=INK); x = 62 + f2.getlength("人均") + 14
+    d.text((x, 180), "$23", font=f3, fill=(214, 92, 50)); x += f3.getlength("$23") + 12
+    d.text((x, 196), "起，坐着看海", font=f2, fill=INK)
+    P = [("The Boathouse Shelly Beach", (40, 300), -4), ("Promenade Bondi", (560, 310), 4), ("The Boathouse Balmoral", (50, 850), 3),
+         ("Gusto on the Beach", (565, 845), -3)]
+    pw, ph = 440, 360
+    for n, (x, y), ang in P:
+        card = Image.new("RGBA", (pw + 40, ph + 150), (255, 255, 255, 255)); cd = ImageDraw.Draw(card)
+        card.paste(crop(CP[n], pw, ph), (20, 20))
+        ft = zh(52, "Black"); fp = zh(66, "Black")
+        cd.text((26, ph + 46), TAG[n], font=ft, fill=INK)
+        if PR[n]: cd.text((pw + 14 - fp.getlength(PR[n]), ph + 36), PR[n], font=fp, fill=(214, 92, 50))
+        card = card.rotate(ang, resample=Image.BICUBIC, expand=True)
+        sh = Image.new("RGBA", img.size, (0, 0, 0, 0)); sh.paste((0, 0, 0, 80), (x + 10, y + 16), card.split()[3])
+        img = Image.alpha_composite(img, sh.filter(ImageFilter.GaussianBlur(10))); img.alpha_composite(card, (x, y))
+    img.convert("RGB").save(f"{OUT}/{fn}", quality=93)
+
+def cov_full(fn):
+    """一张满版海景，标题加六行标签价格"""
+    img = crop(("shel3/277_5e03127827a7baa664fc98a56ca9ec3d.jpg", .45, .5), W, H).convert("RGBA")
+    g = Image.new("RGBA", (W, H), (0, 0, 0, 0)); gd = ImageDraw.Draw(g)
+    for y in range(H):
+        a = int(max(0, (y - 520) / (H - 520)) * 150); gd.line((0, y, W, y), fill=(10, 30, 40, a))
+    img = Image.alpha_composite(img, g); d = ImageDraw.Draw(img)
+    outlined(d, (60, 70), "悉尼海景", zh(150, "Black"), 10); outlined(d, (60, 240), "早午餐", zh(150, "Black"), 10)
+    outlined(d, (64, 420), "人均$23起", zh(90, "Black"), 8, fill=GOLD)
+    y = 680; ft = zh(64, "Black"); fp = zh(72, "Black")
+    for n in NAMES:
+        outlined(d, (80, y), TAG[n], ft, 6)
+        if PR[n]: outlined(d, (W - 80 - fp.getlength(PR[n]), y - 4), PR[n], fp, 6, fill=GOLD)
+        y += 118
+    img.convert("RGB").save(f"{OUT}/{fn}", quality=93)
+
+cov_map("cover_D.jpg"); cov_polaroid("cover_E.jpg"); cov_full("cover_F.jpg")
+print("new covers ok")
