@@ -29,41 +29,41 @@ def wrap(text, font, width):
 # 名字, 标签, 入门房, 看景房(名称,价), 套房, 照片, 介绍, 一句话
 HOTELS = [
  ("Kimpton Margot", "最便宜", 596, None, 805, ("ki1.jpg", .5, .55),
-  "Pitt Street一栋1930年代的Art Deco老楼改的，大堂是挑高的中庭，屋顶有泳池。看不到海，但房间大，设计感强。",
-  "$805就能住套房，是这12家里最便宜的套房。"),
+  "Pitt Street一栋1930年代的Art Deco老楼改的，大堂是挑高的中庭，屋顶有泳池。看不到海。",
+  "套房$805，是这12家里最便宜的套房。"),
  ("Sofitel Darling Harbour", "泳池", 684, ("达令港景", 951), 1339, ("so1.jpg", .5, .5),
   "达令港边上，高层的无边泳池正对港湾和城市天际线，是悉尼最上镜的酒店泳池之一。",
-  "看达令港只比入门房多$267，泳池本身就值回票价。"),
+  "看达令港的房间$951，比入门房多$267。"),
  ("Four Seasons", "看海最值", 688, ("全海港景", 869), 1345, ("fs1.jpg", .5, .5),
-  "环形码头旁边，高层房间一边是海港大桥，一边是歌剧院。酒店老，但位置和景色没得挑。",
-  "$869的全海港景房，是悉尼看歌剧院最便宜的方式。"),
+  "环形码头旁边，高层房间一边是海港大桥，一边是歌剧院。",
+  "全海港景房$869，是这12家里最便宜的看海房。"),
  ("QT Sydney", "最有个性", 690, None, 830, ("qt1.jpg", .5, .5),
   "藏在State Theatre所在的老楼里，房间是浓烈的复古风，红色、豹纹、皮革都敢用。",
-  "不看海，要的是风格和CBD中心的位置。"),
+  "套房$830，只比入门房多$140。"),
  ("The Fullerton", "老邮局", 700, None, 1182, ("fu1.jpg", .5, .45),
   "Martin Place的老邮政总局，钟楼和砂岩立面是悉尼最有名的老建筑之一。大部分房间在后面的塔楼里，老楼里也有Heritage房。",
-  "$973就能住含行政酒廊的房间，这个价位很少见。"),
+  "含行政酒廊的房间$973，套房$1182。"),
  ("InterContinental Coogee", "海边", 778, ("海景", 901), 1292, ("co1.jpg", .5, .5),
-  "Coogee海滩正对面，刚翻新改成InterContinental，泳池边是条纹遮阳伞，很有度假感。",
-  "不想住城里就选它，海景只比入门房多$123。"),
+  "Coogee海滩正对面，刚翻新改成InterContinental，泳池边是条纹遮阳伞。",
+  "海景房$901，比入门房多$123。"),
  ("The Langham", "最英式", 917, ("海港景", 984), 1219, ("la1.jpg", .5, .5),
   "The Rocks的山坡上，水晶灯、线条墙板、古典家具，室内泳池顶上是星空灯。",
-  "看海港只多$67，这12家里加价最少。"),
+  "海港景房$984，只比入门房多$67。"),
  ("W Sydney", "最潮", 927, ("达令港景", 1018), 1063, ("w1.jpg", .5, .5),
   "2023年开的新酒店，玻璃屋顶下的泳池带私人卡座，酒吧和餐厅都是年轻人的场子。",
-  "套房只比入门房贵$136，想住大一点就直接订套房。"),
+  "套房$1063，只比入门房多$136。"),
  ("Pullman Quay Grand", "带家人", 981, ("海港景", 1112), None, ("pu1.jpg", .5, .5),
   "环形码头东边，每一间都是带厨房和客厅的公寓，走路去歌剧院两分钟。",
-  "带爸妈或小孩最方便，两房公寓$1452一晚。"),
+  "一房公寓$981起，两房公寓$1452。"),
  ("Crown Towers", "最高", 1154, ("海港景", 1222), 1969, ("cr1.jpg", .5, .5),
   "Barangaroo最高的那栋楼，落地窗直接看海港大桥，无边泳池正对着海港。",
-  "看海港大桥只比入门房多$68，订就订景观房。"),
+  "海港大桥景$1222，只比入门房多$68。"),
  ("Capella", "最有格调", 1355, None, 3124, ("ca1.jpg", .5, .5),
-  "百年砂岩政府大楼改的，被叫做悉尼第一家六星酒店。服务细，房间安静，但看不到海。",
-  "不看海的酒店里它最贵，你买的是建筑和服务。"),
+  "百年砂岩政府大楼改的，被叫做悉尼第一家六星酒店。看不到海。",
+  "不看海的酒店里它最贵，套房$3124。"),
  ("Park Hyatt", "最贵", 2421, ("歌剧院景", 3456), None, ("ph1.jpg", .5, .5),
   "环形码头对岸，歌剧院就在窗外。全酒店只有150多间房，是离歌剧院最近的酒店。",
-  "入门就要$2421，看歌剧院的房间$3456，是Four Seasons的4倍。"),
+  "入门房就要$2421，看歌剧院的房间$3456，是Four Seasons看海房的4倍。"),
 ]
 SUB = "2027年2月6日周六一晚，两个人一间，含税"
 SHORT = {"Sofitel Darling Harbour": "Sofitel达令港", "InterContinental Coogee": "Coogee洲际", "Pullman Quay Grand": "Pullman"}
@@ -72,7 +72,7 @@ def money(v): return f"${v:,}"
 # ===== 01 价格区间图 =====
 def chart():
     img = Image.new("RGB", (W, H), NAVY); d = ImageDraw.Draw(img)
-    d.text((60, 56), "悉尼高端酒店一晚多少钱", font=serif(68), fill=IVORY)
+    d.text((60, 56), "悉尼酒店周末一晚多少钱", font=serif(68), fill=IVORY)
     d.text((62, 150), SUB, font=zh(30), fill=MUTED)
     lx = 60; ly = 214; f = zh(28)
     for lab, kind in (("入门房", 0), ("看海看景", 1), ("套房", 2)):
@@ -104,41 +104,32 @@ def chart():
 # ===== 02 老杨结论 =====
 def verdict():
     img = Image.new("RGB", (W, H), NAVY); d = ImageDraw.Draw(img)
-    d.text((60, 56), "老杨的结论", font=serif(72), fill=IVORY)
-    C = [("看歌剧院", "Four Seasons", "$869的全海港景房，同样的景在Park Hyatt要$3456。"),
-         ("最便宜", "Kimpton Margot", "$596起，$805住套房，不看海的话性价比最高。"),
-         ("海边度假", "InterContinental Coogee", "刚翻新，海景只加$123，不用挤在城里。"),
-         ("带家人", "Pullman Quay Grand", "每间都是公寓，有厨房有客厅，走路去歌剧院。"),
-         ("纪念日", "Park Hyatt", "贵是真的贵，但歌剧院就在窗外，一辈子住一次。"),
-         ("最不值", "Capella", "不看海却卖到$1355起，除非你就是冲着这栋楼去。")]
-    y = 200
-    for tag, n, s in C:
-        d.text((60, y), tag, font=zh(30, "Bold"), fill=GOLD)
-        d.text((60, y + 44), n, font=serif(50), fill=IVORY); y += 116
-        for ln in wrap(s, zh(32), 960): d.text((62, y), ln, font=zh(32), fill=MUTED); y += 48
-        y += 30
-        d.line((60, y - 16, W - 60, y - 16), fill=NAVY2, width=2)
+    d.text((60, 56), "周末一晚，几个数字", font=serif(72), fill=IVORY)
+    C = [("$848", "12家酒店入门房的中间价"),
+         ("$596", "最便宜的入门房，Kimpton Margot"),
+         ("$869", "最便宜的看海房，Four Seasons全海港景"),
+         ("$805", "最便宜的套房，Kimpton Margot"),
+         ("$3,456", "最贵的一间，Park Hyatt歌剧院景"),
+         ("3家", "入门房就超过$1000：Crown Towers、Capella、Park Hyatt")]
+    y = 190
+    for big, s_ in C:
+        d.text((60, y), big, font=zh(84, "Black"), fill=GOLD); y += 108
+        for ln in wrap(s_, zh(34), 960): d.text((62, y), ln, font=zh(34), fill=IVORY); y += 50
+        y += 26
     assert y < H, y
     img.save(f"{OUT}/02.jpg", quality=93)
 
 # ===== 两家一页 =====
-def chip(d, x, y, lab, val, on):
-    fl = zh(24); fv = zh(40, "Black")
-    w = max(fl.getlength(lab), fv.getlength(val)) + 40
-    d.rounded_rectangle((x, y, x + w, y + 100), radius=12, fill=NAVY2 if on else NAVY, outline=GOLD if on else NAVY2, width=2)
-    d.text((x + 20, y + 10), lab, font=fl, fill=MUTED); d.text((x + 20, y + 40), val, font=fv, fill=IVORY if on else MUTED)
-    return x + w + 16
 def half(img, y0, hh, h):
     n, tag, a, view, suite, photo, intro, line = h
-    ph = 300; img.paste(crop(photo, W, ph), (0, y0)); d = ImageDraw.Draw(img)
-    y = y0 + ph + 24
-    d.text((60, y), n, font=serif(50), fill=IVORY); fs_ = zh(30, "Bold")
-    d.text((W - 60 - fs_.getlength(tag), y + 14), tag, font=fs_, fill=GOLD)
-    y += 80; x = 60
-    x = chip(d, x, y, "入门房", money(a), True)
-    if view: x = chip(d, x, y, view[0], money(view[1]), True)
-    if suite: x = chip(d, x, y, "套房", money(suite), True)
-    y += 122
+    ph = 330; img.paste(crop(photo, W, ph), (0, y0)); d = ImageDraw.Draw(img)
+    y = y0 + ph + 26
+    d.text((60, y), n, font=serif(52), fill=IVORY); y += 86
+    x = 60; fl = zh(28); fv = zh(44, "Black")
+    for lab, v in [("入门房", a)] + ([view] if view else []) + ([("套房", suite)] if suite else []):
+        d.text((x, y + 12), lab, font=fl, fill=MUTED); x += fl.getlength(lab) + 12
+        d.text((x, y), money(v), font=fv, fill=GOLD); x += fv.getlength(money(v)) + 44
+    y += 76
     for ln in wrap(intro, zh(30), 960): d.text((62, y), ln, font=zh(30), fill=MUTED); y += 44
     y += 6
     for ln in wrap(line, zh(30, "Bold"), 960): d.text((62, y), ln, font=zh(30, "Bold"), fill=IVORY); y += 44
@@ -167,7 +158,6 @@ def cover_grid(fn):
     img = Image.new("RGB", (W, H), NAVY); cw, ch = W // 2, H // 3
     for i, (n, tag, v) in enumerate(pick):
         t = crop(BY[n][5], cw - 4, ch - 4); d = ImageDraw.Draw(t); tw = cw - 4
-        outlined(d, ((tw - zh(64, "Black").getlength(tag)) / 2, 24), tag, zh(64, "Black"), 7)
         p = money(v); fp = zh(120, "Black"); outlined(d, ((tw - fp.getlength(p)) / 2, ch / 2 - 70), p, fp, 10)
         t = blur_name(t, n, zh(36, "Black"), tw / 2, ch - 80)
         img.paste(t, ((i % 2) * cw + 2, (i // 2) * ch + 2))
@@ -175,8 +165,8 @@ def cover_grid(fn):
 def cover_hero(fn):
     img = Image.new("RGB", (W, H), NAVY); ph = 900
     img.paste(crop(("ph1.jpg", .55, .5), W, ph), (0, 0)); d = ImageDraw.Draw(img)
-    d.text((60, ph + 50), "悉尼高端酒店", font=serif(104), fill=IVORY)
-    d.text((60, ph + 190), "一晚多少钱", font=serif(104), fill=IVORY)
+    d.text((60, ph + 50), "悉尼酒店周末", font=serif(104), fill=IVORY)
+    d.text((60, ph + 190), "一晚到底多贵", font=serif(104), fill=IVORY)
     f = zh(92, "Black"); s = "$596"; d.text((60, ph + 340), s, font=f, fill=GOLD)
     x = 60 + f.getlength(s) + 24; d.text((x, ph + 362), "到", font=zh(64, "Black"), fill=IVORY); x += zh(64, "Black").getlength("到") + 24
     d.text((x, ph + 340), "$3,456", font=f, fill=GOLD)
