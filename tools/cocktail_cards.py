@@ -156,7 +156,7 @@ def cover_full(fn, title):
             ld.rounded_rectangle((bx - 14, 18, bx + fb.getlength(bar) + 14, 30 + fb.size + 10), radius=8, fill=(0, 0, 0, 120))
             ld.text((bx, 22), bar, font=fb, fill=(255, 255, 255, 255))
             box = (int(bx - 20), 12, int(bx + fb.getlength(bar) + 20), int(40 + fb.size + 12))
-            lay.paste(lay.crop(box).filter(ImageFilter.GaussianBlur(2.6)), box)
+            lay.paste(lay.crop(box).filter(ImageFilter.GaussianBlur(4.2)), box)
             t = t.convert("RGBA"); t.alpha_composite(lay); t = t.convert("RGB"); dd = ImageDraw.Draw(t)
             outlined(dd, ((tw - fd.getlength(drink)) / 2, rh - fd.size - 40), drink, fd, max(6, fd.size // 10))
             img.paste(t, (i * (tw + G), y0))
