@@ -42,6 +42,18 @@ def blur_name(t, text, f, cx, y, r=6.5):
 
 # (店名, 人均, 标签, 结论, 介绍, 必点, 大图, [菜], [环境])
 V = [
+ ("Dunes Kiosk", "$22", "最便宜", "Palm Beach最北头的小卖部，坐草地上看海，早餐$16起。",
+  "Governor Phillip Park里，Dunes餐厅旁边的外卖窗口，买了就坐在草地和沙滩边吃。周日旁边的Dunes餐厅还有早午餐，蟹肉蛋卷$28。",
+  "必点：牛油果吐司$16，玉米糙米饼$18，培根蛋卷$16。",
+  ("dunes/s_TJR_4276_-Edit_web.jpg", .5, .5),
+  [("dunes/s_Dunes__High-Res-103-scaled.jpg", .5, .5), ("dunes/s_Dunes__High-Res-91-scaled.jpg", .5, .5), ("dunes/s_Dunes__High-Res-51-scaled.jpg", .5, .5)],
+  [("dunes/dunes.jpg", .5, .5), ("dunes/s_TJR_4287__web.jpg", .5, .5)]),
+ ("Gusto on the Beach", "$23", "带狗来", "冲浪救生俱乐部楼上，坐在窗边看海，咖啡$5。",
+  "South Curl Curl海滩边，一整排窗户正对大海，阳台上也能坐。可以带狗，本地人遛狗顺路来吃早餐。",
+  "必点：牛油果吐司$18，红薯饼$17，蔬菜碗$20。",
+  ("gusto/bs_17d411288dca52ecb5b2cba5ea4ddb9e.jpg", .5, .5),
+  [("gusto2/to_103101399.jpg", .5, .5), ("gusto2/to_103101401.jpg", .5, .5), ("gusto2/flatwhite.jpg", .5, .5)],
+  [("gusto/bs_2c27ef579a61450ab8a0a6d8a48d35b7.jpg", .5, .5), ("gusto2/to_103101400.jpg", .5, .5)]),
  ("Promenade Bondi", "$24", "看邦迪", "邦迪海滩正中间吃早餐，比旁边很多咖啡店还便宜。",
   "Bondi Pavilion里的海滩吧，红白遮阳伞对着整片沙滩。早餐只有周末早上7点到11点半，不订位，早点去占海边的桌子。",
   "必点：牛油果吐司$24，蘑菇吐司$27，培根蛋卷$16。",
@@ -54,12 +66,18 @@ V = [
   ("baretto/Baretto-Nights-outlook-scaled.jpg", .5, .5),
   [("baretto/Pilu_at_Freshwater_Andrea_Paez_October_2026-126.jpg", .5, .5), ("baretto/old_eggroll.jpg", .5, .5)],
   [("baretto/Baretto-Bench-scaled.jpg", .5, .5), ("baretto/Baretto-view-to-register-scaled.jpg", .5, .5)]),
+ ("The Boathouse Balmoral", "$25", "东南亚早餐", "海景早餐里唯一能吃到炒饭和泰式蛋的，中国胃最喜欢。",
+  "Balmoral海湾的老码头边，房子一半建在水上。早餐有泰式女婿蛋、炒饭和印度煎饼，也有西式大早餐，适合带爸妈。",
+  "必点：泰式女婿蛋$16，炒饭$18，蟹肉蛋卷$32。",
+  ("balm/372_venue-balmoral-beach.jpg", .5, .5),
+  [("balm/2279_IMG_0702.jpg", .5, .5), ("balm/2276_IMG_0369.jpg", .5, .5), ("balm/2303_IMG_0249.jpg", .5, .5)],
+  [("balm/2404_IMG_1761.jpg", .5, .5), ("balm/2454_IMG_1779.jpg", .5, .5)]),
  ("The Boathouse Shelly Beach", "$26", "坐在沙滩上", "桌子直接摆在沙滩上，悉尼最像度假的早餐。",
   "从Manly码头沿海边走15分钟，Shelly Beach是个安静的小海湾，水很清，能看到鱼。早餐7点到11点半，不订位，周末要排队。",
   "必点：蟹肉炒蛋$28，法式吐司$21，牛油果吐司$20。",
-  ("shelly2/1559_Shelly-Beach_Beach-Shot.png", .5, .5),
-  [("shelly2/1286_corporate-events-shelly-beach-5.png", .5, .5), ("shelly/bs_6db2dc9381f5853687f4bb9672b1214e.jpg", .5, .5), ("shelly/bs_107f209c09472ba6aa3ade5d82c1d46b.jpg", .5, .5)],
-  [("shelly/bs_989ee41ccfc4697b70cff89099f25bfd.jpg", .5, .5), ("shelly/bs_732e6eaf2d60978ecfa4d9847c38aacb.jpg", .5, .5)]),
+  ("shel3/277_5e03127827a7baa664fc98a56ca9ec3d.jpg", .5, .5),
+  [("shel3/2559_IMG_0162.jpg", .5, .6), ("shel3/2607_20261004_FoH_Boatshed-Shelley-Beach_TomoO_High-100.jpg", .5, .5), ("shel3/2610_20261004_FoH_Boatshed-Shelley-Beach_TomoO_High-111.jpg", .5, .6)],
+  [("shel3/2457_SB-Upper-Level-Seated-view-.jpg", .5, .5), ("shel3/1558_carousel-5.jpg", .5, .5)]),
  ("Next Door", "$28", "坐火车到", "坐火车就能到的海景早午餐，菜单最全。",
   "Cronulla海滩边，早上6点半开门，窗外就是North Cronulla的沙滩。从早餐到午餐都有，带爸妈和小孩都好点。",
   "必点：班戟$27，辣炒蛋$26，墨西哥早餐卷$22。",
@@ -72,6 +90,12 @@ V = [
   ("bianchinis/27d4d6_62f57d7db6ad4f67903e0799da1bc9b2~mv2.jpeg", .5, .5),
   [("bianchinis/27d4d6_bd56545ecd234c988328d95312350c1c~mv2.jpg", .5, .5), ("bianchinis/27d4d6_f3db62337c4a444abf07c307c40e52eb~mv2.jpg", .5, .5), ("bianchinis/27d4d6_04be3b1f945c47d3857423b3c18e493a~mv2.jpeg", .5, .5)],
   [("bianchinis/27d4d6_c1b2dcf787a24839ac3084ce83825543~mv2.jpg", .5, .5), ("bianchinis/27d4d6_b5d6d4c148c748178834c660558b5af7~mv2.jpeg", .5, .5)]),
+ ("Sea Salt Clovelly", "不标价", "最好拍", "绿白条纹遮阳伞对着Clovelly海湾，这几家里最好拍照。",
+  "Clovelly海湾正对面，海水很平静，吃完可以下去浮潜。官网菜单不标价，所以没放进排名。早餐8点到11点半。",
+  "必点：昆士兰蟹肉蛋卷，松露炒蛋，牛油果吐司。",
+  ("seasalt/0Y6A6332.jpg", .5, .5),
+  [("seasalt/0Y6A6613.jpg", .5, .5), ("seasalt/0Y6A6381.jpg", .5, .45), ("seasalt/0Y6A6485.jpg", .5, .5)],
+  [("seasalt/0Y6A6245.jpg", .5, .45), ("seasalt/0Y6A6306.jpg", .5, .5)]),
 ]
 NAMES = [v[0] for v in V]; PR = {v[0]: v[1] for v in V}; TAG = {v[0]: v[2] for v in V}
 
@@ -86,7 +110,8 @@ def card(fn, v):
     y = y0 + 260 + 20
     d = ImageDraw.Draw(img); fn_ = serif(52); fp = zh(46, "Black"); fv = zh(34, "Bold"); fi = zh(31); lh = 44
     d.text((60, y), name, font=fn_, fill=INK); t = "人均" + price
-    d.text((W - 60 - fp.getlength(t), y + 4), t, font=fp, fill=INK); y += 74
+    d.text((W - 60 - fp.getlength(t), y + 4), t, font=fp, fill=INK) if price[0] == "$" else d.text((W - 60 - zh(36, "Bold").getlength(price), y + 12), price, font=zh(36, "Bold"), fill=GREY)
+    y += 74
     for ln in wrap(verdict, fv, 960): d.text((62, y), ln, font=fv, fill=SEA); y += 48
     y += 4
     for ln in wrap(intro, fi, 960): d.text((62, y), ln, font=fi, fill=GREY); y += lh
@@ -101,10 +126,10 @@ for k, v in enumerate(V): card(f"{k + 2:02d}.jpg", v)
 img = Image.new("RGB", (W, H), CREAM); d = ImageDraw.Draw(img)
 d.text((60, 64), "悉尼海景早午餐人均", font=serif(80), fill=INK)
 d.text((62, 182), "一份早午餐加一杯咖啡，咖啡统一按$6算", font=zh(34), fill=GREY)
-fn_ = zh(46, "Medium"); fp = zh(46, "Bold"); ft = zh(32, "Bold"); y = 320; lh = 190
+fn_ = zh(46, "Medium"); fp = zh(46, "Bold"); ft = zh(32, "Bold"); y = 262; lh = 116
 for i, n in enumerate(NAMES):
     d.text((60, y), f"{i + 1}", font=fp, fill=GREY); d.text((120, y), n, font=fn_, fill=INK)
-    d.text((122, y + 66), TAG[n], font=ft, fill=SEA)
+    d.text((122, y + 58), TAG[n], font=ft, fill=SEA)
     pw = fp.getlength(PR[n]); x0 = 120 + fn_.getlength(n) + 20; x1 = W - 60 - pw - 20
     for xx in range(int(x0), int(x1), 14): d.ellipse((xx, y + 32, xx + 4, y + 36), fill=LINE)
     d.text((W - 60 - pw, y), PR[n], font=fp, fill=INK); y += lh
@@ -112,7 +137,7 @@ d.text((62, y + 20), "很多店周末和公众假期有附加费，大多不订�
 img.save(f"{OUT}/01.jpg", quality=93)
 
 # ===== 首页 =====
-SHORT = {"The Boathouse Shelly Beach": "Boathouse", "Promenade Bondi": "Promenade"}
+SHORT = {"The Boathouse Shelly Beach": "Boathouse", "The Boathouse Balmoral": "Boathouse", "Promenade Bondi": "Promenade", "Gusto on the Beach": "Gusto", "Sea Salt Clovelly": "Sea Salt"}
 CP = {v[0]: v[6] for v in V}
 
 def tile(n, w, h, ftag, fp, fname, tagy=18):
@@ -121,7 +146,7 @@ def tile(n, w, h, ftag, fp, fname, tagy=18):
     outlined(d, ((w - fp.getlength(PR[n])) / 2, h / 2 - fp.size / 2), PR[n], fp, 8)
     return blur_name(t, SHORT.get(n, n), fname, w / 2, h - fname.size - 34)
 
-def cov_five(fn, top, sub):
+def cov_five(fn, top, sub, pick):
     img = Image.new("RGB", (W, H), (14, 26, 36)); d = ImageDraw.Draw(img)
     d.text((60, 36), top, font=zh(100, "Black"), fill=CRM)
     f2 = zh(64, "Black"); f3 = zh(88, "Black"); yy = 168
@@ -129,9 +154,9 @@ def cov_five(fn, top, sub):
     d.text((x, yy), sub[1], font=f3, fill=GOLD); x += f3.getlength(sub[1]) + 12
     d.text((x, yy + 15), sub[2], font=f2, fill=CRM)
     top_h = 300; hh = 470
-    img.paste(tile(NAMES[0], W - 6, hh - 6, zh(72, "Black"), zh(120, "Black"), zh(50, "Black")), (3, top_h + 3))
+    img.paste(tile(pick[0], W - 6, hh - 6, zh(72, "Black"), zh(120, "Black"), zh(50, "Black")), (3, top_h + 3))
     cw, ch = (W - 6) // 2, (H - top_h - hh - 6) // 2
-    for i, n in enumerate(NAMES[1:]):
+    for i, n in enumerate(pick[1:]):
         img.paste(tile(n, cw - 6, ch - 6, zh(60, "Black"), zh(92, "Black"), zh(44, "Black")), (3 + (i % 2) * cw + 3, top_h + hh + (i // 2) * ch + 3))
     img.save(f"{OUT}/{fn}", quality=93)
 
@@ -141,7 +166,7 @@ def cov_four(fn, pick):
         img.paste(tile(n, cw - 4, ch - 4, zh(80, "Black"), zh(132, "Black"), zh(50, "Black"), tagy=30), ((i % 2) * cw + 2, (i // 2) * ch + 2))
     img.save(f"{OUT}/{fn}", quality=93)
 
-cov_five("cover_A.jpg", "悉尼海景早午餐", ("人均", "$24", "起"))
-cov_five("cover_B.jpg", "悉尼看海吃早餐", ("人均", "$24", "起，坐沙滩上"))
-cov_four("cover_C.jpg", ["Promenade Bondi", "The Boathouse Shelly Beach", "Pilu Baretto", "Bianchini's"])
+cov_five("cover_A.jpg", "悉尼海景早午餐", ("人均", "$22", "起"), ["The Boathouse Shelly Beach", "Gusto on the Beach", "Promenade Bondi", "The Boathouse Balmoral", "Bianchini's"])
+cov_five("cover_B.jpg", "悉尼看海吃早餐", ("人均", "$22", "起，坐沙滩上"), ["Promenade Bondi", "Pilu Baretto", "The Boathouse Shelly Beach", "The Boathouse Balmoral", "Next Door"])
+cov_four("cover_C.jpg", ["Promenade Bondi", "The Boathouse Shelly Beach", "The Boathouse Balmoral", "Bianchini's"])
 print("ok")
