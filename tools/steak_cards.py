@@ -152,3 +152,85 @@ def grid12(fn):
     g.save(f"{OUT}/{fn}", quality=93)
 grid12("cover.jpg")
 print("ok")
+
+# ===== 首页多选项：价格 + 标签 + 模糊店名 =====
+TAGS = dict(zip([v[1] for v in V], TAG))
+REDB = (200, 30, 24)
+def blur_name(t, text, f, cx, y, r=7):
+    """把店名写上再糊掉，看得出是店名但认不出是哪家"""
+    lay = Image.new("RGBA", t.size, (0, 0, 0, 0)); d = ImageDraw.Draw(lay)
+    w = f.getlength(text); x = cx - w / 2
+    d.rounded_rectangle((x - 16, y - 6, x + w + 16, y + f.size + 14), radius=10, fill=(0, 0, 0, 150))
+    d.text((x, y), text, font=f, fill=(255, 255, 255, 255))
+    box = (int(x - 20), int(y - 10), int(x + w + 20), int(y + f.size + 18))
+    reg = lay.crop(box).filter(ImageFilter.GaussianBlur(r)); lay.paste(reg, box)
+    base = t.convert("RGBA"); base.alpha_composite(lay); return base.convert("RGB")
+def pill(d, cx, y, text, f, pad=18, fill=REDB):
+    w = f.getlength(text) + pad * 2
+    d.rounded_rectangle((cx - w / 2, y, cx + w / 2, y + f.size + 22), radius=12, fill=fill)
+    d.text((cx - w / 2 + pad, y + 6), text, font=f, fill="white")
+ORDER = [v[1] for v in V]; PIC = {v[1]: v[0] for v in V}; PR = {v[1]: v[2] for v in V}
+# 首页上避开盘子上印的店名
+PIC["Bistecca"] = ("bistecca.jpg", .55, .62, 1.45); PIC["Alfie's"] = ("alfies.jpg", .28, .62, 1.6)
+
+def cov_grid12(fn, blur=True):
+    g = Image.new("RGB", (W, H), (20, 16, 14)); cw, ch = W // 3, H // 4; tw_ = cw - 3; th_ = ch - 3
+    fprice = zh(108, "Black"); ftag = zh(54, "Black"); fname = zh(34, "Black")
+    for i, n in enumerate(ORDER):
+        t = crop(PIC[n], tw_, th_); d = ImageDraw.Draw(t)
+        outlined(d, ((tw_ - fprice.getlength(PR[n])) / 2, 10), PR[n], fprice, 9)
+        pill(d, tw_ / 2, th_ / 2 - 6, TAGS[n], ftag, pad=16)
+        t = blur_name(t, n, fname, tw_ / 2, th_ - 62) if blur else t
+        g.paste(t, ((i % 3) * cw + 1, (i // 3) * ch + 1))
+    g.save(f"{OUT}/{fn}", quality=93)
+
+def cov_hero(fn):
+    """上面大标题，下面6格精选：标签最大，价格其次，店名糊掉"""
+    pick = ["Alfie's", "Bistecca", "The Gidley", "Margaret", "6Head", "Firedoor"]
+    img = Image.new("RGB", (W, H), (22, 16, 12)); d = ImageDraw.Draw(img)
+    f1 = zh(112, "Black"); f2 = zh(64, "Black")
+    d.text((60, 40), "悉尼牛排馆", font=f1, fill=CRM)
+    d.text((60, 175), "人均", font=f2, fill=CRM); x = 60 + f2.getlength("人均") + 16
+    d.text((x, 160), "$55", font=zh(88, "Black"), fill=(255, 196, 64)); x += zh(88, "Black").getlength("$55") + 16
+    d.text((x, 175), "到", font=f2, fill=CRM); x += f2.getlength("到") + 16
+    d.text((x, 160), "$240", font=zh(88, "Black"), fill=(255, 196, 64))
+    pill(d, W - 60 - zh(44, "Black").getlength("12家排好了") / 2 - 18, 70, "12家排好了", zh(44, "Black"))
+    cw, ch = (W - 6) // 2, (H - 300 - 6) // 3; ftag = zh(64, "Black"); fp = zh(96, "Black"); fname = zh(36, "Black")
+    for i, n in enumerate(pick):
+        t = crop(PIC[n], cw - 6, ch - 6); dd = ImageDraw.Draw(t)
+        pill(dd, (cw - 6) / 2, 18, TAGS.get(n, ""), ftag, pad=24)
+        outlined(dd, (((cw - 6) - fp.getlength(PR[n])) / 2, ch / 2 - 40), PR[n], fp, 8)
+        t = blur_name(t, n, fname, (cw - 6) / 2, ch - 70)
+        img.paste(t, (3 + (i % 2) * cw + 3, 300 + (i // 2) * ch + 3))
+    img.save(f"{OUT}/{fn}", quality=93)
+
+def cov_four(fn):
+    """四宫格大图：最值、约会、带爸妈、一生一次"""
+    pick = ["Bistecca", "The Gidley", "Margaret", "Firedoor"]
+    img = Image.new("RGB", (W, H), (22, 16, 12)); cw, ch = W // 2, H // 2
+    ftag = zh(84, "Black"); fp = zh(132, "Black"); fname = zh(40, "Black")
+    for i, n in enumerate(pick):
+        t = crop(PIC[n], cw - 4, ch - 4); d = ImageDraw.Draw(t)
+        pill(d, (cw - 4) / 2, 30, TAGS[n], ftag, pad=28)
+        outlined(d, (((cw - 4) - fp.getlength("人均" + PR[n][1:]) * 0 - fp.getlength(PR[n])) / 2, ch / 2 - 40), PR[n], fp, 10)
+        t = blur_name(t, n, fname, (cw - 4) / 2, ch - 90, r=8)
+        img.paste(t, ((i % 2) * cw + 2, (i // 2) * ch + 2))
+    d = ImageDraw.Draw(img); f = zh(60, "Black"); s = "悉尼牛排人均排行"
+    w = f.getlength(s) + 60; d.rounded_rectangle(((W - w) / 2, H / 2 - 52, (W + w) / 2, H / 2 + 52), radius=20, fill=CRM)
+    d.text(((W - f.getlength(s)) / 2, H / 2 - 40), s, font=f, fill=BRN)
+    img.save(f"{OUT}/{fn}", quality=93)
+
+def cov_versus(fn):
+    """对比：最值 vs 最不值"""
+    img = Image.new("RGB", (W, H), (22, 16, 12)); d = ImageDraw.Draw(img); hh = (H - 260) // 2
+    f1 = zh(84, "Black"); d.text((60, 50), "同样吃牛排", font=f1, fill=CRM); d.text((60, 150), "差的不只是钱", font=f1, fill=(255, 196, 64))
+    for k, n in enumerate(["Bistecca", "6Head"]):
+        t = crop(PIC[n], W, hh - 6); dd = ImageDraw.Draw(t)
+        pill(dd, 220, 30, TAGS[n] if n != "6Head" else "最不值", zh(80, "Black"), pad=28, fill=REDB if k == 0 else (40, 40, 40))
+        outlined(dd, (W - 60 - zh(150, "Black").getlength("人均" + PR[n]), hh - 230), "人均" + PR[n], zh(150, "Black"), 10)
+        t = blur_name(t, n, zh(44, "Black"), 200, hh - 90, r=9)
+        img.paste(t, (0, 260 + k * hh + 3))
+    img.save(f"{OUT}/{fn}", quality=93)
+
+cov_grid12("cover_A.jpg"); cov_hero("cover_B.jpg"); cov_four("cover_C.jpg"); cov_versus("cover_D.jpg")
+print("covers ok")
