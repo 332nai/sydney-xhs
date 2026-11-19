@@ -26,7 +26,7 @@ S = [
  ("歌剧院和植物园", 4, "Mrs Macquaries Point", (-33.8597, 151.2225), "10am", "11:30am", "10,000", "明信片角度，场地大，可以买吃的。"),
  ("环形码头", 5, "Hickson Road Reserve", (-33.8554, 151.2103), "9am", "1:30pm", "2,800", "大桥脚下，对面就是歌剧院。"),
  ("环形码头", 6, "Campbells Cove", (-33.8574, 151.2099), "9am", "3pm", "9,200", "大桥和歌剧院都看得到。"),
- ("The Rocks和Barangaroo", 7, "Dawes Point", (-33.8548, 151.2086), "10am", "7:30pm", "32,000", "就在大桥下面，全场最大，去年晚上7点半才满。"),
+ ("The Rocks和Barangaroo", 7, "Dawes Point", (-33.8548, 151.2086), "10am", "7:30pm", "32,000", "就在大桥下面，全场最大，满得最晚。"),
  ("环形码头", 8, "East Circular Quay", (-33.8599, 151.2129), "9am", "3pm", "10,000", "正对大桥，看不到歌剧院。"),
  ("环形码头", 9, "West Circular Quay", (-33.8610, 151.2093), "9am", "4pm", "16,000", "人最多的码头，视野有限。"),
  ("The Rocks和Barangaroo", 10, "Observatory Hill", (-33.8588, 151.2051), "2pm", "6pm", "4,500", "坐在草坡上看大桥西面，有大树会挡。"),
@@ -102,8 +102,8 @@ def page_map(fn):
 # 02 几点就满
 def page_full(fn):
     img = Image.new("RGB", (W, H), CREAM); d = ImageDraw.Draw(img)
-    d.text((50, 40), "这些看点几点就满了", font=serif(76), fill=INK)
-    d.text((52, 150), "按往年通常满场的时间排，满了就不让进", font=zh(34), fill=GREY)
+    d.text((50, 40), "这些看点通常几点满", font=serif(76), fill=INK)
+    d.text((52, 150), "按官网写的通常满场时间排，满了就不让进", font=zh(34), fill=GREY)
     def tkey(t):
         h, m = (t[:-2].split(":") + ["0"])[:2]; h = int(h) % 12 + (12 if t.endswith("pm") else 0); return h * 60 + int(m)
     L = sorted([s for s in S if s[5]], key=lambda s: tkey(s[5]))
@@ -114,7 +114,6 @@ def page_full(fn):
         d.ellipse((340, y + 14, 366, y + 40), fill=ACOL[s[0]])
         d.text((382, y + 4), s[2], font=fn_, fill=INK)
         y += 72
-    d.text((60, y + 4), "Dawes Point是2025年的满场时间", font=zh(28), fill=GREY)
     assert y < H - 40, y
     img.save(f"{OUT}/{fn}", quality=93)
 
@@ -141,7 +140,7 @@ def page_area(fn, area):
         d.ellipse((50, y + 4, 92, y + 46), fill=ACOL[area]); t = str(s[1]); f = zh(24, "Black")
         d.text((71 - f.getlength(t) / 2, y + 9), t, font=f, fill="white")
         d.text((110, y), s[2], font=fname, fill=INK)
-        info = [f"{s[4]}开门"] + ([f"{s[5]}满"] if s[5] else []) + ([f"容纳{s[6]}人"] if s[6] else [])
+        info = [f"{s[4]}开门"] + ([f"通常{s[5]}满"] if s[5] else []) + ([f"容纳{s[6]}人"] if s[6] else [])
         x = 110; yy = y + fname.size + 14
         for k, it in enumerate(info):
             col = RED if it.endswith("满") else GREY; d.text((x, yy), it, font=fs, fill=col); x += fs.getlength(it) + 28
@@ -182,7 +181,7 @@ def page_tips(fn):
     T = [("两场烟花", "晚上9点有一场家庭烟花，适合带小孩，看完就能走；12点是主场。"),
          ("出去就进不来", "大部分看点出去了不能再进，吃的喝的要一次带够。"),
          ("可以带吃的", "大部分看点能自带野餐，植物园和Barangaroo里也能买吃的。"),
-         ("看满场时间出发", "热门的上午就满了。想晚点去，选Dawes Point、Darling Harbour或者西边Balmain的公园。"),
+         ("看满场时间出发", "热门的通常上午就满。想晚点去，选Dawes Point、Darling Harbour或者西边Balmain的公园。"),
          ("坐公共交通", "当天大量封路，开车很难停。散场后火车和渡轮会加班，但要排很久。")]
     y = 190
     for h_, t in T:
@@ -233,7 +232,7 @@ def cover_night(fn, title, sub, picks):
 def cover_grid(fn):
     img = Image.new("RGB", (W, H), NAVY); d = ImageDraw.Draw(img)
     d.text((50, 40), "悉尼跨年烟花", font=zh(116, "Black"), fill=(255, 244, 214))
-    d.text((50, 185), "免费看点几点就满", font=zh(84, "Black"), fill=GOLD)
+    d.text((50, 185), "免费看点通常几点满", font=zh(84, "Black"), fill=GOLD)
     P = [("上午10:30", "Bennelong Lawn"), ("上午11:30", "Mrs Macquaries"), ("中午12:30", "Tarpeian Lawn"), ("下午1:30", "Hickson Road"),
          ("下午2:30", "Barangaroo"), ("下午3点", "Campbells Cove"), ("下午6点", "Observatory Hill"), ("晚上7:30", "Dawes Point")]
     cw, ch = (W - 90) // 2, 250
@@ -241,14 +240,35 @@ def cover_grid(fn):
         x = 30 + (i % 2) * (cw + 30); y = 330 + (i // 2) * (ch + 22)
         d.rounded_rectangle((x, y, x + cw, y + ch), radius=26, fill=(30, 44, 76))
         f = zh(84 if len(t) <= 5 else 74, "Black"); d.text((x + 30, y + 30), t, font=f, fill=GOLD)
-        d.text((x + 32, y + 30 + f.size + 28), n + " 满", font=zh(38, "Bold"), fill=(255, 244, 214))
+        d.text((x + 32, y + 30 + f.size + 28), "通常这时满 " + n, font=zh(38, "Bold"), fill=(255, 244, 214))
     img.save(f"{OUT}/{fn}", quality=93)
 
 page_map("01.jpg"); page_full("02.jpg")
 for k, a in enumerate(AREAS): page_area(f"{k + 3:02d}.jpg", a)
 page_tickets("10.jpg"); page_tips("11.jpg")
-cover_night("cover_A.jpg", ("悉尼跨年烟花", "免费看点"), "最早上午10:30就满了",
-            [("Bennelong Lawn", "10:30满", 60, 150), ("Mrs Macquaries Point", "11:30满", 40, -120), ("Hickson Road Reserve", "1:30满", -60, -150),
-             ("Dawes Point", "7:30满", -220, 40), ("Mary Booth Reserve", "2点满", 30, -170), ("Barangaroo Reserve", "2:30满", -40, 170)])
+def tmin(t):
+    h, m = (t[:-2].split(":") + ["0"])[:2]; return (int(h) % 12 + (12 if t.endswith("pm") else 0)) * 60 + int(m)
+BANDS = [("通常中午前满", (255, 84, 84), lambda t: t and tmin(t) < 12 * 60 + 1),
+         ("通常下午满", (255, 170, 60), lambda t: t and 12 * 60 < tmin(t) <= 17 * 60),
+         ("通常傍晚后满", (255, 226, 90), lambda t: t and tmin(t) > 17 * 60),
+         ("其他免费看点", (120, 220, 170), lambda t: not t)]
+
+def cover_map(fn):
+    img = Image.new("RGB", (W, H), NAVY); d = ImageDraw.Draw(img)
+    d.text((50, 40), "悉尼跨年烟花", font=zh(120, "Black"), fill=(255, 244, 214))
+    d.text((50, 190), "免费看点通常几点满", font=zh(92, "Black"), fill=GOLD)
+    top = 340; mh = 760
+    mp, xy = night_map(W, mh, BND); img.paste(mp, (0, top)); d = ImageDraw.Draw(img)
+    for s_ in S:
+        col = [b[1] for b in BANDS if b[2](s_[5])][0]
+        x, y = xy(*s_[3]); y += top; r = 15
+        d.ellipse((x - r, y - r, x + r, y + r), fill=col, outline=NAVY, width=3)
+    y = top + mh + 30; f = zh(52, "Black")
+    for k, (lab, col, _) in enumerate(BANDS):
+        x = 60 + (k % 2) * 500; yy = y + (k // 2) * 90
+        d.ellipse((x, yy + 12, x + 46, yy + 58), fill=col); d.text((x + 66, yy), lab, font=f, fill=(255, 244, 214))
+    img.save(f"{OUT}/{fn}", quality=93)
+
+cover_map("cover_A.jpg")
 cover_grid("cover_B.jpg")
 print("ok")
